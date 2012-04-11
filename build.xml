@@ -5,10 +5,10 @@
      <target name="updateFiles">
         <sshexec host="chicago1.vsnetwork.net"
              port="22"
-             username="rpv"
-			 keyfile="${user.home}/.ssh/id_dsa"
+             username="root"
+			 keyfile="${user.home}/.ssh/id_rsa"
              trust="true"
-             command="git pull"
+             command="sudo su rpv && cd ~ && git pull"
              verbose="true"
 			 failonerror="true"/>
     </target>
