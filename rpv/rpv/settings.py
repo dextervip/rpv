@@ -128,6 +128,8 @@ INSTALLED_APPS = (
     'django_jenkins',
 )
 
+PROJECT_APPS = ('teste',)
+
 
 
 # A sample logging configuration. The only tangible logging
