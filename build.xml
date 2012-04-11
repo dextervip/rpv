@@ -3,10 +3,10 @@
     <property name="source" value="./rpv"/>
     
      <target name="updateFiles">
-        <sshexec host="${env.SSH_HOST}"
+        <sshexec host="chicago1.vsnetwork.net"
              port="22"
-             username="${env.SSH_USER}"
-             password="${env.SSH_PASSWORD}"
+             username=""
+             password=""
              trust="true"
              command="git pull"
              verbose="true"
