@@ -6,11 +6,11 @@
         <sshexec host="chicago1.vsnetwork.net"
              port="22"
              username="root"
-			 keyfile="${user.home}/.ssh/id_rsa"
+             keyfile="${user.home}/.ssh/id_rsa"
              trust="true"
-             command="sudo su rpv && cd ~ && git pull"
+             command="cd /var/www/rpv/ &amp;&amp; git pull"
              verbose="true"
-			 failonerror="true"/>
+             failonerror="true"/>
     </target>
         
     <target name="deploy" depends="updateFiles"/>
