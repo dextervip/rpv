@@ -6,7 +6,7 @@
         <sshexec host="chicago1.vsnetwork.net"
              port="22"
              username="rpv"
-			 keyfile="${user.home}/.ssh/id_dsa"
+			 keyfile="${user.home}/.ssh/id_rsa"
              trust="true"
              command="git pull"
              verbose="true"
