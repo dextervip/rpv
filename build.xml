@@ -2,7 +2,30 @@
     <property file="build.properties"/>
     <property name="source" value="./rpv"/>
     
-     <target name="updateFiles">
+    <target name="clean">
+        <delete dir="${source}/reports"/>
+        <mkdir dir="${source}/reports"/>   
+    </target>
+    
+    <target name="test">
+  		<exec executable="python">
+            <arg line="${source}/manage.py test"/>
+        </exec>
+  	</target>
+    
+    <target name="git-update">
+  		<exec executable="git" failonerror="true">
+            <arg line="pull"/>
+        </exec>
+  	</target>
+  	
+  	<target name="syncdb">
+  		<exec executable="python">
+            <arg line="${source}/manage.py syncdb"/>
+        </exec>
+  	</target>
+    
+    <target name="updateFiles">
         <sshexec host="chicago1.vsnetwork.net"
              port="22"
              username="root"
@@ -14,5 +37,6 @@
     </target>
         
     <target name="deploy" depends="updateFiles"/>
-    <target name="build" depends="deploy"/>
+    <target name="update" depends="git-update,syncdb"/>
+    <target name="build" depends="clean,test"/>
 </project>
