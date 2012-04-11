@@ -5,13 +5,12 @@
      <target name="updateFiles">
         <sshexec host="chicago1.vsnetwork.net"
              port="22"
-             username=""
-             password=""
+             username="rpv"
+			 keyfile="${user.home}/.ssh/id_dsa"
              trust="true"
              command="git pull"
              verbose="true"
-			 failonerror="true"
-			 />
+			 failonerror="true"/>
     </target>
         
     <target name="deploy" depends="updateFiles"/>
