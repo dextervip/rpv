@@ -7,6 +7,8 @@ ADMINS = (
     # ('Your Name', 'your_email@example.com'),
 )
 
+DEFAULT_CHARSET = 'utf-8'
+
 MANAGERS = ADMINS
 
 DATABASES = {
@@ -125,6 +127,10 @@ INSTALLED_APPS = (
     'teste',
     'django_jenkins',
 )
+
+PROJECT_APPS = ('teste',)
+
+
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
