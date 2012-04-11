@@ -9,7 +9,7 @@
     
     <target name="test">
   		<exec executable="python">
-            <arg line="${source}/manage.py test"/>
+            <arg line="${source}/manage.py jenkins"/>
         </exec>
   	</target>
     
