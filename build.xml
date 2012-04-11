@@ -1,0 +1,19 @@
+<project name="RPV" default="build" basedir=".">
+    <property file="build.properties"/>
+    <property name="source" value="./rpv"/>
+    
+     <target name="updateFiles">
+        <sshexec host="${env.SSH_HOST}"
+             port="22"
+             username="${env.SSH_USER}"
+             password="${env.SSH_PASSWORD}"
+             trust="true"
+             command="git pull"
+             verbose="true"
+			 failonerror="true"
+			 />
+    </target>
+        
+    <target name="deploy" depends="updateFiles"/>
+    <target name="build" depends="deploy"/>
+</project>
