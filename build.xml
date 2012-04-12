@@ -8,7 +8,7 @@
     </target>
     
     <target name="test">
-  		<exec executable="python">
+  		<exec executable="python" failonerror="true">
             <arg line="${source}/manage.py jenkins"/>
         </exec>
   	</target>
@@ -20,7 +20,7 @@
   	</target>
   	
   	<target name="syncdb">
-  		<exec executable="python">
+  		<exec executable="python" failonerror="true">
             <arg line="${source}/manage.py syncdb"/>
         </exec>
   	</target>
