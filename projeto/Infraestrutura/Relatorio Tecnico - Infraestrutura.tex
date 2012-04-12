@@ -209,27 +209,67 @@ Wolmir
 \section{Ambiente de Gerenciamento}
 	\subsection{Construção de Software}
 		\subsubsection{Introdução}
-		\subsubsection{Ant}
-		\subsubsection{Maven}
-		\subsubsection{Phing}
-		\subsubsection{Jenkins}
-		\subsubsection{phpUnderControl}
 		
-		\begin{table}[h]
-			\tabcolsep=0.11cm
-			\begin{tabular}{|c|c|c|c|c|c|c|c|}
-			\hline Nome 			& Licença 	& Linguagem & Tipo de Construção 	& Recurso 2 & Recurso 3 & Recurso 4  \\
-			\hline  CruiseControl	&  			&  			& Automática			&  			&  			&  			\\
-			\hline  Jenkins			& MIT		& Java		& Automática			&  			&  			&  			\\
-			\hline  phpUnderControl	&  			&  			& Automática 			&  			&  			&  			\\ 
-			\hline  Travis			&  			&  			& Automática			&  			&  			&  			\\ 
-			\hline  Ant				&  			&  			& Manual				&  			&  			&  			\\ 
-			\hline  Maven			&  			&  			& Manual				&  			&  			&  			\\ 
-			\hline  Phing			&  			& PHP		& Manual				&  			&  			&  			\\
-			\hline  
-			\end{tabular} 
-			\caption{Comparação entre ferramentas de construção de software}
-		\end{table}
+			A construção de software é o processo que prepara o software para execução e distribuição do mesmo. Uma ferramenta
+			para construção de software é um utilitário que é usado quando construindo uma nova versão de um software, o
+			utilitário pode baixar dependências do software, configurar ambiente, realizar testes, gerar relatórios e
+			documentações e por fim gerar o executável do software para distribuição.
+			
+		\subsubsection{Ant}
+			O Ant é um biblioteca java e ferramenta de comando de linha para construção de software, cujo objetivo é seguir os
+			passos, também chamado de alvos, e seus alvos dependentes descritos por em um arquivo XML. O principal conhecido uso
+			é de construção de aplicações Java mas pode ser utilizado efetivamente para construção de aplicações em outras
+			linguagens. Ant possui uma grande quantidade de ``antlibs'' contendo tarefas e tipos e seus usuário podem também
+			desenvolver suas antlibs para extender a funcionalidade de tarefas do Ant.
+			
+			Ant é extremamente flexível e não obriga o desenvolvedor seguir um padrão de codificação ou de organização de
+			diretórios para sua aplicação.
+			
+		\subsubsection{Maven}
+			Maven 
+		%\subsubsection{Phing}
+		\subsubsection{Jenkins}
+			Jenkins é um servidor de integração contínua de código fonte aberto escrito em Java, e com mais de 300 plugins para
+			suportar diferentes tipos de desenvolvimento de software. O Jenkins prover o processo de integração contínua para o
+			desenvolvimento de software.
+			O processo de integração contínua visa melhorar a qualidade de software e reduzir o tempo de entrega, substituindo a
+			prática tradicional de aplicação do controle de qualidade depois do desenvolvimento completo. Os princípios da
+			integração contínua são:
+			\begin{itemize}
+			  \item Manter o código fonte em um repositório de controle de versão
+			  \item Automatizar a construção de software
+			  \item Fazer a construção de software testar automaticamente o software
+			  \item Todo mundo deve comitar para o repositório base todo dia
+			  \item Todo commit para repositório base deve ser construido
+			  \item A construção deve ser rápida para identificação dos problemas rapidamente
+			  \item Testar em um ambiente clone de produção
+			  \item Deixar última construção sucedida disponível para os stakeholders e testadores
+			  \item Todo mundo pode ver o resultado das últimas construções
+			  \item Automatizar o deploy
+			\end{itemize}
+			
+			Sendo importante a parte de testes para que a integração contínua funcione. Existem mecanismos implementados em
+			varias linguagens que podem não somente testar o funcionamento total da aplicação mas como verificar a qualidade de
+			código fonte escrito baseado em vários fatores como padrão de codificação, detecção de cópias, detecção de erros em
+			syntax e problemas de lógica.
+			
+		%\subsubsection{phpUnderControl}
+		
+		%\begin{table}[h]
+		%	\tabcolsep=0.11cm
+		%	\begin{tabular}{|c|c|c|c|c|c|c|c|}
+		%	\hline Nome 			& Licença 	& Linguagem & Tipo de Construção 	& Recurso 2 & Recurso 3 & Recurso 4  \\
+		%	\hline  CruiseControl	&  			&  			& Automática			&  			&  			&  			\\
+		%	\hline  Jenkins			& MIT		& Java		& Automática			&  			&  			&  			\\
+		%	\hline  phpUnderControl	&  			&  			& Automática 			&  			&  			&  			\\ 
+		%	\hline  Travis			&  			&  			& Automática			&  			&  			&  			\\ 
+		%	\hline  Ant				&  			&  			& Manual				&  			&  			&  			\\ 
+		%	\hline  Maven			&  			&  			& Manual				&  			&  			&  			\\ 
+		%	\hline  Phing			&  			& PHP		& Manual				&  			&  			&  			\\
+		%	\hline  
+		%	\end{tabular} 
+		%	\caption{Comparação entre ferramentas de construção de software}
+		%\end{table}
 		
 	\subsection{Controle de Versão}
 		\subsubsection{Introdução}

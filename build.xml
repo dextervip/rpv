@@ -24,6 +24,12 @@
             <arg line="${source}/manage.py syncdb"/>
         </exec>
   	</target>
+  	
+  	<target name="latex">
+  		<exec executable="pdflatex" failonerror="true">
+            <arg line="${basedir}/projeto/Infraestrutura/Relatorio Tecnico - Infraestrutura.tex"/>
+        </exec>
+  	</target>
     
     <target name="updateFiles">
         <sshexec host="chicago1.vsnetwork.net"
