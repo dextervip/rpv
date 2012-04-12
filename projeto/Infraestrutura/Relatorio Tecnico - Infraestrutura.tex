@@ -52,10 +52,11 @@ Wolmir
 	\subsection{Ferramenta CASE para Banco de Dados}
 		\subsubsection{Introdução}
 			Uma ferramenta CASE para banco de dados auxilia no processo de projeto de banco de bancos. Um projeto de banco de
-			dados é constituido de duas fases: Modelagem Conceitual e Projeto Lógico. Na primeira fase, é realizado um projeto do
-			modelo de banco de dados em forma de diagrama ER(Entidade Relacionamento), que descreve os tipos de informações que o
-			banco de dados irá armazenar. Enquanto na segunda fase, trata de transformar o modelo conceitual em um modelo lógico
-			que define como será implementado em SGBD específico.
+			dados é constituido de duas fases: Modelagem Conceitual e Projeto Lógico. 
+			
+			Na primeira fase, é realizado um projeto do modelo de banco de dados em forma de diagrama ER(Entidade
+			Relacionamento), que descreve os tipos de informações que o banco de dados irá armazenar. Enquanto na segunda fase,
+			trata de transformar o modelo conceitual em um modelo lógico que define como será implementado em SGBD específico.
 			
 			Para que seja considerada uma ferramenta CASE para banco de dados, a ferramenta deve auxiliar de forma que permita
 			todo o projeto de banco de dados ser inicialmente feito por diagramas e auxiliar na transformação de conceitual para
@@ -89,6 +90,27 @@ Wolmir
 			irão aumentar a produtividade e organização.
 			
 		\subsubsection{MySQL Workbench}
+		
+			Em linhas gerais podemos dizer que o MySQL Workbench é uma ferramenta que possibilita um DBA ou desenvolvedores em
+			geral, criarem e gerenciarem de forma visual todos os tipos de bases de dados MySQL, desde uma base utilizada em uma
+			simples aplicação web, até bases mais complexas, como as existentes em sistemas de data warehouses ou OLTP. Destaques
+			da ferramenta:
+			
+			\begin{itemize}
+			  \item Criação/Edição visual da base de dados: Acelera o desenvolvimento, diminuindo a chance de erros em tarefas
+			  comuns. Oferece validação de schemas para o modelo criado, auxiliando na utilização das melhores práticas de
+			  modelagem de dados e evitando erros na construção de diagramas ER ou criação da base fisicamente.
+			  \item Forward Engineering e Engenharia Reversa: Possibilita a criação de um modelo completo a partir de um script
+			  SQL ou de uma base de dados existente, incluindo o diagrama ER com as tabelas pré-dispostas no mesmo. Oferece
+			  também a construção do banco de dados fisicamente através da modelagem visual.
+			  \item Rastreamento e gerenciamento de mudanças: MySQL Workbench inclui as funcionalidades de Sincronização de
+			  Schemas e utilitários de comparação. Por exemplo, um DBA pode comparar duas bases ativas ou comparar uma modelagem
+			  feita no MySQL Workbench e uma base existente, visualizando as diferenças, com a possibilidade de sincronização
+			  entre um modelo e uma base ou vice versa.
+			\end{itemize}
+
+			Documentação: O MySQL Workbench inclui o DBDoc que auxilia no processo de documentação dos modelos e objetos
+			existentes. Esta documentação pode apresentar-se em texto puro ou no formato HTML.
 		
 \clearpage
 \section{Ambiente de Teste}
