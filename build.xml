@@ -31,10 +31,11 @@
              username="root"
              keyfile="${user.home}/.ssh/id_rsa"
              trust="true"
-             command="cd /var/www/rpv/ &amp;&amp; git pull"
+             command="cd /var/www/rpv/ &amp;&amp; ant -file build.xml update"
              verbose="true"
              failonerror="true"/>
     </target>
+    <!-- command="cd /var/www/rpv/ &amp;&amp; git pull" -->
         
     <target name="deploy" depends="updateFiles"/>
     <target name="update" depends="git-update,syncdb"/>
