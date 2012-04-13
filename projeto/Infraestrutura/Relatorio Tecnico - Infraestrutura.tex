@@ -447,7 +447,21 @@
 			de revisão global, que sugere o estado global do código em desenvolvimento,
 			a partir dos números de versões de cada arquivo fonte.
 		\subsubsection{Git}
+			O Git é um sistema distribuído para controle de versões. Isso significa
+			que, embora exista um repositório central, cada desenvolvedor mantém
+			um clone do repositório, o que permite o gerenciamento dos artefatos,
+			sem precisar de uma conexão com o repositório central.
+			O Git também não trata branches como diretórios, mas como entidades
+			diferentes, possibilitando a troca rápida entre linhas de desenvolvimento
+			dentro do mesmo diretório de trabalho.
+			Ao contrário do SVN, o Git não tem um número indicador do estado global
+			do código, apenas um número específico para cada artefato.
+			Por manter um chceksum de cada versão, o Git tem um controle
+			de integridade melhor do que o SVN.
 		\subsubsection{Conclusão}
+			O Git possui óbvias vantagens em relação ao SVN, especialmente para uma equipe
+			distribuída. Isso, somado ao fato de que o Git tem um maior controle sobre
+			cada submissão de códigos, resultou no Git como a ferramenta de escolha.
 
 	\clearpage		
 	\subsection{Gerenciamento de Tarefas}
