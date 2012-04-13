@@ -51,7 +51,9 @@
 
 \clearpage
 \section{Ambiente de Desenvolvimento}
+
 	\subsection{IDE}
+	
 		\subsubsection{Introdução}
 
 				A IDE ou Ambiente de Desenvolvimento Integrado é um software que auxilia no
@@ -68,6 +70,7 @@
 				a Aptana, uma distribuição do Eclipse e Netbeans.
 		
 		\subsubsection{Aptana}
+		
 			Aptana é uma distrubição da IDE Eclipse com foco no desenvolvimento web, nativamente configurada para
 			desenvolvimento em PHP, Ruby com Rails, Python com Django, HTML, CSS e Javascript. Com uma arquitetura voltada a
 			plugins, a Aptana oferece uma grande flexibilidade no suporte de outros recurso e até outras linguagens por meio dos
@@ -75,6 +78,7 @@
 			sair da IDE.
 		
 		\subsubsection{Netbeans}
+		
 			Netbeans é um Ambiente de Desenvolvimento Integrado (IDE) de código aberto(Open Source), multiplataforma, escrito em
 			Java, apresenta 23 idiomas nativos, sua licença é Freeware, atualmente sua versão estável é a 7.1.1, suporta as
 			seguintes linguagens: Java, C, C++, PHP, Groovy, Ruby, HTML, JavaScript, CSS, e com a inclusão de Beta Plugins,
@@ -90,18 +94,23 @@
 			\end{itemize}
 		
 		\subsubsection{Conclusão}
+		
 			Devido ao seu suporte a Python e à capacidade de integração com o Github, além do seu desempenho, a IDE escolhida foi
 			a Aptana.
 
 	\clearpage
 	\subsection{Ferramenta CASE para UML}
+	
 		\subsubsection{Introdução}
+		
 			A UML, linguagem de modelagem unificada, serve para modelar sistemas orientados
 			a objetos com o auxílio de diagramas e documentar os artefatos
 			produzidos ao longo do desenvolvimento. Desenhar esses diagramas através de uma ferramenta
 			comum é bastante trabalhoso. Logo, para aumentar a produtividade, é necessário
 			uma ferramenta específica.
+			
 		\subsubsection{ArgoUML}
+		
 			ArgoUML é uma ferramenta para auxiliar a criação de diagramas UML. Desenvolvido
 			na universidade de Irvine por Jason E. Robins, como parte de seu Ph.D, a ferramenta
 			pode funcionar em qualquer plataforma que suporte o Java, uma linguagem de 
@@ -109,7 +118,9 @@
 			No entanto, a Argo apresenta sérios problemas quanto à sua usabilidade, pois,
 			além da ocorrência frequente de erros e da interface não amigável, ela ainda não
 			implementa todo o conjunto de modelos que compõem a UML.
+			
 		\subsubsection{Modelio}
+		
 			Modelio é uma ferramenta open source para UML desenvolvida pela Modeliosoft.
 			Ela implementa complemtamente o padrão UML2, além de ser estável e ter uma interface
 			amigável, comparada com outras ferramentas UML. Sua inicialização é lenta e ela não
@@ -124,7 +135,9 @@
 
 	\clearpage
 	\subsection{Ferramenta CASE para Banco de Dados}
+	
 		\subsubsection{Introdução}
+		
 			Uma ferramenta CASE para banco de dados auxilia no processo de projeto de banco de bancos. Um projeto de banco de
 			dados é constituido de duas fases: Modelagem Conceitual e Projeto Lógico. 
 			
@@ -137,6 +150,7 @@
 			lógico. E por transformando em um esquema de banco de dados físico.
 			
 		\subsubsection{PowerDesigner}
+		
 			O PowerDesigner é uma ferramenta CASE Empresarial para o processo de desenvolvimento de software. Atualmente é
 			mantido pela empresa americana Sybase, roda nativamente em computadores com o sistema operacional Microsoft Windows
 			e sobre o eclipse através de plugin.
@@ -186,6 +200,7 @@
 			existentes. Esta documentação pode apresentar-se em texto puro ou no formato HTML.
 			
 		\subsubsection{Conclusão}
+		
 			A ferramenta PowerDesigner é extremamente poderosa para projetos de banco de dados, conta uma grande quantidade de
 			recursos. Possui as três fases da modelagem bem definidas: Modelo Conceitual, Lógico e Físico. Gera SQL e mantem
 			banco de dados de diversas empresas tais como Oracle DB, IBM DB2, MySQL, PostgreSQL entre outros.
@@ -198,8 +213,11 @@
 		
 \clearpage
 \section{Ambiente de Teste}
+
 	\subsection{Ferramenta para Teste Automatizado}
+	
 		\subsubsection{Introdução}
+		
 			Na realização de testes comparam-se os valores resultantes das
 			operações testadas com valores previstos pelos desenvolvedores.
 			Além disso é necessário configurar as pré-condições para a
@@ -208,7 +226,9 @@
 			com o auxílio de uma bilioteca ou framework.
 			Foram estudadas as bibliotecas padrões do Python 2.7, além da
 			ferramenta de testes específica do Django Framework.
+			
 		\subsubsection{doctest}
+		
 			A linguagem Python possui uma sintaxe específica de comentários, chamados docstrings,
 			que geram a documentação de uma classe, função ou método específico.
 			O módulo doctest, parte da distribuição padrão do Python, oferece um
@@ -219,7 +239,9 @@
 			com as saídas esperadas, descritas no docstring.
 			Não é um método robusto, se comparado com o unittest, mas é fácil de realizar. Outro
 			problema é ter que digitar os dados de entrada um a um, caso o conjunto seja grande.
+			
 		\subsubsection{unittest}
+		
 			O módulo unittest, também conhecido com PyUnit, é um framework de testes desenvolvido
 			para ser similar ao JUnit, desenvolvido por Kent Beck e Erich Gamma. Devido à extrema
 			popularidade desta última, o PyUnit é o framework de testes mais utilizado na linguagem
@@ -228,7 +250,9 @@
 			Porém, o unittest não possui ferramentas para a configuração de base de dados para testes
 			e também não possui uma maneira de interagir programaticamente com uma aplicação servidor,
 			aspectos importantes do desenvolvimento Web.
-		subsubsection{Conclusão}
+		
+		\subsubsection{Conclusão}
+		
 			A ferramenta de testes do Django é uma mera extensão do unittest. Tem as mesmas funcionalidades,
 			com a adição de um classe Client que permite testar as respostas da aplicação sem precisar
 			de um servidor rodando. O Django também permite controlar dependências entre testes com
@@ -237,6 +261,7 @@
 
 	\clearpage		
 	\subsection{Ferramenta para Construção e Gerenciamento de Caso de Teste}
+	
 		\subsubsection{Introdução}
 		
 			Ferramenta de gerenciamento dos testes, gerenciam quais módulos devem ser testados, em qual data, 
@@ -292,6 +317,7 @@
 
 	\clearpage		
 	\subsection{Ferramenta para Gerenciamento de Defeitos}
+	
 		\subsubsection{Introdução}
 		
 			A gestão de Defeitos permite a equipe de testes acompanhar a qualidade do software, 
@@ -344,7 +370,9 @@
 
 \clearpage		
 \section{Ambiente de Gerenciamento}
+
 	\subsection{Construção de Software}
+	
 		\subsubsection{Introdução}
 		
 			A construção de software é o processo que prepara o software para execução e distribuição do mesmo. Uma ferramenta
@@ -425,7 +453,9 @@
 	
 	\clearpage		
 	\subsection{Controle de Versão}
+	
 		\subsubsection{Introdução}
+		
 			Uma software para controle de versões, essencial quando
 			se emprega múltiplos desenvolvedores, monitora as mudanças
 			de um conjunto de artefatos, suas versões e autores, para
@@ -433,7 +463,9 @@
 			Cada mudança tem um identificador, de forma que elas
 			possam ser revertidas e associadas a um versão específica
 			do software.
+			
 		\subsubsection{SVN}
+		
 			Desenvolvido pela CollabNet e mantido pela fundação Apache, o Subversion,
 			ou SVN, é um sistema cliente-servidor para controle de versões. Cada
 			desenvolvedor pode requisitar o código mais atualizado e, após realizar
@@ -446,7 +478,9 @@
 			Uma grande diferença entre o SVN e o seu predecessor CVS é o chamado número
 			de revisão global, que sugere o estado global do código em desenvolvimento,
 			a partir dos números de versões de cada arquivo fonte.
+			
 		\subsubsection{Git}
+		
 			O Git é um sistema distribuído para controle de versões. Isso significa
 			que, embora exista um repositório central, cada desenvolvedor mantém
 			um clone do repositório, o que permite o gerenciamento dos artefatos,
@@ -458,7 +492,9 @@
 			do código, apenas um número específico para cada artefato.
 			Por manter um chceksum de cada versão, o Git tem um controle
 			de integridade melhor do que o SVN.
+			
 		\subsubsection{Conclusão}
+		
 			O Git possui óbvias vantagens em relação ao SVN, especialmente para uma equipe
 			distribuída. Isso, somado ao fato de que o Git tem um maior controle sobre
 			cada submissão de códigos, resultou no Git como a ferramenta de escolha.
@@ -497,6 +533,7 @@
 		
 		
 		\subsubsection{Conclusão}
+		
 			Inegavelmente por já trabalharmos com o Redmine à algum tempo e principalmente por já te-lo escolhido como plataforma de outros aspectos, como bug-tracker, e claro por ser um aglutinador de funções, decidimos de modo unânime por sua utilização como ferramenta de Gerenciamento de Tarefas. 
 		
 		
@@ -505,7 +542,7 @@
 	
 		\subsubsection{Introdução}
 		
-			
+			Conceitualmente, trata-se da aplicação de boas práticas padronizadas pela ITIL® (Information Technology Infrastruture Library), adaptadas às necessidades, orçamentos e cultura das organizações de TI. O processo de Gerenciamento de Mudanças é responsável por decidir e coordenar as mudanças na área de TI, ou seja, controlar as mudanças para que elas sejam implantadas de forma eficiente, eficaz e assegurar que a infra-estrutura de TI permaneça alinhada aos requisitos do negócio, com o menor risco possível.
 		
 		\subsubsection{Redmine}
 		
