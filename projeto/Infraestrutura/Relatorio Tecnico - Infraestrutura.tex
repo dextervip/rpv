@@ -4,6 +4,7 @@
 \usepackage[english,brazilian]{babel}
 \usepackage{hyperref}
 \usepackage{url}
+\usepackage{indentfirst}
 \begin{document}
 
 \title{Infraestrutura de Desenvolvimento}
@@ -68,7 +69,7 @@ Wolmir
 			mantido pela empresa americana Sybase, roda nativamente em computadores com o sistema operacional Microsoft Windows
 			e sobre o eclipse através de plugin.
 			
-			O PowerDesginer? possui destaque no mercado de arquitetura de dados sendo umas das ferramentas mais utilizadas em
+			O PowerDesginer possui destaque no mercado de arquitetura de dados sendo umas das ferramentas mais utilizadas em
 			organizações, universidades e grandes empresas. Dentre outras funcionalidades para banco de dados podem ser
 			destacadas:
 			\begin{itemize}
@@ -221,6 +222,7 @@ Wolmir
 			documentações e por fim gerar o executável do software para distribuição.
 			
 		\subsubsection{Ant}
+		
 			O Ant é um biblioteca java e ferramenta de comando de linha para construção de software, cujo objetivo é seguir os
 			passos, também chamado de alvos, e seus alvos dependentes descritos por em um arquivo XML. O principal conhecido uso
 			é de construção de aplicações Java mas pode ser utilizado efetivamente para construção de aplicações em outras
@@ -231,6 +233,7 @@ Wolmir
 			diretórios para sua aplicação.
 			
 		\subsubsection{Maven}
+		
 			Ferramenta para automatizar construção de software, escrita em Java sob licença Apache 2.0, tipicamente utilizada
 			para projetos java. Construção baseada em XML. Permite definir as dependencias da aplicação e deixar o maven
 			baixar-las automaticamente de um repositório.
@@ -260,6 +263,10 @@ Wolmir
 			varias linguagens que podem não somente testar o funcionamento total da aplicação mas como verificar a qualidade de
 			código fonte escrito baseado em vários fatores como padrão de codificação, detecção de cópias, detecção de erros em
 			syntax e problemas de lógica.
+			
+			A ferramenta Jenkins entra para executar o processo de integração contínua, irá tratar de obter o codigo fonte,
+			realizar a construção com ajuda do Maven ou Ant, realizar a execução dos testes e fazer o deploy para o servidor de
+			teste.
 			
 		%\subsubsection{phpUnderControl}
 		
