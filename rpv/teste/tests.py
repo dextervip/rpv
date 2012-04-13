@@ -12,16 +12,15 @@ from django.test.client import Client
 from django_jenkins.runner import CITestSuiteRunner
 
 
-class SimpleTest(TestCase):
+class TestClass(TestCase):
     def test_basic_addition(self):
         """
         Tests that 1 + 1 always equals 2.
         """
         self.assertEqual(1 + 1, 2)
-
-class TestFirstView(TestCase):
     def test_first_view(self):
         c = Client()
         response = c.get('/')
         self.assertEqual(response.status_code, 200, "Ocorreu um erro.")
-        self.assertEqual(response.content, "Ola, este é um teste do django", response.content + "A resposta nao eh a esperada.")
+        self.assertEqual(response.content, "Ola, este é um teste do django...",  "Resposta não esperada:" + response.content)
+
