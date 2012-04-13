@@ -187,7 +187,19 @@ Wolmir Nemitz
 			relização de testes e relatar resultados. Essas tarefas ocupam 
 			tempo para serem feitas mas podem, no entanto, ser automatizadas
 			com o auxílio de uma bilioteca ou framework.
-		\subsubsection{Ferramenta X}
+			Foram estudadas as bibliotecas padrões do Python 2.7, além da
+			ferramenta de testes específica do Django Framework.
+		\subsubsection{doctest}
+			A linguagem Python possui uma sintaxe específica de comentários, chamados docstrings,
+			que geram a documentação de uma classe, função ou método específico.
+			O módulo doctest, parte da distribuição padrão do Python, oferece um
+			método alternativo de testes que utilizam essas docstrings.
+			O doctest trabalha procurando seções de texto
+			que descrevem uma interação, através do console da linguagem, com a parte que está
+			sendo documentada e comparando os resultados reais
+			com as saídas esperadas, descritas no docstring.
+			Não é um método robusto, se comparado com o unittest, mas é fácil de realizar. Outro
+			problema é ter que digitar os dados de entrada um a um, caso o conjunto seja grande.
 		\subsubsection{Ferramenta Y}
 		\subsubsection{Conclusão}
 
