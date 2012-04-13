@@ -1,0 +1,438 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[a4paper, inner=1.5cm, outer=2cm, top=3cm, bottom=2cm, bindingoffset=1cm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[english,brazilian]{babel}
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{indentfirst}
+\hypersetup{%
+    pdfborder = {0 0 0}
+}
+\begin{document}
+\title{Infraestrutura de Desenvolvimento}
+
+
+
+
+
+
+\author{
+Rafael Tavares Amorim \\
+Juliano R. Macedo \\
+Maria Elizabeth \\
+Wolmir Nemitz
+}
+
+
+
+
+\date{31/03/2012}
+\maketitle
+\thispagestyle{empty}
+\clearpage
+\tableofcontents
+\thispagestyle{empty}
+\clearpage
+\section{Ambiente de Desenvolvimento}
+	\subsection{IDE}
+		\subsubsection{Introdução}
+
+				A IDE ou Ambiente de Desenvolvimento Integrado é um software que auxilia no
+				processo de desenvolvimento de software. Com o objetivo de aumentar a
+				produtividade, torna-se indispensável, tipicamente uma IDE contem as
+				seguintes características
+				\begin{itemize}
+					\item Editor de código fonte
+					\item Construtor de software
+					\item Depurador de código
+				\end{itemize}
+				
+				Dentre as IDE que estão atualmente sendo mais utilizadas, vamos falar sobre
+				a Aptana, uma distribuição do Eclipse e Netbeans.
+		
+		\subsubsection{Aptana}
+			Aptana é uma distrubição da IDE Eclipse com foco no desenvolvimento web, nativamente configurada para
+			desenvolvimento em PHP, Ruby com Rails, Python com Django, HTML, CSS e Javascript. Com uma arquitetura voltada a
+			plugins, a Aptana oferece uma grande flexibilidade no suporte de outros recurso e até outras linguagens por meio dos
+			plugins. Nativamente a Apatana possui integração com controle de versão git, facilitando o trabalho em equipe sem
+			sair da IDE.
+		
+		\subsubsection{Netbeans}
+			Netbeans é um Ambiente de Desenvolvimento Integrado (IDE) de código aberto(Open Source), multiplataforma, escrito em
+			Java, apresenta 23 idiomas nativos, sua licença é Freeware, atualmente sua versão estável é a 7.1.1, suporta as
+			seguintes linguagens: Java, C, C++, PHP, Groovy, Ruby, HTML, JavaScript, CSS, e com a inclusão de Beta Plugins,
+			obtém-se a possibilidade de integrar a plataforma com diversas outras linguagens e Frameworks, seu desenvolvedor é a
+			Oracle Corporation, apresenta compatibilidade com versionamento de código, como: SVN, CVS, Git, etc.
+		
+			\begin{itemize}
+				\item Vantagens:
+				IDE extremamente conceituada dentro do mercado, ambiente empresarial de desenvolvimento, sendo utilizada por diversas empresas, interface de usuário simples e clara, fácil instalação ou desinstalação, é multiplataforma, ou seja, existem versões para obter-se proficiência em Windows, Linux, Solaris e MacOS, trabalha com X86 e X64, seu idioma nativo é o inglês, mas ao fazer-se o download do programa, é oferecida a opção de receber a versão com o idioma que o usuário escolher, apesenta varias distribuições como: PHP(47 MB), Java SE(73 MB), Completo(257 MB), etc;
+				\item Desvantagens:
+				 Infelizmente o Netbeans IDE não apresenta integração nativa com Python, que sera nossa linguagem de desenvolvimento, existem alguns plugins que permitem esta integração, mas não permitem uma melhor abordagem dentro da linguagem, princiaplmente referente a interface e recursos de desenvolvimento. 
+				 De acordo com o tamanho do projeto(quantidade de pastas e arquivos(código, imagens, etc)) ao abrir-se a IDE, o seu tempo de carregamento pode aumentar exponencialmente, ocasionando, em situações extremas, o "travamento" completo da IDE.
+			\end{itemize}
+		
+		\subsubsection{Conclusão}
+
+	\clearpage
+	\subsection{Ferramenta CASE para UML}
+		\subsubsection{Introdução}
+			A UML, linguagem de modelagem unificada, serve para modelar sistemas orientados
+			a objetos com o auxílio de diagramas e documentar os artefatos
+			produzidos ao longo do desenvolvimento. Desenhar esses diagramas através de uma ferramenta
+			comum é bastante trabalhoso. Logo, para aumentar a produtividade, é necessário
+			uma ferramenta específica.
+		\subsubsection{ArgoUML}
+			ArgoUML é uma ferramenta para auxiliar a criação de diagramas UML. Desenvolvido
+			na universidade de Irvine por Jason E. Robins, como parte de seu Ph.D, a ferramenta
+			pode funcionar em qualquer plataforma que suporte o Java, uma linguagem de 
+			programação que tem entre seus propósitos principais a portabilidade.
+			No entanto, a Argo apresenta sérios problemas quanto à sua usabilidade, pois,
+			além da ocorrência frequente de erros e da interface não amigável, ela ainda não
+			implementa todo o conjunto de modelos que compõem a UML.
+		\subsubsection{Modelio}
+			Modelio é uma ferramenta open source para UML desenvolvida pela Modeliosoft.
+			Ela implementa complemtamente o padrão UML2, além de ser estável e ter uma interface
+			amigável, comparada com outras ferramentas UML. Sua inicialização é lenta e ela não
+			apresenta integração nativa com alguma ferramenta de colaboração, tal como o git.
+			Em relação à outros sistemas gratuitos para UML, a Modelio é uma das mais robustas
+			e completas, podendo ser extendida através de módulos disponibilizados pela comunidade.
+		\subsubsection{Conclusão}
+			A ArgoUML é instável e difícil de utilizar, além de não ser visualmente agradável. Mas
+			a sua maior desvantagem é o fato de sua implementação do padrão UML estar incompleta.
+			A Modelio, por outro lado, tem qualidade tanto na abrangência de diagramas quanto
+			na usabilidade, configurando a melhor opção para auxiliar na modelagem de projetos.
+
+	\clearpage
+	\subsection{Ferramenta CASE para Banco de Dados}
+		\subsubsection{Introdução}
+			Uma ferramenta CASE para banco de dados auxilia no processo de projeto de banco de bancos. Um projeto de banco de
+			dados é constituido de duas fases: Modelagem Conceitual e Projeto Lógico. 
+			
+			Na primeira fase, é realizado um projeto do modelo de banco de dados em forma de diagrama ER(Entidade
+			Relacionamento), que descreve os tipos de informações que o banco de dados irá armazenar. Enquanto na segunda fase,
+			trata de transformar o modelo conceitual em um modelo lógico que define como será implementado em SGBD específico.
+			
+			Para que seja considerada uma ferramenta CASE para banco de dados, a ferramenta deve auxiliar de forma que permita
+			todo o projeto de banco de dados ser inicialmente feito por diagramas e auxiliar na transformação de conceitual para
+			lógico. E por transformando em um esquema de banco de dados físico.
+			
+		\subsubsection{PowerDesigner}
+			O PowerDesigner é uma ferramenta CASE Empresarial para o processo de desenvolvimento de software. Atualmente é
+			mantido pela empresa americana Sybase, roda nativamente em computadores com o sistema operacional Microsoft Windows
+			e sobre o eclipse através de plugin.
+			
+			O PowerDesginer possui destaque no mercado de arquitetura de dados sendo umas das ferramentas mais utilizadas em
+			organizações, universidades e grandes empresas. Dentre outras funcionalidades para banco de dados podem ser
+			destacadas:
+			\begin{itemize}
+			  \item Engenharia reversa de Bancos
+			  \item Controle de vrsão
+			  \item Organização/disposição de componentes por Layout
+			  \item Rotas automáticas entre ligações de componentes
+			  \item Checagem de consistência do modelo
+			  \item
+			\end{itemize}
+			
+			Para modelagem de banco de dados, é oferecida varias notações como Barker, Entity Relationship, Merise entre outras.
+			Sendo divida em três fases: Modelagem conceitual, logica e física.
+
+			Na modelagem conceitual temos a possibilidade de criar entidades, atributos e relacionamentos. Na segunda fase da
+			modelagem logica fazemos as definições de índices e especificação do nome das chaves estrangeiras entre outras. E na
+			última fase de modelagem física pode se definir views, triggers, procedures e outras configurações dependendo do SGBD.
+
+			O PowerDesginer mostra-se uma ótima ferramenta para modelagem de banco de dados, possuindo diversos recursos que
+			irão aumentar a produtividade e organização.
+			
+		\subsubsection{MySQL Workbench}
+		
+			O MySQL Workbench é uma ferramenta que possibilita um DBA ou desenvolvedores em geral, criarem e gerenciarem de
+			forma visual todos os tipos de bases de dados MySQL, desde uma base utilizada em uma simples aplicação web, até bases
+			mais complexas, como as existentes em sistemas de data warehouses ou OLTP. Destaques da ferramenta:
+			
+			\begin{itemize}
+			  \item Criação/Edição visual da base de dados: Acelera o desenvolvimento, diminuindo a chance de erros em tarefas
+			  comuns. Oferece validação de schemas para o modelo criado, auxiliando na utilização das melhores práticas de
+			  modelagem de dados e evitando erros na construção de diagramas ER ou criação da base fisicamente.
+			  \item Forward Engineering e Engenharia Reversa: Possibilita a criação de um modelo completo a partir de um script
+			  SQL ou de uma base de dados existente, incluindo o diagrama ER com as tabelas pré-dispostas no mesmo. Oferece
+			  também a construção do banco de dados fisicamente através da modelagem visual.
+			  \item Rastreamento e gerenciamento de mudanças: MySQL Workbench inclui as funcionalidades de Sincronização de
+			  Schemas e utilitários de comparação. Por exemplo, um DBA pode comparar duas bases ativas ou comparar uma modelagem
+			  feita no MySQL Workbench e uma base existente, visualizando as diferenças, com a possibilidade de sincronização
+			  entre um modelo e uma base ou vice versa.
+			\end{itemize}
+
+			Documentação: O MySQL Workbench inclui o DBDoc que auxilia no processo de documentação dos modelos e objetos
+			existentes. Esta documentação pode apresentar-se em texto puro ou no formato HTML.
+			
+		\subsubsection{Conclusão}
+			A ferramenta PowerDesigner é extremamente poderosa para projetos de banco de dados, conta uma grande quantidade de
+			recursos. Possui as três fases da modelagem bem definidas: Modelo Conceitual, Lógico e Físico. Gera SQL e mantem
+			banco de dados de diversas empresas tais como Oracle DB, IBM DB2, MySQL, PostgreSQL entre outros.
+			 
+			A ferramenta workbench deixa a desejar na modelagem, não possui as três fases da modelagem definidas, o desenvolver
+			trabalha apenas em um único diagrama onde é definido as tabelas, atributos e relacionamentos. Possui apenas suporte
+			para banco de dados MySQL.
+			
+			Logo fizemos a escolha da ferramenta para banco de dados, o PowerDesigner sendo uma ferramenta bem completa.
+		
+\clearpage
+\section{Ambiente de Teste}
+	\subsection{Ferramenta para Teste Automatizado}
+		\subsubsection{Introdução}
+			Na realização de testes comparam-se os valores resultantes das
+			operações testadas com valores previstos pelos desenvolvedores.
+			Além disso é necessário configurar as pré-condições para a
+			relização de testes e relatar resultados. Essas tarefas ocupam 
+			tempo para serem feitas mas podem, no entanto, ser automatizadas
+			com o auxílio de uma bilioteca ou framework.
+			Foram estudadas as bibliotecas padrões do Python 2.7, além da
+			ferramenta de testes específica do Django Framework.
+		\subsubsection{doctest}
+			A linguagem Python possui uma sintaxe específica de comentários, chamados docstrings,
+			que geram a documentação de uma classe, função ou método específico.
+			O módulo doctest, parte da distribuição padrão do Python, oferece um
+			método alternativo de testes que utilizam essas docstrings.
+			O doctest trabalha procurando seções de texto
+			que descrevem uma interação, através do console da linguagem, com a parte que está
+			sendo documentada e comparando os resultados reais
+			com as saídas esperadas, descritas no docstring.
+			Não é um método robusto, se comparado com o unittest, mas é fácil de realizar. Outro
+			problema é ter que digitar os dados de entrada um a um, caso o conjunto seja grande.
+		\subsubsection{unittest}
+			O módulo unittest, também conhecido com PyUnit, é um framework de testes desenvolvido
+			para ser similar ao JUnit, desenvolvido por Kent Beck e Erich Gamma. Devido à extrema
+			popularidade desta última, o PyUnit é o framework de testes mais utilizado na linguagem
+			Python. Outro benefício é o fato de que os relatórios gerados pelo JUnit são a coluna
+			cervical da integração com ferramentas de construção, como a Jenkins.
+			Porém, o unittest não possui ferramentas para a configuração de base de dados para testes
+			e também não possui uma maneira de interagir programaticamente com uma aplicação servidor,
+			aspectos importantes do desenvolvimento Web.
+		\subsubsection{Conclusão}
+
+	\clearpage		
+	\subsection{Ferramenta para Construção e Gerenciamento de Caso de Teste}
+		\subsubsection{Introdução}
+		\subsubsection{Testlink}
+		\subsubsection{Tarantula}
+		\subsubsection{Klaros Testmanagement}
+			É uma aplicação web baseada em AJAX escrita em Java para organização e gerenciamento do processo de teste. O sistema
+			permite a construção dos casos de teste, gerenciar casos de teste, dividir em suítes de testes, cadastrar os
+			ambientes de teste e sistemas que estão rodando o teste, executar testes e coletar os resultados.
+			
+			Pelos testes realizados no sistema, temos a possibilidade da construção de casos de teste, os casos de teste são
+			nomeados, descritos (descrição, pré-condição e pós-condição), priorizados entre os demais, possui estado de
+			execução, modo de execução e podem ser divididos em vários passos. Também se pode definir o ambiente de execução
+			como Sistema Operacional ou Navegador para aplicações Web. A interface do sistema é bem amigável, não houve
+			dificuldades de navegação sobre a aplicação.
+			
+			\begin{itemize}
+			  \item Possui versionamento e histórico sobre os dados.
+			  \item Trabalha com casos de teste e seus resultados.
+			  \item Gera relatórios em gráficos e tabela sobre os testes. Podendo ser exportado em vários formatos como PDF,
+			  HTML, entre outros.
+			  \item Possui suporte de integração com as ferramentas de gerenciamento de projeto Redmine, Jira, Trac e Bugzilla.
+			  \item É possível através de plugin dos sistemas de integração continua (Hudson/Jenkins) importar os relatórios de
+			  execução dos testes automatizados.
+			  \item Pode ser instalado em Windows por meio de um executável e Linux por meio de um arquivo jar.
+			\end{itemize}
+			
+			A ferramenta se mostrou muito fácil de instalar como um software que você instala no dia a dia com poucos cliques,
+			possui um instalador que facilita muito e instalar todas as dependencias e o servidor em si. Após a instalação, a
+			configuração nada mais foi do que informar o usuário e senha para o administrador assim podendo-se inciar as
+			atividades de teste na ferramenta. Para integração com gerenciamento de defeitos, na parte administrativa, é
+			informado o gerenciamento de defeito, endereço, usuário e senha. 
+			
+		\subsubsection{Conclusão}
+
+	\clearpage		
+	\subsection{Ferramenta para Gerenciamento de Defeitos}
+		\subsubsection{Introdução}
+		
+			A gestão de Defeitos permite a equipe de testes acompanhar a qualidade do software, 
+			de acordo com os registros de bugs, acompanhando suas correções e o surgimento de outros defeitos. 
+			Para executar-se uma gestão eficiente, podemos utilizar algumas ferramentas que permitem este acompanhamento de forma otimizada, 
+			a baixo falaremos sobre as duas mais conceituadas do mercado.
+			
+		\subsubsection{Mantis}
+		
+			Mantis é uma ferramenta para rastreamento e mapeamento de erros em um sistema de software, 
+			apresenta grande popularidade e bom conceito no mercado, ela é Open Source e roda sobre plataforma web, 
+			sendo compatível com a maioria dos navegadores existentes.
+
+				\begin{itemize}
+					\item Vantagens: 
+						Ambiente leve e prático, apresenta como ponto forte sua tradição, estando presente no mercado a mais de dez anos, 
+					  esta disponível em mais de quinze idiomas e permite a integração de diversos plugins, tornando o ambiente de trabalho flexível
+					  com forme as necessidades da equipe. 					
+					\item Desvantagens:
+						Interface confusa e com pouca usabilidade, comumente não é recomendada a sua utilização em grandes projetos, 
+						devido ao seu gerenciamento de defeitos não ser muito eficiente e não permite a edição prática das informações dentro dele. 
+				\end{itemize}
+						
+		\subsubsection{Redmine}
+		
+			 Ferramenta de Gerenciamento de projetos, extremamente conceituada no mercado, contem diversos recursos, 
+			 entre os mais utilizados esta o poderoso gerenciamento de bugs, o qual permite ao usuário acompanhar o 
+			 andamento da correção e/ou surgimento de novos defeitos por meio dos menus: Atividades, Planejamento, Tarefas, Wiki e Fóruns.
+			 O Redmine é escrito em Ruby on Rails, é multiplataforma e Open Source, trabalhando sobre os termos da licença GNU
+			 General Public License v2 (GPL).
+			 
+			 \begin{itemize}
+			 	\item Vantagens:
+			 		Ambiente prático e simples, interface clara e eficiente, excelente organização das informações inseridas dentro da ferramenta. Permite a aglutinação de informações referentes ao projeto em desenvolvimento, desta formar as equipes de trabalho  concentram suas tarefas, analises, resultados e etc, em um mesmo ambiente. 
+			 	\item Desvantagens:
+			 		Como qualquer ferramenta o Redmine sozinho não garante um ambiente produtivo ou eficiente, para se obter o melhor proveito dos recursos disponíveis neste software, é necessário empregar regras e padrões de utilização, para todos os membros do grupo, visando a melhor organização e clareza possível nas informações inseridas no ambiente. Isso é valido para o gerenciamento de defeitos, é necessário definir padrões para o reporte e correção de cada bug encontrado, evitando-se a duplicação e ambiguidade das informações. 
+			 \end{itemize}
+			 
+		
+		\subsubsection{Conclusão}
+		
+			Apos analise criteriosa de cada opção, a ferramenta escolhida foi o Redmine. 
+			Apesar de termos aqui opções muito conceituadas como o proprío Mantis, o fator decisivo foi a praticidade em trabalhar-se com o Redmine, 
+			pois ele é um aglutinador de recursos, ou seja, dentro de um projeto não é necessário trabalhar com outro software específico para o gerenciamento de defeitos, 
+			sendo que o Redmine nos permite utilizar suas características para realizarmos este gerecimento, ou seja, a equipe terá o que necessita em mãos. 
+			Isso representa ganho de tempo e eficiência, pois em apenas um ambiente de gerenciamento a equipe pode trabalhar sobre diversos aspectos/problemas, 
+			gerando uma aglutinação dos dados referentes ao projeto.
+		
+				
+
+\clearpage		
+\section{Ambiente de Gerenciamento}
+	\subsection{Construção de Software}
+		\subsubsection{Introdução}
+		
+			A construção de software é o processo que prepara o software para execução e distribuição do mesmo. Uma ferramenta
+			para construção de software é um utilitário que é usado quando construindo uma nova versão de um software, o
+			utilitário pode baixar dependências do software, configurar ambiente, realizar testes, gerar relatórios e
+			documentações e por fim gerar o executável do software para distribuição.
+			
+		\subsubsection{Ant}
+		
+			O Ant é um biblioteca java e ferramenta de comando de linha para construção de software, cujo objetivo é seguir os
+			passos, também chamado de alvos, e seus alvos dependentes descritos por em um arquivo XML. O principal conhecido uso
+			é de construção de aplicações Java mas pode ser utilizado efetivamente para construção de aplicações em outras
+			linguagens. Ant possui uma grande quantidade de ``antlibs'' contendo tarefas e tipos e seus usuário podem também
+			desenvolver suas antlibs para extender a funcionalidade de tarefas do Ant.
+			
+			Ant é extremamente flexível e não obriga o desenvolvedor seguir um padrão de codificação ou de organização de
+			diretórios para sua aplicação.
+			
+		\subsubsection{Maven}
+		
+			O Maven é uma ferramenta similar ao Ant mas possui outros recursos tais como gerência de dependências, o Maven
+			permite configurar um repositório de dependencias assim trazendo-as quando a construção de software estiver necessitando.
+			Maven é escrita em Java sob licença Apache 2.0 tendo seu foco para projetos Java.
+			
+		%\subsubsection{Phing}
+		\subsubsection{Jenkins}
+			Jenkins é um servidor de integração contínua de código fonte aberto escrito em Java, e com mais de 300 plugins para
+			suportar diferentes tipos de desenvolvimento de software. O Jenkins prover o processo de integração contínua para o
+			desenvolvimento de software.
+			O processo de integração contínua visa melhorar a qualidade de software e reduzir o tempo de entrega, substituindo a
+			prática tradicional de aplicação do controle de qualidade depois do desenvolvimento completo. Os princípios da
+			integração contínua são:
+			\begin{itemize}
+			  \item Manter o código fonte em um repositório de controle de versão
+			  \item Automatizar a construção de software
+			  \item Fazer a construção de software testar automaticamente o software
+			  \item Todo mundo deve comitar para o repositório base todo dia
+			  \item Todo commit para repositório base deve ser construido
+			  \item A construção deve ser rápida para identificação dos problemas rapidamente
+			  \item Testar em um ambiente clone de produção
+			  \item Deixar última construção sucedida disponível para os stakeholders e testadores
+			  \item Todo mundo pode ver o resultado das últimas construções
+			  \item Automatizar o deploy
+			\end{itemize}
+			
+			Sendo importante a parte de testes para que a integração contínua funcione. Existem mecanismos implementados em
+			varias linguagens que podem não somente testar o funcionamento total da aplicação mas como verificar a qualidade de
+			código fonte escrito baseado em vários fatores como padrão de codificação, detecção de cópias, detecção de erros em
+			syntax e problemas de lógica.
+			
+			A ferramenta Jenkins entra para a execução do processo de integração contínua, irá tratar de obter o codigo fonte,
+			realizar a construção com ajuda do Maven ou Ant, realizar a execução dos testes e fazer o deploy para o servidor de
+			teste.
+			
+		%\subsubsection{phpUnderControl}
+		
+		%\begin{table}[h]
+		%	\tabcolsep=0.11cm
+		%	\begin{tabular}{|c|c|c|c|c|c|c|c|}
+		%	\hline Nome 			& Licença 	& Linguagem & Tipo de Construção 	& Recurso 2 & Recurso 3 & Recurso 4  \\
+		%	\hline  CruiseControl	&  			&  			& Automática			&  			&  			&  			\\
+		%	\hline  Jenkins			& MIT		& Java		& Automática			&  			&  			&  			\\
+		%	\hline  phpUnderControl	&  			&  			& Automática 			&  			&  			&  			\\ 
+		%	\hline  Travis			&  			&  			& Automática			&  			&  			&  			\\ 
+		%	\hline  Ant				&  			&  			& Manual				&  			&  			&  			\\ 
+		%	\hline  Maven			&  			&  			& Manual				&  			&  			&  			\\ 
+		%	\hline  Phing			&  			& PHP		& Manual				&  			&  			&  			\\
+		%	\hline  
+		%	\end{tabular} 
+		%	\caption{Comparação entre ferramentas de construção de software}
+		%\end{table}
+		\subsubsection{Conclusão}
+			A ferramenta Maven mostrou-se bem completa não somente para construção de software como para outras utilidades porém
+			há complexidade grande em sua configuração, sendo seu foco para aplicações Java. No momento, A ferramenta Ant foi
+			escolhida pelo fato de ter uma configuração simples e poder ser utilizada para projetos de qualquer linguagem.
+	
+	\clearpage		
+	\subsection{Controle de Versão}
+		\subsubsection{Introdução}
+		\subsubsection{SVN}
+		\subsubsection{Git}
+		\subsubsection{Conclusão}
+
+	\clearpage		
+	\subsection{Gerenciamento de Tarefas}
+		\subsubsection{Introdução}
+			O gerenciamento de tarefas dentro de um projeto de software permite a equipe registrar e manipular todo e qualquer evento referente a ele, de forma simples e eficiente, evitando a desorganização destas atividades. 
+
+		\subsubsection{Redmine}
+			
+			Ferramenta de Gerenciamento de projetos, extremamente conceituada no mercado, contem diversos recursos, entre os mais utilizados esta seu poderoso gerenciamento de tarefas e, o qual permite ao usuário acompanhar o andamento da  execução das tarefas, especialmente, por meio do menu: Tarefas.
+			O Redmine é escrito em Ruby on Rails, multiplataforma e Open Source, trabalhando sobre os termos da licença GNU General Public License v2 (GPL v2).
+		
+		\begin{itemize}
+			\item Vantagens: 
+			Ambiente prático e simples, interface clara e eficiente, excelente organização das informações inseridas dentro da ferramenta. Permite a aglutinação de informações referentes ao projeto em desenvolvimento, permitindo assim que as equipes de trabalho, concentrem suas tarefas, analises, resultados, etc, em um mesmo ambiente. 
+			
+			O gestor de Tarefas do Redmine permite aos usuários organizar as atividades por: Prioridade, Categoria, Situação, Tipo, Versão, Porcentagem de Andamento, etc; E claro, o administrador geral do sistema(do Redmine) pode customizar os campos conforme sua vontade, adequando o software e suas ferramentas de acordo com as necessidade do projeto, isso permite uma flexibilidade dentro do ambiente de trabalho.
+			\item Desvantagens: 
+			Como qualquer ferramenta o Redmine sozinho não garante um ambiente produtivo ou eficiente, para se obter o melhor proveito dos recursos disponíveis neste software, é necessário empregar regras e padrões de utilização, para todos os membros do grupo, visando a melhor organização e clareza possível nas informações inseridas no ambiente. Isso é valido para o gerenciamento de defeitos, é necessário definir padrões para o reporte e correção de cada bug encontrado, evitando-se a duplicação e ambiguidade das informações. 
+		\end{itemize}
+		
+		\subsubsection{Trac}
+		
+			Trac é um gerenciador de projetos e bug-tracker, ele é open-source, escrito em Python e multiplataforma. Trac trabalha sobre uma abordagem minimalista que permite ao usuário configurar seu ambiente conforme suas necessidades. 
+		
+		\begin{itemize}
+			\item Vantagens: 
+				Famoso gestor de projetos e conhecido no mercado, contem gerenciamento de tarefas, é baseado em hiperlinks e apresenta integração com controles de versões, como Subversion, Git, Mercurial, etc. Apresenta uma interface simples e fácilmente pode ser gerenciado pelo administrador do sistema. 
+			\item Desvantagens: 
+				Interface um pouco confusão, e por vezes "muito simples", pode comprometer a qualidade do trabalho desenvolvido dentro da ferramenta.
+				E outro fator relevante, o grupo não conhece a ferramenta, e princialmente por já trabalharmos de modo integrado com o Redmine, dentro dos outros ambientes (teste e desenvolvimento), resolvemos não aprofundar as pesquisas dentro deste ferramenta.
+		\end{itemize}
+		
+		
+		\subsubsection{Conclusão}
+			Inegavelmente por já trabalharmos com o Redmine à algum tempo e principalmente por já te-lo escolhido como plataforma de outros aspectos, como bug-tracker, e claro por ser um aglutinador de funções, decidimos de modo unânime por sua utilização como ferramenta de Gerenciamento de Tarefas. 
+		
+		
+	\clearpage	
+	\subsection{Gerenciamento de Mudança}
+		\subsubsection{Introdução}
+		\subsubsection{Ferramenta X}
+		\subsubsection{Ferramenta Y}
+		\subsubsection{Conclusão}
+		
+		
+
+\clearpage
+%Referências Bibliograficas
+\nocite{*}
+\bibliographystyle{plain}		
+\bibliography{bibliografia}		
+
+\end{document}

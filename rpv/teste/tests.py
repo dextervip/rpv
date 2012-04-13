@@ -25,10 +25,3 @@ class TestFirstView(TestCase):
         response = c.get('/')
         self.assertEqual(response.status_code, 200, "Ocorreu um erro.")
         self.assertEqual(response.content, "Ola, este é um teste do django", response.content + "A resposta nao eh a esperada.")
-
-class TestAll(CITestSuiteRunner):
-    def build_suite(self, test_labels,**kwargs):
-        suite = TestSuite()
-        suite.addTest(SimpleTest('test_basic_addition'))
-        suite.addTest(TestFirstView('test_first_view'))
-        return suite
