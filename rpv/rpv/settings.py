@@ -129,7 +129,6 @@ INSTALLED_APPS = (
 )
 
 PROJECT_APPS = ('teste',)
-JENKINS_TEST_RUNNER='teste.tests.TestAll'
 
 
 # A sample logging configuration. The only tangible logging
