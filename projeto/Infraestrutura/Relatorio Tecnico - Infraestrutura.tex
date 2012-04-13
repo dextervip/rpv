@@ -12,10 +12,6 @@
 \title{Infraestrutura de Desenvolvimento}
 
 
-
-
-
-
 \author{
 Rafael Tavares Amorim \\
 Juliano R. Macedo \\
@@ -24,14 +20,41 @@ Wolmir Nemitz
 }
 
 
-
-
 \date{31/03/2012}
 \maketitle
 \thispagestyle{empty}
 \clearpage
 \tableofcontents
 \thispagestyle{empty}
+\clearpage
+
+\section{Introdução}
+
+	Este relatório tem por finalidade apresentar a base tecnológica, que servirá de suporte para o desenvolvimento de um determinado sistema. 
+	Esta base foi definida através dos resultados de pesquisas, das mais diversas ferramentas para um ambiente de desenvolvimento, 
+	ambiente de testes e ambiente de gerenciamento de software, buscando através destes, 
+	obter uma boa infraestrutura tecnológica para que haja maior produtividade e qualidade no desenvolvimento de software.
+
+	\subsection{Conceitos}
+	
+	\begin{itemize}
+	\item Base Tecnológica: 
+	
+	Base tecnológica é todo e qualquer conjunto de recursos tecnológicos necessários para o desenvolvimento de um produto de software. E esta dividida em: Ambiente de Desenvolvimento, Ambiente de Teste e Ambiente de Gerenciamento.
+	\item Ambiente de Desenvolvimento:
+	
+	 O ambiente de desenvolvimento de um projeto de desenvolvimento de software é o termo usado para todos os itens de que o projeto precisa para desenvolver e implantar o sistema, como, por exemplo, ferramentas, diretrizes, processo, templates e infraestrutura. Dentre estas ferramentas as de maior importância são as:
+	\item Ambiente de Teste: 
+	
+	Ambiente de teste é toda a infra-estrutura onde o teste será executado, compreendendo configurações de hardware, software, ferramentas de automação, equipe envolvida, aspectos organizacionais, suprimentos, rede e documentação. Sua finalidade é propiciar a realização de testes em condições conhecidas e controladas.
+	\item Ambiente de Gerenciamento:
+	
+	 No ambiente de Gerenciamento existem um conjunto de atividades de apoio que permitem a absorção controlada das mudanças inerentes ao desenvolvimento de software, mantendo a estabilidade na evolução do projeto.
+	
+	Gerência de Configuração de Software segundo Pressman “É um conjunto de atividades projetadas para controlar as mudanças pela identificação dos produtos do trabalho que serão alterados, estabelecendo um relacionamento entre eles, definindo o mecanismo para o gerenciamento de diferentes versões destes produtos, controlando as mudanças impostas, e auditando e relatando as mudanças realizadas.”[Pressman, 2005].
+	\end{itemize}
+	
+
 \clearpage
 \section{Ambiente de Desenvolvimento}
 	\subsection{IDE}
@@ -209,14 +232,39 @@ Wolmir Nemitz
 			Porém, o unittest não possui ferramentas para a configuração de base de dados para testes
 			e também não possui uma maneira de interagir programaticamente com uma aplicação servidor,
 			aspectos importantes do desenvolvimento Web.
-		\subsubsection{Conclusão}
+		subsubsection{Conclusão}
+			A ferramenta de testes do Django é uma mera extensão do unittest. Tem as mesmas funcionalidades,
+			com a adição de um classe Client que permite testar as respostas da aplicação sem precisar
+			de um servidor rodando. O Django também permite controlar dependências entre testes com
+			banco de dados, além de inúmeros métodos de asserção desenvolvidos especificamente para
+			o desenvolvimento Web.
 
 	\clearpage		
 	\subsection{Ferramenta para Construção e Gerenciamento de Caso de Teste}
 		\subsubsection{Introdução}
+		
+			Ferramenta de gerenciamento dos testes, gerenciam quais módulos devem ser testados, em qual data, 
+			dão suporte ao gerenciamento de testes e suas atividades. Faz a interface entre as ferramentas de execução, 
+			gerenciamento de defeito e gerenciamento de requisitos, gerar os resultados e os relatórios de progresso de teste.
+		
 		\subsubsection{Testlink}
+		
+			O Testlink é uma ferramenta open source para o gerenciamento de testes. Ela permite o cadastro de planos e casos de testes bem como o controle de execução dos testes. 
+			Com o TestLink é possível que equipes de testes trabalhem de forma sincronizada mesmo em locais diferentes. 
+			Por ter uma interface Web e permitir níveis de acesso diferenciados, analistas de testes podem gerar as especificações de testes que outras equipes poderão executar. 
+			Outra característica interessante é o controle de execuções, gerando uma base histórica dos testes aos quais a aplicação foi submetida.
+			
+			Como toda ferramenta, o TestLink não é perfeito, e possui alguns problemas pontuais que podem ser corrigidos com menos ou mais esforço, um pouco de dedicação e conhecimento básico sobre PHP e MySQL.
+		
+		
 		\subsubsection{Tarantula}
+		
+			Tarantula é uma ferramenta moderna para a gestão de testes de software em projetos de software ágeis. 
+			Esta ferramenta oferece execução de caso de teste, requisitos, possui histórico de versões, lista de defeitos entre outras funcionaliddaes.
+		
+		
 		\subsubsection{Klaros Testmanagement}
+		
 			É uma aplicação web baseada em AJAX escrita em Java para organização e gerenciamento do processo de teste. O sistema
 			permite a construção dos casos de teste, gerenciar casos de teste, dividir em suítes de testes, cadastrar os
 			ambientes de teste e sistemas que estão rodando o teste, executar testes e coletar os resultados.
@@ -327,6 +375,7 @@ Wolmir Nemitz
 			
 		%\subsubsection{Phing}
 		\subsubsection{Jenkins}
+		
 			Jenkins é um servidor de integração contínua de código fonte aberto escrito em Java, e com mais de 300 plugins para
 			suportar diferentes tipos de desenvolvimento de software. O Jenkins prover o processo de integração contínua para o
 			desenvolvimento de software.
@@ -373,6 +422,7 @@ Wolmir Nemitz
 		%	\caption{Comparação entre ferramentas de construção de software}
 		%\end{table}
 		\subsubsection{Conclusão}
+		
 			A ferramenta Maven mostrou-se bem completa não somente para construção de software como para outras utilidades porém
 			há complexidade grande em sua configuração, sendo seu foco para aplicações Java. No momento, A ferramenta Ant foi
 			escolhida pelo fato de ter uma configuração simples e poder ser utilizada para projetos de qualquer linguagem.
@@ -387,6 +437,7 @@ Wolmir Nemitz
 	\clearpage		
 	\subsection{Gerenciamento de Tarefas}
 		\subsubsection{Introdução}
+		
 			O gerenciamento de tarefas dentro de um projeto de software permite a equipe registrar e manipular todo e qualquer evento referente a ele, de forma simples e eficiente, evitando a desorganização destas atividades. 
 
 		\subsubsection{Redmine}
