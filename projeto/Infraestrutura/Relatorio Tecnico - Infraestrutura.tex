@@ -5,8 +5,10 @@
 \usepackage{hyperref}
 \usepackage{url}
 \usepackage{indentfirst}
+\hypersetup{%
+    pdfborder = {0 0 0}
+}
 \begin{document}
-
 \title{Infraestrutura de Desenvolvimento}
 \author{
 Rafael Tavares Amorim \\
@@ -57,13 +59,14 @@ Wolmir
 		
 		\subsubsection{Conclusão}
 
-
+	\clearpage
 	\subsection{Ferramenta CASE para UML}
 		\subsubsection{Introdução}
 		\subsubsection{ArgoUML}
 		\subsubsection{Ferramenta Y}
 		\subsubsection{Conclusão}
 
+	\clearpage
 	\subsection{Ferramenta CASE para Banco de Dados}
 		\subsubsection{Introdução}
 			Uma ferramenta CASE para banco de dados auxilia no processo de projeto de banco de bancos. Um projeto de banco de
@@ -106,10 +109,9 @@ Wolmir
 			
 		\subsubsection{MySQL Workbench}
 		
-			Em linhas gerais podemos dizer que o MySQL Workbench é uma ferramenta que possibilita um DBA ou desenvolvedores em
-			geral, criarem e gerenciarem de forma visual todos os tipos de bases de dados MySQL, desde uma base utilizada em uma
-			simples aplicação web, até bases mais complexas, como as existentes em sistemas de data warehouses ou OLTP. Destaques
-			da ferramenta:
+			O MySQL Workbench é uma ferramenta que possibilita um DBA ou desenvolvedores em geral, criarem e gerenciarem de
+			forma visual todos os tipos de bases de dados MySQL, desde uma base utilizada em uma simples aplicação web, até bases
+			mais complexas, como as existentes em sistemas de data warehouses ou OLTP. Destaques da ferramenta:
 			
 			\begin{itemize}
 			  \item Criação/Edição visual da base de dados: Acelera o desenvolvimento, diminuindo a chance de erros em tarefas
@@ -128,6 +130,15 @@ Wolmir
 			existentes. Esta documentação pode apresentar-se em texto puro ou no formato HTML.
 			
 		\subsubsection{Conclusão}
+			A ferramenta PowerDesigner é extremamente poderosa para projetos de banco de dados, conta uma grande quantidade de
+			recursos. Possui as três fases da modelagem bem definidas: Modelo Conceitual, Lógico e Físico. Gera SQL e mantem
+			banco de dados de diversas empresas tais como Oracle DB, IBM DB2, MySQL, PostgreSQL entre outros.
+			 
+			A ferramenta workbench deixa a desejar na modelagem, não possui as três fases da modelagem definidas, o desenvolver
+			trabalha apenas em um único diagrama onde é definido as tabelas, atributos e relacionamentos. Possui apenas suporte
+			para banco de dados MySQL.
+			
+			Logo fizemos a escolha da ferramenta para banco de dados, o PowerDesigner sendo uma ferramenta bem completa.
 		
 \clearpage
 \section{Ambiente de Teste}
@@ -136,7 +147,8 @@ Wolmir
 		\subsubsection{Ferramenta X}
 		\subsubsection{Ferramenta Y}
 		\subsubsection{Conclusão}
-		
+
+	\clearpage		
 	\subsection{Ferramenta para Construção e Gerenciamento de Caso de Teste}
 		\subsubsection{Introdução}
 		\subsubsection{Testlink}
@@ -168,8 +180,10 @@ Wolmir
 			configuração nada mais foi do que informar o usuário e senha para o administrador assim podendo-se inciar as
 			atividades de teste na ferramenta. Para integração com gerenciamento de defeitos, na parte administrativa, é
 			informado o gerenciamento de defeito, endereço, usuário e senha. 
+			
 		\subsubsection{Conclusão}
-		
+
+	\clearpage		
 	\subsection{Ferramenta para Gerenciamento de Defeitos}
 		\subsubsection{Introdução}
 		
@@ -189,11 +203,9 @@ Wolmir
 						Ambiente leve e prático, apresenta como ponto forte sua tradição, estando presente no mercado a mais de dez anos, 
 					  esta disponível em mais de quinze idiomas e permite a integração de diversos plugins, tornando o ambiente de trabalho flexível
 					  com forme as necessidades da equipe. 					
-					
 					\item Desvantagens:
 						Interface confusa e com pouca usabilidade, comumente não é recomendada a sua utilização em grandes projetos, 
 						devido ao seu gerenciamento de defeitos não ser muito eficiente e não permite a edição prática das informações dentro dele. 
-						
 				\end{itemize}
 						
 		\subsubsection{Redmine}
@@ -201,15 +213,14 @@ Wolmir
 			 Ferramenta de Gerenciamento de projetos, extremamente conceituada no mercado, contem diversos recursos, 
 			 entre os mais utilizados esta o poderoso gerenciamento de bugs, o qual permite ao usuário acompanhar o 
 			 andamento da correção e/ou surgimento de novos defeitos por meio dos menus: Atividades, Planejamento, Tarefas, Wiki e Fóruns.
-			 O Redmine é escrito em Ruby on Rails, é multiplataforma e Open Source, trabalhando sobre os termos da licença GNU General Public License v2 (GPL).
+			 O Redmine é escrito em Ruby on Rails, é multiplataforma e Open Source, trabalhando sobre os termos da licença GNU
+			 General Public License v2 (GPL).
 			 
 			 \begin{itemize}
 			 	\item Vantagens:
 			 		Ambiente prático e simples, interface clara e eficiente, excelente organização das informações inseridas dentro da ferramenta. Permite a aglutinação de informações referentes ao projeto em desenvolvimento, desta formar as equipes de trabalho  concentram suas tarefas, analises, resultados e etc, em um mesmo ambiente. 
-			 	
 			 	\item Desvantagens:
 			 		Como qualquer ferramenta o Redmine sozinho não garante um ambiente produtivo ou eficiente, para se obter o melhor proveito dos recursos disponíveis neste software, é necessário empregar regras e padrões de utilização, para todos os membros do grupo, visando a melhor organização e clareza possível nas informações inseridas no ambiente. Isso é valido para o gerenciamento de defeitos, é necessário definir padrões para o reporte e correção de cada bug encontrado, evitando-se a duplicação e ambiguidade das informações. 
-			 	
 			 \end{itemize}
 			 
 		
@@ -247,9 +258,9 @@ Wolmir
 			
 		\subsubsection{Maven}
 		
-			O Maven é uma ferramenta criada com base no Ant para suprir a necessidade de gerenciar dependências e instalar-las
-			quando necessária, o Maven permite configurar um repositório de dependencias assim trazendo-as quando a construção de
-			software estiver necessitando. Maven é escrita em Java sob licença Apache 2.0 tendo seu foco para projetos Java.
+			O Maven é uma ferramenta similar ao Ant mas possui outros recursos tais como gerência de dependências, o Maven
+			permite configurar um repositório de dependencias assim trazendo-as quando a construção de software estiver necessitando.
+			Maven é escrita em Java sob licença Apache 2.0 tendo seu foco para projetos Java.
 			
 		%\subsubsection{Phing}
 		\subsubsection{Jenkins}
@@ -277,7 +288,7 @@ Wolmir
 			código fonte escrito baseado em vários fatores como padrão de codificação, detecção de cópias, detecção de erros em
 			syntax e problemas de lógica.
 			
-			A ferramenta Jenkins entra para executar o processo de integração contínua, irá tratar de obter o codigo fonte,
+			A ferramenta Jenkins entra para a execução do processo de integração contínua, irá tratar de obter o codigo fonte,
 			realizar a construção com ajuda do Maven ou Ant, realizar a execução dos testes e fazer o deploy para o servidor de
 			teste.
 			
@@ -299,18 +310,22 @@ Wolmir
 		%	\caption{Comparação entre ferramentas de construção de software}
 		%\end{table}
 		\subsubsection{Conclusão}
-		
+			A ferramenta Maven mostrou-se bem completa não somente para construção de software como para outras utilidades porém
+			há complexidade grande em sua configuração, sendo seu foco para aplicações Java. No momento, A ferramenta Ant foi
+			escolhida pelo fato de ter uma configuração simples e poder ser utilizada para projetos de qualquer linguagem.
+	
+	\clearpage		
 	\subsection{Controle de Versão}
 		\subsubsection{Introdução}
 		\subsubsection{SVN}
 		\subsubsection{Git}
 		\subsubsection{Conclusão}
-		
+
+	\clearpage		
 	\subsection{Gerenciamento de Tarefas}
 		\subsubsection{Introdução}
 			O gerenciamento de tarefas dentro de um projeto de software permite a equipe registrar e manipular todo e qualquer evento referente a ele, de forma simples e eficiente, evitando a desorganização destas atividades. 
-		
-		
+
 		\subsubsection{Redmine}
 			
 			Ferramenta de Gerenciamento de projetos, extremamente conceituada no mercado, contem diversos recursos, entre os mais utilizados esta seu poderoso gerenciamento de tarefas e, o qual permite ao usuário acompanhar o andamento da  execução das tarefas, especialmente, por meio do menu: Tarefas.
@@ -321,11 +336,8 @@ Wolmir
 			Ambiente prático e simples, interface clara e eficiente, excelente organização das informações inseridas dentro da ferramenta. Permite a aglutinação de informações referentes ao projeto em desenvolvimento, permitindo assim que as equipes de trabalho, concentrem suas tarefas, analises, resultados, etc, em um mesmo ambiente. 
 			Redmine é a o gestor de projetos open source mais famoso do mundo.
 			O gestor de Tarefas do Redmine permite aos usuários organizar as atividades por: Prioridade, Categoria, Situação, Tipo, Versão, Porcentagem de Andamento, etc; E claro, o administrador geral do sistema(do Redmine) pode customizar os campos conforme sua vontade, adequando o software e suas ferramentas de acordo com as necessidade do projeto, isso permite uma flexibilidade dentro do ambiente de trabalho.
-			
-			
 			\item Desvantagens: 
 			Como qualquer ferramenta o Redmine sozinho não garante um ambiente produtivo ou eficiente, para se obter o melhor proveito dos recursos disponíveis neste software, é necessário empregar regras e padrões de utilização, para todos os membros do grupo, visando a melhor organização e clareza possível nas informações inseridas no ambiente. Isso é valido para o gerenciamento de defeitos, é necessário definir padrões para o reporte e correção de cada bug encontrado, evitando-se a duplicação e ambiguidade das informações. 
-				
 		\end{itemize}
 		
 		\subsubsection{Trac}
@@ -335,11 +347,9 @@ Wolmir
 		\begin{itemize}
 			\item Vantagens: 
 				Famoso gestor de projetos e conhecido no mercado, contem gerenciamento de tarefas, é baseado em hiperlinks e apresenta integração com controles de versões, como Subversion, Git, Mercurial, etc. Apresenta uma interface simples e fácilmente pode ser gerenciado pelo administrador do sistema. 
-		
 			\item Desvantagens: 
 				Interface um pouco confusão, e por vezes "muito simples", pode comprometer a qualidade do trabalho desenvolvido dentro da ferramenta.
 				E outro fator relevante, o grupo não conhece a ferramenta, e princialmente por já trabalharmos de modo integrado com o Redmine, dentro dos outros ambientes (teste e desenvolvimento), resolvemos não aprofundar as pesquisas dentro deste ferramenta.
-			
 		\end{itemize}
 		
 		
@@ -347,7 +357,7 @@ Wolmir
 			Inegavelmente por já trabalharmos com o Redmine à algum tempo e principalmente por já te-lo escolhido como plataforma de outros aspectos, como bug-tracker, e claro por ser um aglutinador de funções, decidimos de modo unânime por sua utilização como ferramenta de Gerenciamento de Tarefas. 
 		
 		
-	
+	\clearpage	
 	\subsection{Gerenciamento de Mudança}
 		\subsubsection{Introdução}
 		\subsubsection{Ferramenta X}
