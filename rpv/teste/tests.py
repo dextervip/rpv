@@ -22,5 +22,5 @@ class TestClass(TestCase):
         c = Client()
         response = c.get('/')
         self.assertEqual(response.status_code, 200, "Ocorreu um erro.")
-        self.assertEqual(response.content, "Ola, este é um teste do django...",  "Resposta não esperada:" + response.content)
+        self.assertEqual(response.content, "Ola, este é um teste do django",  "Resposta não esperada:" + response.content)
 
