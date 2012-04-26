@@ -20,7 +20,7 @@ def addDisciplina(request):
         form = FormNewDisciplina(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            return render_to_response("geral/salvo.html", {})
+            return render_to_response("geral/salvo.html", context_instance=RequestContext(request))
     else:
         form = FormNewDisciplina()
     return render_to_response("disciplina/newDisciplina.html", {'form': form},
@@ -34,7 +34,7 @@ def disciplina(request, nr_disci):
         form = FormDadosDisci(request.POST, request.FILES, instance=disciplina)
         if form.is_valid():
             form.save()
-            return render_to_response("geral/salvo.html", {})
+            return render_to_response("geral/salvo.html", context_instance=RequestContext(request))
     else:
         form = FormDadosDisci()
     return render_to_response("disciplina/disciplina.html", {'disciplina': disciplina, 'form': form} ,
