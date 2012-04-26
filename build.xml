@@ -103,5 +103,5 @@
     <target name="checkDependencies" depends="django,jenkins,pylint,coverage,south"/>   
     <target name="deploy" depends="updateFiles"/>
     <target name="update" depends="git-update,syncdb"/>
-    <target name="build" depends="clean,checkDependencies,test,runserver2,sleep,openSite"/>
+    <target name="build" depends="clean,checkDependencies,test,syncdb,runserver2,sleep,openSite"/>
 </project>
