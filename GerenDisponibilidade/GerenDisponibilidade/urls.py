@@ -6,8 +6,12 @@ from django.conf.urls import patterns, include, url
 
 urlpatterns = patterns('',
     # Examples:
-    url(r'^$', 'teste.views.home'),
-    # url(r'^rpv/', include('rpv.foo.urls')),
+    # url(r'^$', 'GerenDisponibilidade.views.home', name='home'),
+    # url(r'^GerenDisponibilidade/', include('GerenDisponibilidade.foo.urls')),
+    (r'^$', 'moduloGeral.views.home' ),
+    (r'^lista/$', 'disciplinas.views.lista'),
+    (r'^addDisciplina/$', 'disciplinas.views.addDisciplina'),
+    (r'^disciplina/(?P<nr_disci>\d+)/$', "disciplinas.views.disciplina"),
 
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),

@@ -23,4 +23,3 @@ class TestClass(TestCase):
         response = c.get('/')
         self.assertEqual(response.status_code, 200, "Ocorreu um erro.")
         self.assertEqual(response.content, "Olá",  "Resposta não esperada:" + response.content)
-

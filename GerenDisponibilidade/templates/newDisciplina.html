@@ -1,0 +1,16 @@
+﻿{% extends "base.html" %}
+
+	{% block corpo %}
+
+<h1>Cadastro de Disciplinas</h1>
+
+<p>Aqui você podera cadastrar novas Disciplinas.</p>
+<form action="" method="post">
+	
+	{% csrf_token %}
+	{{ form.as_p  }}
+
+	<button type="submit">Cadastrar</button> <a href="/">Voltar</a>
+</form> 
+
+	{% endblock %}

@@ -1,24 +1,26 @@
-# Django settings for rpv project.
+# Django settings for GerenDisponibilidade project.
+
+import os
+ROOTDIR = os.path.dirname(__file__)
+#print ROOTDIR
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
-    # ('Your Name', 'your_email@example.com'),
+    ('Juliano Rodovalho', 'j.rodovalho.m@gmail.com'),
 )
-
-DEFAULT_CHARSET = 'utf-8'
 
 MANAGERS = ADMINS
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'paraNossaAlegria.db',                      # Or path to database file if using sqlite3.
-        'USER': '',                      # Not used with sqlite3.
+        'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': 'gerendisp_db',                      # Or path to database file if using sqlite3.
+        'USER': 'root',                      # Not used with sqlite3.
         'PASSWORD': '',                  # Not used with sqlite3.
         'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
-        'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
+        'PORT': '3306',                      # Set to empty string for default. Not used with sqlite3.
     }
 }
 
@@ -33,7 +35,7 @@ TIME_ZONE = 'America/Chicago'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'pt-br'
 
 SITE_ID = 1
 
@@ -83,7 +85,7 @@ STATICFILES_FINDERS = (
 )
 
 # Make this unique, and don't share it with anybody.
-SECRET_KEY = '*yl^@fm1pwrpabep*^26&amp;3!l@y%bsy*o$g4)ghc_lv89h3@4-*'
+SECRET_KEY = 'd#h0y8h!ek=0*l-o^88b)s$27exi&amp;71@+))b0w&amp;xwh30!fs7ym'
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
@@ -102,12 +104,14 @@ MIDDLEWARE_CLASSES = (
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = 'rpv.urls'
+ROOT_URLCONF = 'GerenDisponibilidade.urls'
 
 # Python dotted path to the WSGI application used by Django's runserver.
-WSGI_APPLICATION = 'rpv.wsgi.application'
+WSGI_APPLICATION = 'GerenDisponibilidade.wsgi.application'
 
 TEMPLATE_DIRS = (
+  os.path.join(ROOTDIR, "C:\\Users\\PC\\workspace\\GerenDisponibilidade\\templates"),
+                 
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
@@ -120,16 +124,14 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'disciplinas',
+    'moduloGeral',
+    
     # Uncomment the next line to enable the admin:
     # 'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
-    'teste',
-    'django_jenkins',
 )
-
-PROJECT_APPS = ('teste',)
-
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
