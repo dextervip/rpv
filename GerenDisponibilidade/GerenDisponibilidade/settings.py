@@ -1,14 +1,14 @@
 # Django settings for GerenDisponibilidade project.
 
 import os
-ROOTDIR = os.path.dirname(__file__)
-#print ROOTDIR
+PROJECT_DIR = os.path.join( os.path.dirname(__file__), '../');
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
     ('Juliano Rodovalho', 'j.rodovalho.m@gmail.com'),
+    ('Rafael', 'jrtadf@gmail.com'),
 )
 
 MANAGERS = ADMINS
@@ -52,18 +52,18 @@ USE_TZ = True
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/home/media/media.lawrence.com/media/"
-MEDIA_ROOT = ''
+MEDIA_ROOT = os.path.join(PROJECT_DIR,'media')
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
 # Examples: "http://media.lawrence.com/media/", "http://example.com/media/"
-MEDIA_URL = ''
+MEDIA_URL = '/media/'
 
 # Absolute path to the directory static files should be collected to.
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/home/media/media.lawrence.com/static/"
-STATIC_ROOT = ''
+STATIC_ROOT = os.path.join(PROJECT_DIR,'public')
 
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
@@ -71,6 +71,7 @@ STATIC_URL = '/static/'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
+    os.path.join(PROJECT_DIR, 'static'),
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
@@ -110,7 +111,7 @@ ROOT_URLCONF = 'GerenDisponibilidade.urls'
 WSGI_APPLICATION = 'GerenDisponibilidade.wsgi.application'
 
 TEMPLATE_DIRS = (
-  os.path.join(ROOTDIR, "C:\\Users\\PC\\workspace\\rpv\\GerenDisponibilidade\\templates"),
+  os.path.join(PROJECT_DIR, 'templates'),
                  
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
@@ -124,13 +125,26 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'disciplinas',
-    'moduloGeral',
+    
+    # Apps de terceiros
+    'django_jenkins',
+    'south',
     
     # Uncomment the next line to enable the admin:
     # 'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
+    
+    # Minhas apps
+    'disciplinas',
+    'moduloGeral',
+    'coordenador',
+)
+
+PROJECT_APPS = (
+    'disciplinas',
+    'moduloGeral', 
+    'coordenador',
 )
 
 # A sample logging configuration. The only tangible logging

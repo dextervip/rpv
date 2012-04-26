@@ -1,21 +1,51 @@
 ﻿{% extends "areaGeral/base.html" %}
 
-	{% block corpo %}
+{% block corpo %}
 
-<!-- Meta Tags -->
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<div class="hero-unit">
+	<h1>Gerenciador de Disponibilidade</h1>
+	<h2>Bem Vindo(a)!</h2>
 
+	<p>
+		Este é o sistema de Gerenciamento de Disponibilidade da Unipampa	- Alegrete - RS
+	</p>
+	<p>
+		<a href="{% url disciplinas:lista %}" class="btn btn-primary btn-large">Listagem de Disciplinas &raquo;</a>
+	</p>
+	<p>
+		<a href="{% url disciplinas:addDisciplina %}" class="btn btn-primary btn-large">Cadastrar nova Disciplina &raquo;</a>
+	</p>
+</div>
 
-<h1>Gerenciador de Disponibilidade</h1>
-<h2>Bem Vindo(a)!</h2>
-
-<p>Este é o sistema de Gerenciamento de Disponibilidade da Unipampa
-	- Alegrete - RS</p>
-
-<ul>
-	<li><a href="lista/">Listagem de Disciplinas</a></li>
-	<br/>
-	<li><a href="addDisciplina/">Cadastrar nova Disciplina</a></li>
-</ul>
+<!-- Example row of columns -->
+<div class="row">
+	<div class="span4">
+		<h2>Heading</h2>
+		<p>
+			Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+		</p>
+		<p>
+			<a class="btn" href="#">View details &raquo;</a>
+		</p>
+	</div>
+	<div class="span4">
+		<h2>Heading</h2>
+		<p>
+			Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+		</p>
+		<p>
+			<a class="btn" href="#">View details &raquo;</a>
+		</p>
+	</div>
+	<div class="span4">
+		<h2>Heading</h2>
+		<p>
+			Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+		</p>
+		<p>
+			<a class="btn" href="#">View details &raquo;</a>
+		</p>
+	</div>
+</div>
 
 {% endblock %}

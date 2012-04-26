@@ -1,11 +1,41 @@
 <project name="RPV" default="build" basedir=".">
     <property file="build.properties"/>
-    <property name="source" value="./rpv"/>
+    <property name="source" value="./GerenDisponibilidade"/>
     
     <target name="clean">
         <delete dir="${source}/reports"/>
         <mkdir dir="${source}/reports"/>   
     </target>
+	
+	<target name="django">
+  		<exec executable="pip" failonerror="true">
+            <arg line="install django"/>
+        </exec>
+  	</target>
+	
+	<target name="jenkins">
+  		<exec executable="pip" failonerror="true">
+            <arg line="install django_jenkins"/>
+        </exec>
+  	</target>
+	
+	<target name="pylint">
+  		<exec executable="pip" failonerror="true">
+            <arg line="install pylint"/>
+        </exec>
+  	</target>
+	
+	<target name="coverage">
+  		<exec executable="pip" failonerror="true">
+            <arg line="install coverage"/>
+        </exec>
+  	</target>
+	
+	<target name="south">
+  		<exec executable="pip" failonerror="true">
+            <arg line="install south"/>
+        </exec>
+  	</target>
     
     <target name="test">
   		<exec executable="python" failonerror="true">
@@ -24,8 +54,41 @@
             <arg line="${source}/manage.py syncdb"/>
         </exec>
   	</target>
+	
+	<target name="runserver">
+  		<exec executable="python" spawn="true">
+            <arg line="${source}/manage.py runserver"/>
+        </exec>
+  	</target>
+	
+	<target name="runserver2">
+  		<exec executable="cmd" failonerror="true">
+            <arg line="/c start ${source}/manage.py runserver"/>
+        </exec>
+  	</target>
+	
+	
+	<macrodef name="openInBrowser">
+	   <attribute name="url"/>
+	   <sequential>
+		  <exec dir="${basedir}" executable="rundll32.exe">
+			 <arg line="url.dll, FileProtocolHandler"/>
+			 <arg line="@{url}"/>
+		  </exec>
+	   </sequential>     
+	</macrodef>
+
+	
+	<target name="openSite">
+	   <echo message="Opening test results in default browser" />
+	   <openInBrowser url="http://localhost:8000"/>
+	</target>
   	
-  	    
+	<target name="sleep">
+		<sleep seconds="5"/>
+	</target>
+	
+ 	    
     <target name="updateFiles">
         <sshexec host="chicago1.vsnetwork.net"
              port="22"
@@ -37,8 +100,8 @@
              failonerror="true"/>
     </target>
     <!-- command="cd /var/www/rpv/ &amp;&amp; git pull" -->
-        
+    <target name="checkDependencies" depends="django,jenkins,pylint,coverage,south"/>   
     <target name="deploy" depends="updateFiles"/>
     <target name="update" depends="git-update,syncdb"/>
-    <target name="build" depends="clean,test"/>
+    <target name="build" depends="clean,checkDependencies,test,runserver2,sleep,openSite"/>
 </project>
