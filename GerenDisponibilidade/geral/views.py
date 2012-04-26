@@ -5,4 +5,4 @@ from django.template import RequestContext
 
 def home(request):
     context = RequestContext(request)
-    return render_to_response("areaGeral/paginaInicial.html", context)
+    return render_to_response("geral/paginaInicial.html", context)

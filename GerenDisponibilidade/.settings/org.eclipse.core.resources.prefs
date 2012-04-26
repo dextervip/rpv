@@ -2,5 +2,5 @@ eclipse.preferences.version=1
 encoding//disciplinas/forms.py=utf-8
 encoding//disciplinas/models.py=utf-8
 encoding//disciplinas/views.py=utf-8
-encoding//moduloGeral/tests.py=utf-8
-encoding//moduloGeral/views.py=utf-8
+encoding//geral/tests.py=utf-8
+encoding//geral/views.py=utf-8

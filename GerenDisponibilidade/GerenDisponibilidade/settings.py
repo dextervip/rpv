@@ -128,7 +128,7 @@ INSTALLED_APPS = (
     
     # Apps de terceiros
     'django_jenkins',
-    #'south',
+    'south',
     
     # Uncomment the next line to enable the admin:
     # 'django.contrib.admin',
@@ -138,7 +138,7 @@ INSTALLED_APPS = (
     # Minhas apps
     'coordenador',
     'disciplinas',
-    'moduloGeral',    
+    'geral',    
     'secretaria',
 )
 
