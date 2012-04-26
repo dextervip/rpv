@@ -9,7 +9,7 @@ from forms import FormNewDisciplina, FormDadosDisci
 
 def lista(request):
     
-    lista_disciplinas = newDisciplina.objects.all()
+    lista_disciplinas = newDisciplina.objects.all().order_by("id")
     return render_to_response("disciplina/listaDisc.html", {'lista_disciplinas': lista_disciplinas},
         context_instance=RequestContext(request))
 
