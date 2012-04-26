@@ -62,6 +62,7 @@
   	</target>
 	
 	<target name="runserver2">
+		<echo message="Iniciando servidor em http://localhost:8000" />
   		<exec executable="cmd" failonerror="true">
             <arg line="/c start ${source}/manage.py runserver"/>
         </exec>
