@@ -2,15 +2,16 @@
 
 ## Requisitos de sistema
 
-* Ter python 2.7 instalado
+* Ter python 2.7 instalado (http://www.python.org/download/)
+ * Distribute (http://packages.python.org/distribute/)
  * Pip
-* Ant
+* Ant 1.8(http://code.google.com/p/winant/downloads/list)
 
 ## Iniciando
 
-Pela linha de comando, navegue até o diretório raiz do projeto e digite:
+Pela linha de comando, navegue atÃ© o diretÃ³rio raiz do projeto e digite:
 
-	ant build
+	ant run
 	
-Aguarde enquanto o script verifica as dependências, realize os testes e faça a instalação do banco de dados. Esta operação pode 
-demorar alguns minutos, após a conclusão, o navegador será aberta na página da aplicação
+Aguarde enquanto o script verifica as dependÃªncias, realize os testes e faÃ§a a instalaÃ§Ã£o do banco de dados. Esta operaÃ§Ã£o pode 
+demorar alguns minutos, apÃ³s a conclusÃ£o, o navegador serÃ¡ aberta na pÃ¡gina da aplicaÃ§Ã£o

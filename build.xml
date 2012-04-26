@@ -80,7 +80,7 @@
 
 	
 	<target name="openSite">
-	   <echo message="Opening test results in default browser" />
+	   <echo message="Abrindo aplicação no navegador de internet" />
 	   <openInBrowser url="http://localhost:8000"/>
 	</target>
   	
@@ -103,5 +103,6 @@
     <target name="checkDependencies" depends="django,jenkins,pylint,coverage,south"/>   
     <target name="deploy" depends="updateFiles"/>
     <target name="update" depends="git-update,syncdb"/>
-    <target name="build" depends="clean,checkDependencies,test,syncdb,runserver2,sleep,openSite"/>
+    <target name="build" depends="clean,checkDependencies,test,syncdb"/>
+	<target name="run" depends="build,runserver2,sleep,openSite"/>
 </project>
