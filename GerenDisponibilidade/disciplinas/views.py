@@ -10,7 +10,7 @@ from forms import FormNewDisciplina, FormDadosDisci
 def lista(request):
     
     lista_disciplinas = newDisciplina.objects.all()
-    return render_to_response("listaDisc.html", {'lista_disciplinas': lista_disciplinas},
+    return render_to_response("disciplina/listaDisc.html", {'lista_disciplinas': lista_disciplinas},
         context_instance=RequestContext(request))
 
 
@@ -20,10 +20,10 @@ def addDisciplina(request):
         form = FormNewDisciplina(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            return render_to_response("salvo.html", {})
+            return render_to_response("areaGeral/salvo.html", {})
     else:
         form = FormNewDisciplina()
-    return render_to_response("newDisciplina.html", {'form': form},
+    return render_to_response("disciplina/newDisciplina.html", {'form': form},
         context_instance=RequestContext(request))
     
 
@@ -34,16 +34,12 @@ def disciplina(request, nr_disci):
         form = FormDadosDisci(request.POST, request.FILES, instance=disciplina)
         if form.is_valid():
             form.save()
-            return render_to_response("salvo.html", {})
+            return render_to_response("areaGeral/salvo.html", {})
     else:
         form = FormDadosDisci()
-    return render_to_response("disciplina.html", {'disciplina': disciplina, 'form': form} ,
+    return render_to_response("disciplina/disciplina.html", {'disciplina': disciplina, 'form': form} ,
         context_instance=RequestContext(request))
         
-        
-def ementa(request):
-    pass
-        
-        
+
 def remover(request):
     pass

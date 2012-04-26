@@ -110,7 +110,7 @@ ROOT_URLCONF = 'GerenDisponibilidade.urls'
 WSGI_APPLICATION = 'GerenDisponibilidade.wsgi.application'
 
 TEMPLATE_DIRS = (
-  os.path.join(ROOTDIR, "C:\\Users\\PC\\workspace\\GerenDisponibilidade\\templates"),
+  os.path.join(ROOTDIR, "C:\\Users\\PC\\workspace\\rpv\\GerenDisponibilidade\\templates"),
                  
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.

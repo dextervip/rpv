@@ -1,0 +1,28 @@
+﻿{% extends "areaGeral/base.html" %}
+
+{% block corpo %}
+
+<!-- Meta Tags -->
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+
+<h2>Lista de Disciplinas Cadastradas</h2>
+
+<ul>
+	{% for disciplina in lista_disciplinas %}
+		<li>
+<a href="/disciplina/{{ disciplina.id }}/">{{ disciplina.id }} - {{ disciplina.titulo }}</a>
+		</li>
+		{% empty %}
+		<li>Não existem disciplinas Cadastradas</li>
+	{% endfor %}
+</ul>
+
+<p>
+	=> <a href="/addDisciplina/">Cadastrar nova Disciplina</a>
+</p>
+<p>
+	<a href="/">Voltar</a>
+</p>
+
+{% endblock %}
