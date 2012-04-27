@@ -1,18 +1,20 @@
 ﻿{% extends "geral/base.html" %}
 
 	{% block corpo %}
+	
+	<h2>Informações gearais sobre a disciplina: </h2>
+	<br/>
+	
 <p>Número: {{ disciplina.id }} - Nome da Disciplina: {{	disciplina.titulo }} - Código: {{ disciplina.codigo }}</p>
 <p>Ementa: {{ disciplina.ementa }}</p>
 <p>Curso: {{ disciplina.curso }} - Carga Horária: {{ disciplina.cargaHora }}</p>
 <p>Créditos Práticos {{ disciplina.creditosPraticos }} - Créditos Teoricos:{{ disciplina.creditosTeoricos }}</p>
-<form action="" method="post">
 
-	{% csrf_token %} {{ form.as_p }}
 
-	<button type="submit">Atualizar Dados</button>
-	<p>
-		<a href="/">Voltar</a>
+	
+	<p> <a href="/attInfoDiscip/">Atualizar Dados</a>
+		</p>
+	<p>	<a href="/">Voltar</a>
 	</p>
-</form>
 
 {% endblock %}

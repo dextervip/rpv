@@ -37,9 +37,13 @@ def disciplina(request, nr_disci):
             return render_to_response("geral/salvo.html", context_instance=RequestContext(request))
     else:
         form = FormDadosDisci()
-    return render_to_response("disciplina/disciplina.html", {'disciplina': disciplina, 'form': form} ,
+    return render_to_response("disciplina/showDisciplina.html", {'disciplina': disciplina, 'form': form} ,
         context_instance=RequestContext(request))
         
+
+def attInfoDisciplinas(request):
+    pass
+
 
 def remover(request):   
     pass
