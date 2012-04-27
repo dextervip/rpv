@@ -3,7 +3,7 @@
 from django.shortcuts import render_to_response, get_object_or_404
 from django.template import RequestContext
 
-from models import newDisciplina
+from models import newDisciplina, compleDisci
 from forms import FormNewDisciplina, FormDadosDisci
 
 
@@ -30,20 +30,26 @@ def addDisciplina(request):
 def disciplina(request, nr_disci):
     
     disciplina = get_object_or_404(newDisciplina, pk=nr_disci)
+    return render_to_response("disciplina/showDisciplina.html", {'disciplina': disciplina} ,
+        context_instance=RequestContext(request))
+        
+
+def attInfoDisciplinas(request, nr_disci):
+    
+    #esta com erros... arrumar!
+    attDiscip = get_object_or_404(compleDisci, pk=nr_disci)
     if request.method == "POST":
-        form = FormDadosDisci(request.POST, request.FILES, instance=disciplina)
+        form = FormDadosDisci(request.POST, request.FILES, instance=attDiscip)
         if form.is_valid():
             form.save()
             return render_to_response("geral/salvo.html", context_instance=RequestContext(request))
     else:
         form = FormDadosDisci()
-    return render_to_response("disciplina/showDisciplina.html", {'disciplina': disciplina, 'form': form} ,
+    return render_to_response("disciplina/attInfoDiscip.html", {'attDiscip': attDiscip, 'form': form} ,
         context_instance=RequestContext(request))
-        
-
-def attInfoDisciplinas(request):
-    pass
 
 
 def remover(request):   
+    
+    # discip = disciplina.objects.get(pk = nr_discp)
     pass
