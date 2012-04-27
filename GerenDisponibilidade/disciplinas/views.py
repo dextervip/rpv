@@ -41,5 +41,5 @@ def disciplina(request, nr_disci):
         context_instance=RequestContext(request))
         
 
-def remover(request):
+def remover(request):   
     pass
