@@ -2,24 +2,25 @@
 
 {% block corpo %}
 
-
 <h2>Lista de Disciplinas Cadastradas</h2>
 
 <ul>
 	{% for disciplina in lista_disciplinas %}
-		<li>
-<a href="/disciplina/{{ disciplina.id }}/">{{ disciplina.id }} - {{ disciplina.titulo }}</a>
-		</li>
-		{% empty %}
-		<li>Não existem disciplinas Cadastradas</li>
+	<li>
+		<a href="/disciplina/{{ disciplina.id }}/">{{ disciplina.id }} - {{ disciplina.titulo }}</a>
+	</li>
+	{% empty %}
+	<li>
+		Não existem disciplinas Cadastradas
+	</li>
 	{% endfor %}
 </ul>
 
 <p>
-	=> <a href="/addDisciplina/">Cadastrar nova Disciplina</a>
+	<a href="/addDisciplina/" class="btn btn-primary btn-large">Cadastrar nova Disciplina &raquo;</a>
 </p>
 <p>
-	<a href="/">Voltar</a>
+	<a href="/" class="btn btn-inverse">Voltar</a>
 </p>
 
 {% endblock %}

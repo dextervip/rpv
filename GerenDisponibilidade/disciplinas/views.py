@@ -49,7 +49,11 @@ def attInfoDisciplinas(request, nr_disci):
         context_instance=RequestContext(request))
 
 
-def remover(request):   
+def removerDiscip(request):   
     
     # discip = disciplina.objects.get(pk = nr_discp)
+    pass
+
+
+def pesquisaDiscip(request):
     pass
