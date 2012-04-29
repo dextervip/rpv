@@ -5,7 +5,7 @@ from django.db import models
 
 class newDisciplina(models.Model):
     
-    titulo = models.CharField(max_length = 150, unique = True)
+    nome = models.CharField(max_length = 150, unique = True)
     ementa = models.TextField()
     #Sera uma listagem com os Cursos ja cadastrados, uma especie de checkBos para selecionar
     curso = models.CharField(max_length = 100)

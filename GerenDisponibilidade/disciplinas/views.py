@@ -5,6 +5,7 @@ from django.template import RequestContext
 
 from models import newDisciplina, compleDisci
 from forms import FormNewDisciplina, FormDadosDisci
+import disciplinas
 
 
 def lista(request):
@@ -55,5 +56,8 @@ def removerDiscip(request):
     pass
 
 
-def pesquisaDiscip(request):
+def pesquisaDiscip(request, paramPesq):
+    
+    resultPesq = newDisciplina.objects.filter(nome__istartswitch="paramPesq").order_by("nome")
+    #return render_to_response()
     pass
