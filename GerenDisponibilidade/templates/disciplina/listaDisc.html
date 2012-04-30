@@ -14,7 +14,7 @@
 
 <div class="alert alert-info">
   <a class="close" data-dismiss="alert" href="#">×</a>
-  <h3 class="alert-heading"> Atenção! </h3>
+  <h3 class="alert-heading"> Dica! </h3>
   <p>Clique sobre qualquer linha da tabela para visualizar as informação da disciplina.</p>
 </div>
 
@@ -25,7 +25,6 @@
 			<th colspan="4" style="text-align: center"> Tabela - Disciplinas Cadastradas</th>
 		</tr>
 		<tr>
-			<th> Número </th>
 			<th> Código </th> 
 			<th> Nome </th> 
 			<th> Curso </th>
@@ -41,7 +40,6 @@
 					     http://nerds-central.blogspot.com.br/2006/12/selectable-table-rows-with-html-and.html
 				-->
 				<tr onclick="location.href='/disciplina/{{ disciplina.id }}/';" style="cursor: pointer">  
-					<td> {{ disciplina.id }} </td> 
 					<td> {{ disciplina.codigo }} </td>
 					<td> {{ disciplina.nome }} </td> 
 					<td> {{ disciplina.curso }} </td>

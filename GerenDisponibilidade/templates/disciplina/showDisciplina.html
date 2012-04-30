@@ -5,19 +5,56 @@
 	<h2>Informações gearais sobre a disciplina: </h2>
 	<br/>
 	
-<div class="hero-unit">
+<div class="well">
 
-<p>Número: {{ disciplina.id }} - Nome da Disciplina: {{	disciplina.titulo }} - Código: {{ disciplina.codigo }}</p>
-<p>Ementa: {{ disciplina.ementa }}</p>
-<p>Curso: {{ disciplina.curso }} - Carga Horária: {{ disciplina.cargaHora }}</p>
-<p>Créditos Práticos {{ disciplina.creditosPraticos }} - Créditos Teoricos:{{ disciplina.creditosTeoricos }}</p>
+
+<table class="table table-striped table-bordered table-condensed">
+	
+	<thead> 
+		<tr>
+			<th colspan="4" style="text-align: center"> Dados de Identificação</th>
+		</tr>
+		<tr>
+			<th> Código </th> 
+			<th> Componente Curricular </th> 
+			<th> Curso </th>
+		</tr>
+	 </thead>
+	<tbody>
+ 		 <tr>
+  	
+  	<td> {{ disciplina.codigo }} </td>
+    <td> {{	disciplina.nome }} </td>
+    <td> {{ disciplina.curso }} </td>
+    <td> {{ disciplina.cargaHora }} </td>
+  	<td> {{ disciplina.creditosPraticos }} </td>
+  	<td> {{ disciplina.creditosTeoricos }} </td>
+  	<td> {{ disciplina.creditosTeoricos }} </td>
+  	
+  	
+  		</tr>
+	</Tbody>
+</table>
+
 </div>
 
+<div class="well">
+	<p>Ementa: </p>
+	{{ disciplina.ementa }}	
+</div>
+
+<div class="well">
+	<p>Objetivo: </p>
+	{{ disciplina.ementa }}	
+</div>
+
+<div class="well">
 	
-	<p>
-		<a href="{% url disciplinas:lista %}" class="btn btn-inverse btn-large">&laquo; Voltar</a>
+	    <a href="{% url disciplinas:lista %" class="btn btn-inverse btn-large">&laquo; Voltar</a>
 		
-		 <a href="/attInfoDisciplinas/{{ disciplina.id }}/" class="btn btn-primary btn-large">Atualizar Dados &raquo;</a>
-	</p>
+		<a href="/attInfoDisciplinas/{{ disciplina.id }}/" class="btn btn-primary btn-large">Atualizar Dados &raquo;</a>		 
+		
+		<a href="" class="btn btn-success btn-large" style="position: relative"><i class="icon-print"></i> Versão p/ Impressão</a>
+</div>
 
 {% endblock %}
