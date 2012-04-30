@@ -33,10 +33,9 @@ def disciplina(request, nr_disci):
     return render_to_response("disciplina/showDisciplina.html", {'disciplina': disciplina} ,
         context_instance=RequestContext(request))
         
-
+#ainda não esta 100%...
 def attInfoDisciplinas(request, nr_disci):
-    
-    #esta com erros... arrumar!
+        
     attDiscip = get_object_or_404(newDisciplina, pk=nr_disci)
     if request.method == "POST":
         form = FormNewDisciplina(request.POST, request.FILES, instance=attDiscip)
@@ -57,6 +56,7 @@ def removerDiscip(request):
 
 def pesquisaDiscip(request, paramPesq):
     
-    resultPesq = newDisciplina.objects.filter(nome__istartswitch="paramPesq").order_by("nome")
+    #não esta 100%...
+    #resultPesq = newDisciplina.objects.filter(nome__istartswitch="paramPesq").order_by("nome")
     #return render_to_response()
     pass
