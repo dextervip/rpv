@@ -12,8 +12,10 @@
 
 
 	
-	<p> <a href="/attInfoDisciplinas/{{ disciplina.id }}/" class="btn btn-primary btn-large">Atualizar Dados &raquo;</a> </p>  
+	<p>
+		<a href="{% url disciplinas:lista %}" class="btn btn-inverse btn-large">&laquo; Voltar</a>
 		
-	<p>	<a href="/" class="btn btn-inverse"> Voltar</a></p>
+		 <a href="/attInfoDisciplinas/{{ disciplina.id }}/" class="btn btn-primary btn-large">Atualizar Dados &raquo;</a>
+	</p>
 
 {% endblock %}

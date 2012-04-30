@@ -10,8 +10,11 @@
 	{% csrf_token %}
 	{{ form.as_p  }}
 
-	<button type="submit">Cadastrar</button> 
-	<a href="/" class="btn btn-inverse">Voltar</a>
+	<p>
+		<a href="/" class="btn btn-inverse btn-large">&laquo;  Voltar </a>
+		
+		<button type="submit" class="btn btn-success btn-large"> Cadastrar <i class="icon-ok"> </i></button> 
+	</p> 
 </form> 
 
 	{% endblock %}
