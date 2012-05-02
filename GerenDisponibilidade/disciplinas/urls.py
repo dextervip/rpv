@@ -2,7 +2,8 @@ from django.conf.urls.defaults import patterns, url
 
 urlpatterns = patterns('disciplinas.views',
     url(r'^$', 'lista', name='lista'),
-    url(r'^addDisciplina/$', 'addDisciplina', name='addDisciplina'),
-   # url(r'^attInfoDisciplinas/$', 'attInfoDisciplinas', name='attInfoDisciplinas'),
+    url(r'^nova-disciplina/$', 'addDisciplina', name='addDisciplina'),
+    #url(r'^infos-disciplina/(?P<nr_disci>\d+)/$', 'disciplina', name='disciplina'),
+    #url(r'^attInfoDisciplinas/$', 'attInfoDisciplinas', name='attInfoDisciplinas'),
     
 )

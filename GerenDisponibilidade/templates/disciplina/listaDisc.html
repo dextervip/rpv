@@ -31,20 +31,15 @@
 		</tr>
 	 </thead>
 	<tbody>
-				<!-- 	<a href="/disciplina/{{ disciplina.id }}/"> -->
-				{% for disciplina in lista_disciplinas %}
- 				<!-- "Gambirra" em href="", deve ser subistituido por uma função javascript,
-				     para selecionar a linha e oferecer ao usuário a oportunidade de 
-					 visualiza os dados da disciplina em outra página.
-					 Ex: http://tycoontalk.freelancer.com/javascript-forum/56439-select-html-table-cell-values-when.html 
-					     http://nerds-central.blogspot.com.br/2006/12/selectable-table-rows-with-html-and.html
-				-->
-				<tr onclick="location.href='/disciplina/{{ disciplina.id }}/';" style="cursor: pointer">  
+		
+		<!-- {-% url disciplinas:disciplina %-}{{ disciplina.id }}/   location.href='/disciplina/{{ disciplina.id }}/ -->
+			{% for disciplina in lista_disciplinas %} 
+			<tr onclick="location.href='/disciplina/{{ disciplina.id }}/';" style="cursor: pointer">  
 					<td> {{ disciplina.codigo }} </td>
 					<td> {{ disciplina.nome }} </td> 
 					<td> {{ disciplina.curso }} </td>
 				</tr>
-	</Tbody>
+	</tbody>
 			{% empty %}
 			<li>
 				Não existem disciplinas Cadastradas
@@ -55,6 +50,6 @@
 <p>
 	<a href="/" class="btn btn-inverse btn-large">&laquo; Voltar</a>
 	
-	<a href="/addDisciplina/" class="btn btn-primary btn-large">Cadastrar nova Disciplina &raquo;</a>
+	<a href="{% url disciplinas:addDisciplina %}" class="btn btn-primary btn-large">Cadastrar nova Disciplina &raquo;</a>
 </p>
 {% endblock %}
