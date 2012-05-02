@@ -83,11 +83,16 @@ def attInfoDisciplinas(request, nr_disci):
         context_instance=RequestContext(request))
 
 
-def removerDiscip(request):   
+def removerDiscip(request, nr_discp):   
     
-    # discip = disciplina.objects.get(pk = nr_discp)
-    pass
-
+    removeDiscip = get_object_or_404(newDisciplina, pk=nr_discp)
+    if request.method == "POST":
+        removeDiscip.delete()
+        return render_to_response("geral/dadosRemovidos.html", context_instance=RequestContext(request))
+    else:
+        return render_to_response("geral/remover.html", {'removeDiscip': removeDiscip} ,
+        context_instance=RequestContext(request))
+        
 
 def pesquisaDiscip(request, paramPesq):
     

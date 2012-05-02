@@ -8,11 +8,12 @@ urlpatterns = patterns('',
     # Examples:
     # url(r'^$', 'GerenDisponibilidade.views.home', name='home'),
     # url(r'^GerenDisponibilidade/', include('GerenDisponibilidade.foo.urls')),
-    (r'^$', 'geral.views.home' ),
+    (r'^$', 'geral.views.home'),
     (r'^lista-disciplinas/', include('disciplinas.urls', namespace='disciplinas')),
     #(r'^lista/$', 'disciplinas.views.lista'),
     #(r'^addDisciplina/$', 'disciplinas.views.addDisciplina'),
     (r'^disciplina/(?P<nr_disci>\d+)/$', "disciplinas.views.disciplina"),
+    (r'^removerDiscip/(?P<nr_discp>\d+)/$', "disciplinas.views.removerDiscip"),
     #(r'^attInfoDisciplinas/(?P<nr_disci>\d+)/$', 'disciplinas.views.attInfoDisciplinas'),
 
     # Uncomment the admin/doc line below to enable admin documentation:

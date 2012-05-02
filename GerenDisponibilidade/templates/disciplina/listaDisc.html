@@ -34,7 +34,7 @@
 		
 		<!-- {-% url disciplinas:disciplina %-}{{ disciplina.id }}/   location.href='/disciplina/{{ disciplina.id }}/ -->
 			{% for disciplina in lista_disciplinas %} 
-			<tr onclick="location.href='/disciplina/{{ disciplina.id }}/';" style="cursor: pointer">  
+			<tr onclick="location.href='/disciplina/{{ disciplina.id }}/';" style="cursor: pointer">
 					<td> {{ disciplina.codigo }} </td>
 					<td> {{ disciplina.nome }} </td> 
 					<td> {{ disciplina.curso }} </td>
