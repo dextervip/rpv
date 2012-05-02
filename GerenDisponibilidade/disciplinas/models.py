@@ -25,8 +25,10 @@ class newDisciplina(models.Model):
     bibliograBasica = models.TextField(verbose_name=u"Referências Básicas (Leituras Obrigatórias)")
     bibliograComplem = models.TextField(verbose_name=u"Referências Complementares", blank=True)
     
-    """ Não esqueça que dados como Professor, 
+""" 
+    Não esqueça que dados como Professor, 
     Coteudo Programático(de tal a tal semana, sera passada tal matéria - não confundir com cronograma)
     cronograma, metodEnsino, Avaliação do Processo de Ensino e Aprendizagem, 
     Atividades de Recuperação Preventiva do Processo de Ensino e Aprendizagem,
-    seram construidos na geração do plano de ensino(Outro grande problema para resolvermos...)."""
+    seram construidos na geração do plano de ensino(Outro grande problema para resolvermos...).
+"""

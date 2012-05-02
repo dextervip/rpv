@@ -69,17 +69,17 @@ def disciplina(request, nr_disci):
         
         
 #ainda não esta 100%...
-def attInfoDisciplinas(request, nr_disci):
+def editarDiscip(request, nr_disci):
         
-    attDiscip = get_object_or_404(newDisciplina, pk=nr_disci)
+    editDiscip = get_object_or_404(newDisciplina, pk=nr_disci)
     if request.method == "POST":
-        form = FormNewDisciplina(request.POST, request.FILES, instance=attDiscip)
+        form = FormNewDisciplina(request.POST, instance=editDiscip)
         if form.is_valid():
             form.save()
             return render_to_response("geral/salvo.html", context_instance=RequestContext(request))
     else:
         form = FormNewDisciplina()
-    return render_to_response("disciplina/attInfoDiscip.html", {'attDiscip': attDiscip, 'form': form} ,
+    return render_to_response("disciplina/editarDiscip.html", {'editDiscip': editDiscip, 'form': form} ,
         context_instance=RequestContext(request))
 
 

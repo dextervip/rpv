@@ -1,55 +1,56 @@
 ﻿{% extends "geral/base.html" %}
 
-
 {% block corpo %}
 
 <!-- Não faz nada por enquanto... -->
 <form class="well form-search">
 	<input type="text" class="input-large search-query">
-	
+
 	<button type="submit" class="btn">
 		<i class="icon-search" ></i> Pesquisar
 	</button>
 </form>
 
 <div class="alert alert-info">
-  <a class="close" data-dismiss="alert" href="#">×</a>
-  <h3 class="alert-heading"><i class="icon-bell"> </i> Dica! </h3>
-  <p>Clique sobre qualquer linha da tabela para visualizar as informação da disciplina.</p>
+	<a class="close" data-dismiss="alert" href="#">×</a>
+	<h3 class="alert-heading"><i class="icon-bell"> </i> Dica! </h3>
+	<p>
+		Clique sobre qualquer linha da tabela para visualizar as informação da disciplina.
+	</p>
 </div>
 
 <table class="table table-striped table-bordered table-condensed">
-	
-	<thead> 
+
+	<thead>
 		<tr>
 			<th colspan="4" style="text-align: center"> Tabela - Disciplinas Cadastradas</th>
 		</tr>
 		<tr>
-			<th> Código </th> 
-			<th> Nome </th> 
+			<th> Código </th>
+			<th> Nome </th>
 			<th> Curso </th>
 		</tr>
-	 </thead>
+	</thead>
 	<tbody>
-		
+
 		<!-- {-% url disciplinas:disciplina %-}{{ disciplina.id }}/   location.href='/disciplina/{{ disciplina.id }}/ -->
-			{% for disciplina in lista_disciplinas %} 
-			<tr onclick="location.href='/disciplina/{{ disciplina.id }}/';" style="cursor: pointer">
-					<td> {{ disciplina.codigo }} </td>
-					<td> {{ disciplina.nome }} </td> 
-					<td> {{ disciplina.curso }} </td>
-				</tr>
+		{% for disciplina in lista_disciplinas %}
+		<tr onclick="location.href='/disciplina/{{ disciplina.id }}/';" style="cursor: pointer">
+			<td> {{ disciplina.codigo }} </td>
+			<td> {{ disciplina.nome }} </td>
+			<td> {{ disciplina.curso }} </td>
+		</tr>
 	</tbody>
-			{% empty %}
-			<li>
-				Não existem disciplinas Cadastradas
-			</li>
-			{% endfor %}
+	{% empty %}
+	<li>
+		Não existem disciplinas Cadastradas
+	</li>
+	{% endfor %}
 </table>
 
 <p>
 	<a href="/" class="btn btn-inverse btn-large">&laquo; Voltar</a>
-	
+
 	<a href="{% url disciplinas:addDisciplina %}" class="btn btn-primary btn-large">Cadastrar nova Disciplina &raquo;</a>
 </p>
 {% endblock %}

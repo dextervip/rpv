@@ -1,22 +1,18 @@
-﻿{% extends "geral/base.html" %}
+{% extends "geral/base.html" %}
 
 {% block corpo %}
 
-<h1>Cadastro de Disciplinas</h1>
-
-<p>
-	Aqui você podera cadastrar novas Disciplinas.
-</p>
 <form action="" method="post">
 
+ 	<!-- Isso não esta certo! -->
 	{% csrf_token %}
-	{{ form.as_p  }}
+	{{ form.as_table }}
 
 	<p>
 		<a href="{% url disciplinas:lista %}" class="btn btn-inverse btn-large">&laquo;  Voltar </a>
 
 		<button type="submit" class="btn btn-success btn-large">
-			<i class="icon-ok"></i> Cadastrar
+			<i class="icon-ok"></i> Atualizar Dados
 		</button>
 	</p>
 </form>

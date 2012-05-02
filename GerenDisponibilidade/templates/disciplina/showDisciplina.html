@@ -1,136 +1,136 @@
 ﻿{% extends "geral/base.html" %}
 
-	{% block corpo %}
-	
-	<h2>Informações gearais sobre a disciplina: </h2>
-	<br/>
-	
+{% block corpo %}
+
+<h2>Informações gearais sobre a disciplina: </h2>
+<br/>
+
 <div class="well">
 
-<table class="table table-striped table-bordered table-condensed">
-	
-	<thead> 
-		<tr>
-			<th colspan="3" style="text-align: center"> Dados de Identificação</th>
-		</tr>
-	 </thead>
-	<tbody>
-			<tr> 
-				<td>Campus: {{ disciplina.campus }}  </td> <td colspan="2">Curso: {{ disciplina.curso }}  </td>
+	<table class="table table-striped table-bordered table-condensed">
+
+		<thead>
+			<tr>
+				<th colspan="3" style="text-align: center"> Dados de Identificação</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Campus: {{ disciplina.campus }} </td><td colspan="2">Curso: {{ disciplina.curso }} </td>
 			</tr>
 			<tr>
-				<td>Componente Curricular: {{ disciplina.nome }}</td> <td colspan="2">Código: {{ disciplina.codigo }}</td>
+				<td>Componente Curricular: {{ disciplina.nome }}</td><td colspan="2">Código: {{ disciplina.codigo }}</td>
 			</tr>
 			<tr>
-				<td>Turma(s): {{ disciplina.turma }}</td> <td>Turno: {{ disciplina.turno }}</td> <td>Ano Letivo / Semestre: {{ disciplina.anoLetivo }}</td>
+				<td>Turma(s): {{ disciplina.turma }}</td><td>Turno: {{ disciplina.turno }}</td><td>Ano Letivo / Semestre: {{ disciplina.anoLetivo }}</td>
 			</tr>
 			<tr>
-				<td>Carga Horária: {{ disciplina.cargaHora }}</td> <td>Créditos Práticos: {{ disciplina.creditosPraticos }}</td> <td>Créditos Teóricos: {{ disciplina.creditosTeoricos }}</td>
+				<td>Carga Horária: {{ disciplina.cargaHora }}</td><td>Créditos Práticos: {{ disciplina.creditosPraticos }}</td><td>Créditos Teóricos: {{ disciplina.creditosTeoricos }}</td>
 			</tr>
-	</tbody>
-</table>
+		</tbody>
+	</table>
 </div>
 
 <div class="well">
 	<table class="table table-striped table-bordered table-condensed">
-	
-	<thead> 
-		<tr>
-			<th colspan="4" style="text-align: center"> Ementa </th>
-		</tr>
-		 </thead>
-	<tbody>
- 	  <tr>
- 	  	
-  	    <td> {{ disciplina.ementa }} </td>
 
-	</tr>
-	</tbody>
-</table>
+		<thead>
+			<tr>
+				<th colspan="4" style="text-align: center"> Ementa </th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+
+				<td> {{ disciplina.ementa }} </td>
+
+			</tr>
+		</tbody>
+	</table>
 </div>
 
 <div class="well">
 	<table class="table table-striped table-bordered table-condensed">
-	
-	<thead> 
-		<tr>
-			<th colspan="4" style="text-align: center"> Objetivos </th>
-		</tr>
-		 </thead>
-	<tbody>
- 	  <tr>
- 	  	
-  	    <td> {{ disciplina.ojetivos }}</td>
 
-	</tr>
-	</tbody>
-</table>	
+		<thead>
+			<tr>
+				<th colspan="4" style="text-align: center"> Objetivos </th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+
+				<td> {{ disciplina.ojetivos }}</td>
+
+			</tr>
+		</tbody>
+	</table>
 </div>
 
 <div class="well">
-<table class="table table-striped table-bordered table-condensed">
-	
-	<thead> 
-		<tr>
-			<th colspan="4" style="text-align: center"> Pré-Requisito(s) </th>
-		</tr>
-		 </thead>
-	<tbody>
- 	  <tr>
- 	  	
-  	    <td> {{ disciplina.preRequisitos }} </td>
+	<table class="table table-striped table-bordered table-condensed">
 
-	</tr>
-	</tbody>
-</table>	
+		<thead>
+			<tr>
+				<th colspan="4" style="text-align: center"> Pré-Requisito(s) </th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+
+				<td> {{ disciplina.preRequisitos }} </td>
+
+			</tr>
+		</tbody>
+	</table>
 </div>
 
 <div class="well">
-<table class="table table-striped table-bordered table-condensed">
-	
-	<thead> 
-		<tr>
-			<th colspan="4" style="text-align: center"> Referências Básicas (Leituras Obrigatórias) </th>
-		</tr>
-		 </thead>
-	<tbody>
- 	  <tr>
- 	  	
-  	    <td> {{ disciplina.bibliograBasica }} </td>
+	<table class="table table-striped table-bordered table-condensed">
 
-	</tr>
-	</tbody>
-</table>		
+		<thead>
+			<tr>
+				<th colspan="4" style="text-align: center"> Referências Básicas (Leituras Obrigatórias) </th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+
+				<td> {{ disciplina.bibliograBasica }} </td>
+
+			</tr>
+		</tbody>
+	</table>
 </div>
 
 <div class="well">
-<table class="table table-striped table-bordered table-condensed">
-	
-	<thead> 
-		<tr>
-			<th colspan="4" style="text-align: center"> Referências Complementares </th>
-		</tr>
-		 </thead>
-	<tbody>
- 	  <tr>
- 	  	
-  	    <td>  {{ disciplina.bibliograComplem }}	</td>
-	</tr>
-	</tbody>
-</table>		
+	<table class="table table-striped table-bordered table-condensed">
+
+		<thead>
+			<tr>
+				<th colspan="4" style="text-align: center"> Referências Complementares </th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+
+				<td> {{ disciplina.bibliograComplem }} </td>
+			</tr>
+		</tbody>
+	</table>
 </div>
 
 <div class="well">
-	
-	    <a href="{% url disciplinas:lista %}" class="btn btn-inverse btn-large">&laquo; Voltar</a>
-		
-		<!-- href da linha de baixo: /attInfoDisciplinas/{{ disciplina.id }}/ -->
-		<a href="" class="btn btn-primary btn-large"><i class="icon-edit"> </i> Editar </a>
-	
-		<a href="/removerDiscip/{{ disciplina.id }}/" class="btn btn-danger btn-large"><i class="icon-trash"> </i> Remover </a> 
-		
-		<!-- Esse último botão sera necessário para a geração do Plano de Ensino -->
-		<a href="" class="btn btn-success btn-large"><i class="icon-print"> </i> Imprimir </a>
+
+	<a href="{% url disciplinas:lista %}" class="btn btn-inverse btn-large">&laquo; Voltar</a>
+
+	<!-- href da linha de baixo: /attInfoDisciplinas/{{ disciplina.id }}/ -->
+	<a href="/editarDiscip/{{ disciplina.id }}/" class="btn btn-primary btn-large"><i class="icon-edit"> </i> Editar </a>
+
+	<a href="/removerDiscip/{{ disciplina.id }}/" class="btn btn-danger btn-large"><i class="icon-trash"> </i> Remover </a>
+
+	<!-- Esse último botão sera necessário para a geração do Plano de Ensino -->
+	<a href="" class="btn btn-success btn-large"><i class="icon-print"> </i> Imprimir </a>
 </div>
 
 {% endblock %}

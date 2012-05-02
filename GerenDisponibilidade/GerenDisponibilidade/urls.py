@@ -14,7 +14,7 @@ urlpatterns = patterns('',
     #(r'^addDisciplina/$', 'disciplinas.views.addDisciplina'),
     (r'^disciplina/(?P<nr_disci>\d+)/$', "disciplinas.views.disciplina"),
     (r'^removerDiscip/(?P<nr_discp>\d+)/$', "disciplinas.views.removerDiscip"),
-    #(r'^attInfoDisciplinas/(?P<nr_disci>\d+)/$', 'disciplinas.views.attInfoDisciplinas'),
+    (r'^editarDiscip/(?P<nr_disci>\d+)/$', 'disciplinas.views.editarDiscip'),
 
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
