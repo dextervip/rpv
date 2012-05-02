@@ -1,0 +1,6 @@
+
+==>> Utilize os arquivos .sql contidos nesta pasta para realizar testes no sistema.
+
+-=> Basta importar qualquer um deles para o phpMyAdmin, dentro das respectivas tabelas e rodar Sync_DB na aplicação!
+
+_-=>> Caso ocorra problemas, drop o banco de dados no phpMyAdmin, crie-o novamente e rode Sync_DB na aplicação, apos este processo, importe os arquivos para o DB. 
