@@ -4,4 +4,5 @@ encoding//disciplinas/models.py=utf-8
 encoding//disciplinas/views.py=utf-8
 encoding//geral/tests.py=utf-8
 encoding//geral/views.py=utf-8
+encoding//professor/views.py=utf-8
 encoding//secretaria/views.py=utf-8

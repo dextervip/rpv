@@ -1,0 +1,122 @@
+{% extends "geral/base.html" %}
+
+{% block corpo %}
+<ul class="breadcrumb">
+	<li>
+		<a href="#">Página Inicial</a><span class="divider">/</span>
+	</li>
+	<li>
+		<a href="#">Professor</a><span class="divider">/</span>
+	</li>
+	<li class="active">
+		Home
+	</li>
+</ul>
+
+<div class="hero-unit">
+	<h1>Área do Professor</h1>
+	<p>
+
+	</p>
+	<br />
+	<br />
+	<div class="row">
+		<div class="span4">
+			<h2>Meu Perfil</h2>
+			<div class="thumbnail">
+				<img alt="" src="http://placehold.it/260x180">
+				<div class="caption">
+					<h5>Minha Informações</h5>
+					<p>
+						Nome:
+						<br/>
+						Área de formação:
+						<br />
+						Preferencia de Disciplinas:
+						<br />
+						Disponibilidade de Horario:
+						<br />
+					</p>
+					<p>
+						<a class="btn btn-primary" href="#">Ver Meu Perfil Completo</a><a class="btn" href="#">Atualizar Meu Perfil</a>
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="span4">
+			<h2>Meus Compromissos</h2>
+			<style type='text/css'>
+				#calendar {
+					width: 700px;
+					margin: 0 auto;
+				}
+			</style>
+			<link rel='stylesheet' type='text/css' href='{{ STATIC_URL }}fullcalendar/fullcalendar.css' />
+			<link rel='stylesheet' type='text/css' href='{{ STATIC_URL }}fullcalendar/fullcalendar.print.css' media='print' />
+			<script type='text/javascript' src='{{ STATIC_URL }}jquery/jquery-1.7.1.min.js'></script>
+			<script type='text/javascript' src='{{ STATIC_URL }}jquery/jquery-ui-1.8.17.custom.min.js'></script>
+			<script type='text/javascript' src='{{ STATIC_URL }}fullcalendar/fullcalendar.min.js'></script>
+			<script type='text/javascript'>
+				$(document).ready(function() {
+
+					var date = new Date();
+					var d = date.getDate();
+					var m = date.getMonth();
+					var y = date.getFullYear();
+
+					$('#calendar').fullCalendar({
+						header : {
+							left : 'prev,next today',
+							center : 'title',
+							right : 'month,agendaWeek,agendaDay'
+						},
+						editable : true,
+						events : [{
+							title : 'All Day Event',
+							start : new Date(y, m, 1)
+						}, {
+							title : 'Long Event',
+							start : new Date(y, m, d - 5),
+							end : new Date(y, m, d - 2)
+						}, {
+							id : 999,
+							title : 'Repeating Event',
+							start : new Date(y, m, d - 3, 16, 0),
+							allDay : false
+						}, {
+							id : 999,
+							title : 'Repeating Event',
+							start : new Date(y, m, d + 4, 16, 0),
+							allDay : false
+						}, {
+							title : 'Meeting',
+							start : new Date(y, m, d, 10, 30),
+							allDay : false
+						}, {
+							title : 'Lunch',
+							start : new Date(y, m, d, 12, 0),
+							end : new Date(y, m, d, 14, 0),
+							allDay : false
+						}, {
+							title : 'Birthday Party',
+							start : new Date(y, m, d + 1, 19, 0),
+							end : new Date(y, m, d + 1, 22, 30),
+							allDay : false
+						}, {
+							title : 'Click for Google',
+							start : new Date(y, m, 28),
+							end : new Date(y, m, 29),
+							url : 'http://google.com/'
+						}]
+					});
+
+				});
+
+			</script>
+			<div id='calendar'></div>
+		</div>
+	</div>
+
+</div>
+
+{% endblock %}
