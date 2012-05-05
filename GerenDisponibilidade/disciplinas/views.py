@@ -5,8 +5,6 @@ from django.template import RequestContext
 
 from models import newDisciplina
 from forms import FormNewDisciplina
-#from django.http import HttpResponseRedirect
-#from django.core.urlresolvers import reverse
 
 
 def lista(request):
@@ -66,5 +64,5 @@ def pesquisaDiscip(request):
     if request.method == "POST":
         paramPesq = request.POST.get('pesquisa')
         resultPesq = newDisciplina.objects.filter(nome__icontains=paramPesq).order_by("nome")
-        return render_to_response("disciplina/pesquisaDiscip.html", {'resultPesq': resultPesq}, 
+        return render_to_response("disciplina/pesquisaDiscip.html", {'resultPesq': resultPesq},
                               context_instance=RequestContext(request))
