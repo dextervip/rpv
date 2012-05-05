@@ -16,7 +16,6 @@ def lista(request):
         context_instance=RequestContext(request))
 
 
-
 def addDisciplina(request):
         
     if request.method == "POST":
@@ -62,9 +61,10 @@ def removerDiscip(request, nr_discp):
         context_instance=RequestContext(request))
         
 
-def pesquisaDiscip(request, paramPesq):
+def pesquisaDiscip(request):
     
-    #não esta 100%...
-    #resultPesq = newDisciplina.objects.filter(nome__istartswitch="paramPesq").order_by("nome")
-    #return render_to_response()
-    pass
+    if request.method == "POST":
+        paramPesq = request.POST.get('pesquisa')
+        resultPesq = newDisciplina.objects.filter(nome__icontains=paramPesq).order_by("nome")
+        return render_to_response("disciplina/pesquisaDiscip.html", {'resultPesq': resultPesq}, 
+                              context_instance=RequestContext(request))
