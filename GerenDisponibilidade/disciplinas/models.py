@@ -6,7 +6,7 @@ from django.db import models
 
 class newDisciplina(models.Model):
     
-    nome = models.CharField('Componente Curricular', max_length=255, unique=True)
+    nome = models.CharField('Componente Curricular', max_length=255)
     codigo = models.CharField('Código', max_length=50, unique=True)
     #Sera uma listagem com os Cursos ja cadastrados, uma especie de checkBos para selecionar
     curso = models.CharField(max_length=150, blank=True)
@@ -19,7 +19,8 @@ class newDisciplina(models.Model):
     turma = models.CharField(max_length=20, blank=True)
     
     ementa = models.TextField()
-    ojetivos = models.TextField()
+    objetivoGeral = models.TextField('Objetivo Geral')
+    objetivoEspecif = models.TextField('Objetivo Específico', blank=True)
     #Sera um relacionamento - Combo para escolher as disciplinas já cadastradas... listando as já escolhidas
     preRequisitos = models.TextField('Pré-requisito(s)', blank=True)
     bibliograBasica = models.TextField('Referências Básicas (Leituras Obrigatórias)')

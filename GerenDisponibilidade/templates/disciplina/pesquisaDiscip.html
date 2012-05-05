@@ -38,18 +38,15 @@
 			<td> {{ disciplina.nome }} </td>
 			<td> {{ disciplina.curso }} </td>
 		</tr>
-
-		{% empty %}
-		<td colspan="3">
-			Não existe disciplina com este nome!
-		</td>
-		{% endfor %}
 	</tbody>
+	{% empty %}
+	<td colspan="3"> Não existe disciplina com este nome! </td>
+	{% endfor %}
 </table>
 
 <p>
 	<a href="/" class="btn btn-inverse btn-large">&laquo; Voltar</a>
 
-	<a href="{% url disciplinas:addDisciplina %}" class="btn btn-primary btn-large">Cadastrar nova Disciplina &raquo;</a>
-</p> 
+	<a href="{% url disciplinas:addDisciplina %}" class="btn btn-primary btn-large"> Cadastrar nova Disciplina &raquo;</a>
+</p>
 {% endblock %}

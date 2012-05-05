@@ -22,7 +22,7 @@
 
 	<thead>
 		<tr>
-			<th colspan="4" style="text-align: center"> Tabela - Disciplinas Cadastradas</th>
+			<th colspan="4" style="text-align: center"> Tabela - Disciplinas Cadastradas </th>
 		</tr>
 		<tr>
 			<th> Código </th>
@@ -41,15 +41,13 @@
 		</tr>
 	</tbody>
 	{% empty %}
-	<li>
-		Não existem disciplinas Cadastradas!
-	</li>
+	<td colspan="3"> Não existem disciplinas Cadastradas! </td>
 	{% endfor %}
 </table>
 
 <p>
-	<a href="/" class="btn btn-inverse btn-large">&laquo; Voltar</a>
+	<a href="/" class="btn btn-inverse btn-large">&laquo; Voltar </a>
 
-	<a href="{% url disciplinas:addDisciplina %}" class="btn btn-primary btn-large">Cadastrar nova Disciplina &raquo;</a>
+	<a href="{% url disciplinas:addDisciplina %}" class="btn btn-primary btn-large"> Cadastrar nova Disciplina &raquo;</a>
 </p>
 {% endblock %}
