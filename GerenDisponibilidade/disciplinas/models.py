@@ -7,23 +7,23 @@ from django.db import models
 class newDisciplina(models.Model):
     
     nome = models.CharField('Componente Curricular', max_length=255, unique=True)
-    codigo = models.CharField(verbose_name=u"Código", max_length=50, unique=True)
+    codigo = models.CharField('Código', max_length=50, unique=True)
     #Sera uma listagem com os Cursos ja cadastrados, uma especie de checkBos para selecionar
     curso = models.CharField(max_length=150, blank=True)
     campus = models.CharField(max_length=150, blank=True)
-    cargaHora = models.CharField(verbose_name=u"Carga Horária", max_length=5)
-    creditosPraticos = models.CharField(verbose_name=u"Créditos Práticos", max_length=20)
-    creditosTeoricos = models.CharField(verbose_name=u"Créditos Teóricos", max_length=20)
-    anoLetivo = models.CharField(verbose_name=u"Ano Letivo", max_length=10, blank=True)
+    cargaHora = models.CharField('Carga Horária', max_length=5)
+    creditosPraticos = models.CharField('Créditos Práticos', max_length=20)
+    creditosTeoricos = models.CharField('Créditos Teóricos', max_length=20)
+    anoLetivo = models.CharField('Ano Letivo', max_length=10, blank=True)
     turno = models.CharField(max_length=20, blank=True)
     turma = models.CharField(max_length=20, blank=True)
     
     ementa = models.TextField()
     ojetivos = models.TextField()
     #Sera um relacionamento - Combo para escolher as disciplinas já cadastradas... listando as já escolhidas
-    preRequisitos = models.TextField(verbose_name=u"Pré-requisito(s)", blank=True)
-    bibliograBasica = models.TextField(verbose_name=u"Referências Básicas (Leituras Obrigatórias)")
-    bibliograComplem = models.TextField(verbose_name=u"Referências Complementares", blank=True)
+    preRequisitos = models.TextField('Pré-requisito(s)', blank=True)
+    bibliograBasica = models.TextField('Referências Básicas (Leituras Obrigatórias)')
+    bibliograComplem = models.TextField('Referências Complementares', blank=True)
     
 """ 
     Não esqueça que dados como Professor, 

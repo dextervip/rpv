@@ -29,37 +29,6 @@ def addDisciplina(request):
     return render_to_response("disciplina/newDisciplina.html", {'form': form},
         context_instance=RequestContext(request))
     
-    
-"""
-################## Inicio da Refatoração (TESTE)
-def addDisciplina(request):
-     if request.method == "POST":
-        return create(request)
-    else:
-        return new(request)
-       
-    
-def create(request):
-    form = FormNewDisciplina(request.POST)
-
-    if not form.is_valid():
-        context = RequestContext(request, {'form': form})
-        return render_to_response("disciplina/newDisciplina.html", context)
-    
-    else:
-        novaDiscip = form.save()
-        return HttpResponseRedirect(reverse('geral/salvo.html', args=[ novaDiscip.pk ]))        
-    # pass
-
-
-def new(request):
-    form = FormNewDisciplina()
-    context = RequestContext(request, {'form': form})
-    return render_to_response("disciplina/newDisciplina.html", context)    
-    # pass
-
-################## Fim da Refatoração (TESTE)
-"""
 
 def disciplina(request, nr_disci):
     
@@ -68,7 +37,6 @@ def disciplina(request, nr_disci):
         context_instance=RequestContext(request))
         
         
-#ainda não esta 100%...
 def editarDiscip(request, nr_disci):
         
     editDiscip = get_object_or_404(newDisciplina, pk=nr_disci)
@@ -78,7 +46,7 @@ def editarDiscip(request, nr_disci):
             form.save()
             return render_to_response("geral/salvo.html", context_instance=RequestContext(request))
     else:
-        form = FormNewDisciplina()
+        form = FormNewDisciplina(instance=editDiscip)
     return render_to_response("disciplina/editarDiscip.html", {'editDiscip': editDiscip, 'form': form} ,
         context_instance=RequestContext(request))
 

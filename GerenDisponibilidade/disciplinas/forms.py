@@ -7,6 +7,7 @@ from models import newDisciplina
 from django.utils.safestring import mark_safe
 
 class FormNewDisciplina(forms.ModelForm):
+    
     class Meta:
         model = newDisciplina
         
