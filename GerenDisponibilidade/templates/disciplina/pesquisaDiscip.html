@@ -1,4 +1,4 @@
-﻿{% extends "geral/base.html" %}
+{% extends "geral/base.html" %}
 
 {% block corpo %}
 
@@ -22,7 +22,7 @@
 
 	<thead>
 		<tr>
-			<th colspan="4" style="text-align: center"> Tabela - Disciplinas Cadastradas</th>
+			<th colspan="4" style="text-align: center"> Tabela - Resultados da Pesquisa </th>
 		</tr>
 		<tr>
 			<th> Código </th>
@@ -32,24 +32,24 @@
 	</thead>
 	<tbody>
 
-		<!-- {-% url disciplinas:disciplina %-}{{ disciplina.id }}/   location.href='/disciplina/{{ disciplina.id }}/ -->
-		{% for disciplina in lista_disciplinas %}
+		{% for disciplina in resultPesq %}
 		<tr onclick="location.href='/disciplina/{{ disciplina.id }}/';" style="cursor: pointer">
 			<td> {{ disciplina.codigo }} </td>
 			<td> {{ disciplina.nome }} </td>
 			<td> {{ disciplina.curso }} </td>
 		</tr>
+
+		{% empty %}
+		<td colspan="3">
+			Não existe disciplina com este nome!
+		</td>
+		{% endfor %}
 	</tbody>
-	{% empty %}
-	<li>
-		Não existem disciplinas Cadastradas!
-	</li>
-	{% endfor %}
 </table>
 
 <p>
 	<a href="/" class="btn btn-inverse btn-large">&laquo; Voltar</a>
 
 	<a href="{% url disciplinas:addDisciplina %}" class="btn btn-primary btn-large">Cadastrar nova Disciplina &raquo;</a>
-</p>
+</p> 
 {% endblock %}
