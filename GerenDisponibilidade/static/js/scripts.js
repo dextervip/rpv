@@ -35,7 +35,7 @@ function loadCalendar(){
 							alert('View: ' + view.name);
 
 							// change the border color just for fun
-							$(this).css('border-color', 'red');
+							//$(this).css('border-color', 'red');
 							if(calEvent.url) {
 								//window.open(event.url);
 								//return false;
