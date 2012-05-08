@@ -7,3 +7,11 @@ from django.template import RequestContext
 def home(request):
     context_instance = RequestContext(request)
     return render_to_response("professor/home.html", context_instance)
+
+def adicionarCompromisso(request):
+    context_instance = RequestContext(request)
+    return render_to_response("professor/adicionar-compromisso.html", context_instance)
+
+def getCompromisso(request):
+    context_instance = RequestContext(request)
+    return render_to_response("professor/get-compromissos.html", context_instance)
