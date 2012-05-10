@@ -99,3 +99,26 @@ function loadCalendar() {
 	});
 
 }
+
+$(function() {
+	$(".datapicker").datepicker();
+	$('.horas').typeahead({
+		source : gerarListaHoras(),
+	});
+	
+	
+});
+
+function gerarListaHoras(){
+	var horas = new Array();
+	for (var i=0; i < 24; i++) {
+		for (var j=0; j < 60; j+=30) {
+		  var d = new Date(0, 0, 0, i, j, 0, 0);
+		  //alert(i+" "+j);
+		  		  horas.push(d.toLocaleTimeString());
+		  		  
+		};
+	  
+	};
+	return horas;
+}
