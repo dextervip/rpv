@@ -57,45 +57,48 @@ function loadCalendar() {
 				$(this).css('border-color', '');
 
 			},
-			events : [{
-				title : 'Evento todo o dia',
-				start : new Date(y, m, 1)
-			}, {
-				title : 'Evento longo',
-				start : new Date(y, m, d - 5),
-				end : new Date(y, m, d - 2)
-			}, {
-				id : 999,
-				title : 'Evento recorrente',
-				start : new Date(y, m, d - 3, 16, 0),
-				allDay : false
-			}, {
-				id : 999,
-				title : 'Evento recorrente',
-				start : new Date(y, m, d + 4, 16, 0),
-				allDay : false
-			}, {
-				title : 'Reunião',
-				start : new Date(y, m, d, 10, 30),
-				allDay : false
-			}, {
-				title : 'Almoço',
-				start : new Date(y, m, d, 12, 0),
-				end : new Date(y, m, d, 14, 0),
-				allDay : false
-			}, {
-				title : 'Aniversário do Juca',
-				start : new Date(y, m, d + 1, 19, 0),
-				end : new Date(y, m, d + 1, 22, 30),
-				allDay : false
-			}, {
-				title : 'Compromisso link externo',
-				start : new Date(y, m, 28),
-				end : new Date(y, m, 29),
-				url : 'http://google.com/'
-			}]
+			events : {
+				url : '/professor/get-compromissos',
+				type : 'GET',
+				//data: {
+				//   custom_param1: 'something',
+				//   custom_param2: 'somethingelse'
+				//},
+				error : function() {
+					alert('there was an error while fetching events!');
+				},
+				//color : 'yellow', // a non-ajax option
+				//textColor : 'black' // a non-ajax option
+			},
+			loading: function(bool) {
+				if (bool) $('.loading').show();
+				else $('.loading').hide();
+			}
+
 		});
 
 	});
 
+}
+
+$(function() {
+	$(".datapicker").datepicker();
+	$('.horas').typeahead({
+		source : gerarListaHoras(),
+	});
+
+});
+
+function gerarListaHoras() {
+	var horas = new Array();
+	for(var i = 0; i < 24; i++) {
+		for(var j = 0; j < 60; j += 30) {
+			var d = new Date(0, 0, 0, i, j, 0, 0);
+			//alert(i+" "+j);
+			horas.push(d.toLocaleTimeString());
+
+		};
+
+	};
+	return horas;
 }

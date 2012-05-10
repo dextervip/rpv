@@ -49,9 +49,15 @@
         </exec>
   	</target>
   	
-  	<target name="syncdb">
+  	<target name="migrate">
   		<exec executable="python" failonerror="true">
-            <arg line="${source}/manage.py syncdb"/>
+            <arg line="${source}/manage.py migrate"/>
+        </exec>
+  	</target>
+	
+	<target name="load-fixtures">
+  		<exec executable="python" failonerror="true">
+            <arg line="${source}/manage.py loaddata fixtures.json"/>
         </exec>
   	</target>
 	
@@ -103,7 +109,7 @@
     <!-- command="cd /var/www/rpv/ &amp;&amp; git pull" -->
     <target name="checkDependencies" depends="django,jenkins,pylint,coverage,south"/>   
     <target name="deploy" depends="updateFiles"/>
-    <target name="update" depends="git-update,syncdb"/>
-    <target name="build" depends="clean,checkDependencies,test,syncdb"/>
+    <target name="update" depends="git-update,migrate"/>
+    <target name="build" depends="clean,checkDependencies,test,migrate,load-fixtures"/>
 	<target name="run" depends="build,runserver2,sleep,openSite"/>
 </project>

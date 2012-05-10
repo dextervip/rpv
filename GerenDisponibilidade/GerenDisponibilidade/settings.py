@@ -129,6 +129,7 @@ INSTALLED_APPS = (
     # Apps de terceiros
     'django_jenkins',
     'south',
+    'crispy_forms',
     
     # Uncomment the next line to enable the admin:
     # 'django.contrib.admin',
@@ -142,6 +143,8 @@ INSTALLED_APPS = (
     'secretaria',
     'professor',
 )
+
+CRISPY_TEMPLATE_PACK =('bootstrap')
 
 PROJECT_APPS = (
     'coordenador',
