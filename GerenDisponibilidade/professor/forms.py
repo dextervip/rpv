@@ -23,14 +23,10 @@ class CadastroCompromisso(forms.Form):
     
     diaInteiro = forms.BooleanField(label='Dia Inteiro',initial=False,required=False, help_text='Marque esta opção para compromisso não ter uma hora de início e fim.')
 
-    publico = forms.MultipleChoiceField(label='Público', required=False,
-        choices=(
-            ('Público', 'Esta opção permite que todos tenhão acesso público para visualização deste compromisso'),
-            
-        ),
-        widget=forms.CheckboxSelectMultiple,
-        
-        #help_text = "<strong>Note:</strong> Labels surround all the options for much larger click areas and a more usable form.",
+    publico = forms.BooleanField(label='Público', 
+                                 initial=False,
+                                 required=False,
+                                 help_text='Esta opção permite que todos tenhão acesso público para visualização deste compromisso',
     )
     
     # Uni-form

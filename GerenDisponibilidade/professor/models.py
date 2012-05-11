@@ -28,17 +28,22 @@ class Agenda():
         c = Compromisso(titulo=request.POST['titulo'],
                             descricao=request.POST['descricao'],
                             dataInicio=dataI,
-                            dataFim=dataF,        
+                            dataFim=dataF,
                             
                             )
-        if request.POST['horaInicio'] == '' :
-            c.diaInteiro=True           
+        if 'publico' in request.POST:
+            c.publico = True
         else:
-            c.diaInteiro=False
-            c.horaInicio=request.POST['horaInicio']
-            c.horaFim=request.POST['horaFim']            
+            c.publico = False
+        if request.POST['horaInicio'] == '' :
+            c.diaInteiro = True           
+        else:
+            c.diaInteiro = False
+            c.horaInicio = request.POST['horaInicio']
+            c.horaFim = request.POST['horaFim']            
         c.save()
         return HttpResponseRedirect(reverse('professor:home'))
+    
     def getCompromisso(self):
         compromissos = Compromisso.objects.all()
         vetor = []
@@ -49,10 +54,11 @@ class Agenda():
                           'start' : datetime.strftime(compromisso.dataInicio , dateFormat) ,
                           'end': datetime.strftime(compromisso.dataFim, dateFormat),
                           'allDay' : compromisso.diaInteiro,
-                          'url' : '/professor/visualizar-compromisso/'+ str(compromisso.id),
+                          'url' : '/professor/visualizar-compromisso/' + str(compromisso.id),
                           })
         data = simplejson.dumps(vetor);
         return HttpResponse(data, mimetype='application/json')
+    
     def excluirCompromisso(self, request, id):
         compromisso = get_object_or_404(Compromisso, pk=id)
         compromisso.delete()
