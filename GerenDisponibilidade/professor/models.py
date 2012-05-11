@@ -6,6 +6,7 @@ from datetime import datetime
 from django.core.urlresolvers import reverse
 from django.http import HttpResponse, HttpResponseRedirect
 from django.utils import simplejson
+from django.shortcuts import render_to_response, get_object_or_404
 
 
 class Compromisso(models.Model):
@@ -52,5 +53,10 @@ class Agenda():
                           })
         data = simplejson.dumps(vetor);
         return HttpResponse(data, mimetype='application/json')
+    def excluirCompromisso(self, request, id):
+        compromisso = get_object_or_404(Compromisso, pk=id)
+        compromisso.delete()
+        messages.add_message(request, messages.INFO, 'O compromisso foi excluido com sucesso da sua agenda!')
+        return HttpResponseRedirect(reverse('professor:home'))
     
 

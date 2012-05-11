@@ -54,8 +54,48 @@
 	<div class="well">
 		<a href="{% url professor:home %}" class="btn btn-inverse btn-large">&laquo; Voltar</a>
 		<a href="/professor/editar-compromisso/{{ compromisso.id }}" class="btn btn-primary btn-large"><i class="icon-edit"> </i> Editar </a>
-		<a href="/professor/excluir-compromisso/{{ compromisso.id }}" class="btn btn-danger btn-large"><i class="icon-trash"> </i> Excluir </a>
+		<a href="/professor/excluir-compromisso/{{ compromisso.id }}" class="btn btn-danger btn-large excluir"><i class="icon-trash"> </i> Excluir </a>
 	</div>
 </div>
+
+<div id="modalAlertDelete">
+	<div class="modal-backdrop"></div>
+	<div class="modal" id="myModal">
+		<div class="modal-header">
+			<button class="close" data-dismiss="modal">
+				×
+			</button>
+			<h3>Exclusão de Compromisso</h3>
+		</div>
+		<div class="modal-body">
+			
+			<p>
+				Você tem certeza que deseja excluir este compromisso?
+			</p>
+			
+		</div>
+		<div class="modal-footer">
+			<a href="#" class="btn fechar">Não</a>
+    		<a href="#" class="btn btn-primary confirmar-exclusao">Sim</a>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript" charset="utf-8">
+	$('#modalAlertDelete').hide();
+	$('a.excluir').click(function(){
+		$('#modalAlertDelete').show();
+		//alert("Quer excluir malandro né?! vai ficar querendo");
+		return false;
+	});
+	
+	$('a.confirmar-exclusao').click(function(){
+		window.location = $('a.excluir').attr('href');
+	});
+	
+	$('#modalAlertDelete button.close,#modalAlertDelete #botao-fechar,#modalAlertDelete a.fechar').click(function() {
+		$('#modalAlertDelete').hide();
+	});
+</script>
 
 {% endblock %}

@@ -24,14 +24,15 @@ def adicionarCompromisso(request):
     context_instance = RequestContext(request, { 'form' : form})
     return render_to_response("professor/adicionar-compromisso.html", context_instance)
 
-def editarCompromisso(request):
+def editarCompromisso(request, id):
     return None
-def visualizarCompromisso(request,id):
+def visualizarCompromisso(request, id):
     compromisso = get_object_or_404(Compromisso, pk=id)
     context_instance = RequestContext(request, { 'compromisso' : compromisso})
     return render_to_response("professor/visualizar-compromisso.html", context_instance)
-def excluirCompromisso(request):
-    return None
+def excluirCompromisso(request, id):
+    agenda = Agenda()
+    return agenda.excluirCompromisso(request, id)
 def getCompromissos(request):
     agenda = Agenda()
     return agenda.getCompromisso()

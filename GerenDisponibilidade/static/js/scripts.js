@@ -42,7 +42,7 @@ function loadCalendar() {
 				// change the border color just for fun
 				//$(this).css('border-color', 'red');
 				if(calEvent.url) {
-					window.open(event.url);
+					//window.open(event.url);
 					//return false;
 					//alert('opa temos um link aqui');
 					//return false;
