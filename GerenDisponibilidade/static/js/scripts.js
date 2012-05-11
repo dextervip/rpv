@@ -102,3 +102,10 @@ function gerarListaHoras() {
 	};
 	return horas;
 }
+
+
+//$('#adicionar-compromisso-botao').click(function(){
+	//	$('#modalAlert').show();
+	//	return false;
+	//});
+	//$('#modalAlert').hide();

@@ -16,14 +16,14 @@ class CadastroCompromisso(forms.Form):
     )
     
     dataInicio = forms.DateField(label='Data Início',)
-    horaInicio = forms.TimeField(label='Hora Início',)
+    horaInicio = forms.TimeField(label='Hora Início',required=False)
     
     dataFim = forms.DateField(label='Data Fim',)
-    horaFim = forms.TimeField(label='Hora Fim', help_text='<strong>Nota:</strong> Hora de finalização do compromisso.',)
+    horaFim = forms.TimeField(label='Hora Fim', help_text='<strong>Nota:</strong> Hora de finalização do compromisso.',required=False)
     
     diaInteiro = forms.CheckboxInput()
 
-    publico = forms.MultipleChoiceField(label='Público',
+    publico = forms.MultipleChoiceField(label='Público', required=False,
         choices=(
             ('Público', 'Esta opção permite que todos tenhão acesso público para visualização deste compromisso'),
             
