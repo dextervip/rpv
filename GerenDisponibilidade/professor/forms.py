@@ -16,12 +16,12 @@ class CadastroCompromisso(forms.Form):
     )
     
     dataInicio = forms.DateField(label='Data Início',)
-    horaInicio = forms.TimeField(label='Hora Início',required=False)
+    horaInicio = forms.TimeField(label='Hora Início', required=False)
     
     dataFim = forms.DateField(label='Data Fim',)
     horaFim = forms.TimeField(label='Hora Fim', help_text='<strong>Nota:</strong> Hora de finalização do compromisso.',required=False)
     
-    diaInteiro = forms.CheckboxInput()
+    diaInteiro = forms.BooleanField(label='Dia Inteiro',initial=False,required=False, help_text='Marque esta opção para compromisso não ter uma hora de início e fim.')
 
     publico = forms.MultipleChoiceField(label='Público', required=False,
         choices=(
@@ -46,7 +46,7 @@ class CadastroCompromisso(forms.Form):
         Field('dataFim', css_class='input-xlarge datapicker'),
         Field('horaFim', css_class='input-xlarge horas'),
   
-        Field('diaInteiro'),
+        Field('diaInteiro', id='diaInteiro'),
           
         Field('publico', style="background: #FAFAFA; padding: 10px;"),
         

@@ -7,14 +7,17 @@ from django.core.urlresolvers import reverse
 from django.http import HttpResponse, HttpResponseRedirect
 from django.utils import simplejson
 
+
 class Compromisso(models.Model):
     
         titulo = models.CharField(max_length=80)
         descricao = models.TextField()
         dataInicio = models.DateField()
         dataFim = models.DateField()
-        horaInicio = models.TimeField(null=True)
-        horaFim = models.TimeField(null=True)
+        horaInicio = models.TimeField(null=True, blank=True)
+        horaFim = models.TimeField(null=True, blank=True)
+        diaInteiro = models.BooleanField(default=True)
+        publico = models.BooleanField(default=False)
         
 class Agenda():
     def inserirCompromisso(self, request):
@@ -24,19 +27,30 @@ class Agenda():
         c = Compromisso(titulo=request.POST['titulo'],
                             descricao=request.POST['descricao'],
                             dataInicio=dataI,
-                            dataFim=dataF,
-                            horaInicio=request.POST['horaInicio'],
-                            horaFim=request.POST['horaFim']
+                            dataFim=dataF,        
+                            
                             )
+        if request.POST['horaInicio'] == '' :
+            c.diaInteiro=True           
+        else:
+            c.diaInteiro=False
+            c.horaInicio=request.POST['horaInicio']
+            c.horaFim=request.POST['horaFim']            
         c.save()
         return HttpResponseRedirect(reverse('professor:home'))
     def getCompromisso(self):
         compromissos = Compromisso.objects.all()
         vetor = []
         dateFormat = "%Y, %m, %d"
-        for compromisso in compromissos:
-            vetor.append({'id' : compromisso.id ,  'title' : compromisso.titulo, 'start' : datetime.strftime(compromisso.dataInicio, dateFormat) , 'end': datetime.strftime(compromisso.dataFim, dateFormat)})
-            data = simplejson.dumps(vetor);
+        for compromisso in compromissos:            
+            vetor.append({'id' : compromisso.id ,
+                          'title' : compromisso.titulo,
+                          'start' : datetime.strftime(compromisso.dataInicio , dateFormat) ,
+                          'end': datetime.strftime(compromisso.dataFim, dateFormat),
+                          'allDay' : compromisso.diaInteiro,
+                          'url' : '/professor/visualizar-compromisso/'+ str(compromisso.id),
+                          })
+        data = simplejson.dumps(vetor);
         return HttpResponse(data, mimetype='application/json')
     
 

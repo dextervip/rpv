@@ -1,0 +1,61 @@
+{% extends "geral/base.html" %}
+
+{% block corpo %}
+<div class="hero-unit">
+	<h1>Visualizar Compromisso</h1>
+	<br />
+	<h2>{{ compromisso.titulo }}</h2>
+	<hr />
+
+	<div class="well">
+
+		<table class="table table-striped table-bordered table-condensed">
+
+			<thead>
+				<tr>
+					<th colspan="3" style="text-align: center"> Dados do Compromisso</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Título: {{ compromisso.titulo }} </td>
+				</tr>
+				<tr>
+					<td style="height: 200px;">Descrição:
+					<br />
+					{{ compromisso.descricao }} </td>
+				</tr>
+				<tr>
+					<td>Data Início: {{ compromisso.dataInicio|date:"d/m/Y" }}</td>
+				</tr>
+				<tr>
+					<td>Data Fim: {{ compromisso.dataFim|date:"d/m/Y" }}</td>
+				</tr>
+				{% if not compromisso.diaInteiro %}
+				<tr>
+					<td>Hora Início: {{ compromisso.horaInicio }}</td>
+				</tr>
+				<tr>
+					<td>Hora Fim: {{ compromisso.horaFim }}</td>
+				</tr>
+				{% endif %}
+				<tr>
+					<td>Dia Inteiro: {{ compromisso.diaInteiro|yesno:'Sim,Não' }}</td>
+				</tr>
+				<tr>
+					<td>Público: {{ compromisso.publico|yesno:'Sim,Não' }}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<hr />
+
+	<div class="well">
+		<a href="{% url professor:home %}" class="btn btn-inverse btn-large">&laquo; Voltar</a>
+		<a href="/professor/editar-compromisso/{{ compromisso.id }}" class="btn btn-primary btn-large"><i class="icon-edit"> </i> Editar </a>
+		<a href="/professor/excluir-compromisso/{{ compromisso.id }}" class="btn btn-danger btn-large"><i class="icon-trash"> </i> Excluir </a>
+	</div>
+</div>
+
+{% endblock %}

@@ -35,17 +35,17 @@ function loadCalendar() {
 			editable : false,
 			eventClick : function(calEvent, jsEvent, view) {
 
-				alert('Event: ' + calEvent.title);
-				alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
-				alert('View: ' + view.name);
+				//alert('Event: ' + calEvent.title);
+				//alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
+				//alert('View: ' + view.name);
 
 				// change the border color just for fun
 				//$(this).css('border-color', 'red');
 				if(calEvent.url) {
-					//window.open(event.url);
+					window.open(event.url);
 					//return false;
-					alert('opa temos um link aqui');
-					return false;
+					//alert('opa temos um link aqui');
+					//return false;
 				}
 
 			},
@@ -103,9 +103,18 @@ function gerarListaHoras() {
 	return horas;
 }
 
+$(function() {
+	$('input#diaInteiro').click(function(){
+		if($(this).is(":checked")){
+			$('div#div_id_horaFim, div#div_id_horaInicio').hide('slow');
+			$('input#id_horaInicio,input#id_horaFim').val('');
+			//alert('esconder');
+		}else{
+			$('div#div_id_horaFim, div#div_id_horaInicio').show('slow');
+			//alert('mostrar');
+		}
+		
+	});
+});
 
-//$('#adicionar-compromisso-botao').click(function(){
-	//	$('#modalAlert').show();
-	//	return false;
-	//});
-	//$('#modalAlert').hide();
+
