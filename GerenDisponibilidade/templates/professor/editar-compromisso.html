@@ -1,0 +1,15 @@
+{% extends "geral/base.html" %}
+
+{% block corpo %}
+
+<h1>Editar Compromisso</h1>
+<hr />
+<br />
+
+{% load crispy_forms_tags %}
+<form method="post" class="uniForm form-horizontal">
+	{% crispy form %}
+</form>
+
+
+{% endblock %}

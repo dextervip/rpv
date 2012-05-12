@@ -26,7 +26,12 @@ function loadCalendar() {
 				week : 'semana',
 				day : 'dia'
 			},
-			timeFormat : 'H(:mm)',
+			allDayText : 'Dia Inteiro',
+			timeFormat : {
+				agenda : 'H:mm{ - H:mm}'
+			},
+			timeFormat : 'H:mm{ - H:mm}',
+			axisFormat: 'H:mm',
 			titleFormat : {
 				month : "MMMM 'de' yyyy", // September 2009
 				week : "d[ yyyy]{ '&#8212;'[ MMM] d 'de' MMMM 'de' yyyy}", // Sep 7 - 13 2009
@@ -70,11 +75,12 @@ function loadCalendar() {
 				//color : 'yellow', // a non-ajax option
 				//textColor : 'black' // a non-ajax option
 			},
-			loading: function(bool) {
-				if (bool) $('.loading').show();
-				else $('.loading').hide();
+			loading : function(bool) {
+				if(bool)
+					$('.loading').show();
+				else
+					$('.loading').hide();
 			}
-
 		});
 
 	});
@@ -104,17 +110,21 @@ function gerarListaHoras() {
 }
 
 $(function() {
-	$('input#diaInteiro').click(function(){
-		if($(this).is(":checked")){
+	if($('input#diaInteiro').is(":checked")) {
+		$('div#div_id_horaFim, div#div_id_horaInicio').hide('slow');
+		$('input#id_horaInicio,input#id_horaFim').val('');
+	}
+
+	$('input#diaInteiro').click(function() {
+		if($(this).is(":checked")) {
 			$('div#div_id_horaFim, div#div_id_horaInicio').hide('slow');
 			$('input#id_horaInicio,input#id_horaFim').val('');
 			//alert('esconder');
-		}else{
+		} else {
 			$('div#div_id_horaFim, div#div_id_horaInicio').show('slow');
 			//alert('mostrar');
 		}
-		
+
 	});
 });
-
 

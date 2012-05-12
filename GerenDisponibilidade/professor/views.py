@@ -25,7 +25,15 @@ def adicionarCompromisso(request):
     return render_to_response("professor/adicionar-compromisso.html", context_instance)
 
 def editarCompromisso(request, id):
-    return None
+    c = get_object_or_404(Compromisso, pk=id)
+    form = CadastroCompromisso(instance=c)
+    if request.method == 'POST':
+        form = CadastroCompromisso(request.POST) 
+        if form.is_valid():
+            agenda = Agenda()
+            return agenda.editarCompromisso(request, id)
+    context_instance = RequestContext(request, { 'form' : form})
+    return render_to_response("professor/editar-compromisso.html", context_instance)
 def visualizarCompromisso(request, id):
     compromisso = get_object_or_404(Compromisso, pk=id)
     context_instance = RequestContext(request, { 'compromisso' : compromisso})

@@ -8,7 +8,8 @@ from crispy_forms.layout import Layout, Div, Submit, HTML, Button, Row, Field
 from crispy_forms.bootstrap import AppendedText, PrependedText, FormActions
 
 
-class CadastroCompromisso(forms.Form):
+class CadastroCompromisso(forms.ModelForm):
+    
     titulo = forms.CharField(label='Título', max_length=80, required=True)
 
     descricao = forms.CharField(label='Descrição',
@@ -51,5 +52,8 @@ class CadastroCompromisso(forms.Form):
             Submit('cancel', 'Cancelar'),
         )
     )
+    
+    class Meta():
+        model = Compromisso
     
  
