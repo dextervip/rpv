@@ -5,10 +5,11 @@ from django.template import RequestContext
 from django.utils import simplejson
 from django.http import HttpResponse, HttpResponseRedirect
 from forms import CadastroCompromisso
-from professor.models import Compromisso,Agenda
+from professor.models import Compromisso, Agenda
 from datetime import datetime
 from django.core.urlresolvers import reverse
 from django.contrib import messages
+
 
 def home(request):
     context_instance = RequestContext(request)
@@ -24,6 +25,7 @@ def adicionarCompromisso(request):
     context_instance = RequestContext(request, { 'form' : form})
     return render_to_response("professor/adicionar-compromisso.html", context_instance)
 
+
 def editarCompromisso(request, id):
     c = get_object_or_404(Compromisso, pk=id)
     form = CadastroCompromisso(instance=c)
@@ -34,13 +36,19 @@ def editarCompromisso(request, id):
             return agenda.editarCompromisso(request, id)
     context_instance = RequestContext(request, { 'form' : form})
     return render_to_response("professor/editar-compromisso.html", context_instance)
+
+
 def visualizarCompromisso(request, id):
     compromisso = get_object_or_404(Compromisso, pk=id)
     context_instance = RequestContext(request, { 'compromisso' : compromisso})
     return render_to_response("professor/visualizar-compromisso.html", context_instance)
+
+
 def excluirCompromisso(request, id):
     agenda = Agenda()
     return agenda.excluirCompromisso(request, id)
+
+
 def getCompromissos(request):
     agenda = Agenda()
     return agenda.getCompromisso()

@@ -50,10 +50,10 @@ class Agenda():
         c = get_object_or_404(Compromisso, pk=id)
         dataI = datetime.strptime(request.POST['dataInicio'], '%d/%m/%Y').strftime('%Y-%m-%d')
         dataF = datetime.strptime(request.POST['dataFim'], '%d/%m/%Y').strftime('%Y-%m-%d')
-        c.titulo = request.POST['titulo'],
+        c.titulo = request.POST.get('titulo'),
         c.descricao = request.POST['descricao'],
-        c.dataInicio=dataI
-        c.dataFim=dataF
+        c.dataInicio = dataI
+        c.dataFim = dataF
         if 'publico' in request.POST:
             c.publico = True
         else:
@@ -77,8 +77,8 @@ class Agenda():
         for compromisso in compromissos:            
             vetor.append({'id' : compromisso.id ,
                           'title' : compromisso.titulo,
-                          'start' : datetime.strftime(compromisso.dataInicio , dateFormat) + " " +str(compromisso.horaInicio),
-                          'end': datetime.strftime(compromisso.dataFim, dateFormat)+ " " +str(compromisso.horaFim),
+                          'start' : datetime.strftime(compromisso.dataInicio , dateFormat) + " " + str(compromisso.horaInicio),
+                          'end': datetime.strftime(compromisso.dataFim, dateFormat) + " " + str(compromisso.horaFim),
                           'allDay' : compromisso.diaInteiro,
                           'url' : '/professor/visualizar-compromisso/' + str(compromisso.id),
                           })

@@ -53,7 +53,7 @@ class CadastroCompromisso(forms.ModelForm):
         )
     )
     
-    class Meta():
+    class Meta:
         model = Compromisso
     
  
