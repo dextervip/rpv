@@ -2,16 +2,21 @@
 
 {% block corpo %}
 
+<h1>Cadastro de Tipos de Sala</h1>
+
+<p>
+	Cadastro de Tipos de Sala.
+</p>
 <form action="" method="post">
 
 	{% csrf_token %}
-	{{ form.as_table }}
+	{{ form.as_p  }}
 
 	<p>
 		<a href="{% url secretaria:listaTipos %}" class="btn btn-inverse btn-large">&laquo;  Voltar </a>
 
 		<button type="submit" class="btn btn-success btn-large">
-			<i class="icon-ok"></i> Atualizar Dados
+			<i class="icon-ok"></i> Cadastrar
 		</button>
 	</p>
 </form>

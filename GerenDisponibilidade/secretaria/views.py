@@ -6,7 +6,7 @@ from django.template import RequestContext
 from models import TipoDeSala
 from forms import FormTipoDeSala
 
-def lista(request):
+def listaTipos(request):
     
     lista_tipos_sala = TipoDeSala.objects.all().order_by("id")
     return render_to_response("secretaria/listaTipos.html", {'lista_tipos_sala': lista_tipos_sala},
