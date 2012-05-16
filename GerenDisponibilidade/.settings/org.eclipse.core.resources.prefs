@@ -1,4 +1,5 @@
 eclipse.preferences.version=1
+encoding//coordenador/views.py=utf-8
 encoding//disciplinas/forms.py=utf-8
 encoding//disciplinas/models.py=utf-8
 encoding//disciplinas/views.py=utf-8
@@ -7,4 +8,6 @@ encoding//geral/views.py=utf-8
 encoding//professor/forms.py=utf-8
 encoding//professor/models.py=utf-8
 encoding//professor/views.py=utf-8
+encoding//secretaria/forms.py=utf-8
+encoding//secretaria/models.py=utf-8
 encoding//secretaria/views.py=utf-8
