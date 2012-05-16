@@ -10,7 +10,6 @@ from datetime import datetime
 from django.core.urlresolvers import reverse
 from django.contrib import messages
 
-
 def home(request):
     context_instance = RequestContext(request)
     return render_to_response("professor/home.html", context_instance)
