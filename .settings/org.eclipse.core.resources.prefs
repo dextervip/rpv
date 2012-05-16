@@ -1,8 +1,9 @@
-#Mon May 14 21:09:12 BRT 2012
+#Tue May 15 21:23:53 BRT 2012
 eclipse.preferences.version=1
 encoding//GerenDisponibilidade/disciplinas/forms.py=utf-8
 encoding//GerenDisponibilidade/disciplinas/models.py=utf-8
 encoding//GerenDisponibilidade/disciplinas/views.py=utf-8
 encoding//GerenDisponibilidade/professor/views.py=utf-8
 encoding//GerenDisponibilidade/secretaria/forms.py=utf-8
+encoding//GerenDisponibilidade/secretaria/models.py=utf-8
 encoding//GerenDisponibilidade/secretaria/views.py=utf-8

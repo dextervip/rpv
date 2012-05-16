@@ -32,7 +32,7 @@
 
 		<!-- {-% url secretaria:tipoDeSala %-}{{ tipoDeSala.id }}/   location.href='/secretaria/{{ tipoDeSala.id }}/ -->
 		{% for tipoDeSala in lista_tipos_sala %}
-		<tr onclick="location.href='/secretaria/{{ tipoDeSala.id }}/';" style="cursor: pointer">
+		<tr onclick="location.href='/secretaria/tipos_de_sala/{{ tipoDeSala.id }}/';" style="cursor: pointer">
 			<td> {{ tipoDeSala.nome }} </td>
 		</tr>
 	</tbody>

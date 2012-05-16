@@ -2,7 +2,7 @@
 
 {% block corpo %}
 
-<form action="/pesquisaTipoSala/" method="post" class="well form-search">
+<form action="/pesquisaSala/" method="post" class="well form-search">
 	{% csrf_token %}
 	<input name="pesquisa" type="text" class="input-large search-query">
 	<button type="submit" class="btn btn-info">
@@ -14,7 +14,7 @@
 	<a class="close" data-dismiss="alert" href="#">×</a>
 	<h3 class="alert-heading"><i class="icon-bell"> </i> Dica! </h3>
 	<p>
-		Clique sobre qualquer linha da tabela para visualizar as informação do tipo de sala.
+		Clique sobre qualquer linha da tabela para visualizar as informações da sala.
 	</p>
 </div>
 
@@ -25,24 +25,24 @@
 			<th colspan="4" style="text-align: center"> Tabela - Resultados da Pesquisa </th>
 		</tr>
 		<tr>
-			<th> Nome </th>
+			<th> Número </th>
 		</tr>
 	</thead>
 	<tbody>
 
-		{% for tipo in resultPesq %}
-		<tr onclick="location.href='/secretaria/tipos_de_sala/{{ tipo.id }}/';" style="cursor: pointer">
-			<td> {{ tipo.nome }} </td>
+		{% for sala in resultPesq %}
+		<tr onclick="location.href='/secretaria/sala/{{ sala.id }}/';" style="cursor: pointer">
+			<td> {{ sala.numero }} </td>
 		</tr>
 	</tbody>
 	{% empty %}
-	<td colspan="3"> Não existe tipo de sala com este nome! </td>
+	<td colspan="3"> Não existe sala com este número! </td>
 	{% endfor %}
 </table>
 
 <p>
 	<a href="/" class="btn btn-inverse btn-large">&laquo; Voltar</a>
 
-	<a href="{% url secretaria:addTipoDeSala %}" class="btn btn-primary btn-large"> Cadastrar novo tipo de sala &raquo;</a>
+	<a href="{% url secretaria:addSala %}" class="btn btn-primary btn-large"> Cadastrar nova sala &raquo;</a>
 </p>
 {% endblock %}

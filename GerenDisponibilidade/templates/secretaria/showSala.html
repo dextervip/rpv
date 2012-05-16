@@ -1,0 +1,52 @@
+{% extends "geral/base.html" %}
+
+{% block corpo %}
+
+<h2>Sala: </h2>
+<br/>
+
+<div class="well">
+
+	<table class="table table-striped table-bordered table-condensed">
+
+		<thead>
+			<tr>
+				<th colspan="3" style="text-align: center"> Dados de Identificação</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Número: {{ sala.numero }} </td>
+			</tr>
+			<tr>
+				<td>Tipo: {{ sala.tipo.nome }}</td>
+			</tr>
+			<tr>
+				<td>Capacidade: {{ sala.capacidade }}</td>
+			</tr>
+			<tr>
+				<td>Ar Condicionado: {{ sala.ar_condicionado }}</td>
+			</tr>
+			<tr>
+				<td>Número de Lugares: {{ sala.numLugares }}</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+
+
+<div class="well">
+
+	<a href="{% url secretaria:listaSalas %}" class="btn btn-inverse btn-large">&laquo; Voltar</a>
+
+	<!-- href da linha de baixo: /attInfoDisciplinas/{{ disciplina.id }}/ -->
+	<a href="/editarSala/{{ sala.id }}/" class="btn btn-primary btn-large"><i class="icon-edit"> </i> Editar </a>
+
+	<a href="/removerSala/{{ sala.id }}/" class="btn btn-danger btn-large"><i class="icon-trash"> </i> Remover </a>
+
+	<!-- Esse último botão sera necessário para a geração do Plano de Ensino -->
+	<a href="" class="btn btn-success btn-large"><i class="icon-print"> </i> Imprimir </a>
+</div>
+
+{% endblock %}

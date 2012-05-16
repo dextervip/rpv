@@ -9,6 +9,7 @@ TEMPLATE_DEBUG = DEBUG
 ADMINS = (
     ('Juliano R.', 'j.rodovalho.m@gmail.com'),
     ('Rafael', 'jrtadf@gmail.com'),
+    ('Wolmir', 'neocorrupt@gmail.com')
 )
 
 MANAGERS = ADMINS
@@ -17,10 +18,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
         'NAME': 'gerendisp_db',                      # Or path to database file if using sqlite3.
-        'USER': 'root',                      # Not used with sqlite3.
+        'USER': 'root',                      # Not used with sqlite3. root
         'PASSWORD': '',                  # Not used with sqlite3.
         'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
-        'PORT': '3306',                      # Set to empty string for default. Not used with sqlite3.
+        'PORT': '3306',                      # Set to empty string for default. Not used with sqlite3.#3306
     }
 }
 

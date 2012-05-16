@@ -18,6 +18,14 @@ urlpatterns = patterns('',
     (r'^removerDiscip/(?P<nr_discp>\d+)/$', "disciplinas.views.removerDiscip"),
     (r'^editarDiscip/(?P<nr_disci>\d+)/$', 'disciplinas.views.editarDiscip'),
     (r'^pesquisaDiscip/$', 'disciplinas.views.pesquisaDiscip'),
+    (r'^secretaria/tipos_de_sala/(?P<nr_tipo>\d+)/$', "secretaria.views.tipoDeSala"),
+    (r'^editarTipoSala/(?P<nr_tipo>\d+)/$', 'secretaria.views.editarTipoSala'),
+    (r'^removerTipoSala/(?P<nr_tipo>\d+)/$', "secretaria.views.removerTipoSala"),
+    (r'^pesquisaTipoSala/$', 'secretaria.views.pesquisaTipoSala'),
+    (r'^secretaria/sala/(?P<nr_sala>\d+)/$', "secretaria.views.s_sala"),
+    (r'^editarSala/(?P<nr_sala>\d+)/$', 'secretaria.views.editarSala'),
+    (r'^removerSala/(?P<nr_sala>\d+)/$', "secretaria.views.removerSala"),
+    (r'^pesquisaSala/$', 'secretaria.views.pesquisaSala'),
     #(?<paramPesq>\w+)/
 
 

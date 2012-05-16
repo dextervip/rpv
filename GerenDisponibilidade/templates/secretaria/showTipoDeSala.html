@@ -16,10 +16,10 @@
 		</thead>
 		<tbody>
 			<tr>
-				<td>Nome: {{ tipo_sala.nome }} </td>
+				<td>Nome: {{ tipo.nome }} </td>
 			</tr>
 			<tr>
-				<td>Descrição: {{ tipo_sala.descricao }}</td>
+				<td>Descrição: {{ tipo.descricao }}</td>
 			</tr>
 		</tbody>
 	</table>
@@ -32,9 +32,9 @@
 	<a href="{% url secretaria:listaTipos %}" class="btn btn-inverse btn-large">&laquo; Voltar</a>
 
 	<!-- href da linha de baixo: /attInfoDisciplinas/{{ disciplina.id }}/ -->
-	<a href="/editarTipoSala/{{ tipo_sala.id }}/" class="btn btn-primary btn-large"><i class="icon-edit"> </i> Editar </a>
+	<a href="/editarTipoSala/{{ tipo.id }}/" class="btn btn-primary btn-large"><i class="icon-edit"> </i> Editar </a>
 
-	<a href="/removerTipoSala/{{ tipo_sala.id }}/" class="btn btn-danger btn-large"><i class="icon-trash"> </i> Remover </a>
+	<a href="/removerTipoSala/{{ tipo.id }}/" class="btn btn-danger btn-large"><i class="icon-trash"> </i> Remover </a>
 
 	<!-- Esse último botão sera necessário para a geração do Plano de Ensino -->
 	<a href="" class="btn btn-success btn-large"><i class="icon-print"> </i> Imprimir </a>
