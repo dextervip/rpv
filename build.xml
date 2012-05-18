@@ -81,7 +81,7 @@
   	</target>
 	
 	
-	<macrodef name="open-in-browser">
+	<macrodef name="openInBrowser">
 	   <attribute name="url"/>
 	   <sequential>
 		  <exec dir="${basedir}" executable="rundll32.exe">
