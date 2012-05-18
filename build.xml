@@ -61,6 +61,12 @@
         </exec>
   	</target>
 	
+	<target name="syncdb">
+  		<exec executable="python" failonerror="true">
+            <arg line="${source}/manage.py syncdb"/>
+        </exec>
+  	</target>
+	
 	<target name="load-fixtures">
   		<exec executable="python" failonerror="true">
             <arg line="${source}/manage.py loaddata fixtures.json"/>
@@ -116,6 +122,6 @@
     <target name="check-dependencies" depends="django,jenkins,pylint,coverage,south,crispy-forms"/>   
     <target name="deploy" depends="update-files"/>
     <target name="update" depends="git-update,migrate"/>
-    <target name="build" depends="clean,check-dependencies,test,migrate,load-fixtures"/>
+    <target name="build" depends="clean,check-dependencies,syncdb"/>
 	<target name="run" depends="runserver2,sleep,open-site"/>
 </project>
