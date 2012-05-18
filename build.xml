@@ -36,6 +36,12 @@
             <arg line="install south"/>
         </exec>
   	</target>
+	
+	<target name="crispy-forms">
+  		<exec executable="pip" failonerror="true">
+            <arg line="install django-crispy-forms"/>
+        </exec>
+  	</target>
     
     <target name="test">
   		<exec executable="python" failonerror="true">
@@ -75,7 +81,7 @@
   	</target>
 	
 	
-	<macrodef name="openInBrowser">
+	<macrodef name="open-in-browser">
 	   <attribute name="url"/>
 	   <sequential>
 		  <exec dir="${basedir}" executable="rundll32.exe">
@@ -86,7 +92,7 @@
 	</macrodef>
 
 	
-	<target name="openSite">
+	<target name="open-site">
 	   <echo message="Abrindo aplicação no navegador de internet" />
 	   <openInBrowser url="http://localhost:8000"/>
 	</target>
@@ -96,7 +102,7 @@
 	</target>
 	
  	    
-    <target name="updateFiles">
+    <target name="update-files">
         <sshexec host="chicago1.vsnetwork.net"
              port="22"
              username="root"
@@ -107,9 +113,9 @@
              failonerror="true"/>
     </target>
     <!-- command="cd /var/www/rpv/ &amp;&amp; git pull" -->
-    <target name="checkDependencies" depends="django,jenkins,pylint,coverage,south"/>   
-    <target name="deploy" depends="updateFiles"/>
+    <target name="check-dependencies" depends="django,jenkins,pylint,coverage,south,crispy-forms"/>   
+    <target name="deploy" depends="update-files"/>
     <target name="update" depends="git-update,migrate"/>
-    <target name="build" depends="clean,checkDependencies,test,migrate,load-fixtures"/>
-	<target name="run" depends="build,runserver2,sleep,openSite"/>
+    <target name="build" depends="clean,check-dependencies,test,migrate,load-fixtures"/>
+	<target name="run" depends="runserver2,sleep,open-site"/>
 </project>
