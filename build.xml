@@ -131,5 +131,5 @@
     <target name="update" depends="git-update,syncdb"/>
     <target name="build" depends="clean,check-dependencies,test"/>
 	<target name="run" depends="runserver2,sleep,open-site"/>
-	<target name="build-jenkins" depends="clean,check-dependencies,test-jenkins"/>
+	<target name="build-jenkins" depends="clean,check-dependencies"/>
 </project>
