@@ -121,7 +121,7 @@
     <!-- command="cd /var/www/rpv/ &amp;&amp; git pull" -->
     <target name="check-dependencies" depends="django,jenkins,pylint,coverage,south,crispy-forms"/>   
     <target name="deploy" depends="update-files"/>
-    <target name="update" depends="git-update,migrate"/>
-    <target name="build" depends="clean,check-dependencies,syncdb"/>
+    <target name="update" depends="git-update,syncdb"/>
+    <target name="build" depends="clean,check-dependencies"/>
 	<target name="run" depends="runserver2,sleep,open-site"/>
 </project>
