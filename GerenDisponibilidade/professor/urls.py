@@ -1,4 +1,4 @@
-from django.conf.urls.defaults import patterns, url
+from django.conf.urls.defaults import patterns, url, include
 
 urlpatterns = patterns('professor.views',
     url(r'^$', 'home', name='home'),
