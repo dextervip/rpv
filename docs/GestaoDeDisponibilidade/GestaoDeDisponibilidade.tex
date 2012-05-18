@@ -140,7 +140,36 @@
 	
 	
 	\section{South}
-	\section{Django Jenkins}
+	\subsubsection{Jenkins}
+			
+				Jenkins é um servidor de integração contínua de código fonte aberto escrito em Java, e com mais de 300 plugins para
+				suportar diferentes tipos de desenvolvimento de software. O Jenkins prover o processo de integração contínua para o
+				desenvolvimento de software.
+				O processo de integração contínua visa melhorar a qualidade de software e reduzir o tempo de entrega, substituindo a
+				prática tradicional de aplicação do controle de qualidade depois do desenvolvimento completo. Os princípios da
+				integração contínua são:
+				\begin{itemize}
+				  \item Manter o código fonte em um repositório de controle de versão
+				  \item Automatizar a construção de software
+				  \item Fazer a construção de software testar automaticamente o software
+				  \item Todo mundo deve comitar para o repositório base todo dia
+				  \item Todo commit para repositório base deve ser construído
+				  \item A construção deve ser rápida para identificação dos problemas rapidamente
+				  \item Testar em um ambiente clone de produção
+				  \item Deixar última construção sucedida disponível para os stakeholders e testadores
+				  \item Todo mundo pode ver o resultado das últimas construções
+				  \item Automatizar o deploy
+				\end{itemize}
+				
+				Sendo importante a parte de testes para que a integração contínua funcione. Existem mecanismos implementados em
+				varias linguagens que podem não somente testar o funcionamento total da aplicação mas como verificar a qualidade de
+				código fonte escrito baseado em vários fatores como padrão de codificação, detecção de cópias, detecção de erros em
+				syntax e problemas de lógica.
+				
+				A ferramenta Jenkins entra para a execução do processo de integração contínua, irá tratar de obter o código fonte,
+				realizar a construção com ajuda do Maven ou Ant, realizar a execução dos testes e fazer o deploy para o servidor de
+				teste.
+				
 	\blindtext
 	
 	\section{MySQL}
