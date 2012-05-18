@@ -39,7 +39,7 @@
 	
 	<target name="crispy-forms">
   		<exec executable="pip" failonerror="true">
-            <arg line="install django-crispy-forms==dev"/>
+            <arg line="install django-crispy-forms"/>
         </exec>
   	</target>
     
@@ -114,7 +114,7 @@
     </target>
     <!-- command="cd /var/www/rpv/ &amp;&amp; git pull" -->
     <target name="check-dependencies" depends="django,jenkins,pylint,coverage,south,crispy-forms"/>   
-    <target name="deploy" depends="updateFiles"/>
+    <target name="deploy" depends="update-files"/>
     <target name="update" depends="git-update,migrate"/>
     <target name="build" depends="clean,check-dependencies,test,migrate,load-fixtures"/>
 	<target name="run" depends="runserver2,sleep,open-site"/>
