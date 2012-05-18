@@ -45,6 +45,7 @@
     
     <target name="test">
   		<exec executable="python" failonerror="true">
+			<env key="APPLICATION_ENV" value="testing"/>
             <arg line="${source}/manage.py jenkins"/>
         </exec>
   	</target>
@@ -122,6 +123,6 @@
     <target name="check-dependencies" depends="django,jenkins,pylint,coverage,south,crispy-forms"/>   
     <target name="deploy" depends="update-files"/>
     <target name="update" depends="git-update,syncdb"/>
-    <target name="build" depends="clean,check-dependencies"/>
+    <target name="build" depends="clean,check-dependencies,test"/>
 	<target name="run" depends="runserver2,sleep,open-site"/>
 </project>
