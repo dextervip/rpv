@@ -134,7 +134,15 @@
 		Pip é uma ferramenta para instalar e gerenciar pacotes Python, tais como aqueles encontrados no Python Package Index.\cite{PIPSITE}
 
 	\section{Django}
-	
+		Django é um framework para desenvolvimento web em Python, cuja proposta
+		é encorajar a construção rápida e pragmática de aplicações.\cite{DJANGOSITE}
+		O django segue a arquitetura model-view-controller. O modelo das aplicações
+		é definido através de classes de modelo que serão mapeadas, mediante o lançamento do projeto,
+		para entidades relacionais no banco de dados definido pelos desenvolvedores. A view é
+		representada através de funções ou métodos que processam requisições com um sistema
+		de templates. O controller é nada mais que a customização das URLs da aplicação,
+		que podem ser detectadas através de expressões regulares e redirecionam o
+		usuário à view apropriada.\cite{DJANGOWIKIPEDIA}
 	
 	\section{South}
 		
@@ -200,13 +208,27 @@
 			
 			
 	\section{MySQL}
-	
+
+		MySQL é o sistema de gerenciamento de base de dados mais utilizado no mundo.\cite{MYSQLWIKI}
+		É o SGBD utilizado no projeto de gerenciamento de disponibilidades por ser livre de custos
+		e amplamente documentado.
 	
 
 \clearpage
 \chapter{SPRINT}
 	
 	\blindtext
+	\section{User Story 1}
+	\subsection{Análise}
+		A análise do CRUD de disciplinas foi erroneamente baseada em uma expansão da User Story abordada na primeira semana. Com isso, a modelagem e, consequentemente, a implementação da funcionalidade não foram totalmente validadas pelos Product Owners.
+		Uma nova modelagem já foi discutida pelo grupo e será submetida a validação pelos PO's no início do próximo sprint.
+	
+	\section{User Story 2}
+	\subsection{Projeto}
+	Na modelagem do cadastro de professores e compromissos, as seguintes relações foram propostas:
+	Um professor poderia estar vinculado a várias disciplinas e poderia ter vários compromissos, mas apenas uma área de formação.
+	Salas também poderiam ter compromissos.
+	A sequencia de mensagens está demonstrado através do diagrama em anexo.
 
 \clearpage
 %Referências Bibliograficas
