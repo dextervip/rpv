@@ -146,7 +146,20 @@
 		usuário à view apropriada.\cite{DJANGOWIKIPEDIA}
 	
 	\section{South}
-		
+		South é uma ferramenta de migração de dados em aplicações Django, 
+		permite ao desenvolvedor migrar as informações do banco de dados apos refatorações no modelo
+		sem que seja necessário manipular-se o banco, executando as alterações necessárias 
+		no mesmo de acordo com as modificações realizadas.
+				
+		Suas principais característica são: 
+			\begin{itemize}
+			\item Criação e migração automática: South pode ver o que realmente foi modificado no seu arquivo models.py
+			 e automaticamente escrever a migrações que corresponda as suas alterações.
+			\item Independência de banco de dados: Na medida do possível, do South é completamente independente 
+			de banco de dados, suportando atualmente cinco backends de bancos de dados diferentes.
+			\item App-experiente: South reconhece e trabalha com o conceito de aplicativos Django, permitindo que você use 
+			as migrações para as aplicações que você preferir, e deixa-lhe trabalhar sobre syncdb nas demais.
+			\end{itemize}
 	
 	\section{Jenkins}
 			
