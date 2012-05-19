@@ -5,9 +5,13 @@
 \usepackage{url}
 \usepackage{indentfirst}
 \usepackage{blindtext}
-\hypersetup{
+\hypersetup{%
     pdfborder = {0 0 0}
 }
+\usepackage{graphicx}
+\graphicspath{{./imagens/}}
+\usepackage{placeins}
+
 \begin{document}
 
 \autor{Rafael Tavares Amorim \\ Juliano R. Macedo\\ Wolmir L. F. Nemitz}
@@ -288,30 +292,40 @@
 	Um professor poderia estar vinculado a várias disciplinas e poderia ter vários compromissos, mas apenas uma área de formação.
 	Salas também poderiam ter compromissos.
 	A sequencia de mensagens está demonstrado através do diagrama em anexo.
-
-\clearpage
-
-\section{Acesso ao Sistema}
-		De acordo com o planejamento construído no sprint anterior o qual definimos nossa infraestrutura de desenvolvimento, 
-		o sistema esta em integração contínua com o servidor de testes on-line, podendo ser acessado a partir da seguinte url:
 	
-		\url{http://chicago1.vsnetwork.net/}
+	
+		\begin{figure}[h]
+			\begin{center}
+				 \includegraphics[width=400px]{classesmodelo}
+				 \caption[labelInTOC]{Diagrama de Classes Modelo}
+				 \label{fig:diagramaClassesModelo}
+			\end{center}
+		\end{figure}
+		\FloatBarrier
+
+	\clearpage
+
+	\section{Acesso ao Sistema}
+			De acordo com o planejamento construído no sprint anterior o qual definimos nossa infraestrutura de desenvolvimento, 
+			o sistema esta em integração contínua com o servidor de testes on-line, podendo ser acessado a partir da seguinte url:
 		
+			\url{http://chicago1.vsnetwork.net/}
+			
 
-\section{Acesso as Ferramentas}
-	
-	O gestor de projeto pode ser acessado através da url: \url{http://redmine.vsnetwork.net/projects/rp-v} , o qual está visivelmente público em todas as atividades do projeto. 
-	
-	O código fonte do projeto pode ser acessado pelo github\cite{GITHUB} na url: \url{https://github.com/dextervip/rpv}. 
-	
-	As construções automatizadas do jenkins podem ser acessadas pela url: \url{http://chicago2.vsnetwork.net:8080/job/RPV}.
+	\section{Acesso as Ferramentas}
+		
+		O gestor de projeto pode ser acessado através da url: \url{http://redmine.vsnetwork.net/projects/rp-v} , o qual está visivelmente público em todas as atividades do projeto. 
+		
+		O código fonte do projeto pode ser acessado pelo github\cite{GITHUB} na url: \url{https://github.com/dextervip/rpv}. 
+		
+		As construções automatizadas do jenkins podem ser acessadas pela url: \url{http://chicago2.vsnetwork.net:8080/job/RPV}.
 
-\clearpage
+	\clearpage
 
-%Referências Bibliograficas
-\nocite{*}
-\bibliographystyle{abnt-num}
-%\bibliographystyle{plain}		
-\bibliography{bibliografia}		
+	%Referências Bibliograficas
+	\nocite{*}
+	\bibliographystyle{abnt-num}
+	%\bibliographystyle{plain}		
+	\bibliography{bibliografia}		
 
 \end{document}
