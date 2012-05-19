@@ -38,7 +38,7 @@
 	
 	\section{Metodologia Ágil}
 	
-		Metodologia Ágil é um famoso conjunto de metodologias de desenvolvimento de software, 
+		Metodologia ágil é um famoso conjunto de metodologias de desenvolvimento de software, 
 		com foco na mitigação dos riscos esta metodologia aposta em pequenos ciclos iterativos de desenvolvimento do software,
 		onde ocorre a repetição de cada tarefa comum em um processo de software, ou seja, em cada ciclo realiza-se analise, projeto,
 		implementação e testes, referentes aquele módulo, desta forma busca-se à capacidade real de implantar-se um nova versão 
@@ -50,88 +50,86 @@
 		baseados nas necessidades atuais do mercado de software.
 	
 	\section{Scrum}
-
-		O scrum é uma metodologia ágil, muitos consideram como um framework ágil também, que vem cada dia sendo mais popular
-		no desenvolvimento de software.
-		O scrum tem o objetivo de agilizar o processo de desenvolvimento de software. O scrum possui basicamente 3
-		papéis: Team, Scrum Master e Poduct Owner.
+	
+		\subsection{Visão Geral}
+			O \emph{scrum} é uma metodologia ágil, muitos consideram como um framework ágil também, que vem cada dia sendo mais popular
+			no desenvolvimento de software. O \emph{scrum} tem o objetivo de agilizar o processo de desenvolvimento de software com entregas aos 
+			clientes de forma iterativa e com incrementos de software com alto valor. Basicamente temos 3
+			papéis neste processo: \emph{Team, Scrum Master e Product Owner.}
 		
-		O Product Owner é um papel muito importante no scrum, cabe a ele definir quais funcionalidades devem ou
-		não existir no sistema por meio de user stories e também definir a prioridade das user stories. Este papel também
-		trata de aprovar ou rejeitar o trabalho realizado e dizer se foi realizado como esperado.
+		\subsection{Papéis}
 		
-		O Scrum Master tem papel de manter a produtividade da equipe facilitando o processo de scrum e resolver impedimentos
-		no decorrer dos sprints. Ele ajuda o time a se manter organizado e certificar que as regras do processo estão sendo
-		seguidas corretamente. O scrum master não dita o que o time deve fazer mas sim ajuda o time se manter autônomo,
-		organizado e com uma boa produtividade. 
+			O \emph{product owner} é um papel muito importante no \emph{scrum}, cabe a ele definir quais funcionalidades devem ou
+			não existir no sistema por meio de \emph{user stories} e também definir a prioridade delas. Este papel também
+			trata de aprovar ou rejeitar o trabalho realizado e dizer se foi realizado como esperado.
+			
+			O \emph{scrum master} tem papel de manter a produtividade da equipe, facilitando o processo de \emph{scrum} e resolver impedimentos
+			no decorrer do \emph{sprint}. Ele ajuda o time a se manter organizado e certificar que as regras do processo estão sendo
+			seguidas corretamente. O \emph{scrum master} não dita o que o time deve fazer mas sim ajuda o time se manter autônomo,
+			organizado e com uma boa produtividade. 
+			
+			O \emph{team} tem papel de transformar os itens de \emph{backlog} em produtos que serão entregues de forma incremental em cada
+			sprint. Cabe ao time ter autonomia própria para se organizar e trabalhar de forma de colaborativa ajudando uns aos
+			outros sem a necessidade de existência de um "chefe" para dizer o que deve ser feito.
 		
-		O Team tem papel de transformar os itens de backlog em produtos que serão entregues de forma incremental em cada
-		sprint. Cabe ao time ter autonomia própria para se organizar e trabalhar de forma de colaborativa ajudando uns aos
-		outros sem a necessidade de existência de um ``chefe'' para dizer o que deve ser feito.
+		\subsection{Processo}
 		
-		O processo de scrum é trabalhado em cima de vários ciclos chamados de sprint, que possuem um tempo fixo, geralmente de
-		1 a 4 semanas. Neste ciclo o time irá realizar o sprint backlog
-		
-		Product Backlog possui uma lista priorizada pelo product owner das funcionalidades desejadas do projeto, e parte
-		desta lista irá forma o sprint backlog. É uma coleção de user stories.
-		
-		Sprint Backlog contêm os itens de backlog que o time concordou completar em um ciclo de sprint, cada item de backlog é
-		quebrado em tarefas, atribuídas para equipe e estimado o tempo de realização (por meio de planning poker?).
-		
-		Planning poker
-		
-		Tasks
-		
-		Backlog item ou também conhecido como User Story é um recurso/funcionalidade desejada no sistema que vão compor o
-		product backlog. Uma user story usualmente é composta por um ator do sistema e a ação para alcançar determinado
-		objetivo. Exemplos: 
-			\begin{itemize}
-				\item Como um <usuário> Eu posso <realizar ação> para alcançar <determinado objetivo>
-				\item Como um cliente, eu posso criar um perfil no sistema
-				\item Como um cliente, eu posso escolher um usuário e senha
-				\item Como um administrador, eu posso bloquear contas de clientes
-			\end{itemize}
-				 
-		Stories points
-		
-		No Sprint Planning, a equipe decidirá quais backlog itens irão para o sprint backlog. Depois da priorização das user
-		stories pelo product owner, a equipe seleciona o item do topo do product backlog, o qual tem maior prioridade, para a
-		discussão e criação das tarefas necessárias para entrega do item. Então as tarefas são atribuídas e estimadas em
-		tempo, este processo é repetido até que o time decida que não há possibilidade de realização de mais itens.
-		
-				
-		Burndown é um gráfico que oferece uma forma poderosa de analisar o andamento do projeto. Ele nos oferece
-		informações\ldots Pode-se estimar a velocidade de andamento do time
-		
-		Diariamente há uma reunião conhecida como Daily Meeting, uma reunião com duração aproximada de 15 minutos,
-		conduzida pelo scrum master e tem como foco 3 perguntas para todo membro da equipe:
-			\begin{itemize}
-				\item O que eu fiz ontem?
-				\item O que eu estou fazendo hoje?
-				\item O que está me impedindo de fazer?
-			\end{itemize}
-		
-		Apesar da reunião ser conduzida pelo scrum master, cada membro deve responder para o time inteiro e não somente para o
-		scrum master, todos devem estar de pé na reunião e falar somente quando for perguntado pelo scrum master. No final da
-		reunião é discutido por todos soluções caso haja algum impedimento.
-		
-		Sprint Review tem intuito de demonstrar o que foi realizado no sprint com a presença stakeholders, 
-		
-		Sprint Retrospective é uma reunião que tem objetivo de discutir se o sprint foi realizado com sucesso ou se é
-		necessário melhorias.
-		
-		O projeto pode ser parado a qualquer momento, as vezes o cliente percebe que as funcionalidade implementadas já foram
-		suficientes e atendem a necessidade atual assim não dispersando dinheiro em funcionalidade que talvez nunca seriam
-		utilizadas.
+			O processo de \emph{scrum} é trabalhado em cima de vários ciclos chamados de \emph{sprint}, que possuem um tempo fixo, geralmente de
+			1 a 4 semanas. Para cada \emph{sprint} é realizado a escolha de \emph{user stories} que estão no \emph{product backlog}. No \emph{product backlog} temos uma lista priorizada 
+			pelo \emph{product owner} das funcionalidades desejadas do projeto, e parte desta lista irá forma o \emph{sprint backlog}. É uma coleção de \emph{user stories}.
+			
+			Em um ciclo, o time irá realizar o \emph{sprint backlog} que contêm os itens de \emph{backlog} que o time concordou 
+			completar em um ciclo de \emph{sprint}, cada item de \emph{backlog} é quebrado em tarefas, atribuídas para equipe e estimado o tempo de realização.
+			
+					
+			O \emph{backlog item} ou também conhecido como \emph{user story} é um recurso/funcionalidade desejada no sistema que vão compor o
+			\emph{product backlog}. Uma \emph{user story} usualmente é composta por um ator do sistema e a ação para alcançar determinado
+			objetivo. Exemplos: 
+				\begin{itemize}
+					\item Como um <usuário> Eu posso <realizar ação> para alcançar <determinado objetivo>
+					\item Como um cliente, eu posso criar um perfil no sistema
+					\item Como um cliente, eu posso escolher um usuário e senha
+					\item Como um administrador, eu posso bloquear contas de clientes
+				\end{itemize}
+					 
+					
+			No \emph{sprint planning}, a equipe decidirá quais \emph{backlog itens} irão para o \emph{sprint backlog}. Depois da priorização das \emph{user
+			stories} pelo \emph{product owner}, a equipe seleciona o item do topo do \emph{product backlog}, o qual tem maior prioridade, para a
+			discussão e criação das tarefas necessárias para entrega do item. Então as tarefas são atribuídas e estimadas em
+			tempo, este processo é repetido até que o time decida que não há possibilidade de realização de mais itens.
+			
+			Com a ajuda do\emph{Burndown} que é um gráfico que oferece uma forma poderosa que podemos analisar o andamento do projeto. Podemos estimar a velocidade de andamento do time, atrasos e tempo de 
+			execução de cada \emph{user story}.
+			
+			Por meio de um reunião diariamente, podemos também verificar impedimentos que podem afetar a produtividade da equipe, conhecida como \emph{daily meeting}, 
+			é uma reunião com duração aproximada de 15 minutos,	conduzida pelo \emph{scrum master} e tem como foco 3 perguntas para todo membro da equipe:
+				\begin{itemize}
+					\item O que eu fiz ontem?
+					\item O que eu estou fazendo hoje?
+					\item O que está me impedindo de fazer?
+				\end{itemize}
+			
+			Apesar da reunião ser conduzida pelo scrum master, cada membro deve responder para o time inteiro e não somente para o
+			\emph{scrum master}, todos devem estar de pé na reunião e falar somente quando for perguntado pelo \emph{scrum master}. No final da
+			reunião é discutido por todos soluções caso haja algum impedimento.
+			
+			No final de um \emph{sprint}, ocorre uma reunião informal, chamada \emph{sprint review} que tem intuito de demonstrar o que foi 
+			realizado no sprint com a presença da equipe, \emph{scrum master}, \emph{product owner} e stakeholders. Também é feita a reunião chamada \emph{sprint retrospective}
+			que é uma reunião da equipe que tem objetivo de discutir se o sprint foi realizado com sucesso ou se é necessário melhorias.
+			
+			Um projeto em \emph{scrum} pode ser parado a qualquer momento, as vezes o cliente percebe que as funcionalidade implementadas já foram
+			suficientes e atendem a necessidade atual assim não dispersando dinheiro em funcionalidade que talvez nunca seriam utilizadas.
+			
+			As informações desta seção foram retiradas da referência \cite{SCRUMEPF}.
 	
 	\section{Python}
 	
 		Python é uma conceituada linguagem de programação de alto nível, interpretada, orientada a objetos e de tipagem forte. Idealizada como uma linguagem que valorize o tempo e esforço do programador, Python foca a legibilidade do código, sua indentação, velocidade de desenvolvimento e expressividade. Dentro desta filosofia 
-		podemos destacar a forte indentação da linguagem, o que facilita a sua leitura melhorando o visual organizacional da linguagem, e também sua sintaxe simples, limpa e coerente coopera para um rápido aprendizado.
+		podemos destacar a forte indentação da linguagem, o que facilita a sua leitura melhorando o visual organizacional da linguagem, e também sua sintaxe simples, limpa e coerente coopera para um rápido aprendizado.\cite{PYTHON}
 	
 	\section{Pip}
 	
-		Devido à grande quantidade de extensões, bibliotecas e frameworks que utilizam o Python, a comunidade dessa linguagem criou um repositório centralizado de pacotes, o Python Package Index (http://pypi.python.org/pypi).
+		Devido à grande quantidade de extensões, bibliotecas e frameworks que utilizam o Python, a comunidade dessa linguagem criou um repositório centralizado de pacotes, o Python Package Index.
 		Pip é uma ferramenta para instalar e gerenciar pacotes Python, tais como aqueles encontrados no Python Package Index.\cite{PIPSITE}
 
 	\section{Django}
@@ -165,10 +163,11 @@
 			
 				Jenkins é um servidor de integração contínua de código fonte aberto escrito em Java, e com mais de 300 plugins para
 				suportar diferentes tipos de desenvolvimento de software. O Jenkins prover o processo de integração contínua para o
-				desenvolvimento de software.
+				desenvolvimento de software \cite{JENKINS}.
+				
 				O processo de integração contínua visa melhorar a qualidade de software e reduzir o tempo de entrega, substituindo a
 				prática tradicional de aplicação do controle de qualidade depois do desenvolvimento completo. Os princípios da
-				integração contínua são:
+				integração contínua são\cite{CIWIKIPEDIA}:
 				\begin{itemize}
 				  \item Manter o código fonte em um repositório de controle de versão
 				  \item Automatizar a construção de software
@@ -182,14 +181,14 @@
 				  \item Automatizar o deploy
 				\end{itemize}
 				
-				Sendo importante a parte de testes para que a integração contínua funcione. Existem mecanismos implementados em
+				Sendo importante, a parte de testes para que a integração contínua funcione. Existem mecanismos implementados em
 				varias linguagens que podem não somente testar o funcionamento total da aplicação mas como verificar a qualidade de
 				código fonte escrito baseado em vários fatores como padrão de codificação, detecção de cópias, detecção de erros em
-				syntax e problemas de lógica.
+				syntax e problemas de lógica, também chamado de inspeção contínua.\cite{INSPECAO-CONTINUA}
 				
 				A ferramenta Jenkins entra para a execução do processo de integração contínua, irá tratar de obter o código fonte,
 				realizar a construção com ajuda do Maven ou Ant, realizar a execução dos testes e fazer o deploy para o servidor de
-				teste.
+				teste.\cite{JENKINS-BUILD}
 
 		\section{Klaros Testmanagement}
 		
