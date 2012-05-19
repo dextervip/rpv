@@ -1,12 +1,11 @@
 \documentclass{abnt}
-%\usepackage[a4paper, inner=1.5cm, outer=2cm, top=3cm, bottom=2cm, bindingoffset=1cm]{geometry}
 \usepackage[utf8]{inputenc}
 \usepackage[english,brazilian]{babel}
 \usepackage{hyperref}
 \usepackage{url}
 \usepackage{indentfirst}
 \usepackage{blindtext}
-\hypersetup{%
+\hypersetup{
     pdfborder = {0 0 0}
 }
 \begin{document}
@@ -30,11 +29,9 @@
 
 \chapter{INTRODUÇÃO}
 
-	Este relatório tem por finalidade apresentar a fundamentação teórica e tecnológica utilizada no segundo sprint, bem como o detalhamento de nossa solução, e por fim um link de referência para acesso ao sistema.\ldots
+	Este relatório tem por finalidade apresentar a fundamentação teórica e tecnológica utilizada no segundo sprint, bem como o detalhamento de nossa solução, e por fim um link de referência para acesso ao sistema.
 
-	%\blindenumerate[10]
 
-	\section{Conceitos}
 	
 	\section{Metodologia Ágil}
 	
@@ -52,10 +49,11 @@
 	\section{Scrum}
 	
 		\subsection{Visão Geral}
+		
 			O \emph{scrum} é uma metodologia ágil, muitos consideram como um framework ágil também, que vem cada dia sendo mais popular
 			no desenvolvimento de software. O \emph{scrum} tem o objetivo de agilizar o processo de desenvolvimento de software com entregas aos 
 			clientes de forma iterativa e com incrementos de software com alto valor. Basicamente temos 3
-			papéis neste processo: \emph{Team, Scrum Master e Product Owner.}
+			papéis neste processo: \emph{Team, Scrum Master e Product Owner}.
 		
 		\subsection{Papéis}
 		
@@ -115,7 +113,7 @@
 			
 			No final de um \emph{sprint}, ocorre uma reunião informal, chamada \emph{sprint review} que tem intuito de demonstrar o que foi 
 			realizado no sprint com a presença da equipe, \emph{scrum master}, \emph{product owner} e stakeholders. Também é feita a reunião chamada \emph{sprint retrospective}
-			que é uma reunião da equipe que tem objetivo de discutir se o sprint foi realizado com sucesso ou se é necessário melhorias.
+			que é uma reunião da equipe que tem objetivo de discutir se o \emph{sprint} foi realizado com sucesso ou se é necessário melhorias.
 			
 			Um projeto em \emph{scrum} pode ser parado a qualquer momento, as vezes o cliente percebe que as funcionalidade implementadas já foram
 			suficientes e atendem a necessidade atual assim não dispersando dinheiro em funcionalidade que talvez nunca seriam utilizadas.
@@ -216,7 +214,7 @@
 			\end{itemize}
 			
 			A ferramenta se mostrou muito fácil de instalar como um software que você instala no dia a dia com poucos cliques,
-			possui um instalador que facilita muito e instalar todas as dependencias e o servidor em si. Após a instalação, a
+			possui um instalador que facilita muito e instalar todas as dependências e o servidor em si. Após a instalação, a
 			configuração nada mais foi do que informar o usuário e senha para o administrador assim podendo-se inciar as
 			atividades de teste na ferramenta. Para integração com gerenciamento de defeitos, na parte administrativa, é
 			informado o gerenciamento de defeito, endereço, usuário e senha. 
@@ -280,8 +278,8 @@
 	
 	\section{User Story 1}
 	\subsection{Análise}
-		A análise do CRUD de disciplinas foi erroneamente baseada em uma expansão da User Story abordada na primeira semana. Com isso, a modelagem e, consequentemente, a implementação da funcionalidade não foram totalmente validadas pelos Product Owners.
-		Uma nova modelagem já foi discutida pelo grupo e será submetida a validação pelos PO's no início do próximo sprint.
+		A análise do CRUD de disciplinas foi erroneamente baseada em uma expansão da \emph{user story} abordada na primeira semana. Com isso, a modelagem e, consequentemente, a implementação da funcionalidade não foram totalmente validadas pelos Product Owners.
+		Uma nova modelagem já foi discutida pelo grupo e será submetida a validação pelos \emph{product owners} no início do próximo \emph{sprint}.
 	
 	\section{User Story 2}
 	\subsection{Projeto}
@@ -299,9 +297,13 @@
 		\url{http://chicago1.vsnetwork.net/}
 		
 
-\section{Acesso ao Gestor de Projeto}
+\section{Acesso as Ferramentas}
 	
-	O gestor de projeto pode ser acessado através da url: \url{http://redmine.vsnetwork.net/projects/rp-v} , o qual está visívelmente público em todas as atividades.
+	O gestor de projeto pode ser acessado através da url: \url{http://redmine.vsnetwork.net/projects/rp-v} , o qual está visivelmente público em todas as atividades do projeto. 
+	
+	O código fonte do projeto pode ser acessado pelo github\cite{GITHUB} na url: \url{https://github.com/dextervip/rpv}. 
+	
+	As construções automatizadas do jenkins podem ser acessadas pela url: \url{http://chicago2.vsnetwork.net:8080/job/RPV}.
 
 \clearpage
 
