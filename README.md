@@ -11,7 +11,7 @@
 
 Pela linha de comando, navegue até o diretório raiz do projeto e digite:
 
-	ant run
+	ant build run
 	
 Aguarde enquanto o script verifica as dependências, realize os testes e faça a instalação do banco de dados. Esta operação pode 
 demorar alguns minutos, após a conclusão, o navegador será aberta na página da aplicação
