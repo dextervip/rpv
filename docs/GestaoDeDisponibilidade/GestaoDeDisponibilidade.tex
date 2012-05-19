@@ -33,7 +33,7 @@
 
 \chapter{INTRODUÇÃO}
 
-	Este relatório tem por finalidade apresentar a fundamentação teórica e tecnológica utilizada no segundo sprint, bem como o detalhamento de nossa solução, e por fim um link de referência para acesso ao sistema.
+	Este relatório tem por finalidade apresentar a fundamentação teórica e tecnológica utilizada no segundo \emph{sprint}, bem como o detalhamento de nossa solução, e por fim um link de referência para acesso ao sistema.
 
 
 	
@@ -141,7 +141,7 @@
 		é definido através de classes de modelo que serão mapeadas, mediante o lançamento do projeto,
 		para entidades relacionais no banco de dados definido pelos desenvolvedores. A \emph{view} é
 		representada através de funções ou métodos que processam requisições com um sistema
-		de templates. O \emph{controller} é nada mais que a customização das URLs da aplicação,
+		de \emph{templates}. O \emph{controller} é nada mais que a customização das URLs da aplicação,
 		que podem ser detectadas através de expressões regulares e redirecionam o
 		usuário à \emph{view} apropriada.\cite{DJANGOWIKIPEDIA}
 	
@@ -153,12 +153,12 @@
 				
 		Suas principais característica são: 
 			\begin{itemize}
-			\item Criação e migração automática: South pode ver o que realmente foi modificado no seu arquivo models.py
+			\item Criação e migração automática: \emph{South} pode ver o que realmente foi modificado no seu arquivo models.py
 			 e automaticamente escrever a migrações que corresponda as suas alterações.
 			\item Independência de banco de dados: Na medida do possível, do \emph{South} é completamente independente 
 			de banco de dados, suportando atualmente cinco \emph{backends} de bancos de dados diferentes.
 			\item Avançado: \emph{South} reconhece e trabalha com o conceito de aplicativos \emph{Django}, permitindo que você use 
-			as migrações para as aplicações que você preferir, e deixa-lhe trabalhar sobre syncdb nas demais.
+			as migrações para as aplicações que você preferir, e deixa-lhe trabalhar sobre \emph{syncdb} nas demais.
 			\end{itemize}
 			
 		As informações desta seção foram retiradas da referência \cite{SOUTH}.
@@ -176,19 +176,19 @@
 				  \item Manter o código fonte em um repositório de controle de versão
 				  \item Automatizar a construção de software
 				  \item Fazer a construção de software testar automaticamente o software
-				  \item Todo mundo deve comitar para o repositório base todo dia
-				  \item Todo commit para repositório base deve ser construído
+				  \item Todo mundo deve submeter para o repositório base todo dia
+				  \item Toda submissão para repositório base deve ser construído
 				  \item A construção deve ser rápida para identificação dos problemas rapidamente
 				  \item Testar em um ambiente clone de produção
-				  \item Deixar última construção sucedida disponível para os stakeholders e testadores
+				  \item Deixar última construção sucedida disponível para os \emph{stakeholders} e testadores
 				  \item Todo mundo pode ver o resultado das últimas construções
-				  \item Automatizar o deploy
+				  \item Automatizar o \emph{deploy}
 				\end{itemize}
 				
 				Sendo importante, a parte de testes para que a integração contínua funcione. Existem mecanismos implementados em
 				varias linguagens que podem não somente testar o funcionamento total da aplicação mas como verificar a qualidade de
 				código fonte escrito baseado em vários fatores como padrão de codificação, detecção de cópias, detecção de erros em
-				syntax e problemas de lógica, também chamado de inspeção contínua.\cite{INSPECAO-CONTINUA}
+				sintaxe e problemas de lógica, também chamado de inspeção contínua.\cite{INSPECAO-CONTINUA}
 				
 				A ferramenta \emph{Jenkins} entra para a execução do processo de integração contínua, irá tratar de obter o código fonte,
 				realizar a construção com ajuda do \emph{Maven}\cite{MAVENBUILDTOOL} ou \emph{Ant}\cite{ANTBUILDTOOL}, realizar a execução dos testes e fazer o deploy para o servidor de
@@ -211,8 +211,8 @@
 			  \item Trabalha com casos de teste e seus resultados.
 			  \item Gera relatórios em gráficos e tabela sobre os testes. Podendo ser exportado em vários formatos como PDF,
 			  HTML, entre outros.
-			  \item Possui suporte de integração com as ferramentas de gerenciamento de projeto Redmine, Jira, Trac e Bugzilla.
-			  \item É possível através de plugin dos sistemas de integração continua (Hudson/Jenkins) importar os relatórios de
+			  \item Possui suporte de integração com as ferramentas de gerenciamento de projeto \emph{Redmine, Jira, Trac e Bugzilla}.
+			  \item É possível através de plugin dos sistemas de integração continua (\emph{Hudson/Jenkins}) importar os relatórios de
 			  execução dos testes automatizados.
 			  \item Pode ser instalado em Windows por meio de um executável e Linux por meio de um arquivo jar.
 			\end{itemize}
@@ -235,21 +235,21 @@
 
 \chapter{SPRINT}
 	
-		Esta seção aborda as informações sobre o Sprint II, demonstrando o nosso sprint backlog logo a baixo.
+		Esta seção aborda as informações sobre o Sprint II, demonstrando o nosso \emph{sprint backlog} logo a baixo.
 	
 	\section{Detalhamento da Solução}
 	
-		Apos a apresentação do problema proposto a equipe trabalhou sobre as propostas de solução que melhor envolviam o ambiente já definido no sprint anterior,
+		Após a apresentação do problema proposto a equipe trabalhou sobre as propostas de solução que melhor envolviam o ambiente já definido no \emph{sprint} anterior,
 		apos este levantamento determinou-se que o projeto seria construído sobre os seguintes pilares:
 		\begin{itemize}
-		\item  A linguagem de programação seria Python.
-		\item O ambiente de desenvolvimento integrado será à Aptana Studio 3.
-		\item O ambiente de desenvolvimento sera Web.
-		\item  O framework de desenvolvimento será o Django.
-		\item  A ferramenta de gerenciamento será o Redmine.
-		\item  A ferramenta de versionamento será o GitHub.
-		\item  A ferramenta de gerenciamento e execução de testes será o Klaros.
-		\item  A ferramenta de integração contínua será o Jenkins.
+		\item  A linguagem de programação \emph{Python}.
+		\item O ambiente de desenvolvimento integrado com \emph{Aptana Studio 3}.
+		\item O ambiente de desenvolvimento Web.
+		\item  O framework de desenvolvimento \emph{Django}.
+		\item  A ferramenta de gerenciamento \emph{Redmine}.
+		\item  A ferramenta de versionamento \emph{GitHub}.
+		\item  A ferramenta de gerenciamento e execução de testes \emph{Klaros}.
+		\item  A ferramenta de integração contínua \emph{Jenkins}.
 		\end{itemize}
 		
 		Dentro desta primeira versão do sistema, estão inclusos as funcionalidades a seguir:
@@ -283,7 +283,7 @@
 	
 	\section{User Story 1}
 	\subsection{Análise}
-		A análise do CRUD de disciplinas foi erroneamente baseada em uma expansão da \emph{user story} abordada na primeira semana. Com isso, a modelagem e, consequentemente, a implementação da funcionalidade não foram totalmente validadas pelos Product Owners.
+		A análise do CRUD de disciplinas foi erroneamente baseada em uma expansão da \emph{user story} abordada na primeira semana. Com isso, a modelagem e, consequentemente, a implementação da funcionalidade não foram totalmente validadas pelos \emph{product owners}.
 		Uma nova modelagem já foi discutida pelo grupo e será submetida a validação pelos \emph{product owners} no início do próximo \emph{sprint}.
 	
 	\section{User Story 2}
@@ -306,7 +306,7 @@
 	\clearpage
 
 	\section{Acesso ao Sistema}
-			De acordo com o planejamento construído no sprint anterior o qual definimos nossa infraestrutura de desenvolvimento, 
+			De acordo com o planejamento construído no \emph{sprint} anterior o qual definimos nossa infraestrutura de desenvolvimento, 
 			o sistema esta em integração contínua com o servidor de testes on-line, podendo ser acessado a partir da seguinte url:
 		
 			\url{http://chicago1.vsnetwork.net/}
