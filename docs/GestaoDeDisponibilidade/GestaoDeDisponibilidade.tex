@@ -237,7 +237,7 @@
 
 \chapter{SPRINT}
 	
-		Esta seção aborda as informações sobre o Sprint II, demonstrando o nosso \emph{sprint backlog} logo a baixo.
+		Esta seção aborda as informações sobre o Sprint II, demonstrando o nosso \emph{sprint backlog} logo a baixo. Os diagramas de casos de uso e classes para cada \emph{user story} está disponível nas seções seguintes.
 	
 	\section{Detalhamento da Solução}
 	
@@ -284,12 +284,11 @@
 
 	\clearpage
 	\section{User Story 1}
-
-		A análise do CRUD de disciplinas foi erroneamente baseada em uma expansão da \emph{user story} abordada na primeira semana. Com isso, a modelagem e, consequentemente, a implementação da funcionalidade não foram totalmente validadas pelos \emph{product owners}.
-		Uma nova modelagem já foi discutida pelo grupo e será submetida a validação pelos \emph{product owners} no início do próximo \emph{sprint}.
-		
-		Realizamos a codificação da user story baseado no levantamento executando junto aos product owners os quais apontaram desejos e necessidades urgentes para tal, todas elas foram atendidas, e esta user story esta cem porcento funcional. 
 	
+		\begin{itemize}
+			\item Como coordenador, eu quero cadastrar as disciplinas juntamente com sua descrição, ementa, pré-requisitos e sua necessidade de sala, que poderão ser ofertadas no sistema e para que os professores possam escolher suas disciplinas de preferência.
+		\end{itemize}
+				
 		\begin{figure}[h]
 			\begin{center}
 				 \includegraphics[width=400px]{casoUsoDisciplinas}
@@ -302,13 +301,10 @@
 	\clearpage	
 	\section{User Story 2}
 
-	Realizamos a expansão da user story explorando seus casos de uso, e em seguida construímos o diagrama que representava estes casos de uso.
-	Apos a implementação de algumas funcionalidades já iniciamos a execução dos testes no sistema, os quais foram gerenciados pela ferramenta já citada, o Klaros, seus relatórios, gerados ao final de cada teste foram salvos e reportados como evidências para o projeto como um todo. 
-	
-	Na modelagem do cadastro de professores e compromissos, as seguintes relações foram propostas:
-	Um professor poderia estar vinculado a várias disciplinas e poderia ter vários compromissos, mas apenas uma área de formação.
-	Salas também poderiam ter compromissos.
-	A sequencia de mensagens está demonstrado através do diagrama em anexo.
+		\begin{itemize}
+			\item Como professor, eu quero cadastrar meus compromissos no sistema para que todos vejam quando não posso agendar outro compromisso.
+		\end{itemize}
+			
 	
 		\begin{figure}[h]
 			\begin{center}
@@ -320,10 +316,12 @@
 		\FloatBarrier
 	\clearpage
 	\section{User Story 3}
+
+		\begin{itemize}
+			\item Como secretária, eu quero cadastrar as salas, com seu tipo e capacidade para que o coordenador possa vê-las podendo organizar as ofertas de disciplinas.
+		\end{itemize}
 	
-	Durante o projeto da semana três, realizamos a construção do diagrama de classes bem como seu diagrama de sequencia.
-	Projetamos a futura arquitetura desta user story a qual pode ser visualizada no diagrama geral, no final desta seção. 
-	
+		
 		\begin{figure}[h]
 			\begin{center}
 				 \includegraphics[width=400px]{casoUsoSecretaria}
@@ -334,6 +332,10 @@
 		\FloatBarrier
 	\clearpage
 	\section{User Story 4}
+
+		\begin{itemize}
+			\item Como coordenador, eu quero ofertar disciplinas com base nos dados informados pelos professores.
+		\end{itemize}
 	
 		\begin{figure}[h]
 			\begin{center}
@@ -347,6 +349,7 @@
 	\clearpage
 	\section{Diagrama de Classes}
 		
+		O figura \ref{fig:diagramaClassesModelo} mostra o diagrama de classes da solução implementada para as \emph{user stories} do \emph{sprint}.
 	
 		\begin{figure}[h]
 			\begin{center}
