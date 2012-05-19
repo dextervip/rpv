@@ -6,3 +6,8 @@ from django.template import RequestContext
 def home(request):
     context = RequestContext(request)
     return render_to_response("geral/paginaInicial.html", context)
+
+
+def sobre(request):
+    context = RequestContext(request)
+    return render_to_response("geral/sobre.html", context)
