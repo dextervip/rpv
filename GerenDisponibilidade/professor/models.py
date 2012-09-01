@@ -7,6 +7,7 @@ from django.core.urlresolvers import reverse
 from django.http import HttpResponse, HttpResponseRedirect
 from django.utils import simplejson
 from django.shortcuts import render_to_response, get_object_or_404
+from django.core.validators import MaxLengthValidator
 
 
 class Compromisso(models.Model):
@@ -19,6 +20,9 @@ class Compromisso(models.Model):
         horaFim = models.TimeField(null=True, blank=True)
         diaInteiro = models.BooleanField(default=True)
         publico = models.BooleanField(default=False)
+        frequencia = models.IntegerField()
+        dataFimFrequencia = models.DateField(blank=True)
+        
         
 class Agenda():
     def inserirCompromisso(self, request):
@@ -29,6 +33,9 @@ class Agenda():
                             descricao=request.POST['descricao'],
                             dataInicio=dataI,
                             dataFim=dataF,
+                            frequencia=request.POST['frequencia'],
+                            dataFimFrequencia = datetime.strptime(request.POST['dataFimFrequencia'], '%d/%m/%Y').strftime('%Y-%m-%d')
+                            
                             
                             )
         if 'publico' in request.POST:
@@ -47,26 +54,29 @@ class Agenda():
         return HttpResponseRedirect(reverse('professor:home'))
     
     def editarCompromisso(self, request, id):
-        c = get_object_or_404(Compromisso, pk=id)
+        compromisso = get_object_or_404(Compromisso, pk=id)
         dataI = datetime.strptime(request.POST['dataInicio'], '%d/%m/%Y').strftime('%Y-%m-%d')
         dataF = datetime.strptime(request.POST['dataFim'], '%d/%m/%Y').strftime('%Y-%m-%d')
-        c.titulo = request.POST.get('titulo'),
-        c.descricao = request.POST['descricao'],
-        c.dataInicio = dataI
-        c.dataFim = dataF
+        compromisso.titulo = request.POST['titulo']
+        compromisso.descricao = request.POST['descricao']
+        compromisso.dataInicio = dataI
+        compromisso.dataFim = dataF
+        compromisso.frequencia = request.POST['frequencia']
+        compromisso.dataFimFrequencia = datetime.strptime(request.POST['dataFimFrequencia'], '%d/%m/%Y').strftime('%Y-%m-%d')
+        
         if 'publico' in request.POST:
-            c.publico = True
+            compromisso.publico = True
         else:
-            c.publico = False
+            compromisso.publico = False
         if request.POST['horaInicio'] == '' :
-            c.diaInteiro = True
-            c.horaInicio = '00:00:00' 
-            c.horaFim = '00:00:00'           
+            compromisso.diaInteiro = True
+            compromisso.horaInicio = '00:00:00' 
+            compromisso.horaFim = '00:00:00'           
         else:
-            c.diaInteiro = False
-            c.horaInicio = request.POST['horaInicio']
-            c.horaFim = request.POST['horaFim']
-        c.save()
+            compromisso.diaInteiro = False
+            compromisso.horaInicio = request.POST['horaInicio']
+            compromisso.horaFim = request.POST['horaFim']
+        compromisso.save()
         messages.add_message(request, messages.INFO, 'O compromisso foi editado com sucesso em sua agenda!')
         return HttpResponseRedirect(reverse('professor:home'))
     
@@ -90,5 +100,17 @@ class Agenda():
         compromisso.delete()
         messages.add_message(request, messages.INFO, 'O compromisso foi excluido com sucesso da sua agenda!')
         return HttpResponseRedirect(reverse('professor:home'))
-    
 
+class DiaSemana(models.Model):
+    DIAS_CHOICES = (('Seg','Segunda-Feira'),
+            ('Ter', 'Terça-Feira'),
+            ('Qua','Quarta-Feira'),
+            ('Qui','Quinta-Feira'),
+            ('Sex','Sexta-Feira'),
+            ('Sab','Sábado'),
+            ('Dom','Domingo'),
+            )
+    
+    dias = models.CharField(max_length=3, choices=DIAS_CHOICES) 
+    
+    
