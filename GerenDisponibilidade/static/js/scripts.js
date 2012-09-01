@@ -126,5 +126,36 @@ $(function() {
 		}
 
 	});
+	
+	//recorrencia
+	var Frequencia ={
+		atualizar: function(){
+			if($('div#frequencia input#id_frequencia_1').is(":checked")){
+				$('div#div_id_dataFimFrequencia').hide('slow');
+				
+			}else{
+				$('div#div_id_dataFimFrequencia').show('slow');
+				
+			}
+			
+			if($('div#frequencia input#id_frequencia_3').is(":checked")){
+				$('div#div_id_diaSemana').show('slow');
+			}else{
+				$('div#div_id_diaSemana').hide('slow');
+			}
+						
+		}
+	}
+	Frequencia.atualizar();
+	
+	$('div#frequencia').change(function(){
+		Frequencia.atualizar();
+	})
+	
+	
+	
+	
+	
+	
 });
 
