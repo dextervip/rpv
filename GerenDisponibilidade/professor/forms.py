@@ -20,18 +20,18 @@ class CadastroCompromisso(forms.ModelForm):
     horaInicio = forms.TimeField(label='Hora Início', required=False)
     
     dataFim = forms.DateField(label='Data Fim',)
-    horaFim = forms.TimeField(label='Hora Fim', help_text='<strong>Nota:</strong> Hora de finalização do compromisso.',required=False)
+    horaFim = forms.TimeField(label='Hora Fim', help_text='<strong>Nota:</strong> Hora de finalização do compromisso.', required=False)
     
-    diaInteiro = forms.BooleanField(label='Dia Inteiro',initial=False,required=False, help_text='Marque esta opção para compromisso não ter uma hora de início e fim.')
+    diaInteiro = forms.BooleanField(label='Dia Inteiro', initial=False, required=False, help_text='Marque esta opção para compromisso não ter uma hora de início e fim.')
 
-    publico = forms.BooleanField(label='Público', 
+    publico = forms.BooleanField(label='Público',
                                  initial=False,
                                  required=False,
                                  help_text='Esta opção permite que todos tenhão acesso público para visualização deste compromisso',
     )
     
     frequencia = forms.TypedChoiceField(label='Frequência', choices=(
-                                                                (0,'Apenas Uma vez'), 
+                                                                (0, 'Apenas Uma vez'),
                                                                 (1, 'Todos os Dias'),
                                                                 (2, 'Semanal'),
                                                                 (3, 'Mensal'),
@@ -39,9 +39,9 @@ class CadastroCompromisso(forms.ModelForm):
                                                                 (5, 'Anual')
                                                                 ), widget=forms.RadioSelect, initial='0', required=True,)
     
-    dataFimFrequencia = forms.DateField(label='Data de final da Frequência',)
+    dataFimFrequencia = forms.DateField(label='Fim da Frequência',)
     
-    diaSemana = forms.TypedChoiceField(label='Dias da Semana', choices= DiaSemana.DIAS_CHOICES, initial='Seg', widget=forms.CheckboxSelectMultiple)
+    diaSemana = forms.TypedChoiceField(label='Dias da Semana', choices=DiaSemana.DIAS_CHOICES, initial='Seg', widget=forms.CheckboxSelectMultiple, required=False)
     
     
     

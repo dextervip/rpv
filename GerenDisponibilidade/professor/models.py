@@ -22,7 +22,7 @@ class Compromisso(models.Model):
         publico = models.BooleanField(default=False)
         frequencia = models.IntegerField()
         dataFimFrequencia = models.DateField(blank=True)
-        
+        diaSemana = models.ManyToManyField('DiaSemana')
         
 class Agenda():
     def inserirCompromisso(self, request):
@@ -34,10 +34,11 @@ class Agenda():
                             dataInicio=dataI,
                             dataFim=dataF,
                             frequencia=request.POST['frequencia'],
-                            dataFimFrequencia = datetime.strptime(request.POST['dataFimFrequencia'], '%d/%m/%Y').strftime('%Y-%m-%d')
-                            
+                            dataFimFrequencia=datetime.strptime(request.POST['dataFimFrequencia'], '%d/%m/%Y').strftime('%Y-%m-%d')
+                        
                             
                             )
+        print request.POST['diaSemana']
         if 'publico' in request.POST:
             c.publico = True
         else:
@@ -102,15 +103,15 @@ class Agenda():
         return HttpResponseRedirect(reverse('professor:home'))
 
 class DiaSemana(models.Model):
-    DIAS_CHOICES = (('Seg','Segunda-Feira'),
+    DIAS_CHOICES = (('Seg', 'Segunda-Feira'),
             ('Ter', 'Terça-Feira'),
-            ('Qua','Quarta-Feira'),
-            ('Qui','Quinta-Feira'),
-            ('Sex','Sexta-Feira'),
-            ('Sab','Sábado'),
-            ('Dom','Domingo'),
+            ('Qua', 'Quarta-Feira'),
+            ('Qui', 'Quinta-Feira'),
+            ('Sex', 'Sexta-Feira'),
+            ('Sab', 'Sábado'),
+            ('Dom', 'Domingo'),
             )
-    
-    dias = models.CharField(max_length=3, choices=DIAS_CHOICES) 
+           
+    dias = models.CharField(max_length=15, choices=DIAS_CHOICES) 
     
     
