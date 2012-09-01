@@ -1,7 +1,7 @@
 # -*- encoding: utf-8 -*-
 
 from django import forms
-from models import Compromisso
+from models import Compromisso, DiaSemana
 
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Layout, Div, Submit, HTML, Button, Row, Field
@@ -30,6 +30,21 @@ class CadastroCompromisso(forms.ModelForm):
                                  help_text='Esta opção permite que todos tenhão acesso público para visualização deste compromisso',
     )
     
+    frequencia = forms.TypedChoiceField(label='Frequência', choices=(
+                                                                (0,'Apenas Uma vez'), 
+                                                                (1, 'Todos os Dias'),
+                                                                (2, 'Semanal'),
+                                                                (3, 'Mensal'),
+                                                                (4, 'Semestral'),
+                                                                (5, 'Anual')
+                                                                ), widget=forms.RadioSelect, initial='0', required=True,)
+    
+    dataFimFrequencia = forms.DateField(label='Data de final da Frequência',)
+    
+    diaSemana = forms.TypedChoiceField(label='Dias da Semana', choices= DiaSemana.DIAS_CHOICES, initial='Seg', widget=forms.CheckboxSelectMultiple)
+    
+    
+    
     # Uni-form
     helper = FormHelper()
     helper.form_class = 'form-horizontal'
@@ -46,6 +61,12 @@ class CadastroCompromisso(forms.ModelForm):
         Field('diaInteiro', id='diaInteiro'),
           
         Field('publico', style="background: #FAFAFA; padding: 10px;"),
+        
+        Field('frequencia', id='frequencia'),
+        
+        Field('dataFimFrequencia', css_class='input-xlarge datapicker'),
+        
+        Field('diaSemana', id='diaSemana'),
         
         FormActions(
             Submit('save_changes', 'Salvar', css_class="btn-primary"),
