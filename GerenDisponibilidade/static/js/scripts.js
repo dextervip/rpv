@@ -130,6 +130,11 @@ $(function() {
 	//recorrencia
 	var Frequencia ={
 		atualizar: function(){
+			if($('div#frequencia input').is(":checked") == false){
+				$('div#div_id_dataFimFrequencia').hide('slow');	
+				$('div#div_id_diaSemana').hide('slow');	
+				return;
+			}	
 			if($('div#frequencia input#id_frequencia_1').is(":checked")){
 				$('div#div_id_dataFimFrequencia').hide('slow');				
 			}else{
@@ -140,7 +145,8 @@ $(function() {
 				$('div#div_id_diaSemana').show('slow');				
 			}else{
 				$('div#div_id_diaSemana').hide('slow');				
-			}						
+			}
+								
 		}
 	}
 	Frequencia.atualizar();
