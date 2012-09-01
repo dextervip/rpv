@@ -37,11 +37,11 @@ class CadastroCompromisso(forms.ModelForm):
                                                                 (3, 'Mensal'),
                                                                 (4, 'Semestral'),
                                                                 (5, 'Anual')
-                                                                ), widget=forms.RadioSelect, initial='0', required=True,)
+                                                                ), widget=forms.RadioSelect, initial=0, required=True,)
     
     dataFimFrequencia = forms.DateField(label='Fim da Frequência',)
     
-    diaSemana = forms.TypedChoiceField(label='Dias da Semana', choices=DiaSemana.DIAS_CHOICES, initial='Seg', widget=forms.CheckboxSelectMultiple, required=False)
+    diaSemana = forms.TypedChoiceField(label='Dias da Semana', choices=DiaSemana.DIAS_CHOICES, initial=0, widget=forms.CheckboxSelectMultiple, required=False)
     
     
     
