@@ -38,7 +38,7 @@ class Agenda():
                         
                             
                             )
-        print request.POST['diaSemana']
+        #print request.POST['diaSemana']
         if 'publico' in request.POST:
             c.publico = True
         else:
@@ -53,7 +53,7 @@ class Agenda():
             c.horaFim = request.POST['horaFim']            
         c.save()
         return HttpResponseRedirect(reverse('professor:home'))
-    
+            
     def editarCompromisso(self, request, id):
         compromisso = get_object_or_404(Compromisso, pk=id)
         dataI = datetime.strptime(request.POST['dataInicio'], '%d/%m/%Y').strftime('%Y-%m-%d')

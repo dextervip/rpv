@@ -11,3 +11,7 @@ def home(request):
 def sobre(request):
     context = RequestContext(request)
     return render_to_response("geral/sobre.html", context)
+
+def contato(request):
+    context = RequestContext(request)
+    return render_to_response("geral/contato.html", context)

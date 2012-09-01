@@ -38,8 +38,8 @@ class CadastroCompromisso(forms.ModelForm):
                                                                 (4, 'Semestral'),
                                                                 (5, 'Anual')
                                                                 ), widget=forms.RadioSelect, initial=0, required=True,)
-    
-    dataFimFrequencia = forms.DateField(label='Fim da Frequência',)
+    #É necessário mudar-se o tipo do form, se quiser que aceite dados nullos.
+    dataFimFrequencia = forms.DateField(label='Fim da Frequência')
     
     diaSemana = forms.MultipleChoiceField(label='Dias da Semana', choices=DiaSemana.DIAS_CHOICES, initial="0", widget=forms.CheckboxSelectMultiple, required=False) 
     

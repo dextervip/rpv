@@ -2,6 +2,17 @@
 
 {% block corpo %}
 
+<ul class="breadcrumb">
+	<li>
+		<a href="/">Página Inicial</a><span class="divider">/</span>
+	</li>
+	<li>
+		<a href="/">Disciplinas</a><span class="divider">/</span>
+	</li>
+	<li class="active">
+		Pesquisa de Disciplinas
+	</li>
+</ul>
 <h1>Cadastro de Disciplinas</h1>
 
 <p>
@@ -9,17 +20,16 @@
 </p>
 <form action="" method="post">
 
-		<!-- Remover isso apos o termino da refatoração -->
+	<!-- Remover isso apos o termino da refatoração
 	<p>
-		<h4> >> O model de disciplinas necessita ser refatorado por quetões de banco de dados </h4>
+	<h4> >> O model de disciplinas necessita ser refatorado por quetões de banco de dados </h4>
 	</p>
 
 	<br />
-		<!-- Remover isso apos o termino da refatoração -->
+	Remover isso apos o termino da refatoração -->
 
 	{% csrf_token %}
 	{{ form.as_p  }}
-
 
 	<p>
 		<a href="{% url disciplinas:lista %}" class="btn btn-inverse btn-large">&laquo;  Voltar </a>

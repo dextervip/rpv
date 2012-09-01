@@ -3,10 +3,10 @@
 {% block corpo %}
 <ul class="breadcrumb">
 	<li>
-		<a href="#">Página Inicial</a><span class="divider">/</span>
+		<a href="/">Página Inicial</a><span class="divider">/</span>
 	</li>
 	<li>
-		<a href="#">Professor</a><span class="divider">/</span>
+		<a href="{% url professor:home %}">Professor</a><span class="divider">/</span>
 	</li>
 	<li class="active">
 		Home
@@ -54,7 +54,7 @@
 				loadCalendar();
 			</script>
 			<p>
-				<a id="adicionar-compromisso-botao" class="btn btn-primary btn-large" href="{% url professor:adicionarCompromisso %}">Adicionar Compromisso</a>
+				<a id="adicionar-compromisso-botao" class="btn btn-primary btn-large" href="{% url professor:adicionarCompromisso %}"><i class="icon-lock"> </i> Adicionar Compromisso</a>
 			</p>
 			<div class="loading"><img src="{{ STATIC_URL }}img/loading.gif" alt="" /></div>
 			<div id="calendar"></div>

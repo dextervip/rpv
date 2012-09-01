@@ -2,6 +2,21 @@
 
 {% block corpo %}
 
+<ul class="breadcrumb">
+	<li>
+		<a href="/">Página Inicial</a><span class="divider">/</span>
+	</li>
+	<li>
+		<a href="/">Disciplinas</a><span class="divider">/</span>
+	</li>
+	<li>
+		<a href="{% url disciplinas:lista %}">Listagem de Disciplinas</a><span class="divider">/</span>
+	</li>
+	<li class="active">
+		Informações da Disciplina
+	</li>
+</ul>
+
 <h2>Informações gearais sobre a disciplina: </h2>
 <br/>
 

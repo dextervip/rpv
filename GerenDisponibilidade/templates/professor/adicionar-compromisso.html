@@ -2,13 +2,33 @@
 
 {% block corpo %}
 
+<ul class="breadcrumb">
+	<li>
+		<a href="/">Página Inicial</a><span class="divider">/</span>
+	</li>
+	<li>
+		<a href="{% url professor:home %}">Professor</a><span class="divider">/</span>
+	</li>
+	<li>
+		<a href="{% url professor:home %}">Home</a><span class="divider">/</span>
+	</li>	
+	<li class="active">
+		Adicionar Compromisso
+	</li>
+</ul>
+
 <h1>Adicionar Compromisso</h1>
 <hr />
 <br />
 
 {% load crispy_forms_tags %}
 <form method="post" class="uniForm form-horizontal">
+
 	{% crispy form %}
+
+	<p>
+		<a href="{% url professor:home %}" class="btn btn-inverse btn-large">&laquo;  Voltar </a>
+	</p>
 </form>
 
 {% endblock %}

@@ -2,6 +2,21 @@
 
 {% block corpo %}
 
+<ul class="breadcrumb">
+	<li>
+		<a href="/">Página Inicial</a><span class="divider">/</span>
+	</li>
+	<li>
+		<a href="/">Disciplinas</a><span class="divider">/</span>
+	</li>
+	<li>
+		<a href="{% url disciplinas:lista %}">Listagem de Disciplinas</a><span class="divider">/</span>
+	</li>
+	<li class="active">
+		Pesquisa de Disciplinas
+	</li>
+</ul>
+
 <form action="/pesquisaDiscip/" method="post" class="well form-search">
 	{% csrf_token %}
 	<input name="pesquisa" type="text" class="input-large search-query">

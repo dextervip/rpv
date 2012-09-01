@@ -3,10 +3,10 @@
 {% block corpo %}
 <ul class="breadcrumb">
 	<li>
-		<a href="#">Página Inicial</a><span class="divider">/</span>
+		<a href="/">Página Inicial</a><span class="divider">/</span>
 	</li>
 	<li>
-		<a href="#">Professor</a><span class="divider">/</span>
+		<a href="/">Coordenador</a><span class="divider">/</span>
 	</li>
 	<li class="active">
 		Home
@@ -16,6 +16,13 @@
 <div class="hero-unit">
 	<h2>Área do Coordenador</h2>
 
+	<br />
+	<p>
+		<a href="{% url disciplinas:lista %}" class="btn btn-primary btn-large">Listagem de Disciplinas &raquo;</a>
+	</p>
+	<p>
+		<a href="{% url disciplinas:addDisciplina %}" class="btn btn-primary btn-large">Cadastrar nova Disciplina &raquo;</a>
+	</p>
 </div>
 
 <div class="well">
