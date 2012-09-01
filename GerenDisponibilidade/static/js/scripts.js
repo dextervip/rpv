@@ -31,11 +31,11 @@ function loadCalendar() {
 				agenda : 'H:mm{ - H:mm}'
 			},
 			timeFormat : 'H:mm{ - H:mm}',
-			axisFormat: 'H:mm',
+			axisFormat : 'H:mm',
 			titleFormat : {
 				month : "MMMM 'de' yyyy", // September 2009
 				week : "d[ yyyy]{ '&#8212;'[ MMM] d 'de' MMMM 'de' yyyy}", // Sep 7 - 13 2009
-				day : "dddd, d 'de' MMMM 'de' yyyy"                  // Tuesday, Sep 8, 2009
+				day : "dddd, d 'de' MMMM 'de' yyyy" // Tuesday, Sep 8, 2009
 			},
 			editable : false,
 			eventClick : function(calEvent, jsEvent, view) {
@@ -46,7 +46,7 @@ function loadCalendar() {
 
 				// change the border color just for fun
 				//$(this).css('border-color', 'red');
-				if(calEvent.url) {
+				if (calEvent.url) {
 					//window.open(event.url);
 					//return false;
 					//alert('opa temos um link aqui');
@@ -76,7 +76,7 @@ function loadCalendar() {
 				//textColor : 'black' // a non-ajax option
 			},
 			loading : function(bool) {
-				if(bool)
+				if (bool)
 					$('.loading').show();
 				else
 					$('.loading').hide();
@@ -97,8 +97,8 @@ $(function() {
 
 function gerarListaHoras() {
 	var horas = new Array();
-	for(var i = 0; i < 24; i++) {
-		for(var j = 0; j < 60; j += 30) {
+	for (var i = 0; i < 24; i++) {
+		for (var j = 0; j < 60; j += 30) {
 			var d = new Date(0, 0, 0, i, j, 0, 0);
 			//alert(i+" "+j);
 			horas.push(d.toLocaleTimeString());
@@ -110,13 +110,13 @@ function gerarListaHoras() {
 }
 
 $(function() {
-	if($('input#diaInteiro').is(":checked")) {
+	if ($('input#diaInteiro').is(":checked")) {
 		$('div#div_id_horaFim, div#div_id_horaInicio').hide('slow');
 		$('input#id_horaInicio,input#id_horaFim').val('');
 	}
 
 	$('input#diaInteiro').click(function() {
-		if($(this).is(":checked")) {
+		if ($(this).is(":checked")) {
 			$('div#div_id_horaFim, div#div_id_horaInicio').hide('slow');
 			$('input#id_horaInicio,input#id_horaFim').val('');
 			//alert('esconder');
@@ -126,39 +126,33 @@ $(function() {
 		}
 
 	});
-	
+
 	//recorrencia
-	var Frequencia ={
-		atualizar: function(){
-			if($('div#frequencia input').is(":checked") == false){
-				$('div#div_id_dataFimFrequencia').hide('slow');	
-				$('div#div_id_diaSemana').hide('slow');	
+	var Frequencia = {
+		atualizar : function() {
+			if ($('div#frequencia input').is(":checked") == false) {
+				$('div#div_id_dataFimFrequencia').hide('slow');
+				$('div#div_id_diaSemana').hide('slow');
 				return;
-			}	
-			if($('div#frequencia input#id_frequencia_1').is(":checked")){
-				$('div#div_id_dataFimFrequencia').hide('slow');				
-			}else{
-				$('div#div_id_dataFimFrequencia').show('slow');								
 			}
-			
-			if($('div#frequencia input#id_frequencia_3').is(":checked")){
-				$('div#div_id_diaSemana').show('slow');				
-			}else{
-				$('div#div_id_diaSemana').hide('slow');				
+			if ($('div#frequencia input#id_frequencia_1').is(":checked")) {
+				$('div#div_id_dataFimFrequencia').hide('slow');
+			} else {
+				$('div#div_id_dataFimFrequencia').show('slow');
 			}
-								
+
+			if ($('div#frequencia input#id_frequencia_3').is(":checked")) {
+				$('div#div_id_diaSemana').show('slow');
+			} else {
+				$('div#div_id_diaSemana').hide('slow');
+			}
+
 		}
 	}
 	Frequencia.atualizar();
-	
-	$('div#frequencia').change(function(){
+
+	$('div#frequencia').change(function() {
 		Frequencia.atualizar();
 	})
-	
-	
-	
-	
-	
-	
 });
 
