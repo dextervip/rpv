@@ -1,10 +1,8 @@
 # -*- encoding: utf-8 -*-
 
 from django.db import models
-#from django.utils.translation import ugettext_lazy as _
-#label=_('Componete Curricular'), 
 
-class newDisciplina(models.Model):
+class Disciplina(models.Model):
     
     nome = models.CharField('Componente Curricular', max_length=255)
     codigo = models.CharField('Código', max_length=50, unique=True)
@@ -26,7 +24,15 @@ class newDisciplina(models.Model):
     bibliograBasica = models.TextField('Referências Básicas (Leituras Obrigatórias)')
     bibliograComplem = models.TextField('Referências Complementares', blank=True)
     
-""" 
+"""
+   
+    nome = models.CharField(max_length = 255)
+    codigo = models.CharField(max_length=50)
+    
+
+TERMINAR ESTA REMODELAÇÃO NO MODEL E FORM DE DISCIPLINAS!
+
+
     Não esqueça que dados como Professor, 
     Coteudo Programático(de tal a tal semana, sera passada tal matéria - não confundir com cronograma)
     cronograma, metodEnsino, Avaliação do Processo de Ensino e Aprendizagem, 

@@ -3,13 +3,13 @@
 from django.shortcuts import render_to_response, get_object_or_404
 from django.template import RequestContext
 
-from models import newDisciplina
+from models import Disciplina
 from forms import FormNewDisciplina
 
 
 def lista(request):
     
-    lista_disciplinas = newDisciplina.objects.all().order_by("id")
+    lista_disciplinas = Disciplina.objects.all().order_by("id")
     return render_to_response("disciplina/listaDisc.html", {'lista_disciplinas': lista_disciplinas},
         context_instance=RequestContext(request))
 
@@ -23,20 +23,20 @@ def addDisciplina(request):
             return render_to_response("geral/salvo.html", context_instance=RequestContext(request))
     else:
         form = FormNewDisciplina()
-    return render_to_response("disciplina/newDisciplina.html", {'form': form},
+    return render_to_response("disciplina/Disciplina.html", {'form': form},
         context_instance=RequestContext(request))
     
 
 def disciplina(request, nr_disci):
     
-    disciplina = get_object_or_404(newDisciplina, pk=nr_disci)
+    disciplina = get_object_or_404(Disciplina, pk=nr_disci)
     return render_to_response("disciplina/showDisciplina.html", {'disciplina': disciplina} ,
         context_instance=RequestContext(request))
         
         
 def editarDiscip(request, nr_disci):
         
-    editDiscip = get_object_or_404(newDisciplina, pk=nr_disci)
+    editDiscip = get_object_or_404(Disciplina, pk=nr_disci)
     if request.method == "POST":
         form = FormNewDisciplina(request.POST, instance=editDiscip)
         if form.is_valid():
@@ -50,7 +50,7 @@ def editarDiscip(request, nr_disci):
 
 def removerDiscip(request, nr_discp):   
     
-    removeDiscip = get_object_or_404(newDisciplina, pk=nr_discp)
+    removeDiscip = get_object_or_404(Disciplina, pk=nr_discp)
     if request.method == "POST":
         removeDiscip.delete()
         return render_to_response("geral/dadosRemovidos.html", context_instance=RequestContext(request))
@@ -63,6 +63,6 @@ def pesquisaDiscip(request):
     
     if request.method == "POST":
         paramPesq = request.POST.get('pesquisa')
-        resultPesq = newDisciplina.objects.filter(nome__icontains=paramPesq).order_by("nome")
+        resultPesq = Disciplina.objects.filter(nome__icontains=paramPesq).order_by("nome")
         return render_to_response("disciplina/pesquisaDiscip.html", {'resultPesq': resultPesq},
                               context_instance=RequestContext(request))
