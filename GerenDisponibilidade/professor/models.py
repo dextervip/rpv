@@ -103,15 +103,17 @@ class Agenda():
         return HttpResponseRedirect(reverse('professor:home'))
 
 class DiaSemana(models.Model):
-    DIAS_CHOICES = ((0, 'Segunda-Feira'),
-            (1, 'Terça-Feira'),
-            (2, 'Quarta-Feira'),
-            (3, 'Quinta-Feira'),
-            (4, 'Sexta-Feira'),
-            (5, 'Sábado'),
-            (6, 'Domingo'),
-            )
+    
+    DIAS_CHOICES = (
+                    ("Seg", "Segunda-Feira"),
+                    ("Ter", "Terça-Feira"),
+                    ("Qua", "Quarta-Feira"),
+                    ("Qui", "Quinta-Feira"),
+                    ("Sex", "Sexta-Feira"),
+                    ("Sab", "Sábado"),
+                    ("Dom", "Domingo"),
+                    )
            
-    dias = models.CharField(max_length=15, choices=DIAS_CHOICES) 
+    dias = models.CharField(max_length=20, choices=DIAS_CHOICES) 
     
     

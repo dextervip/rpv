@@ -41,8 +41,7 @@ class CadastroCompromisso(forms.ModelForm):
     
     dataFimFrequencia = forms.DateField(label='Fim da Frequência',)
     
-    diaSemana = forms.TypedChoiceField(label='Dias da Semana', choices=DiaSemana.DIAS_CHOICES, initial=0, widget=forms.CheckboxSelectMultiple, required=False)
-    
+    diaSemana = forms.MultipleChoiceField(label='Dias da Semana', choices=DiaSemana.DIAS_CHOICES, initial="0", widget=forms.CheckboxSelectMultiple, required=False) 
     
     
     # Uni-form
