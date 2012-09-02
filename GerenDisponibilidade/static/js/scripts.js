@@ -14,7 +14,7 @@ function loadCalendar() {
 			},
 			dayNames : ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado'],
 			dayNamesShort : ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sab'],
-			monthNames : ['Janeiro', 'Fevevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agostp', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
+			monthNames : ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
 			monthNamesShort : ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Aug', 'Set', 'Out', 'Nov', 'Dez'],
 			buttonText : {
 				prev : '&nbsp;&#9668;&nbsp;', // left triangle

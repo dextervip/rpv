@@ -24,6 +24,10 @@
 {% load crispy_forms_tags %}
 <form method="post" class="uniForm form-horizontal">
 	{% crispy form %}
+
+	<p>
+		<a href="{% url professor:home %}" class="btn btn-inverse btn-large">&laquo;  Voltar </a>
+	</p>
 </form>
 
 {% endblock %}
