@@ -2,6 +2,16 @@
 
 {% block corpo %}
 
+<ul class="breadcrumb">
+	<li>
+		<a href="/">Página Inicial</a><span class="divider">/</span>
+	</li>
+	<li class="active">
+		Lista de Salas
+	</li>
+</ul>
+
+
 <form action="/pesquisaSala/" method="post" class="well form-search">
 	{% csrf_token %}
 	<input name="pesquisa" type="text" class="input-large search-query">
@@ -11,7 +21,7 @@
 </form>
 
 <div class="alert alert-info">
-	<a class="close" data-dismiss="alert" href="#">×</a>
+	<a class="close" data-dismiss="alert-" href="#">×</a>
 	<h3 class="alert-heading"><i class="icon-bell"> </i> Dica! </h3>
 	<p>
 		Clique sobre qualquer linha da tabela para visualizar as informações da sala.
