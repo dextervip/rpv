@@ -3,7 +3,7 @@
 import os
 PROJECT_DIR = os.path.join( os.path.dirname(__file__), '../');
 
-DEBUG = False
+DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
