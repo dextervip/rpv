@@ -133,12 +133,15 @@ $(function() {
 			if ($('div#frequencia input').is(":checked") == false) {
 				$('div#div_id_dataFimFrequencia').hide('slow');
 				$('div#div_id_diaSemana').hide('slow');
+				this.insertDefaultDateFimFrequencia();
 				return;
 			}
 			if ($('div#frequencia input#id_frequencia_1').is(":checked")) {
 				$('div#div_id_dataFimFrequencia').hide('slow');
+				this.insertDefaultDateFimFrequencia();
 			} else {
 				$('div#div_id_dataFimFrequencia').show('slow');
+				this.removeDefaultDateFimFrequencia();
 			}
 
 			if ($('div#frequencia input#id_frequencia_3').is(":checked")) {
@@ -146,8 +149,15 @@ $(function() {
 			} else {
 				$('div#div_id_diaSemana').hide('slow');
 			}
-
+		},
+		insertDefaultDateFimFrequencia: function(){
+			$('input#id_dataFimFrequencia').val('01/01/1900');
+		},
+		removeDefaultDateFimFrequencia: function(){
+			$('input#id_dataFimFrequencia').val('');
 		}
+						
+		
 	}
 	Frequencia.atualizar();
 

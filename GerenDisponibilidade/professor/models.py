@@ -21,7 +21,7 @@ class Compromisso(models.Model):
         diaInteiro = models.BooleanField(default=True)
         publico = models.BooleanField(default=False)
         frequencia = models.IntegerField()
-        dataFimFrequencia = models.DateField(blank=True)
+        dataFimFrequencia = models.DateField(null=True, blank=True)
         diaSemana = models.ManyToManyField('DiaSemana')
         
 class Agenda():
