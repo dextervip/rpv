@@ -6,6 +6,7 @@ from models import Compromisso, DiaSemana
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Layout, Div, Submit, HTML, Button, Row, Field
 from crispy_forms.bootstrap import AppendedText, PrependedText, FormActions
+from crispy_forms.templatetags.crispy_forms_field import css_class
 
 
 class CadastroCompromisso(forms.ModelForm):
@@ -68,8 +69,7 @@ class CadastroCompromisso(forms.ModelForm):
         Field('diaSemana', id='diaSemana'),
         
         FormActions(
-            Submit('save_changes', 'Salvar', css_class="btn-primary"),
-            Submit('cancel', 'Cancelar'),
+            Submit('save_changes', 'Salvar', css_class="btn btn-success btn-large"),
         )
     )
     

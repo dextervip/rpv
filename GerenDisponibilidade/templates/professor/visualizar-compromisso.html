@@ -61,6 +61,50 @@
 				<tr>
 					<td>Público: {{ compromisso.publico|yesno:'Sim,Não' }}</td>
 				</tr>
+				
+				{% if compromisso.frequencia = 0 %}
+				<tr>
+					<td>Frequência: Apenas Uma vez</td>
+				</tr>
+				{% else %}
+					{% if compromisso.frequencia = 1 %}
+						<tr>
+							<td>Frequência: Todos os Dias</td>
+						</tr>
+					{% else %}
+						{% if compromisso.frequencia = 2 %}
+							<tr>
+								<td>Frequência: Semanal</td>
+							</tr>
+						{% else %}
+							{% if compromisso.frequencia = 3 %}
+								<tr>
+									<td>Frequência: Mensal</td>
+								</tr>
+							{% else %}
+								{% if compromisso.frequencia = 4 %}
+									<tr>
+										<td>Frequência: Semestral</td>
+									</tr>
+								{% else %}
+									{% if compromisso.frequencia = 5 %}
+										<tr>
+											<td>Frequência: Anual</td>
+										</tr>							
+									{% endif %}					
+								{% endif %}
+							{% endif %}
+						{% endif %}
+   					{% endif %}
+				{% endif %}
+				
+				<tr>
+					<td>Fim da Frequência: {{ compromisso.dataFimFrequencia }}</td>
+				</tr>
+				<tr>
+					<td>Dias da Semana: {{ diasemana.diaSemana }}</td>
+				</tr>
+				
 			</tbody>
 		</table>
 	</div>
