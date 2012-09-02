@@ -2,6 +2,18 @@
 
 {% block corpo %}
 
+<ul class="breadcrumb">
+	<li>
+		<a href="/">Página Inicial</a><span class="divider">/</span>
+	</li>
+	<li>
+		<a href="{% url secretaria:listaSalas %}">Lista de Salas</a><span class="divider">/</span>
+	</li>	
+	<li class="active">
+		Lista Tipos de Sala
+	</li>
+</ul>
+
 <form action="/pesquisaTipoSala/" method="post" class="well form-search">
 	{% csrf_token %}
 	<input name="pesquisa" type="text" class="input-large search-query">

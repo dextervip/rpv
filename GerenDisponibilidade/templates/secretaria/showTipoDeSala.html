@@ -2,6 +2,19 @@
 
 {% block corpo %}
 
+
+<ul class="breadcrumb">
+	<li>
+		<a href="/">Página Inicial</a><span class="divider">/</span>
+	</li>
+	<li>
+		<a href="{% url secretaria:listaSalas %}">Lista Tipos de Sala</a><span class="divider">/</span>
+	</li>	
+	<li class="active">
+		Dados do Tipo de Sala
+	</li>
+</ul>
+
 <h2>Tipo de Sala: </h2>
 <br/>
 
