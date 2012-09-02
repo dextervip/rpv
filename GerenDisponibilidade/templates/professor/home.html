@@ -30,14 +30,14 @@
 						<br/>
 						Área de formação:
 						<br />
-						Preferencia de Disciplinas:
+						Preferência de Disciplinas:
 						<br />
-						Disponibilidade de Horario:
+						Disponibilidade de Horário:
 						<br />
 					</p>
 					<p>
-						<a class="btn btn-primary" href="#">Ver Meu Perfil Completo</a>
-						<a class="btn" href="#">Atualizar Meu Perfil</a>
+						<a class="btn btn-primary" href="#">Ver Perfil Completo</a>
+						<a class="btn" href="#">Atualizar Perfil</a>
 					</p>
 				</div>
 			</div>
@@ -56,14 +56,13 @@
 			<p>
 				<a id="adicionar-compromisso-botao" class="btn btn-primary btn-large" href="{% url professor:adicionarCompromisso %}"><i class="icon-lock"> </i> Adicionar Compromisso</a>
 			</p>
-			<div class="loading"><img src="{{ STATIC_URL }}img/loading.gif" alt="" /></div>
+			<div class="loading"><img src="{{ STATIC_URL }}img/loading.gif" alt="" />
+			</div>
 			<div id="calendar"></div>
 
 		</div>
 	</div>
 
 </div>
-
-
 
 {% endblock %}
