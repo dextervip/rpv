@@ -8,6 +8,7 @@ from crispy_forms.layout import Layout, Div, Submit, HTML, Button, Row, Field
 from crispy_forms.bootstrap import AppendedText, PrependedText, FormActions
 from crispy_forms.templatetags.crispy_forms_field import css_class
 
+import datetime
 
 class CadastroCompromisso(forms.ModelForm):
     
@@ -17,10 +18,10 @@ class CadastroCompromisso(forms.ModelForm):
         widget=forms.Textarea(),
     )
     
-    dataInicio = forms.DateField(label='Data Início',)
+    dataInicio = forms.DateField(label='Data Início',initial=datetime.date.today)
     horaInicio = forms.TimeField(label='Hora Início', required=False)
     
-    dataFim = forms.DateField(label='Data Fim',)
+    dataFim = forms.DateField(label='Data Fim',initial=datetime.date.today)
     horaFim = forms.TimeField(label='Hora Fim', help_text='<strong>Nota:</strong> Hora de finalização do compromisso.', required=False)
     
     diaInteiro = forms.BooleanField(label='Dia Inteiro', initial=False, required=False, help_text='Marque esta opção para compromisso não ter uma hora de início e fim.')
