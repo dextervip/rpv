@@ -73,6 +73,12 @@
             <arg line="${source}/manage.py migrate"/>
         </exec>
   	</target>
+  	
+  	<target name="drop.database">
+  		<exec executable="python" failonerror="true">
+            <arg line="${source}/manage.py drop"/>
+        </exec>
+  	</target>
 	
 	<target name="syncdb">
   		<exec executable="python" failonerror="true">
@@ -140,7 +146,7 @@
     </target>
     <!-- command="cd /var/www/rpv/ &amp;&amp; git pull" -->
     <target name="check-dependencies" depends="django,jenkins,pylint,coverage,south,crispy-forms,dateutil"/>   
-    <target name="deploy" depends="update-files"/>
+    <target name="deploy" depends="update-files, drop.database, syncdb"/>
     <target name="update" depends="git-update,syncdb"/>
     <target name="build" depends="clean,check-dependencies,test"/>
 	<target name="run" depends="runserver2,sleep,open-site"/>
