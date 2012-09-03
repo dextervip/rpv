@@ -37,7 +37,7 @@ class CadastroCompromisso(forms.ModelForm):
                                                                 (1, 'Todos os Dias'),
                                                                 (2, 'Semanal'),
                                                                 (3, 'Mensal'),
-                                                                (4, 'Semestral'),
+                                                                #(4, 'Semestral'),
                                                                 (5, 'Anual')
                                                                 ), widget=forms.RadioSelect, initial=0, required=True,)
     #É necessário mudar-se o tipo do form, se quiser que aceite dados nullos.
