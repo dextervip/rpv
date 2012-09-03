@@ -73,7 +73,14 @@
             <arg line="${source}/manage.py syncdb"/>
         </exec>
   	</target>
-	
+  	
+  	<target name="drop.tables">
+  		<exec executable="cmd" failonerror="true">
+            <arg line="/c python ${source}/manage.py sqlclear secretaria professor coordenador disciplinas geral sites sessions contenttypes | python ${source}/manage.py dbshell"/>
+        </exec>
+  	</target>
+  	
+  	  		
 	<target name="load-fixtures">
   		<exec executable="python" failonerror="true">
             <arg line="${source}/manage.py loaddata fixtures.json"/>

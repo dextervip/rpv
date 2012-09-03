@@ -8,6 +8,9 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.utils import simplejson
 from django.shortcuts import render_to_response, get_object_or_404
 from django.core.validators import MaxLengthValidator
+from datetime import timedelta
+from calendar import monthrange
+from dateutil import relativedelta
 
 
 class Compromisso(models.Model):
@@ -101,7 +104,8 @@ class Agenda():
         compromissos = Compromisso.objects.all()
         vetor = []
         dateFormat = "%Y-%m-%d"
-        for compromisso in compromissos:            
+        for compromisso in compromissos:  
+                                                          
             vetor.append({'id' : compromisso.id ,
                           'title' : compromisso.titulo,
                           'start' : datetime.strftime(compromisso.dataInicio , dateFormat) + " " + str(compromisso.horaInicio),
@@ -109,6 +113,32 @@ class Agenda():
                           'allDay' : compromisso.diaInteiro,
                           'url' : '/professor/visualizar-compromisso/' + str(compromisso.id),
                           })
+            
+            #verifica repeticao todos os dias
+            if(compromisso.frequencia == 1):  
+                delta = compromisso.dataFimFrequencia - compromisso.dataInicio
+                for i in range(1, (delta.days + 1)):
+                    vetor.append({'id' : compromisso.id ,
+                          'title' : compromisso.titulo,
+                          'start' : datetime.strftime((compromisso.dataInicio + timedelta(days=i)), dateFormat) + " " + str(compromisso.horaInicio),
+                          'end': datetime.strftime((compromisso.dataFim + timedelta(days=i)), dateFormat) + " " + str(compromisso.horaFim),
+                          'allDay' : compromisso.diaInteiro,
+                          'url' : '/professor/visualizar-compromisso/' + str(compromisso.id),
+                          })
+                    
+            #verifica repeticao todos os meses
+            if(compromisso.frequencia == 3):  
+                delta = relativedelta.relativedelta(compromisso.dataFimFrequencia,compromisso.dataInicio)
+                #return HttpResponse(delta.months)
+                for i in range(1, delta.months):
+                    vetor.append({'id' : compromisso.id ,
+                          'title' : compromisso.titulo,
+                          'start' : datetime.strftime((compromisso.dataInicio+relativedelta.relativedelta( months = +i ) ), dateFormat) + " " + str(compromisso.horaInicio),
+                          'end': datetime.strftime((compromisso.dataFim + relativedelta.relativedelta( months = +i )), dateFormat) + " " + str(compromisso.horaFim),
+                          'allDay' : compromisso.diaInteiro,
+                          'url' : '/professor/visualizar-compromisso/' + str(compromisso.id),
+                          })
+      
         data = simplejson.dumps(vetor);
         return HttpResponse(data, mimetype='application/json')
     
@@ -117,3 +147,5 @@ class Agenda():
         compromisso.delete()
         messages.add_message(request, messages.INFO, 'O compromisso foi excluido com sucesso da sua agenda!')
         return HttpResponseRedirect(reverse('professor:home'))
+    
+    
