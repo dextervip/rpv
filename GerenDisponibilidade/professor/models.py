@@ -69,7 +69,8 @@ class Agenda():
         else:
             c.diaInteiro = False
             c.horaInicio = request.POST['horaInicio']
-            c.horaFim = request.POST['horaFim']            
+            c.horaFim = request.POST['horaFim']
+        c.descricao = request.POST['diaSemana']
         c.save()
         return HttpResponseRedirect(reverse('professor:home'))
             
