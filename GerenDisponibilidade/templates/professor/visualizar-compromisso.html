@@ -61,60 +61,51 @@
 				<tr>
 					<td>Público: {{ compromisso.publico|yesno:'Sim,Não' }}</td>
 				</tr>
-
-				{% if compromisso.frequencia == 0 %}
+				
+				{% if compromisso.frequencia = 0 %}
 				<tr>
 					<td>Frequência: Apenas uma Vez</td>
 				</tr>
 				{% else %}
-				{% if compromisso.frequencia == 1 %}
-				<tr>
-					<td>Frequência: Todos os Dias</td>
-				</tr>
-				{% else %}
-				{% if compromisso.frequencia == 2 %}
-				<tr>
-					<td>Frequência: Semanal</td>
-				</tr>
-				{% else %}
-				{% if compromisso.frequencia == 3 %}
-				<tr>
-					<td>Frequência: Mensal</td>
-				</tr>
-				{% else %}
-				{% if compromisso.frequencia == 4 %}
-				<tr>
-					<td>Frequência: Semestral</td>
-				</tr>
-				{% else %}
-				{% if compromisso.frequencia == 5 %}
-				<tr>
-					<td>Frequência: Anual</td>
-				</tr>
+					{% if compromisso.frequencia = 1 %}
+						<tr>
+							<td>Frequência: Todos os Dias</td>
+						</tr>
+					{% else %}
+						{% if compromisso.frequencia = 2 %}
+							<tr>
+								<td>Frequência: Semanal</td>
+							</tr>
+						{% else %}
+							{% if compromisso.frequencia = 3 %}
+								<tr>
+									<td>Frequência: Mensal</td>
+								</tr>
+							{% else %}
+								{% if compromisso.frequencia = 4 %}
+									<tr>
+										<td>Frequência: Semestral</td>
+									</tr>
+								{% else %}
+									{% if compromisso.frequencia = 5 %}
+										<tr>
+											<td>Frequência: Anual</td>
+										</tr>							
+									{% endif %}					
+								{% endif %}
+							{% endif %}
+						{% endif %}
+   					{% endif %}
 				{% endif %}
-				{% endif %}
-				{% endif %}
-				{% endif %}
-				{% endif %}
-				{% endif %}
-
-				<!--
-				{% ifnotequal compromisso.dataFimFrequencia  removerIsso %}
-				<tr>
-				<td>Fim da Frequência: {{ compromisso.dataFimFrequencia }}</td>
-				</tr>
-				{% endifnotequal %}
-				-->
-
+				
+				{% if not compromisso.dataFimFrequencia|date:"d/m/Y" == "01/01/1900" %} 
 				<tr>
 					<td>Fim da Frequência: {{ compromisso.dataFimFrequencia }}</td>
 				</tr>
+				{% endif %}
+												
 				<tr>
-					<td>Dias da Semana:
-					{% for value in compromisso.diaSemana.all %}
-						{{ value.dias }}
-					{% endfor %} 
-					</td>
+					<td>Dias da Semana: {{ diasemana.diaSemana }}</td>
 				</tr>
 			</tbody>
 		</table>
