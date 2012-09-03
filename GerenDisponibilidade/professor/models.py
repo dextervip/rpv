@@ -48,7 +48,7 @@ class Agenda():
         messages.add_message(request, messages.INFO, 'O compromisso foi adicionado com sucesso em sua agenda!')
         dataI = datetime.strptime(request.POST['dataInicio'], '%d/%m/%Y').strftime('%Y-%m-%d')
         dataF = datetime.strptime(request.POST['dataFim'], '%d/%m/%Y').strftime('%Y-%m-%d')
-        c = Compromisso(titulo=request.POST['titulo'],
+        compromisso = Compromisso(titulo=request.POST['titulo'],
                             descricao=request.POST['descricao'],
                             dataInicio=dataI,
                             dataFim=dataF,
@@ -60,25 +60,26 @@ class Agenda():
         diaSemanas = request.POST.getlist('diaSemana')
         for diaSemana in diaSemanas:
             d, created = DiaSemana.objects.get_or_create(dias=diaSemana)
-            d.dias = diaSemana;
-            d.save() 
-            c.save()
-            c.diaSemana.add(d);
+            if created == True:
+                d.dias = diaSemana;
+                d.save() 
+            compromisso.save()
+            compromisso.diaSemana.add(d);
            
     
         if 'publico' in request.POST:
-            c.publico = True
+            compromisso.publico = True
         else:
-            c.publico = False
+            compromisso.publico = False
         if request.POST['horaInicio'] == '' :
-            c.diaInteiro = True
-            c.horaInicio = '00:00:00' 
-            c.horaFim = '00:00:00'           
+            compromisso.diaInteiro = True
+            compromisso.horaInicio = '00:00:00' 
+            compromisso.horaFim = '00:00:00'           
         else:
-            c.diaInteiro = False
-            c.horaInicio = request.POST['horaInicio']
-            c.horaFim = request.POST['horaFim']
-        c.save()
+            compromisso.diaInteiro = False
+            compromisso.horaInicio = request.POST['horaInicio']
+            compromisso.horaFim = request.POST['horaFim']
+        compromisso.save()
         return HttpResponseRedirect(reverse('professor:home'))
             
     def editarCompromisso(self, request, id):
@@ -91,6 +92,16 @@ class Agenda():
         compromisso.dataFim = dataF
         compromisso.frequencia = request.POST['frequencia']
         compromisso.dataFimFrequencia = datetime.strptime(request.POST['dataFimFrequencia'], '%d/%m/%Y').strftime('%Y-%m-%d')
+        
+        compromisso.diaSemana.clear()
+        diaSemanas = request.POST.getlist('diaSemana')
+        for diaSemana in diaSemanas:
+            d, created = DiaSemana.objects.get_or_create(dias=diaSemana)
+            if created == True:
+                d.dias = diaSemana;
+                d.save() 
+            compromisso.save()
+            compromisso.diaSemana.add(d);
         
         if 'publico' in request.POST:
             compromisso.publico = True
