@@ -103,14 +103,15 @@
 					<td>Fim da Frequência: {{ compromisso.dataFimFrequencia }}</td>
 				</tr>
 				{% endif %}
-												
+
+				{% if not compromisso.diaSemana.count == 0 %}
 				<tr>
 					<td>Dias da Semana:
 					{% for value in compromisso.diaSemana.all %}
 						{{ value.dias }}
-					{% endfor %} 
-					</td>
+					{% endfor %} </td>
 				</tr>
+				{% endif %}
 			</tbody>
 		</table>
 	</div>
