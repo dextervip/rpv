@@ -57,7 +57,15 @@ class Agenda():
                         
                             
                             )
-        #print request.POST['diaSemana']
+        diaSemanas = request.POST.getlist('diaSemana')
+        for diaSemana in diaSemanas:
+            d, created = DiaSemana.objects.get_or_create(dias=diaSemana)
+            d.dias = diaSemana;
+            d.save() 
+            c.save()
+            c.diaSemana.add(d);
+           
+    
         if 'publico' in request.POST:
             c.publico = True
         else:
@@ -69,7 +77,7 @@ class Agenda():
         else:
             c.diaInteiro = False
             c.horaInicio = request.POST['horaInicio']
-            c.horaFim = request.POST['horaFim']            
+            c.horaFim = request.POST['horaFim']
         c.save()
         return HttpResponseRedirect(reverse('professor:home'))
             
