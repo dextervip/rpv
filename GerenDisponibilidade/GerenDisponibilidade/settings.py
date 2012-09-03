@@ -21,7 +21,7 @@ if os.getenv('APPLICATION_ENV', None) == 'testing':
             'NAME': 'gerendisp_db',                      # Or path to database file if using sqlite3.
             'USER': 'jenkins',                      # Not used with sqlite3. root
             'PASSWORD': '',                  # Not used with sqlite3.
-            'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
+            'HOST': 'localhost',                      # Set to empty string for localhost. Not used with sqlite3.
             'PORT': '3306',                      # Set to empty string for default. Not used with sqlite3.#3306
         }
     }
@@ -32,7 +32,7 @@ else:
             'NAME': 'gerendisp_db',                      # Or path to database file if using sqlite3.
             'USER': 'root',                      # Not used with sqlite3. root
             'PASSWORD': '',                  # Not used with sqlite3.
-            'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
+            'HOST': 'localhost',                      # Set to empty string for localhost. Not used with sqlite3.
             'PORT': '3306',                      # Set to empty string for default. Not used with sqlite3.#3306
         }
     }
