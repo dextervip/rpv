@@ -154,7 +154,9 @@ $(function() {
 			$('input#id_dataFimFrequencia').val('01/01/1900');
 		},
 		removeDefaultDateFimFrequencia: function(){
-			$('input#id_dataFimFrequencia').val('');
+			if($('input#id_dataFimFrequencia').val() == '01/01/1900'){
+				$('input#id_dataFimFrequencia').val('');
+			}
 		}
 						
 		
