@@ -70,8 +70,8 @@ class CadastroCompromisso(forms.ModelForm):
         Field('diaSemana', id='diaSemana'),
         
         FormActions(
-            HTML('<span> <a href="{% url professor:home %}" class="btn btn-danger btn-large excluir">&laquo;  Descartar </a> </span>'),
             Submit('save_changes', 'Salvar', css_class="btn btn-success btn-large"),
+            HTML('<span> <a href="{% url professor:home %}" class="btn btn-danger btn-large excluir">&laquo;  Descartar </a> </span>'),
         )
     )
     
