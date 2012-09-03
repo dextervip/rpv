@@ -18,10 +18,10 @@ class CadastroCompromisso(forms.ModelForm):
         widget=forms.Textarea(),
     )
     
-    dataInicio = forms.DateField(label='Data Início',initial=datetime.date.today)
+    dataInicio = forms.DateField(label='Data Início', initial=datetime.date.today)
     horaInicio = forms.TimeField(label='Hora Início', required=False)
     
-    dataFim = forms.DateField(label='Data Fim',initial=datetime.date.today)
+    dataFim = forms.DateField(label='Data Fim', initial=datetime.date.today)
     horaFim = forms.TimeField(label='Hora Fim', help_text='<strong>Nota:</strong> Hora de finalização do compromisso.', required=False)
     
     diaInteiro = forms.BooleanField(label='Dia Inteiro', initial=False, required=False, help_text='Marque esta opção para compromisso não ter uma hora de início e fim.')
@@ -70,7 +70,7 @@ class CadastroCompromisso(forms.ModelForm):
         Field('diaSemana', id='diaSemana'),
         
         FormActions(
-            HTML('<span> <a href="{% url professor:home %}" class="btn btn-danger btn-large excluir">&laquo;  Discartar </a> </span>'),
+            HTML('<span> <a href="{% url professor:home %}" class="btn btn-danger btn-large excluir">&laquo;  Descartar </a> </span>'),
             Submit('save_changes', 'Salvar', css_class="btn btn-success btn-large"),
         )
     )
