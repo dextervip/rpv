@@ -3,7 +3,10 @@
 {% block corpo %}
 
 <div class="hero-unit">
+	<div style="text-align: center">
 	<h1>Gerenciador de Disponibilidade</h1>
+	</div>
+	<br />
 	<h2>Bem Vindo(a)!</h2>
 
 	<br />
@@ -13,7 +16,7 @@
 </div>
 
 <!-- Example row of columns -->
-<div class="row">
+<div class="row" style="text-align: center">
 
 	<div class="span4">
 		<h2>Professor</h2>
@@ -27,7 +30,7 @@
 	<div class="span4">
 		<h2>Secretaria</h2>
 		<p>
-			Para gerenciamento de salas e equipamentos, acesse a área da secretaria.
+			Gerenciamento de salas e equipamentos.
 		</p>
 		<p>
 			<a class="btn btn-large btn-info" href="{% url secretaria:listaSalas %}">Acessar &raquo;</a>
@@ -36,7 +39,7 @@
 	<div class="span4">
 		<h2>Coordenador</h2>
 		<p>
-			Área do Coordenador.
+			Gerenciamento de horários.
 		</p>
 		<p>
 			<a class="btn btn-large btn-info" href="/home/">Acessar &raquo;</a>
