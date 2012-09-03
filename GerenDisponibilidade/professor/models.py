@@ -59,10 +59,10 @@ class Agenda():
                             )
         diaSemanas = request.POST.getlist('diaSemana')
         for diaSemana in diaSemanas:
-            d = DiaSemana()
+            d, created = DiaSemana.objects.get_or_create(dias=diaSemana)
             d.dias = diaSemana;
-            c.save()
             d.save() 
+            c.save()
             c.diaSemana.add(d);
            
     
