@@ -79,8 +79,6 @@ class Agenda():
             c.horaInicio = request.POST['horaInicio']
             c.horaFim = request.POST['horaFim']
         c.save()
-        dias_list = DiaSemana.objects.filter(dias[1] in request.POST['diaSemana'])
-        c.diaSemana.add(dias_list)
         return HttpResponseRedirect(reverse('professor:home'))
             
     def editarCompromisso(self, request, id):
