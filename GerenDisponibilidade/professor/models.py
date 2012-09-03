@@ -57,15 +57,7 @@ class Agenda():
                         
                             
                             )
-        diaSemanas = request.POST.getlist('diaSemana')
-        for diaSemana in diaSemanas:
-            d = DiaSemana()
-            d.dias = diaSemana;
-            c.save()
-            d.save() 
-            c.diaSemana.add(d);
-           
-    
+        #print request.POST['diaSemana']
         if 'publico' in request.POST:
             c.publico = True
         else:
@@ -77,10 +69,8 @@ class Agenda():
         else:
             c.diaInteiro = False
             c.horaInicio = request.POST['horaInicio']
-            c.horaFim = request.POST['horaFim']
+            c.horaFim = request.POST['horaFim']            
         c.save()
-        dias_list = DiaSemana.objects.filter(dias[1] in request.POST['diaSemana'])
-        c.diaSemana.add(dias_list)
         return HttpResponseRedirect(reverse('professor:home'))
             
     def editarCompromisso(self, request, id):

@@ -98,17 +98,13 @@
    					{% endif %}
 				{% endif %}
 				
-				<!-- 
-					{% ifnotequal compromisso.dataFimFrequencia  removerIsso %}
+				
+				{% if not compromisso.dataFimFrequencia|date:"d/m/Y" == "01/01/1900" %} 
 				<tr>
 					<td>Fim da Frequência: {{ compromisso.dataFimFrequencia }}</td>
 				</tr>
-				{% endifnotequal %}
-				-->
-								
-				<tr>
-					<td>Fim da Frequência: {{ compromisso.dataFimFrequencia }}</td>
-				</tr>					
+				{% endif %}
+												
 				<tr>
 					<td>Dias da Semana: {{ diasemana.diaSemana }}</td>
 				</tr>
