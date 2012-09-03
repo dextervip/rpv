@@ -50,4 +50,5 @@ def excluirCompromisso(request, id):
 
 def getCompromissos(request):
     agenda = Agenda()
-    return agenda.getCompromisso()
+    return agenda.getCompromisso() 
+    

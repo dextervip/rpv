@@ -24,6 +24,22 @@ class Compromisso(models.Model):
         dataFimFrequencia = models.DateField(null=True, blank=True)
         diaSemana = models.ManyToManyField('DiaSemana')
         
+ 
+class DiaSemana(models.Model):
+    
+    DIAS_CHOICES = (
+                    ("Seg", "Segunda-Feira"),
+                    ("Ter", "Terça-Feira"),
+                    ("Qua", "Quarta-Feira"),
+                    ("Qui", "Quinta-Feira"),
+                    ("Sex", "Sexta-Feira"),
+                    ("Sab", "Sábado"),
+                    ("Dom", "Domingo"),
+                    )
+           
+    dias = models.CharField(max_length=20, choices=DIAS_CHOICES) 
+    
+       
 class Agenda():
     def inserirCompromisso(self, request):
         messages.add_message(request, messages.INFO, 'O compromisso foi adicionado com sucesso em sua agenda!')
@@ -101,19 +117,3 @@ class Agenda():
         compromisso.delete()
         messages.add_message(request, messages.INFO, 'O compromisso foi excluido com sucesso da sua agenda!')
         return HttpResponseRedirect(reverse('professor:home'))
-
-class DiaSemana(models.Model):
-    
-    DIAS_CHOICES = (
-                    ("Seg", "Segunda-Feira"),
-                    ("Ter", "Terça-Feira"),
-                    ("Qua", "Quarta-Feira"),
-                    ("Qui", "Quinta-Feira"),
-                    ("Sex", "Sexta-Feira"),
-                    ("Sab", "Sábado"),
-                    ("Dom", "Domingo"),
-                    )
-           
-    dias = models.CharField(max_length=20, choices=DIAS_CHOICES) 
-    
-    
