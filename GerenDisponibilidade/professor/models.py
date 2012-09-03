@@ -128,13 +128,39 @@ class Agenda():
                     
             #verifica repeticao todos os meses
             if(compromisso.frequencia == 3):  
-                delta = relativedelta.relativedelta(compromisso.dataFimFrequencia,compromisso.dataInicio)
+                delta = relativedelta.relativedelta(compromisso.dataFimFrequencia, compromisso.dataInicio)
                 #return HttpResponse(delta.months)
                 for i in range(1, delta.months):
                     vetor.append({'id' : compromisso.id ,
                           'title' : compromisso.titulo,
-                          'start' : datetime.strftime((compromisso.dataInicio+relativedelta.relativedelta( months = +i ) ), dateFormat) + " " + str(compromisso.horaInicio),
-                          'end': datetime.strftime((compromisso.dataFim + relativedelta.relativedelta( months = +i )), dateFormat) + " " + str(compromisso.horaFim),
+                          'start' : datetime.strftime((compromisso.dataInicio + relativedelta.relativedelta(months= +i)), dateFormat) + " " + str(compromisso.horaInicio),
+                          'end': datetime.strftime((compromisso.dataFim + relativedelta.relativedelta(months= +i)), dateFormat) + " " + str(compromisso.horaFim),
+                          'allDay' : compromisso.diaInteiro,
+                          'url' : '/professor/visualizar-compromisso/' + str(compromisso.id),
+                          })
+                    
+            #verifica repeticao todos os semestres
+            #if(compromisso.frequencia == 3):  
+            #    delta = relativedelta.relativedelta(compromisso.dataFimFrequencia, compromisso.dataInicio)
+                #return HttpResponse(delta.months)
+            #    for i in range(1, delta.months):
+            #        vetor.append({'id' : compromisso.id ,
+            #              'title' : compromisso.titulo,
+            #              'start' : datetime.strftime((compromisso.dataInicio + relativedelta.relativedelta(months= +i)), dateFormat) + " " + str(compromisso.horaInicio),
+            #              'end': datetime.strftime((compromisso.dataFim + relativedelta.relativedelta(months= +i)), dateFormat) + " " + str(compromisso.horaFim),
+            #              'allDay' : compromisso.diaInteiro,
+            #              'url' : '/professor/visualizar-compromisso/' + str(compromisso.id),
+            #              })
+                    
+            #verifica repeticao todos os anos
+            if(compromisso.frequencia == 5):  
+                delta = relativedelta.relativedelta(compromisso.dataFimFrequencia, compromisso.dataInicio)
+                #return HttpResponse(delta.years)
+                for i in range(1, delta.years):
+                    vetor.append({'id' : compromisso.id ,
+                          'title' : compromisso.titulo,
+                          'start' : datetime.strftime((compromisso.dataInicio + relativedelta.relativedelta(years= +i)), dateFormat) + " " + str(compromisso.horaInicio),
+                          'end': datetime.strftime((compromisso.dataFim + relativedelta.relativedelta(years= +i)), dateFormat) + " " + str(compromisso.horaFim),
                           'allDay' : compromisso.diaInteiro,
                           'url' : '/professor/visualizar-compromisso/' + str(compromisso.id),
                           })
