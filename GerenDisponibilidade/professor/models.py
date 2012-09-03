@@ -57,7 +57,15 @@ class Agenda():
                         
                             
                             )
-        #print request.POST['diaSemana']
+        diaSemanas = request.POST.getlist('diaSemana')
+        for diaSemana in diaSemanas:
+            d = DiaSemana()
+            d.dias = diaSemana;
+            c.save()
+            d.save() 
+            c.diaSemana.add(d);
+           
+    
         if 'publico' in request.POST:
             c.publico = True
         else:
