@@ -1,11 +1,11 @@
 a#adicionar-compromisso-botao {
 	float: right;
 	margin-bottom: 15px;
-	margin-right: -5px;
+	
 }
 
 #calendar {
-	width: 700px;
+	width: 690px;
 	margin: 0 auto;
 	display: inline-block;
 }
