@@ -175,7 +175,7 @@ class Agenda():
             #verifica repeticao todos os anos
             if(compromisso.frequencia == 5):  
                 delta = relativedelta.relativedelta(compromisso.dataFimFrequencia, compromisso.dataInicio)
-                #return HttpResponse(delta.years)
+                return HttpResponse(delta.years)
                 for i in range(1, delta.years):
                     vetor.append({'id' : compromisso.id ,
                           'title' : compromisso.titulo,

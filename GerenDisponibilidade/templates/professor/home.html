@@ -43,24 +43,50 @@
 			</div>
 		</div>
 		<div class="span8">
-			<h2>Meus Compromissos</h2>
+			
+			<ul class="nav nav-tabs" id="myTab">
+			  <li class="active"><a href="#compromissos">Meus Compromissos</a></li>
+			  <li><a href="#disponibilidade-aula">Disponibilidade Aula</a></li>
+			  <li><a href="#disciplinas-preferencia">Disciplinas de Preferencia</a></li>
+			</ul>
+			
+			<div class="tab-content">
+				<div class="tab-pane active" id="compromissos">
+			  		
+			  		
 
-			<link rel='stylesheet' type='text/css' href='{{ STATIC_URL }}fullcalendar/fullcalendar.css' />
-			<link rel='stylesheet' type='text/css' href='{{ STATIC_URL }}fullcalendar/fullcalendar.print.css' media='print' />
-			<!--<script type='text/javascript' src='{{ STATIC_URL }}jquery/jquery-1.7.1.min.js'></script>-->
-			<script type='text/javascript' src='{{ STATIC_URL }}jquery/jquery-ui-1.8.17.custom.min.js'></script>
-			<script type='text/javascript' src='{{ STATIC_URL }}fullcalendar/fullcalendar.min.js'></script>
-			<script type='text/javascript'>
-				loadCalendar();
+					<link rel='stylesheet' type='text/css' href='{{ STATIC_URL }}fullcalendar/fullcalendar.css' />
+					<link rel='stylesheet' type='text/css' href='{{ STATIC_URL }}fullcalendar/fullcalendar.print.css' media='print' />
+					<!--<script type='text/javascript' src='{{ STATIC_URL }}jquery/jquery-1.7.1.min.js'></script>-->
+					<script type='text/javascript' src='{{ STATIC_URL }}jquery/jquery-ui-1.8.17.custom.min.js'></script>
+					<script type='text/javascript' src='{{ STATIC_URL }}fullcalendar/fullcalendar.min.js'></script>
+					<script type='text/javascript'>
+						loadCalendar();
+					</script>
+					<p>
+						<a id="adicionar-compromisso-botao" class="btn btn-primary " href="{% url professor:adicionarCompromisso %}"><i class="icon-calendar"> </i> Adicionar Compromisso</a>
+					</p>
+					<!-- Icone de 'loading' do calendário da home de professor 
+						<div class="loading"><img src="{{ STATIC_URL }}img/loading.gif" alt="" /></div> 
+						-->
+					<div id="calendar"></div>
+
+				</div>
+			  <div class="tab-pane" id="disponibilidade-aula">
+			  	...
+			  </div>
+			  <div class="tab-pane" id="disciplinas-preferencia">
+			  	...
+			  </div>
+			</div>
+ 
+			<script>
+			  $('#myTab a').click(function (e) {
+				  e.preventDefault();
+				  $(this).tab('show');
+				})
 			</script>
-			<p>
-				<a id="adicionar-compromisso-botao" class="btn btn-primary btn-large" href="{% url professor:adicionarCompromisso %}"><i class="icon-calendar"> </i> Adicionar Compromisso</a>
-			</p>
-			<!-- Icone de 'loading' do calendário da home de professor 
-				<div class="loading"><img src="{{ STATIC_URL }}img/loading.gif" alt="" /></div> 
-				-->
-			<div id="calendar"></div>
-
+			
 		</div>
 	</div>
 
