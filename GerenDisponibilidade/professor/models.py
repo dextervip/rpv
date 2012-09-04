@@ -147,9 +147,10 @@ class Agenda():
                     
             #verifica repeticao todos os meses
             if(compromisso.frequencia == 3):  
-                delta = relativedelta.relativedelta(compromisso.dataFimFrequencia, compromisso.dataInicio)
-                #return HttpResponse(delta.months)
-                for i in range(1, delta.months):
+                #delta = relativedelta.relativedelta(compromisso.dataInicio,compromisso.dataFimFrequencia )
+                delta = self.monthdelta(compromisso.dataInicio, compromisso.dataFimFrequencia)
+                #return HttpResponse(self.monthdelta(compromisso.dataInicio, compromisso.dataFimFrequencia))
+                for i in range(1, delta):
                     vetor.append({'id' : compromisso.id ,
                           'title' : compromisso.titulo,
                           'start' : datetime.strftime((compromisso.dataInicio + relativedelta.relativedelta(months= +i)), dateFormat) + " " + str(compromisso.horaInicio),
@@ -192,5 +193,15 @@ class Agenda():
         compromisso.delete()
         messages.add_message(request, messages.INFO, 'O compromisso foi excluido com sucesso da sua agenda!')
         return HttpResponseRedirect(reverse('professor:home'))
-    
+
+    def monthdelta(self, d1, d2):
+        delta = 0
+        while True:
+            mdays = monthrange(d1.year, d1.month)[1]
+            d1 += timedelta(days=mdays)
+            if d1 <= d2:
+                delta += 1
+            else:
+                break
+        return delta
     
