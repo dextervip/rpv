@@ -214,9 +214,9 @@ class DisponibilidadeAula(models.Model):
     
     def horas(self):
         vetor = []
-        hora = datetime(1,1,1,0,0)
-        for i in range(1, 24*2):
-            hora = hora + timedelta(minutes=30)
+        hora = datetime(1,1,1,6,30)
+        for i in range(1, 16):
+            hora = hora + timedelta(hours=1)
             vetor.append(hora.time())
         return vetor
     
