@@ -205,3 +205,26 @@ class Agenda():
                 break
         return delta
     
+class DisponibilidadeAula(models.Model):
+    hora = models.TimeField()
+    diaSemana = models.ManyToManyField('DiaSemana')
+    
+    def diasSemana(self):
+        return {'seg':'Segunda','ter':'Terça','qua':'Quarta','qui':'Quinta','sex':'Sexta','sab':'Sabado','dom':'Domingo'}
+    
+    def horas(self):
+        vetor = []
+        hora = datetime(1,1,1,0,0)
+        for i in range(1, 24*2):
+            hora = hora + timedelta(minutes=30)
+            vetor.append(hora.time())
+        return vetor
+    
+class Professor(models.Model):
+    nome = models.CharField(max_length=30)
+    disponibilidadeAula = models.ManyToManyField('DisponibilidadeAula')
+    areaFormacao = models.ManyToManyField('AreaFormacao')
+    
+class AreaFormacao(models.Model):
+    nome = models.CharField(max_length=30)
+    

@@ -10,3 +10,22 @@ a#adicionar-compromisso-botao {
 	display: inline-block;
 }
 
+#calendar span.fc-header-title h2 {
+	font-size: 1.8em;
+}
+
+div#disponibilidade-aula table tbody th.nao-selecionado {
+	
+}
+
+div#disponibilidade-aula table tbody th.nao-selecionado:hover {
+	background-color: green;
+}
+
+div#disponibilidade-aula table tbody th.selecionado {
+	background-color: green;
+}
+
+div#disponibilidade-aula table tbody th.selecionado:hover {
+	background-color: red;
+}

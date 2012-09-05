@@ -166,5 +166,32 @@ $(function() {
 	$('div#frequencia').change(function() {
 		Frequencia.atualizar();
 	})
+	
+	
+	$('div#disponibilidade-aula table tbody th').click(function() {
+		alert($(this).attr('dia')+' '+$(this).attr('hora'));
+		
+		$.ajax({
+            async: true,
+            url: '/professor/disponibilidadeAula',
+            data: { dia: $(this).attr('dia'), hora: $(this).attr('hora') },
+            success: function(data) {
+                alert('success: '+data);
+            },
+            error : function(){
+            	alert('Erro');
+            }
+        });
+		
+	})
+	
+	
+	
+	var DisponibilidadeAula = {
+	}
+	
+	
+	
+	
 });
 

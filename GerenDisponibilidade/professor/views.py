@@ -5,13 +5,15 @@ from django.template import RequestContext
 from django.utils import simplejson
 from django.http import HttpResponse, HttpResponseRedirect
 from forms import CadastroCompromisso
-from professor.models import Compromisso, Agenda
-from datetime import datetime
+from professor.models import Compromisso, Agenda, DisponibilidadeAula
+from datetime import datetime, time, timedelta
 from django.core.urlresolvers import reverse
 from django.contrib import messages
 
 def home(request):
-    context_instance = RequestContext(request)
+    dis = DisponibilidadeAula()
+    #return HttpResponse(vetor)
+    context_instance = RequestContext(request, {'horas':dis.horas(),'dias': dis.diasSemana()})
     return render_to_response("professor/home.html", context_instance)
 
 def adicionarCompromisso(request):
@@ -51,4 +53,8 @@ def excluirCompromisso(request, id):
 def getCompromissos(request):
     agenda = Agenda()
     return agenda.getCompromisso() 
+
+def disponibilidadeAula(request):
+    dis = DisponibilidadeAula()
+    return HttpResponse(request.GET['dia']+' '+request.GET['hora']) 
     

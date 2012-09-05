@@ -73,7 +73,29 @@
 
 				</div>
 			  <div class="tab-pane" id="disponibilidade-aula">
-			  	...
+			  	<table class="table table-bordered">
+				   <caption>Disponibilidade</caption>
+					  <thead>
+					    <tr>
+							<th>Hora</th>
+					      
+					      {% for diaKey, dia in dias.items %}
+					      	<th>{{ dia }}</th>
+					      {% endfor %}
+					    </tr>
+					  </thead>
+					  <tbody>
+					  	{% for hora in horas %}
+					    <tr>
+					      	<th>{{ hora }}</th>
+					      	{% for diaKey, dia in dias.items %}
+					      		<th dia="{{ diaKey }}" hora="{{ hora }}" class="nao-selecionado"></th>
+					      	{% endfor %}
+					    </tr>
+					    {% endfor %}
+					  </tbody>
+				</table>
+			  	
 			  </div>
 			  <div class="tab-pane" id="disciplinas-preferencia">
 			  	...
