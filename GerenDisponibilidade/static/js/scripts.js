@@ -179,7 +179,7 @@ $(function() {
                 alert('success: '+data);
             },
             error : function(){
-            	alert('Erro');
+            	alert('Erro ao salvar disponibilidade');
             }
         });
 		

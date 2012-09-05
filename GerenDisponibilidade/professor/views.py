@@ -56,5 +56,6 @@ def getCompromissos(request):
 
 def disponibilidadeAula(request):
     dis = DisponibilidadeAula()
-    return HttpResponse(request.GET['dia']+' '+request.GET['hora']) 
+    result = dis.informarDisponibilidade(request.GET['dia'], request.GET['hora'])
+    return HttpResponse(result) 
     

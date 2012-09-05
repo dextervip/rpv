@@ -40,7 +40,8 @@ class DiaSemana(models.Model):
                     ("Dom", "Domingo"),
                     )
            
-    dias = models.CharField(max_length=20, choices=DIAS_CHOICES) 
+    nome = models.CharField(max_length=20, choices=DIAS_CHOICES) 
+    nome_curto = models.CharField(max_length=20, choices=DIAS_CHOICES) 
     
        
 class Agenda():
@@ -61,7 +62,7 @@ class Agenda():
         for diaSemana in diaSemanas:
             d, created = DiaSemana.objects.get_or_create(dias=diaSemana)
             if created == True:
-                d.dias = diaSemana;
+                d.nome_curto = diaSemana;
                 d.save() 
             compromisso.save()
             compromisso.diaSemana.add(d);
@@ -98,7 +99,7 @@ class Agenda():
         for diaSemana in diaSemanas:
             d, created = DiaSemana.objects.get_or_create(dias=diaSemana)
             if created == True:
-                d.dias = diaSemana;
+                d.nome_curto = diaSemana;
                 d.save() 
             compromisso.save()
             compromisso.diaSemana.add(d);
@@ -207,7 +208,7 @@ class Agenda():
     
 class DisponibilidadeAula(models.Model):
     hora = models.TimeField()
-    diaSemana = models.ManyToManyField('DiaSemana')
+    diaSemana = models.ForeignKey(DiaSemana, blank=True, null=True)
     
     def diasSemana(self):
         return [('seg','Segunda'),('ter','Terça'),('qua','Quarta'),('qui','Quinta'),('sex','Sexta'),('sab','Sabado'),('dom','Domingo')]
@@ -220,6 +221,22 @@ class DisponibilidadeAula(models.Model):
             vetor.append(hora.time())
         return vetor
     
+    def informarDisponibilidade(self, dia, hora):
+        p = Professor.objects.get(id=1);
+        ds = DiaSemana.objects.get(nome_curto=dia);
+        
+        dis, created = DisponibilidadeAula.objects.get_or_create(hora=hora)
+        if created == True:
+            dis.hora = hora
+            dis.save()
+        dis.diaSemana=ds
+        dis.save()
+        
+        p.disponibilidadeAula.add(dis)
+        p.save()
+                
+        return [True, dia, hora]
+     
 class Professor(models.Model):
     nome = models.CharField(max_length=30)
     disponibilidadeAula = models.ManyToManyField('DisponibilidadeAula')
