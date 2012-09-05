@@ -46,7 +46,7 @@
 			
 			<ul class="nav nav-tabs" id="myTab">
 			  <li class="active"><a href="#compromissos">Meus Compromissos</a></li>
-			  <li><a href="#disponibilidade-aula">Disponibilidade Aula</a></li>
+			  <li><a href="#disponibilidade-aula">Disponibilidade de Aula</a></li>
 			  <li><a href="#disciplinas-preferencia">Disciplinas de Preferencia</a></li>
 			</ul>
 			
@@ -74,12 +74,12 @@
 				</div>
 			  <div class="tab-pane" id="disponibilidade-aula">
 			  	<table class="table table-bordered">
-				   <caption>Disponibilidade</caption>
+				   <caption>Realize a seleção dos horarios que você tem disponibilidade para dar aula.</caption>
 					  <thead>
 					    <tr>
 							<th>Hora</th>
 					      
-					      {% for diaKey, dia in dias.items %}
+					      {% for diaKey, dia in dias %}
 					      	<th>{{ dia }}</th>
 					      {% endfor %}
 					    </tr>
@@ -88,7 +88,7 @@
 					  	{% for hora in horas %}
 					    <tr>
 					      	<th>{{ hora }}</th>
-					      	{% for diaKey, dia in dias.items %}
+					      	{% for diaKey, dia in dias %}
 					      		<th dia="{{ diaKey }}" hora="{{ hora }}" class="nao-selecionado"></th>
 					      	{% endfor %}
 					    </tr>

@@ -210,7 +210,7 @@ class DisponibilidadeAula(models.Model):
     diaSemana = models.ManyToManyField('DiaSemana')
     
     def diasSemana(self):
-        return {'seg':'Segunda','ter':'Terça','qua':'Quarta','qui':'Quinta','sex':'Sexta','sab':'Sabado','dom':'Domingo'}
+        return [('seg','Segunda'),('ter','Terça'),('qua','Quarta'),('qui','Quinta'),('sex','Sexta'),('sab','Sabado'),('dom','Domingo')]
     
     def horas(self):
         vetor = []
