@@ -41,7 +41,10 @@ class DiaSemana(models.Model):
                     )
            
     nome = models.CharField(max_length=20, choices=DIAS_CHOICES) 
-    nome_curto = models.CharField(max_length=20, choices=DIAS_CHOICES) 
+    nome_curto = models.CharField(max_length=20, choices=DIAS_CHOICES)
+    
+    def diasSemana(self):
+        return [('seg','Segunda'),('ter','Terça'),('qua','Quarta'),('qui','Quinta'),('sex','Sexta'),('sab','Sabado'),('dom','Domingo')]
     
        
 class Agenda():
@@ -221,26 +224,50 @@ class DisponibilidadeAula(models.Model):
             vetor.append(hora.time())
         return vetor
     
-    def informarDisponibilidade(self, dia, hora):
-        p = Professor.objects.get(id=1);
-        ds = DiaSemana.objects.get(nome_curto=dia);
-        
-        dis, created = DisponibilidadeAula.objects.get_or_create(hora=hora)
-        if created == True:
-            dis.hora = hora
-            dis.save()
-        dis.diaSemana=ds
-        dis.save()
-        
-        p.disponibilidadeAula.add(dis)
-        p.save()
+    
                 
-        return [True, dia, hora]
      
 class Professor(models.Model):
     nome = models.CharField(max_length=30)
     disponibilidadeAula = models.ManyToManyField('DisponibilidadeAula')
     areaFormacao = models.ManyToManyField('AreaFormacao')
+    
+    def getDisponibilidadeAulas(self):
+        return self.disponibilidadeAula.select_related().all()
+    
+    def getDisponibilidadeAula(self, dia, hora):
+        d = DiaSemana.objects.get(nome_curto=dia)
+        try:
+            dis = self.disponibilidadeAula.select_related().get(diaSemana=d, hora=hora)
+        except Exception:
+            return False
+        return dis
+    
+    def adicionarDisponibilidadeAula(self, dis):
+        self.disponibilidadeAula.add(dis)
+        
+    def removeDisponibilidadeAula(self, dis):
+        self.disponibilidadeAula.remove(dis)
+        
+    def informarDisponibilidade(self, dia, hora):
+        ds = DiaSemana.objects.get(nome_curto=dia);
+        dis, created = DisponibilidadeAula.objects.get_or_create(diaSemana=ds, hora=hora)
+        if created == True:
+            dis.hora = hora
+            dis.save()
+            dis.diaSemana=ds
+            dis.save()
+        
+        if isinstance(self.getDisponibilidadeAula(dia, hora), DisponibilidadeAula):
+            self.removeDisponibilidadeAula(dis)
+        else:
+            self.adicionarDisponibilidadeAula(dis)
+        
+        self.save()
+        return ['Add', dia, hora]
+        
+    
+    
     
 class AreaFormacao(models.Model):
     nome = models.CharField(max_length=30)

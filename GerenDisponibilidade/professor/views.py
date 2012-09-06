@@ -5,7 +5,7 @@ from django.template import RequestContext
 from django.utils import simplejson
 from django.http import HttpResponse, HttpResponseRedirect
 from forms import CadastroCompromisso
-from professor.models import Compromisso, Agenda, DisponibilidadeAula
+from professor.models import Compromisso, Agenda, DisponibilidadeAula, Professor
 from datetime import datetime, time, timedelta
 from django.core.urlresolvers import reverse
 from django.contrib import messages
@@ -55,7 +55,7 @@ def getCompromissos(request):
     return agenda.getCompromisso() 
 
 def disponibilidadeAula(request):
-    dis = DisponibilidadeAula()
-    result = dis.informarDisponibilidade(request.GET['dia'], request.GET['hora'])
+    p = Professor.objects.get(id=1);
+    result = p.informarDisponibilidade(request.GET['dia'], request.GET['hora'])
     return HttpResponse(result) 
     

@@ -169,17 +169,17 @@ $(function() {
 	
 	
 	$('div#disponibilidade-aula table tbody th').click(function() {
-		alert($(this).attr('dia')+' '+$(this).attr('hora'));
+		console.log($(this).attr('dia')+' '+$(this).attr('hora'));
 		
 		$.ajax({
             async: true,
             url: '/professor/disponibilidadeAula',
             data: { dia: $(this).attr('dia'), hora: $(this).attr('hora') },
             success: function(data) {
-                alert('success: '+data);
+                console.log('success: '+data);
             },
             error : function(){
-            	alert('Erro ao salvar disponibilidade');
+            	console.log('Erro ao salvar disponibilidade');
             }
         });
 		
@@ -188,6 +188,18 @@ $(function() {
 	
 	
 	var DisponibilidadeAula = {
+		
+		seletorCelula : '',
+	
+		marcarSelecionado: function(){
+			this.seletorCelula.removeClass('nao-selecionado');
+			$(this.seletorCelula).addClass('selecionado');
+		},
+		marcarNaoSelecionado: function(){
+			this.seletorCelula.removeClass('selecionado');
+			this.seletorCelula.addClass('nao-selecionado');
+		}
+	
 	}
 	
 	
