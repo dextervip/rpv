@@ -260,14 +260,13 @@ class Professor(models.Model):
         
         if isinstance(self.getDisponibilidadeAula(dia, hora), DisponibilidadeAula):
             self.removeDisponibilidadeAula(dis)
+            result = 'removed'
         else:
             self.adicionarDisponibilidadeAula(dis)
+            result = 'added'
         
         self.save()
-        return ['Add', dia, hora]
-        
-    
-    
+        return {'result' : result , 'dia' : dia,'hora': hora}
     
 class AreaFormacao(models.Model):
     nome = models.CharField(max_length=30)

@@ -57,5 +57,14 @@ def getCompromissos(request):
 def disponibilidadeAula(request):
     p = Professor.objects.get(id=1);
     result = p.informarDisponibilidade(request.GET['dia'], request.GET['hora'])
-    return HttpResponse(result) 
+    data = simplejson.dumps(result);
+    return HttpResponse(data, mimetype='application/json')
+
+def getDisponibilidadeAula(request):
+    from django.core import serializers
+    p = Professor.objects.get(id=1);
+    result = p.getDisponibilidadeAulas()
+    data = serializers.serialize("json", result)
+    return HttpResponse(data, mimetype='application/json')
+    
     

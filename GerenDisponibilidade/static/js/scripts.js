@@ -168,15 +168,25 @@ $(function() {
 	})
 	
 	
-	$('div#disponibilidade-aula table tbody th').click(function() {
+	
+	
+	$('div#disponibilidade-aula table tbody th.celula-disponibilidade').click(function() {
 		console.log($(this).attr('dia')+' '+$(this).attr('hora'));
 		
 		$.ajax({
             async: true,
             url: '/professor/disponibilidadeAula',
             data: { dia: $(this).attr('dia'), hora: $(this).attr('hora') },
+            context: this,
             success: function(data) {
-                console.log('success: '+data);
+                console.log('success: '+data.result);
+                DisponibilidadeAula.seletorCelula = $(this);
+                if(data.result == 'added'){
+                	DisponibilidadeAula.marcarSelecionado();
+                }else if(data.result == 'removed'){
+                	DisponibilidadeAula.marcarNaoSelecionado();
+                }
+                
             },
             error : function(){
             	console.log('Erro ao salvar disponibilidade');
@@ -186,9 +196,12 @@ $(function() {
 	})
 	
 	
+});
+
+var DisponibilidadeAula = {
 	
-	var DisponibilidadeAula = {
-		
+		dia: '',
+		hora: '',	
 		seletorCelula : '',
 	
 		marcarSelecionado: function(){
@@ -198,12 +211,25 @@ $(function() {
 		marcarNaoSelecionado: function(){
 			this.seletorCelula.removeClass('selecionado');
 			this.seletorCelula.addClass('nao-selecionado');
+		},
+		
+		carregarDadosDoServidor: function(){
+			$.ajax({
+	            async: true,
+	            url: '/professor/getDisponibilidadeAula',
+	            context: this,
+	            success: function(data) {
+	                console.log('success: '+data);
+	                
+	                //$('div#disponibilidade-aula table tbody th.celula-disponibilidade')
+	                
+	            },
+	            error : function(){
+	            	console.log('Erro ao salvar disponibilidade');
+	            }
+        	});
+		
 		}
 	
 	}
-	
-	
-	
-	
-});
 
