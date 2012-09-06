@@ -193,7 +193,9 @@ $(function() {
             }
         });
 		
-	})
+	});
+	
+	
 	
 	
 });
@@ -206,7 +208,7 @@ var DisponibilidadeAula = {
 	
 		marcarSelecionado: function(){
 			this.seletorCelula.removeClass('nao-selecionado');
-			$(this.seletorCelula).addClass('selecionado');
+			this.seletorCelula.addClass('selecionado');
 		},
 		marcarNaoSelecionado: function(){
 			this.seletorCelula.removeClass('selecionado');
@@ -221,7 +223,17 @@ var DisponibilidadeAula = {
 	            success: function(data) {
 	                console.log('success: '+data);
 	                
-	                //$('div#disponibilidade-aula table tbody th.celula-disponibilidade')
+	                $('div#disponibilidade-aula table tbody th.celula-disponibilidade').each(function() {
+	                	var seletor = $(this);
+	                	$.each(data, function(i, item) {
+						    if(seletor.attr('dia') == item.dia && seletor.attr('hora') == item.hora){
+						    	console.log('Selecionado: '+item.dia+' '+item.hora);
+						    	DisponibilidadeAula.seletorCelula = seletor;
+						    	DisponibilidadeAula.marcarSelecionado();
+					    	}
+						});
+					    
+					});
 	                
 	            },
 	            error : function(){
@@ -232,4 +244,8 @@ var DisponibilidadeAula = {
 		}
 	
 	}
+	
+	$(function() {
+		DisponibilidadeAula.carregarDadosDoServidor();
+	});
 

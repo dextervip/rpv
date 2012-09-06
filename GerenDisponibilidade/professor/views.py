@@ -64,7 +64,11 @@ def getDisponibilidadeAula(request):
     from django.core import serializers
     p = Professor.objects.get(id=1);
     result = p.getDisponibilidadeAulas()
-    data = serializers.serialize("json", result)
+    vetor = []
+    for r in result:
+        vetor.append({'hora':  r.hora.strftime("%H:%M") , 'dia':r.diaSemana.nome_curto})
+        
+    data = simplejson.dumps(vetor);
     return HttpResponse(data, mimetype='application/json')
     
     
