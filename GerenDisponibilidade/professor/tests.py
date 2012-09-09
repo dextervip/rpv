@@ -6,8 +6,7 @@ Replace this with more appropriate tests for your application.
 """
 
 from django.test import TestCase
-from GerenDisponibilidade.professor.models import Professor, DiaSemana, DisponibilidadeAula
-
+from professor.models import Professor, DiaSemana, DisponibilidadeAula
 
 class SimpleTest(TestCase):
         
