@@ -11,6 +11,7 @@ from django.core.validators import MaxLengthValidator
 from datetime import timedelta
 from calendar import monthrange
 from dateutil import relativedelta
+from disciplinas.models import Disciplina
 
 
 class Compromisso(models.Model):
@@ -271,3 +272,7 @@ class Professor(models.Model):
 class AreaFormacao(models.Model):
     nome = models.CharField(max_length=30)
     
+class DisciplinaPreferencia(models.Model):
+    disciplina = models.ForeignKey(Disciplina)
+	professor = models.ForeignKey(Professor)
+	grau = models.IntegerField()
