@@ -273,6 +273,13 @@ class AreaFormacao(models.Model):
     nome = models.CharField(max_length=30)
     
 class DisciplinaPreferencia(models.Model):
-    disciplina = models.ForeignKey(Disciplina)
+	disciplina = models.ForeignKey(Disciplina)
 	professor = models.ForeignKey(Professor)
 	grau = models.IntegerField()
+	
+	def ajustar_grau(professor, disciplina, grau=0):
+		ddp, created = DisciplinaPreferencia.objects.get_or_create(professor=professor, disciplina=disciplina)
+		ddp.grau = grau
+		ddp.save()
+	
+	
