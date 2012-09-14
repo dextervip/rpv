@@ -43,16 +43,22 @@
 			</div>
 		</div>
 		<div class="span8">
-			
+
 			<ul class="nav nav-tabs" id="myTab">
-			  <li class="active"><a href="#compromissos"><b> Compromissos </b></a></li>
-			  <li><a href="#disponibilidade-aula"><b> Disponibilidade para Aulas </b></a></li>
-			  <li><a href="#disciplinas-preferencia"><b> Disciplinas de Preferência </b></a></li>
+				<li class="active">
+					<a href="#compromissos"><b> Compromissos </b></a>
+				</li>
+				<li>
+					<a href="#disponibilidade-aula"><b> Disponibilidade para Aulas </b></a>
+				</li>
+				<li>
+					<a href="#disciplinas-preferencia"><b> Disciplinas de Preferência </b></a>
+				</li>
 			</ul>
-			
+
 			<div class="tab-content">
-				<div class="tab-pane active" id="compromissos">	  		
-			  		
+				<div class="tab-pane active" id="compromissos">
+
 					<link rel='stylesheet' type='text/css' href='{{ STATIC_URL }}fullcalendar/fullcalendar.css' />
 					<link rel='stylesheet' type='text/css' href='{{ STATIC_URL }}fullcalendar/fullcalendar.print.css' media='print' />
 					<!--<script type='text/javascript' src='{{ STATIC_URL }}jquery/jquery-1.7.1.min.js'></script>-->
@@ -64,49 +70,54 @@
 					<p>
 						<a id="adicionar-compromisso-botao" class="btn btn-primary " href="{% url professor:adicionarCompromisso %}"><i class="icon-calendar"> </i> Adicionar Compromisso</a>
 					</p>
-					<!-- Icone de 'loading' do calendário da home de professor 
-						<div class="loading"><img src="{{ STATIC_URL }}img/loading.gif" alt="" /></div> 
-						-->
+					<!-- Icone de 'loading' do calendário da home de professor
+					<div class="loading"><img src="{{ STATIC_URL }}img/loading.gif" alt="" /></div>
+					-->
 					<div id="calendar"></div>
 
 				</div>
-			  <div class="tab-pane" id="disponibilidade-aula">
-			  	<table class="table table-bordered">
-				   <caption>Realize a seleção dos horarios que você tem disponibilidade para dar aula.</caption>
-					  <thead>
-					    <tr>
-							<th>Hora</th>
-					      
-					      {% for diaKey, dia in dias %}
-					      	<th>{{ dia }}</th>
-					      {% endfor %}
-					    </tr>
-					  </thead>
-					  <tbody>
-					  	{% for hora in horas %}
-					    <tr>
-					      	<th>{{ hora }}</th>
-					      	{% for diaKey, dia in dias %}
-					      		<th dia="{{ diaKey }}" hora="{{ hora }}" class="nao-selecionado celula-disponibilidade"></th>
-					      	{% endfor %}
-					    </tr>
-					    {% endfor %}
-					  </tbody>
-				</table>
-			  	
-			  </div>
-			  <div class="tab-pane" id="disciplinas-preferencia">
-			  	...In construction___
-			  </div>
+				<div class="tab-pane" id="disponibilidade-aula">
+					<table class="table table-bordered">
+						<caption>
+							Realize a seleção dos horarios que você tem disponibilidade para dar aula.
+						</caption>
+						<thead>
+							<tr>
+								<th>
+								<center>
+									Hora
+								</center></th>
+
+								{% for diaKey, dia in dias %}
+								<th>{{ dia }}</th>
+								{% endfor %}
+							</tr>
+						</thead>
+						<tbody>
+							{% for hora in horas %}
+							<tr>
+								<th>{{ hora }}</th>
+								{% for diaKey, dia in dias %}
+								<th dia="{{ diaKey }}" hora="{{ hora }}" class="nao-selecionado celula-disponibilidade"></th>
+								{% endfor %}
+							</tr>
+							{% endfor %}
+						</tbody>
+					</table>
+
+				</div>
+				<div class="tab-pane" id="disciplinas-preferencia">
+					...In construction___
+				</div>
 			</div>
- 
+
 			<script>
-			  $('#myTab a').click(function (e) {
-				  e.preventDefault();
-				  $(this).tab('show');
+				$('#myTab a').click(function(e) {
+					e.preventDefault();
+					$(this).tab('show');
 				})
 			</script>
-			
+
 		</div>
 	</div>
 

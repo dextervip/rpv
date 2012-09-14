@@ -1,0 +1,11 @@
+/*.aux
+/*.bbl
+/*.blg
+/*.log
+/*.toc
+/*.pdf
+/*.dvi
+/*.out
+/*.synctex.gz
+
+*.lof
