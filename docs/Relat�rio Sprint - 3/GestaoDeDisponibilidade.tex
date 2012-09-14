@@ -14,15 +14,15 @@
 
 \begin{document}
 
-\autor{Rafael Tavares Amorim \\ Juliano R. Macedo\\ Wolmir L. F. Nemitz}
+\autor{Rafael Tavares Amorim \\ Juliano Rodovalho Macedo \\ Wolmir L. F. Nemitz}
 
-\titulo{Entrega 2: Gestão de Disponibilidade \\ Versão 1.0}
+\titulo{Entrega 3: Gestão de Disponibilidade \\ Versão 2.0}
 
 \instituicao{Universidade Federal do Pampa \par Engenharia da Software \par Resolução de Problemas V}
 
-\local{Alegrete - RS, Brasil}
+\local{Alegrete - Rio Grande do Sul, Brasil}
 
-\data{19 de Maio de 2012}
+\data{15 de Setembro de 2012}
 
 \capa
 
@@ -35,17 +35,18 @@
 
 \chapter{INTRODUÇÃO}
 
-	Este relatório tem por finalidade apresentar a fundamentação teórica e tecnológica utilizada no segundo \emph{sprint}, bem como o detalhamento de nossa solução, e por fim um link de referência para acesso ao sistema.
+	Este relatório tem por finalidade apresentar a fundamentação teórica e tecnológica utilizada no terceiro \emph{sprint}, o nosso Product Backlog completo e atualizado, 
+	o Sprint Backlog munido de nossas especificações de engenharia juntamente com o detalhamento da solução, e por fim,o link de referência visando o acesso ao sistema.
 
 
 	
 	\section{Metodologia Ágil}
 	
 		Metodologia ágil é um famoso conjunto de metodologias de desenvolvimento de software, 
-		com foco na mitigação dos riscos esta metodologia aposta em pequenos ciclos iterativos de desenvolvimento do software,
+		com foco na mitigação dos riscos, esta metodologia aposta em pequenos ciclos iterativos de desenvolvimento de software,
 		onde ocorre a repetição de cada tarefa comum em um processo de software, ou seja, em cada ciclo realiza-se analise, projeto,
-		implementação e testes, referentes aquele módulo, desta forma busca-se à capacidade real de implantar-se um nova versão 
-		do software ao final de cada iteração. Ao final de cada clico de iteração a equipe responsável por todo o projeto é reunida 
+		implementação e testes, referentes aquele módulo, desta forma busca-se à capacidade real de implantar um nova versão 
+		do sistema ao final de cada ciclo; Antes de iniciar-se uma nova iteração a equipe responsável por todo o projeto é reunida 
 		e reavalia-se as características, metas e prioridades do projeto como um todo, para que estas sejam aplicadas no próximo ciclo.
 		
 		Os modelos ágeis são hoje a principal alternativa as metodologias tradicionais de desenvolvimento de software, 
@@ -56,15 +57,14 @@
 	
 		\subsection{Visão Geral}
 		
-			O \emph{scrum} é uma metodologia ágil, muitos consideram como um framework ágil também, que vem cada dia sendo mais popular
-			no desenvolvimento de software. O \emph{scrum} tem o objetivo de agilizar o processo de desenvolvimento de software com entregas aos 
-			clientes de forma iterativa e com incrementos de software com alto valor. Basicamente temos 3
-			papéis neste processo: \emph{Team, Scrum Master e Product Owner}.
+			O \emph{scrum} é uma metodologia ágil de desenvolvimento de software, embora muitos consideram-no como um framework ágil, 
+			o seus maior objetivo é agilizar o processo de desenvolvimento de software com pequenas entregas ao cliente de forma iterativa
+			visando agregar-se valor ao produto a cada ciclo(iteração) . Em sua existem três papéis neste processo, são eles: \emph{Product Owner, Scrum Master, Team}.
 		
 		\subsection{Papéis}
 		
-			O \emph{product owner} é um papel muito importante no \emph{scrum}, cabe a ele definir quais funcionalidades devem ou
-			não existir no sistema por meio de \emph{user stories} e também definir a prioridade delas. Este papel também
+			O \emph{Product Owner} é um papel muito importante no \emph{scrum}, cabe a ele definir quais funcionalidades devem ou
+			não existir no sistema por meio de \emph{user stories} e também definir a prioridade delas. Este pa\texttt{}pel também
 			trata de aprovar ou rejeitar o trabalho realizado e dizer se foi realizado como esperado.
 			
 			O \emph{scrum master} tem papel de manter a produtividade da equipe, facilitando o processo de \emph{scrum} e resolver impedimentos
@@ -128,12 +128,14 @@
 	
 	\section{Python}
 	
-		\emph{Python} é uma conceituada linguagem de programação de alto nível, interpretada, orientada a objetos e de tipagem forte. Idealizada como uma linguagem que valorize o tempo e esforço do programador, Python foca a legibilidade do código, sua indentação, velocidade de desenvolvimento e expressividade. Dentro desta filosofia 
-		podemos destacar a forte indentação da linguagem, o que facilita a sua leitura melhorando o visual organizacional da linguagem, e também sua sintaxe simples, limpa e coerente coopera para um rápido aprendizado.\cite{PYTHON}
+		\emph{Python} é uma conceituada linguagem de programação de alto nível, interpretada, orientada a objetos e de tipagem forte. 
+		Idealizada como uma linguagem que valorize o tempo e esforço do programador, Python foca a legibilidade do código,
+		 sua indentação, velocidade de desenvolvimento e expressividade. Dentro desta filosofia podemos destacar a forte indentação da linguagem e sua sintaxe simples , 
+		 o que facilita a leitura melhorando o visual organizacional da linguagem, este aspecto limpo e coerente coopera para um rápido aprendizado.\cite{PYTHON}
 	
 	\section{Pip}
 	
-		Devido à grande quantidade de extensões, bibliotecas e frameworks que utilizam o \emph{Python}, a comunidade dessa linguagem criou um repositório centralizado de pacotes, o \emph{Python Package Index}.
+		Devido à grande quantidade de extensões, bibliotecas e frameworks que utilizam \emph{Python}, a comunidade desta linguagem criou um repositório centralizado de pacotes, o \emph{Python Package Index}.
 		\emph{Pip} é uma ferramenta para instalar e gerenciar pacotes \emph{Python}, tais como aqueles encontrados no \emph{Python Package Index}.\cite{PIPSITE}
 
 	\section{Django}
@@ -150,94 +152,92 @@
 	\section{South}
 		\emph{South} é uma ferramenta de migração de dados em aplicações \emph{Django}, 
 		permite ao desenvolvedor migrar as informações do banco de dados apos refatorações no modelo
-		sem que seja necessário manipular-se o banco, executando as alterações necessárias 
+		sem á real necessidade em manipular-se o banco, executando as alterações necessárias 
 		no mesmo de acordo com as modificações realizadas.
 				
 		Suas principais característica são: 
 			\begin{itemize}
-			\item Criação e migração automática: \emph{South} pode ver o que realmente foi modificado no seu arquivo models.py
-			 e automaticamente escrever a migrações que corresponda as suas alterações.
-			\item Independência de banco de dados: Na medida do possível, do \emph{South} é completamente independente 
-			de banco de dados, suportando atualmente cinco \emph{backends} de bancos de dados diferentes.
-			\item Avançado: \emph{South} reconhece e trabalha com o conceito de aplicativos \emph{Django}, permitindo que você use 
-			as migrações para as aplicações que você preferir, e deixa-lhe trabalhar sobre \emph{syncdb} nas demais.
+			\item Criação e migração automática: \emph{South} é possível visualizar o que realmente foi modificado em seu arquivo models.py
+			 e automaticamente escrever a migrações que corresponda as estas alterações.
+			\item Independência de banco de dados: Em questões gerais, o \emph{South} é independente da tecnologia utilizada no banco de dados, 
+			suportando atualmente os cinco \emph{backends} de bancos de dados mais conceituados no mercado.
+			\item Avançado: \emph{South} reconhece e trabalha com o conceito de aplicativos \emph{Django}, permitindo que o desenvolvedor configure 
+			suas migrações para aquelas aplicações escolhidas, e permite ao mesmo trabalhar sobre \emph{syncdb} nas demais.
 			\end{itemize}
 			
 		As informações desta seção foram retiradas da referência \cite{SOUTH}.
 	
 	\section{Jenkins}
 			
-				\emph{Jenkins} é um servidor de integração contínua de código fonte aberto escrito em Java, e com mais de 300 plugins para
-				suportar diferentes tipos de desenvolvimento de software. O \emph{Jenkins} prover o processo de integração contínua para o
-				desenvolvimento de software \cite{JENKINS}.
+				\emph{Jenkins} é um servidor de integração contínua, de código fonte aberto e escrito em Java, disponibiliza mais de 300 plugins 
+				com suporte aos mais diversos tipos de desenvolvimento de software. O \emph{Jenkins} prover todo o processo de integração 
+				contínua durante o desenvolvimento de software.
 				
-				O processo de integração contínua visa melhorar a qualidade de software e reduzir o tempo de entrega, substituindo a
-				prática tradicional de aplicação do controle de qualidade depois do desenvolvimento completo. Os princípios da
-				integração contínua são\cite{CIWIKIPEDIA}:
+				O processo de integração contínua visa melhorar a qualidade do produto de software entregue em cada versão, reduzindo o tempo efetivo de integração,
+				substituindo então as práticas tradicionais de aplicação do controle de qualidade após o desenvolvimento completo. Os princípios da
+				integração contínua são:
 				\begin{itemize}
-				  \item Manter o código fonte em um repositório de controle de versão
-				  \item Automatizar a construção de software
-				  \item Fazer a construção de software testar automaticamente o software
-				  \item Todo mundo deve submeter para o repositório base todo dia
-				  \item Toda submissão para repositório base deve ser construído
-				  \item A construção deve ser rápida para identificação dos problemas rapidamente
-				  \item Testar em um ambiente clone de produção
-				  \item Deixar última construção sucedida disponível para os \emph{stakeholders} e testadores
-				  \item Todo mundo pode ver o resultado das últimas construções
-				  \item Automatizar o \emph{deploy}
+				  \item Manter o código fonte em um repositório de controle de versão;
+				  \item Automatizar a construção de software;
+				  \item Fazer a construção da software e testa-lo automaticamente;
+				  \item Todos os desenvolvedores devem submeter\emph{(commitar)} para a mesma base de repositório diariamente;
+				  \item Toda submissão para o repositório base deve ser construído;
+				  \item A construção deve ocorrer rapidamente visando identificar os problemas o mais breve possível;
+				  \item Testar em um ambiente clone de produção\emph{(simular o ambiente real)};
+				  \item Deixar sempre a última construção bem sucedida disponível para os \emph{stakeholders} e testadores;
+				  \item Todos podem ver o resultado das últimas construções;
+				  \item Automatizar o \emph{deploy};
 				\end{itemize}
 				
-				Sendo importante, a parte de testes para que a integração contínua funcione. Existem mecanismos implementados em
-				varias linguagens que podem não somente testar o funcionamento total da aplicação mas como verificar a qualidade de
-				código fonte escrito baseado em vários fatores como padrão de codificação, detecção de cópias, detecção de erros em
-				sintaxe e problemas de lógica, também chamado de inspeção contínua.\cite{INSPECAO-CONTINUA}
+				O momento de testes, durante o deploy é de extrema importância para obter-se bons resultados com a integração contínua. Existem 
+				diversos mecanismos implementados em varias linguagens que podem não somente testar o funcionamento total da aplicação mas 
+				também verificar a qualidade do código fonte escrito, utilizando para isso fatores como padrão de codificação, detecção de cópias, 
+				detecção de erros em sintaxe e problemas de lógica, comumente chamado de inspeção contínua.
 				
 				A ferramenta \emph{Jenkins} entra para a execução do processo de integração contínua, irá tratar de obter o código fonte,
-				realizar a construção com ajuda do \emph{Maven}\cite{MAVENBUILDTOOL} ou \emph{Ant}\cite{ANTBUILDTOOL}, realizar a execução dos testes e fazer o deploy para o servidor de
-				teste.\cite{JENKINS-BUILD}
+				realizar a construção com ajuda do \emph{Maven}\cite{MAVENBUILDTOOL} ou \emph{Ant}\cite{ANTBUILDTOOL}, realizar a execução dos testes 
+				e fazer o deploy para o servidor.\cite{JENKINS-BUILD}
 
 		\section{Klaros Testmanagement}
 		
-			É uma aplicação web baseada em AJAX escrita em Java para organização e gerenciamento do processo de teste. O sistema
-			permite a construção dos casos de teste, gerenciar casos de teste, dividir em suítes de testes, cadastrar os
-			ambientes de teste e sistemas que estão rodando o teste, executar testes e coletar os resultados.
+			É uma aplicação web baseada em AJAX e escrita em Java, seu intuito é melhorar a organização e gerenciamento do processo de teste como um todo. 
+			O sistema permite a construção dos casos de teste, gerencia-los, dividi-los em suítes de testes, cadastrar os
+			ambientes de teste(sistema/ambiente onde os testes serão rodados), executar os testes e coletar seus resultados.
 			
-			Pelos testes realizados no sistema, temos a possibilidade da construção de casos de teste, os casos de teste são
-			nomeados, descritos (descrição, pré-condição e pós-condição), priorizados entre os demais, possui estado de
-			execução, modo de execução e podem ser divididos em vários passos. Também se pode definir o ambiente de execução
-			como Sistema Operacional ou Navegador para aplicações Web. A interface do sistema é bem amigável, não houve
-			dificuldades de navegação sobre a aplicação.
+			Através dos testes realizados no sistema, podemos construir os casos de teste, estes são nomeados, 
+			descritos (descrição, pré-condição e pós-condição), priorizados entre os demais, possuem estado de execução, 
+			modo de execução e podem ser divididos em vários passos. Também é possível definir-se o ambiente de execução, 
+			como o Sistema Operacional ou Navegador para aplicações Web. O software apresenta uma interface relativamente amigável, 
+			embora seu mapeamento e feedbacks não sejam muito claros, isso não afeta no modo globalmente na utilização da ferramenta.
 			
 			\begin{itemize}
 			  \item Possui versionamento e histórico sobre os dados.
 			  \item Trabalha com casos de teste e seus resultados.
-			  \item Gera relatórios em gráficos e tabela sobre os testes. Podendo ser exportado em vários formatos como PDF,
-			  HTML, entre outros.
-			  \item Possui suporte de integração com as ferramentas de gerenciamento de projeto \emph{Redmine, Jira, Trac e Bugzilla}.
-			  \item É possível através de plugin dos sistemas de integração continua (\emph{Hudson/Jenkins}) importar os relatórios de
+			  \item Gera relatórios em gráficos e tabela sobre os testes. Podendo ser exportado em vários formatos como PDF, HTML, XML, entre outros.
+			  \item Possui suporte a integração com ferramentas de gerenciamento de projeto como: \emph{Redmine, Jira, Trac e Bugzilla}.
+			  \item É possível através de plugins dos sistemas de integração continua (\emph{Hudson/Jenkins}) importar os relatórios de
 			  execução dos testes automatizados.
 			  \item Pode ser instalado em Windows por meio de um executável e Linux por meio de um arquivo jar.
 			\end{itemize}
 			
-			A ferramenta se mostrou muito fácil de instalar como um software que você instala no dia a dia com poucos cliques,
-			possui um instalador que facilita muito e instalar todas as dependências e o servidor em si. Após a instalação, a
-			configuração nada mais foi do que informar o usuário e senha para o administrador assim podendo-se inciar as
-			atividades de teste na ferramenta. Para integração com gerenciamento de defeitos, na parte administrativa, é
-			informado o gerenciamento de defeito, endereço, usuário e senha. 
+			A ferramenta apresentou ótimo desempenho, auxiliando de modo global dentro dos testes realizados no sistema, 
+			seus recursos agregaram expressivo valor aos resultados colhidos em cada teste, destaque para seus relatórios 
+			os quais apresentam excelente corpo de informações, como gráficos, tabelas e detalhamento de cada ocorrência 
+			durante a execução dos teste. Sua integração com o sistema de gerenciamento de defeitos é feito na parte administrativa do software, 
+			onde informa-se o endereço, usuário e senha, para então realizar-se a integração.
 			
-			Todas informações desta seção foram retiradas da referência \cite{KLAROS}.
+			O embasamento teórico para as informações contidas nesta seção podem ser encontradas na referência \cite{KLAROS}.
 			
 	\section{MySQL}
 
-		\emph{MySQL} é o sistema de gerenciamento de base de dados mais utilizado no mundo.
-		É o \emph{SGBD} utilizado no projeto de gerenciamento de disponibilidades por ser livre de custos
-		e amplamente documentado.\cite{MYSQLWIKI}
+		\emph{MySQL} é um famoso sistema de gerenciamento de base de dados, conta com diversas funcionalidades e sua fácil abordagem foi o motivo chave para sua escolha.
+		É o \emph{SGBD} utilizado no projeto de gerenciamento de disponibilidades por ser livre de custos e amplamente documentado.\cite{MYSQLWIKI}
 	
 \clearpage
 
 \chapter{SPRINT}
 	
-		Esta seção aborda as informações sobre o Sprint II, demonstrando o nosso \emph{sprint backlog} logo a baixo. Os diagramas de casos de uso e classes para cada \emph{user story} está disponível nas seções seguintes.
+		Esta seção aborda as informações sobre o Sprint III, demonstrando o nosso \emph{Sprint Backlog} logo a baixo. Os diagramas de casos de uso e classes para cada \emph{User Story} está disponível nas seções seguintes.
 	
 	\section{Detalhamento da Solução}
 	
