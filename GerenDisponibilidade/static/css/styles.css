@@ -14,8 +14,11 @@ a#adicionar-compromisso-botao {
 	font-size: 1.8em;
 }
 
-div#disponibilidade-aula table tbody th.nao-selecionado {
-	
+div#disponibilidade-aula table tbody th.nao-selecionado:before {
+	/*content: "Ocupado";*/
+	text-align: center;
+	font-weight: normal;
+	color: gray;
 }
 
 div#disponibilidade-aula table tbody th.nao-selecionado:hover {
@@ -24,6 +27,13 @@ div#disponibilidade-aula table tbody th.nao-selecionado:hover {
 
 div#disponibilidade-aula table tbody th.selecionado {
 	background-color: green;
+	
+}
+div#disponibilidade-aula table tbody th.selecionado:before {
+	content: "Disponível";
+	text-align: center;
+	font-weight: normal;
+	color: white;
 }
 
 div#disponibilidade-aula table tbody th.selecionado:hover {
