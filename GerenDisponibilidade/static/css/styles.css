@@ -15,7 +15,7 @@ a#adicionar-compromisso-botao {
 }
 
 div#disponibilidade-aula table tbody th.nao-selecionado:before {
-	content: "Ocupado";
+	/*content: "Ocupado";*/
 	text-align: center;
 	font-weight: normal;
 	color: gray;
@@ -33,6 +33,7 @@ div#disponibilidade-aula table tbody th.selecionado:before {
 	content: "Disponível";
 	text-align: center;
 	font-weight: normal;
+	color: white;
 }
 
 div#disponibilidade-aula table tbody th.selecionado:hover {
