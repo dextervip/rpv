@@ -39,3 +39,24 @@ div#disponibilidade-aula table tbody th.selecionado:before {
 div#disponibilidade-aula table tbody th.selecionado:hover {
 	background-color: red;
 }
+
+
+div#topHome {
+	background-image: url("/static/img/Projeto-Agenda-PS2.png"); 
+	position: center;
+	background-repeat: no-repeat;
+	
+}
+
+div#cabecalho {
+	
+	width: 350px;
+	opacity: 0.5;
+}
+
+div#cabecalho #texto {
+	
+	text-align: left;
+	font-size: 2.8em;
+	
+}
