@@ -6,7 +6,7 @@
 /*.pdf
 /*.dvi
 /*.out
+/*.lof
+/*.ps
 /*.synctex.gz
 
-*.lof
-*.ps
