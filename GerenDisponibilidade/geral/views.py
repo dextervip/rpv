@@ -8,9 +8,15 @@ def home(request):
     return render_to_response("geral/paginaInicial.html", context)
 
 
+def pageLogin(request):
+    context = RequestContext(request)
+    return render_to_response("geral/pageHomeLogin.html", context) 
+    
+
 def sobre(request):
     context = RequestContext(request)
     return render_to_response("geral/sobre.html", context)
+
 
 def contato(request):
     context = RequestContext(request)
