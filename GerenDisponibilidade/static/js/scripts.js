@@ -435,16 +435,13 @@ function StarRating(selector){
 $(document).ready(function() {
 
 	$('div.rating span').click(function(){
-		starR= new StarRating( $(this).parent());
+		starR= new StarRating($(this).parent());
 		starR.changeValue($(this).attr('valor'));
-		
+		//atualiza valor no oTable
 		aPos = oTable.fnGetPosition( $(this).parent().parent().get(0) );
 		aData = oTable.fnGetData( aPos[0] );
-		 
-		rating = aData[3];
-		aData[3] = $(rating).attr('valor', starR.getValue());
-		//oTable.fnUpdate(aData[3], aPos[0], aPos[1]); 
-		console.log(aData[3]);
+		aData[3] = $(aData[3]).attr('valor', starR.getValue());
+		//console.log(aData[3]);
 		 
 	});
 
