@@ -15,3 +15,7 @@ Pela linha de comando, navegue até o diretório raiz do projeto e digite:
 	
 Aguarde enquanto o script verifica as dependências, realize os testes e faça a instalação do banco de dados. Esta operação pode 
 demorar alguns minutos, após a conclusão, o navegador será aberta na página da aplicação
+
+## License
+
+Gerenciador de Disponibilidade Copyright (C) 2012 Juliano R. e Rafael T.
