@@ -369,12 +369,41 @@ $(document).ready(function() {
 	} );
 } );
 
+function StarRating(selector){
+	
+	this.$selector = selector,
+
+	this.changeValue = function(value){
+		if(this.$selector.attr('valor') == value){
+			console.log('clicou no mesmo valor! limpar!');
+			this.clearRating();
+			return;
+		}
+		this.$selector.attr('valor',value);
+		this.$selector.find('span').each(function(){
+			if(value >= $(this).attr('valor')){
+				$(this).addClass('selecionado');
+			}else{
+				$(this).removeClass('selecionado');
+			}
+		});
+	},
+	
+	this.clearRating = function(){
+		this.$selector.attr('valor',0);
+		this.$selector.find('span').each(function(){
+			if($(this).hasClass('selecionado') == true){
+				$(this).removeClass('selecionado');
+			}
+		});
+	}
+}
 
 $(document).ready(function() {
 
 	$('div.rating span').click(function(){
-		valor = $(this).attr('valor');
-		alert('voce clicou na estrela de valor '+valor);
+		starR= new StarRating( $(this).parent());
+		starR.changeValue($(this).attr('valor'));
 	});
 
 } );

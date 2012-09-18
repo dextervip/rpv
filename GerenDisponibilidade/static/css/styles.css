@@ -133,3 +133,7 @@ span:before {
 	left: 0;
 	color: gold;
 }
+
+.rating span.selecionado {
+	color: gold;
+}
