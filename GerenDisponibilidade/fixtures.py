@@ -1,6 +1,7 @@
 # -*- encoding: utf-8 -*-
-
-from professor.models import Professor, AreaFormacao, DisponibilidadeAula, DiaSemana
+from django.db import models
+from disciplinas.models import Disciplina
+from professor.models import Professor, AreaFormacao, DisponibilidadeAula, DiaSemana, Curso
 
 class Fixtures(object):
     '''
@@ -78,3 +79,59 @@ class Fixtures(object):
         dis6.nome_curto = "dom"
         dis6.nome = "Domingo"
         dis6.save()
+        
+        #=========================
+        #Carregando cursos
+        #=========================
+        
+        curso = Curso()
+        curso.nome = "Engenharia de Software"
+        curso.save()
+        
+        curso = Curso()
+        curso.nome = "Ciências da Computação"
+        curso.save()
+        
+        curso = Curso()
+        curso.nome = "Engenharia de Civil"
+        curso.save()
+        
+        curso = Curso()
+        curso.nome = "Engenharia de Elétrica"
+        curso.save()
+        
+        curso = Curso()
+        curso.nome = "Engenharia de Agrícola"
+        curso.save()
+        
+        curso = Curso()
+        curso.nome = "Engenharia de Mecânica"
+        curso.save()
+        
+        #=========================
+        #Carregando disciplinas
+        #=========================
+        
+        disc = Disciplina()
+        disc.nome = "RP V"
+        disc.save()
+        
+        disc = Disciplina()
+        disc.nome = "Redes"
+        disc.save()
+        
+        disc = Disciplina()
+        disc.nome = "Processamento de Imagem"
+        disc.save()
+        
+        disc = Disciplina()
+        disc.nome = "Dispositivos Móveis"
+        disc.save()
+        
+        disc = Disciplina()
+        disc.nome = "Lógica"
+        disc.save()
+        
+        disc = Disciplina()
+        disc.nome = "IHC"
+        disc.save()

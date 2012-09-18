@@ -12,17 +12,11 @@ class SimpleTest(TestCase):
         
     def adicionaDisponibilidade(self):
         p = Professor.objects.get(id=1)
+        p.informarDisponibilidade("qua", "14:30")
         
-        ds = DiaSemana.objects.get(nome_curto="qua");
-        dis, created = DisponibilidadeAula.objects.get_or_create(hora="14:30")
-        if created == True:
-            dis.hora = "14:30"
-            dis.save()
-        dis.diaSemana=ds
-        dis.save()
+        p = Professor.objects.get(id=1)
+        result = p.getDisponibilidadeAulas()
         
-        p.disponibilidadeAula.add(dis)
-        p.save()
-        
-        result = p.getDisponibilidadeAula("qua","14:30")
-        self.assertEqual(result, dis)
+        self.assertEqual(result[0].hora, "14:30")
+        self.assertEqual(result[0].diaSemana.nome_curto, "qua")
+        self.assertEqual(result[0].diaSemana.nome_curto, "quar")

@@ -232,6 +232,7 @@ class Professor(models.Model):
     nome = models.CharField(max_length=30)
     disponibilidadeAula = models.ManyToManyField('DisponibilidadeAula')
     areaFormacao = models.ManyToManyField('AreaFormacao')
+    nivelInteresse = models.ManyToManyField('NivelInteresse')
     
     def getDisponibilidadeAulas(self):
         return self.disponibilidadeAula.select_related().all()
@@ -271,15 +272,13 @@ class Professor(models.Model):
     
 class AreaFormacao(models.Model):
     nome = models.CharField(max_length=30)
+class Curso(models.Model):
+    nome = models.CharField(max_length=30)
+class Campus(models.Model):
+    nome = models.CharField(max_length=30)
     
-class DisciplinaPreferencia(models.Model):
-	disciplina = models.ForeignKey(Disciplina)
-	professor = models.ForeignKey(Professor)
-	grau = models.IntegerField()
-	
-	def ajustar_grau(professor, disciplina, grau=0):
-		ddp, created = DisciplinaPreferencia.objects.get_or_create(professor=professor, disciplina=disciplina)
-		ddp.grau = grau
-		ddp.save()
-	
-	
+class NivelInteresse(models.Model):
+    disciplina = models.ForeignKey(Disciplina)
+    nivel = models.IntegerField()
+    
+    

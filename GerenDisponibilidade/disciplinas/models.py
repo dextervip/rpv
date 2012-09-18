@@ -2,16 +2,15 @@
 
 from django.db import models
 
-class Curso(models.Model):
-    nome = models.CharField(max_length=150, blank=True)
+#from professor.models import Curso, Campus
 
 class Disciplina(models.Model):
     
     nome = models.CharField('Componente Curricular', max_length=255)
     codigo = models.CharField('Código', max_length=50, unique=True)
     #Sera uma listagem com os Cursos ja cadastrados, uma especie de checkBos para selecionar
-    curso = models.ForeignKey(Curso)
-    campus = models.CharField(max_length=150, blank=True)
+    curso = models.ForeignKey('professor.Curso', blank=True, null=True)
+    campus = models.ForeignKey('professor.Campus', blank=True, null=True)
     cargaHora = models.CharField('Carga Horária', max_length=5)
     creditosPraticos = models.CharField('Créditos Práticos', max_length=20)
     creditosTeoricos = models.CharField('Créditos Teóricos', max_length=20)
@@ -26,6 +25,9 @@ class Disciplina(models.Model):
     preRequisitos = models.TextField('Pré-requisito(s)', blank=True)
     bibliograBasica = models.TextField('Referências Básicas (Leituras Obrigatórias)')
     bibliograComplem = models.TextField('Referências Complementares', blank=True)
+    
+    def getDisciplinas(self):
+        return Disciplina.objects.all()
     
 """
    
