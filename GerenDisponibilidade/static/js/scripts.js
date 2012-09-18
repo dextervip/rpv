@@ -348,9 +348,26 @@ $.extend( $.fn.dataTableExt.oPagination, {
 	}
 } );
 
+jQuery.extend( jQuery.fn.dataTableExt.oSort, {
+    "alt-string-pre": function ( a ) {
+   		valor = $(a).attr('valor');
+   		console.log(valor);
+        return valor;
+    },
+     
+    "alt-string-asc": function( a, b ) {
+        return ((a < b) ? -1 : ((a > b) ? 1 : 0));
+    },
+ 
+    "alt-string-desc": function(a,b) {
+        return ((a < b) ? 1 : ((a > b) ? -1 : 0));
+    }
+} );
+
+var oTable = null;
 /* Table initialisation */
 $(document).ready(function() {
-	$('#tabela-disciplinas-preferencia').dataTable( {
+	oTable = $('#tabela-disciplinas-preferencia').dataTable( {
 		//"sDom": "<'row'<'span6'l><'span6'f>r>t<'row'<'span6'i><'span6'p>>",
 		"sPaginationType": "bootstrap",
 		"oLanguage": {
@@ -365,7 +382,14 @@ $(document).ready(function() {
         "sPrevious": "Anterior"},
         "sSearch": "Filtrar:",
         "sLengthMenu": "_MENU_ disciplinas por página",
-    },
+        
+    	},
+    	"aoColumns": [
+			null,
+			null,
+			null,
+			{ "sType": "alt-string" },
+		]
 	} );
 } );
 
@@ -399,11 +423,22 @@ function StarRating(selector){
 	}
 }
 
+
+
 $(document).ready(function() {
 
 	$('div.rating span').click(function(){
 		starR= new StarRating( $(this).parent());
 		starR.changeValue($(this).attr('valor'));
+		
+		aPos = oTable.fnGetPosition( $(this).parent().parent().get(0) );
+		aData = oTable.fnGetData( aPos[0] );
+		 
+		rating = aData[3];
+		aData[3] = $(rating).attr('valor', $(this).attr('valor'));
+		//oTable.fnUpdate(aData[3], aPos[0], aPos[1]); 
+		console.log(aData[3]);
+		 
 	});
 
-} );
+});
