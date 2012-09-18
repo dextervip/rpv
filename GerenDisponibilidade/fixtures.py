@@ -113,6 +113,17 @@ class Fixtures(object):
         #=========================
         
         disc = Disciplina()
+        disc.nome = "Algoritmos"
+        disc.save()
+        disc.curso.add(curso1)
+        disc.curso.add(curso2)
+        disc.curso.add(curso3)
+        disc.curso.add(curso4)
+        disc.curso.add(curso5)
+        disc.curso.add(curso6)
+        disc.save()
+        
+        disc = Disciplina()
         disc.nome = "RP V"
         disc.save()
         disc.curso.add(curso1)
@@ -134,6 +145,7 @@ class Fixtures(object):
         disc.nome = "Dispositivos Móveis"
         disc.save()
         disc.curso.add(curso1)
+        disc.curso.add(curso2)
         disc.save()
         
         disc = Disciplina()
