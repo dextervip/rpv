@@ -272,10 +272,18 @@ class Professor(models.Model):
     
 class AreaFormacao(models.Model):
     nome = models.CharField(max_length=30)
+    
 class Curso(models.Model):
     nome = models.CharField(max_length=30)
+    def __unicode__(self):
+        return self.nome
+    class Meta:
+        ordering = ['nome']
+    
 class Campus(models.Model):
     nome = models.CharField(max_length=30)
+    def __unicode__(self):
+        return self.nome
     
 class NivelInteresse(models.Model):
     disciplina = models.ForeignKey(Disciplina)

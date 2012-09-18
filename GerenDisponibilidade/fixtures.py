@@ -84,29 +84,29 @@ class Fixtures(object):
         #Carregando cursos
         #=========================
         
-        curso = Curso()
-        curso.nome = "Engenharia de Software"
-        curso.save()
+        curso1 = Curso()
+        curso1.nome = "Engenharia de Software"
+        curso1.save()
         
-        curso = Curso()
-        curso.nome = "Ciências da Computação"
-        curso.save()
+        curso2 = Curso()
+        curso2.nome = "Ciências da Computação"
+        curso2.save()
         
-        curso = Curso()
-        curso.nome = "Engenharia de Civil"
-        curso.save()
+        curso3 = Curso()
+        curso3.nome = "Engenharia Civil"
+        curso3.save()
         
-        curso = Curso()
-        curso.nome = "Engenharia de Elétrica"
-        curso.save()
+        curso4 = Curso()
+        curso4.nome = "Engenharia Elétrica"
+        curso4.save()
         
-        curso = Curso()
-        curso.nome = "Engenharia de Agrícola"
-        curso.save()
+        curso5 = Curso()
+        curso5.nome = "Engenharia Agrícola"
+        curso5.save()
         
-        curso = Curso()
-        curso.nome = "Engenharia de Mecânica"
-        curso.save()
+        curso6 = Curso()
+        curso6.nome = "Engenharia Mecânica"
+        curso6.save()
         
         #=========================
         #Carregando disciplinas
@@ -115,23 +115,36 @@ class Fixtures(object):
         disc = Disciplina()
         disc.nome = "RP V"
         disc.save()
+        disc.curso.add(curso1)
+        disc.save()
         
         disc = Disciplina()
         disc.nome = "Redes"
+        disc.save()
+        disc.curso.add(curso1)
         disc.save()
         
         disc = Disciplina()
         disc.nome = "Processamento de Imagem"
         disc.save()
+        disc.curso.add(curso1)
+        disc.save()
         
         disc = Disciplina()
         disc.nome = "Dispositivos Móveis"
+        disc.save()
+        disc.curso.add(curso1)
         disc.save()
         
         disc = Disciplina()
         disc.nome = "Lógica Proposicional"
         disc.save()
+        disc.curso.add(curso1)
+        disc.save()
         
         disc = Disciplina()
         disc.nome = "IHC"
+        disc.save()
+        disc.curso.add(curso1)
+        disc.curso.add(curso2)
         disc.save()

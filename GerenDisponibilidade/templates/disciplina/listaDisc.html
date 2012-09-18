@@ -49,7 +49,7 @@
 		<tr onclick="location.href='/disciplina/{{ disciplina.id }}/';" style="cursor: pointer">
 			<td> {{ disciplina.codigo }} </td>
 			<td> {{ disciplina.nome }} </td>
-			<td> {{ disciplina.curso }} </td>
+			<td>{{ disciplina.curso.all|join:", "  }}</td>
 		</tr>
 	</tbody>
 	{% empty %}

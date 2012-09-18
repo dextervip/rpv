@@ -130,7 +130,11 @@
 		{% for disciplina in disciplinas %}
 		<tr>
 			<td>1</td>
-			<td>Engenharia de Software</td>
+			<td>
+					{% for c in disciplina.curso.all %}
+						{{ c }} <br/>
+					{% endfor %}
+			</td>
 			<td>{{ disciplina.nome }}</td>
 			<td>	
 				<div class="rating" valor="0">

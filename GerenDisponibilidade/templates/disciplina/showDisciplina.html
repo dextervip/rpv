@@ -31,7 +31,7 @@
 		</thead>
 		<tbody>
 			<tr>
-				<td>Campus: {{ disciplina.campus }} </td><td colspan="2">Curso: {{ disciplina.curso }} </td>
+				<td>Campus: {{ disciplina.campus }} </td><td colspan="2">Curso: {{ disciplina.curso.all|join:", "  }}</td>
 			</tr>
 			<tr>
 				<td>Componente Curricular: {{ disciplina.nome }}</td><td colspan="2">Código: {{ disciplina.codigo }}</td>

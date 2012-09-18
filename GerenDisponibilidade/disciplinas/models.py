@@ -10,7 +10,7 @@ class Disciplina(models.Model):
     #codigo = models.CharField('Código', max_length=50, unique=True)
     codigo = models.CharField('Código', max_length=50)
     #Sera uma listagem com os Cursos ja cadastrados, uma especie de checkBos para selecionar
-    curso = models.ForeignKey('professor.Curso', blank=True, null=True)
+    curso = models.ManyToManyField('professor.Curso', blank=True, null=True)
     campus = models.ForeignKey('professor.Campus', blank=True, null=True)
     cargaHora = models.CharField('Carga Horária', max_length=5)
     creditosPraticos = models.CharField('Créditos Práticos', max_length=20)
