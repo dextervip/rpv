@@ -7,7 +7,8 @@ from django.db import models
 class Disciplina(models.Model):
     
     nome = models.CharField('Componente Curricular', max_length=255)
-    codigo = models.CharField('Código', max_length=50, unique=True)
+    #codigo = models.CharField('Código', max_length=50, unique=True)
+    codigo = models.CharField('Código', max_length=50)
     #Sera uma listagem com os Cursos ja cadastrados, uma especie de checkBos para selecionar
     curso = models.ForeignKey('professor.Curso', blank=True, null=True)
     campus = models.ForeignKey('professor.Campus', blank=True, null=True)

@@ -129,7 +129,7 @@ class Fixtures(object):
         disc.save()
         
         disc = Disciplina()
-        disc.nome = "Lógica"
+        disc.nome = "Lógica Proposicional"
         disc.save()
         
         disc = Disciplina()

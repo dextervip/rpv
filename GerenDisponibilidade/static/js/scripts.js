@@ -370,5 +370,11 @@ $(document).ready(function() {
 } );
 
 
+$(document).ready(function() {
 
+	$('div.rating span').click(function(){
+		valor = $(this).attr('valor');
+		alert('voce clicou na estrela de valor '+valor);
+	});
 
+} );

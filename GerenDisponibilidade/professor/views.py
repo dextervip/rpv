@@ -9,11 +9,12 @@ from professor.models import Compromisso, Agenda, DisponibilidadeAula, Professor
 from datetime import datetime, time, timedelta
 from django.core.urlresolvers import reverse
 from django.contrib import messages
+from disciplinas.models import Disciplina
 
 def home(request):
     dis = DisponibilidadeAula()
-    #return HttpResponse(vetor)
-    context_instance = RequestContext(request, {'horas':dis.horas(),'dias': dis.diasSemana()})
+    disc = Disciplina()
+    context_instance = RequestContext(request, {'horas':dis.horas(),'dias': dis.diasSemana(), 'disciplinas' : disc.getDisciplinas() })
     return render_to_response("professor/home.html", context_instance)
 
 def adicionarCompromisso(request):

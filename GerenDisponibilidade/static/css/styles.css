@@ -1,7 +1,6 @@
 a#adicionar-compromisso-botao {
 	float: right;
 	margin-bottom: 15px;
-	
 }
 
 #calendar {
@@ -27,7 +26,6 @@ div#disponibilidade-aula table tbody th.nao-selecionado:hover {
 
 div#disponibilidade-aula table tbody th.selecionado {
 	background-color: green;
-	
 }
 div#disponibilidade-aula table tbody th.selecionado:before {
 	content: "Disponível";
@@ -40,27 +38,23 @@ div#disponibilidade-aula table tbody th.selecionado:hover {
 	background-color: red;
 }
 
-
 div#topHome {
-	background-image: url("/static/img/Projeto-Agenda-PS2.png"); 
+	background-image: url("/static/img/Projeto-Agenda-PS2.png");
 	position: center;
 	background-repeat: no-repeat;
-	
 }
 
 div#cabecalho {
-	
+
 	width: 350px;
 	opacity: 0.5;
 }
 
 div#cabecalho #texto {
-	
+
 	text-align: left;
 	font-size: 2.8em;
-	
 }
-
 
 div.dataTables_length label {
 	float: left;
@@ -88,22 +82,54 @@ table.table {
 	margin-bottom: 6px !important;
 }
 
-table.table thead .sorting,
-table.table thead .sorting_asc,
-table.table thead .sorting_desc,
-table.table thead .sorting_asc_disabled,
-table.table thead .sorting_desc_disabled {
+table.table thead .sorting, table.table thead .sorting_asc, table.table thead .sorting_desc, table.table thead .sorting_asc_disabled, table.table thead .sorting_desc_disabled {
 	cursor: pointer;
 	*cursor: hand;
 }
 
-table.table thead .sorting { background: url('../img/sort_both.png') no-repeat center right; }
-table.table thead .sorting_asc { background: url('../img/sort_asc.png') no-repeat center right; }
-table.table thead .sorting_desc { background: url('../img/sort_desc.png') no-repeat center right; }
+table.table thead .sorting {
+	background: url('../img/sort_both.png') no-repeat center right;
+}
+table.table thead .sorting_asc {
+	background: url('../img/sort_asc.png') no-repeat center right;
+}
+table.table thead .sorting_desc {
+	background: url('../img/sort_desc.png') no-repeat center right;
+}
 
-table.table thead .sorting_asc_disabled { background: url('../img/sort_asc_disabled.png') no-repeat center right; }
-table.table thead .sorting_desc_disabled { background: url('../img/sort_desc_disabled.png') no-repeat center right; }
+table.table thead .sorting_asc_disabled {
+	background: url('../img/sort_asc_disabled.png') no-repeat center right;
+}
+table.table thead .sorting_desc_disabled {
+	background: url('../img/sort_desc_disabled.png') no-repeat center right;
+}
 
 table.dataTable th:active {
 	outline: none;
+}
+
+/*estrelas */
+.rating {
+	unicode-bidi: bidi-override;
+	direction: rtl;
+	text-align: center;
+	font-size: 28px;
+}
+.rating > span {
+	display: inline-block;
+	position: relative;
+	width: 0.9em;
+}
+.rating > span:hover,
+.rating > span:hover ~
+span {
+	color: transparent;
+}
+.rating > span:hover:before,
+.rating > span:hover ~
+span:before {
+	content: "\2605";
+	position: absolute;
+	left: 0;
+	color: gold;
 }
