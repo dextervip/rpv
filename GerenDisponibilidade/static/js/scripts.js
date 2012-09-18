@@ -396,8 +396,10 @@ $(document).ready(function() {
 function StarRating(selector){
 	
 	this.$selector = selector,
+	this.value = 0;
 
 	this.changeValue = function(value){
+		this.value = value;
 		if(this.$selector.attr('valor') == value){
 			console.log('clicou no mesmo valor! limpar!');
 			this.clearRating();
@@ -415,11 +417,16 @@ function StarRating(selector){
 	
 	this.clearRating = function(){
 		this.$selector.attr('valor',0);
+		this.value = 0;
 		this.$selector.find('span').each(function(){
 			if($(this).hasClass('selecionado') == true){
 				$(this).removeClass('selecionado');
 			}
 		});
+	},
+	
+	this.getValue = function(){
+		return this.value;
 	}
 }
 
@@ -435,7 +442,7 @@ $(document).ready(function() {
 		aData = oTable.fnGetData( aPos[0] );
 		 
 		rating = aData[3];
-		aData[3] = $(rating).attr('valor', $(this).attr('valor'));
+		aData[3] = $(rating).attr('valor', starR.getValue());
 		//oTable.fnUpdate(aData[3], aPos[0], aPos[1]); 
 		console.log(aData[3]);
 		 
