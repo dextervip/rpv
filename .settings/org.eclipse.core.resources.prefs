@@ -5,6 +5,7 @@ encoding//GerenDisponibilidade/disciplinas/views.py=utf-8
 encoding//GerenDisponibilidade/fixtures.py=utf-8
 encoding//GerenDisponibilidade/geral/management/commands/loadfixtures.py=utf-8
 encoding//GerenDisponibilidade/geral/tests.py=utf-8
+encoding//GerenDisponibilidade/geral/views.py=utf-8
 encoding//GerenDisponibilidade/professor/forms.py=utf-8
 encoding//GerenDisponibilidade/professor/models.py=utf-8
 encoding//GerenDisponibilidade/professor/views.py=utf-8

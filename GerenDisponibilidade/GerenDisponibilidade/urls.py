@@ -8,10 +8,11 @@ urlpatterns = patterns('',
     # Examples:
     # url(r'^$', 'GerenDisponibilidade.views.home', name='home'),
     # url(r'^GerenDisponibilidade/', include('GerenDisponibilidade.foo.urls')),
-    (r'^$', 'geral.views.home'),
+    (r'^$', 'geral.views.pageLogin'), # 'geral.views.home'
+    (r'^page-home/$', 'geral.views.home'),
     (r'^sobre/$', 'geral.views.sobre'),
     (r'^contato/$', 'geral.views.contato'),
-    (r'^home/$', 'coordenador.views.home'),
+    (r'^coordenador-home/$', 'coordenador.views.home'),
     (r'^lista-disciplinas/', include('disciplinas.urls', namespace='disciplinas')),
     (r'^secretaria/', include('secretaria.urls', namespace='secretaria')),
     (r'^professor/', include('professor.urls', namespace='professor')),
