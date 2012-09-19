@@ -47,7 +47,7 @@ div#topHome {
 div#cabecalho {
 
 	width: 350px;
-	opacity: 0.5;
+	background-color: #808080;
 }
 
 div#cabecalho #texto {
