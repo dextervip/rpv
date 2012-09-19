@@ -486,8 +486,7 @@ function StarRatingRow(selector){
 	            type: "GET",
 	            data: { nivel: value, idDisciplina: idDisciplina },
 	            success: function(data) {
-	                console.log('interesse de disciplina: '+data);
-	                
+	                //console.log('interesse de disciplina: '+data);
 	            },
 	            error : function(){
 	            	console.log('Erro ao salvar interesse de disciplina');
