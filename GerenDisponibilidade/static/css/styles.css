@@ -39,21 +39,27 @@ div#disponibilidade-aula table tbody th.selecionado:hover {
 }
 
 div#topHome {
-	background-image: url("/static/img/Projeto-Agenda-PS2.png");
+	background-image: url("/static/img/Projeto-Agenda-PS.png");
 	position: center;
 	background-repeat: no-repeat;
 }
 
 div#cabecalho {
 
-	width: 350px;
-	background-color: #808080;
+	width: 360px;
+	text-align: center;
 }
 
 div#cabecalho #texto {
 
-	text-align: left;
 	font-size: 2.8em;
+	color: black;
+}
+
+div#cabecalho #texto2 {
+	
+	font-size: 1.1em;
+	color: black;
 }
 
 div.dataTables_length label {
