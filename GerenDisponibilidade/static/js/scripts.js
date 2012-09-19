@@ -406,6 +406,7 @@ function StarRating(selector){
 			return;
 		}
 		this.$selector.attr('valor',value);
+		this.changeValueServer(this.$selector.parent().parent().attr('idDisciplina'), value)
 		this.$selector.find('span').each(function(){
 			if(value >= $(this).attr('valor')){
 				$(this).addClass('selecionado');
