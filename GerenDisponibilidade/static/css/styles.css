@@ -62,6 +62,24 @@ div#cabecalho #texto2 {
 	color: black;
 }
 
+div#page404 {
+	
+	text-align: center;
+}
+
+div#page404 #404Imagem {
+	
+	background-image: url("/static/img/error404.jpg");
+	position: center;
+	background-repeat: no-repeat;
+}
+
+div#bordaLogin {
+	
+	border: 2px;
+	border-color: #000000;
+}
+
 div.dataTables_length label {
 	float: left;
 	text-align: left;
