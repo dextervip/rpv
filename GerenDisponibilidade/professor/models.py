@@ -270,6 +270,15 @@ class Professor(models.Model):
         self.save()
         return {'result' : result , 'dia' : dia,'hora': hora}
     
+    def adicionarNivelInteresse(self, nivel):
+        self.nivelInteresse.add(nivel)
+        
+    def removerNivelInteresse(self, nivel):
+        self.nivelInteresse.add(nivel)
+    
+    def getNiveisInteresse(self):
+        return self.nivelInteresse.all()
+    
 class AreaFormacao(models.Model):
     nome = models.CharField(max_length=30)
     
@@ -286,7 +295,7 @@ class Campus(models.Model):
         return self.nome
     
 class NivelInteresse(models.Model):
-    disciplina = models.ForeignKey(Disciplina)
+    disciplina = models.ForeignKey(Disciplina, blank=True, null=True)
     nivel = models.IntegerField()
     
     

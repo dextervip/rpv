@@ -8,6 +8,8 @@ urlpatterns = patterns('professor.views',
     url(r'^excluir-compromisso/(?P<id>\d{1,10})$', 'excluirCompromisso', name='excluirCompromisso'),
     url(r'^get-compromissos$', 'getCompromissos', name='getCompromissos'),
     url(r'^disponibilidadeAula$', 'disponibilidadeAula', name='disponibilidadeAula'),
+    url(r'^informarInteresseDisciplina$', 'informarInteresseDisciplina', name='informarInteresseDisciplina'),
+    url(r'^getInteressesDisciplina$', 'getInteressesDisciplina', name='getInteressesDisciplina'),
     url(r'^getDisponibilidadeAula$', 'getDisponibilidadeAula', name='getDisponibilidadeAula'),
         
 )

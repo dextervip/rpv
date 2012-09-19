@@ -128,7 +128,7 @@
 						</thead>
 						<tbody>
 							{% for disciplina in disciplinas %}
-							<tr>
+							<tr idDisciplina="{{ disciplina.pk }}">
 								<td>1</td>
 								<td> {% for c in disciplina.curso.all %}
 								{{ c }}

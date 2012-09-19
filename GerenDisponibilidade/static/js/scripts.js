@@ -418,6 +418,7 @@ function StarRating(selector){
 	this.clearRating = function(){
 		this.$selector.attr('valor',0);
 		this.value = 0;
+		this.changeValueServer(this.$selector.parent().parent().attr('idDisciplina'), 0)
 		this.$selector.find('span').each(function(){
 			if($(this).hasClass('selecionado') == true){
 				$(this).removeClass('selecionado');
@@ -427,6 +428,22 @@ function StarRating(selector){
 	
 	this.getValue = function(){
 		return this.value;
+	},
+	
+	this.changeValueServer= function(idDisciplina, value){
+		$.ajax({
+	            async: true,
+	            url: '/professor/informarInteresseDisciplina',
+	            type: "GET",
+	            data: { nivel: value, idDisciplina: idDisciplina },
+	            success: function(data) {
+	                console.log('interesse de disciplina: '+data);
+	                
+	            },
+	            error : function(){
+	            	console.log('Erro ao salvar interesse de disciplina');
+	            }
+        	});
 	}
 }
 

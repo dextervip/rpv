@@ -5,7 +5,7 @@ from django.template import RequestContext
 from django.utils import simplejson
 from django.http import HttpResponse, HttpResponseRedirect
 from forms import CadastroCompromisso
-from professor.models import Compromisso, Agenda, DisponibilidadeAula, Professor
+from professor.models import Compromisso, Agenda, DisponibilidadeAula, Professor, NivelInteresse
 from datetime import datetime, time, timedelta
 from django.core.urlresolvers import reverse
 from django.contrib import messages
@@ -71,5 +71,35 @@ def getDisponibilidadeAula(request):
         
     data = simplejson.dumps(vetor);
     return HttpResponse(data, mimetype='application/json')
+
+def informarInteresseDisciplina(request):
+    professor = Professor.objects.get(id=1);
+    discip = Disciplina.objects.get(pk=request.GET['idDisciplina'])
+    nivel, created = NivelInteresse.objects.get_or_create(disciplina=discip, nivel=request.GET['nivel'])
+    if created == True:
+        nivel.nivel = request.GET['nivel']
+        nivel.save()
+        nivel.disciplina = discip
+        nivel.save()
+
+    if professor.nivelInteresse.filter(disciplina=discip).exists() == True:
+        n = professor.nivelInteresse.filter(disciplina=discip)[0]
+        professor.nivelInteresse.remove(n)
+        professor.adicionarNivelInteresse(nivel)
+    else:
+        professor.adicionarNivelInteresse(nivel)
+    professor.save()
+    
+    return HttpResponse([], mimetype='application/json')
+
+def getInteressesDisciplina(request):
+    professor = Professor.objects.get(id=1);
+    niveis = professor.getNiveisInteresse()
+    vetor = []
+    for n in niveis:
+        vetor.append({'idDisciplina':  n.disciplina.pk , 'nivel': n.nivel})
+    data = simplejson.dumps(vetor);
+    return HttpResponse(data, mimetype='application/json')
+    
     
     
