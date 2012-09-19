@@ -251,7 +251,6 @@ var DisponibilidadeAula = {
 
 
 
-
 /* Default class modification */
 $.extend( $.fn.dataTableExt.oStdClasses, {
 	"sWrapper": "dataTables_wrapper form-inline"
@@ -364,6 +363,55 @@ jQuery.extend( jQuery.fn.dataTableExt.oSort, {
     }
 } );
 
+
+
+
+
+function StarRating(selector){
+
+	this.selector = selector;
+
+	this.loadData = function(){
+		$.ajax({
+	            async: false,
+	            url: '/professor/getInteressesDisciplina',
+	            type: "GET",
+	            context: this,
+	            success: function(data) {
+	            var selector = this.selector;
+	                $.each(data,function(i, item){
+	                	console.log('carregando interesse de disciplina: '+item.idDisciplina+' Nota:'+item.nivel);
+	                	$.each(selector, function(){
+	                		//console.log($(this).attr('idDisciplina'))
+	                		if($(this).attr('idDisciplina') == item.idDisciplina){
+	                			starR= new StarRatingRow($(this).find('div.rating'));
+	                			starR.changeValue(item.nivel);
+	                		}
+	                	});
+	                });
+	                
+	            },
+	            error : function(){
+	            	console.log('Erro ao carregar interesse de disciplina');
+	            },
+	            complete: function() {
+	            
+	            }
+        });
+	}
+}
+jQuery.exists = function(selector) {return ($(selector).length > 0);}
+
+$(document).ready(function() {
+	if ($.exists("#tabela-disciplinas-preferencia")) { 
+		console.log('Carregando dados de disciplinas de preferencia');
+		var starRating = new StarRating($('#tabela-disciplinas-preferencia tbody tr'));
+		starRating.loadData();
+	}
+})
+
+
+
 var oTable = null;
 /* Table initialisation */
 $(document).ready(function() {
@@ -391,9 +439,9 @@ $(document).ready(function() {
 			{ "sType": "alt-string" },
 		]
 	} );
-} );
+});
 
-function StarRating(selector){
+function StarRatingRow(selector){
 	
 	this.$selector = selector,
 	this.value = 0;
@@ -406,7 +454,7 @@ function StarRating(selector){
 			return;
 		}
 		this.$selector.attr('valor',value);
-		this.changeValueServer(this.$selector.parent().parent().attr('idDisciplina'), value)
+		//this.changeValueServer(this.$selector.parent().parent().attr('idDisciplina'), value)
 		this.$selector.find('span').each(function(){
 			if(value >= $(this).attr('valor')){
 				$(this).addClass('selecionado');
@@ -419,7 +467,7 @@ function StarRating(selector){
 	this.clearRating = function(){
 		this.$selector.attr('valor',0);
 		this.value = 0;
-		this.changeValueServer(this.$selector.parent().parent().attr('idDisciplina'), 0)
+		//this.changeValueServer(this.$selector.parent().parent().attr('idDisciplina'), 0)
 		this.$selector.find('span').each(function(){
 			if($(this).hasClass('selecionado') == true){
 				$(this).removeClass('selecionado');
@@ -433,7 +481,7 @@ function StarRating(selector){
 	
 	this.changeValueServer= function(idDisciplina, value){
 		$.ajax({
-	            async: true,
+	            async: false,
 	            url: '/professor/informarInteresseDisciplina',
 	            type: "GET",
 	            data: { nivel: value, idDisciplina: idDisciplina },
@@ -445,16 +493,26 @@ function StarRating(selector){
 	            	console.log('Erro ao salvar interesse de disciplina');
 	            }
         	});
+        this.changeValue(value);
 	}
 }
+
+
 
 
 
 $(document).ready(function() {
 
 	$('div.rating span').click(function(){
-		starR= new StarRating($(this).parent());
-		starR.changeValue($(this).attr('valor'));
+		starR= new StarRatingRow($(this).parent());
+		if( $(this).parent().attr('valor') == $(this).attr('valor') && $(this).hasClass('selecionado')){
+			starR.changeValueServer($(this).parent().parent().parent().attr('idDisciplina'), 0);
+		}else{
+			starR.changeValueServer($(this).parent().parent().parent().attr('idDisciplina'), $(this).attr('valor'));
+		}
+		//starR.changeValue($(this).attr('valor'));
+		
+		
 		//atualiza valor no oTable
 		aPos = oTable.fnGetPosition( $(this).parent().parent().get(0) );
 		aData = oTable.fnGetData( aPos[0] );
