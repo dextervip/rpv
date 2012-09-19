@@ -20,33 +20,33 @@
 </div>
 
 <!-- Example row of columns -->
-<div class="row" style="text-align: center">
+<div class="row" id="optionHome">
 
-	<div class="span4">
+	<div class="span4 alert alert-info" id="optionProfessor">
 		<h2>Professor</h2>
 		<p>
 			Perfil e agenda de compromissos.
 		</p>
 		<p>
-			<a class="btn btn-large btn-info" href="{% url professor:home %}">Acessar &raquo;</a>
+			<a class="btn btn-large btn-success" href="{% url professor:home %}">Acessar &raquo;</a>
 		</p>
 	</div>
-	<div class="span4">
+	<div class="span4 alert alert-info" id="optionSecretaria">
 		<h2>Secretaria</h2>
 		<p>
 			Gestão de salas e equipamentos.
 		</p>
 		<p>
-			<a class="btn btn-large btn-info" href="{% url secretaria:listaSalas %}">Acessar &raquo;</a>
+			<a class="btn btn-large btn-success" href="{% url secretaria:listaSalas %}">Acessar &raquo;</a>
 		</p>
 	</div>
-	<div class="span4">
+	<div class="span4 alert alert-info" id="optionCoordenador">
 		<h2>Coordenador</h2>
 		<p>
 			Gestão de horários.
 		</p>
 		<p>
-			<a class="btn btn-large btn-info" href="/coordenador-home/">Acessar &raquo;</a>
+			<a class="btn btn-large btn-success" href="/coordenador-home/">Acessar &raquo;</a>
 		</p>
 	</div>
 </div>
