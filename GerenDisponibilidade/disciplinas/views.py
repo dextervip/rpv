@@ -66,3 +66,5 @@ def pesquisaDiscip(request):
         resultPesq = Disciplina.objects.filter(nome__icontains=paramPesq).order_by("nome")
         return render_to_response("disciplina/pesquisaDiscip.html", {'resultPesq': resultPesq},
                               context_instance=RequestContext(request))
+    else:
+        return render_to_response("disciplina/pesquisaDiscip.html", context_instance=RequestContext(request))

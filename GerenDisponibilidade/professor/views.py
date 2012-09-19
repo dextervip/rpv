@@ -5,11 +5,11 @@ from django.template import RequestContext
 from django.utils import simplejson
 from django.http import HttpResponse, HttpResponseRedirect
 from forms import CadastroCompromisso
-from GerenDisponibilidade.professor.models import Compromisso, Agenda, DisponibilidadeAula, Professor, NivelInteresse
+from professor.models import Compromisso, Agenda, DisponibilidadeAula, Professor, NivelInteresse
 from datetime import datetime, time, timedelta
 from django.core.urlresolvers import reverse
 from django.contrib import messages
-from GerenDisponibilidade.disciplinas.models import Disciplina
+from disciplinas.models import Disciplina
 
 def home(request):
     dis = DisponibilidadeAula()
