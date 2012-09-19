@@ -69,7 +69,7 @@ div#page404 {
 
 div#page404 #404Imagem {
 	
-	background-image: url("/static/img/error404.jpg");
+	background-image: url("/static/img/404.jpg");
 	position: center;
 	background-repeat: no-repeat;
 }
