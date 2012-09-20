@@ -12,27 +12,27 @@ import datetime
 
 class CadastroCompromisso(forms.ModelForm):
     
-    titulo = forms.CharField(label='Título', max_length=80, required=True)
+    titulo = forms.CharField(label='<b>Título</b>', max_length=80, required=True)
 
-    descricao = forms.CharField(label='Descrição',
+    descricao = forms.CharField(label='<b>Descrição</b>',
         widget=forms.Textarea(),
     )
     
-    dataInicio = forms.DateField(label='Data Início', initial=datetime.date.today)
-    horaInicio = forms.TimeField(label='Hora Início', required=False)
+    dataInicio = forms.DateField(label='<b>Data Início</b>', initial=datetime.date.today)
+    horaInicio = forms.TimeField(label='<b>Hora Início</b>', required=False)
     
-    dataFim = forms.DateField(label='Data Fim', initial=datetime.date.today)
-    horaFim = forms.TimeField(label='Hora Fim', help_text='<strong>Nota:</strong> Hora de finalização do compromisso.', required=False)
+    dataFim = forms.DateField(label='<b>Data Fim</b>', initial=datetime.date.today)
+    horaFim = forms.TimeField(label='<b>Hora Fim</b>', help_text='Nota: <i>Hora de finalização do compromisso.</i>', required=False)
     
-    diaInteiro = forms.BooleanField(label='Dia Inteiro', initial=False, required=False, help_text='Marque esta opção para compromisso não ter uma hora de início e fim.')
+    diaInteiro = forms.BooleanField(label='Dia Inteiro', initial=False, required=False, help_text='<i>Marque esta opção para compromisso não ter uma hora de início e fim.</i>')
 
     publico = forms.BooleanField(label='Público',
                                  initial=False,
                                  required=False,
-                                 help_text='Esta opção permite que todos tenhão acesso público para visualização deste compromisso',
+                                 help_text='<i>Esta opção permite que todos tenhão acesso público para visualização deste compromisso.</i>',
     )
     
-    frequencia = forms.TypedChoiceField(label='Frequência', choices=(
+    frequencia = forms.TypedChoiceField(label='<b>Frequência</b>', choices=(
                                                                 (0, 'Apenas Uma vez'),
                                                                 (1, 'Todos os Dias'),
                                                                 (2, 'Semanal'),
@@ -41,9 +41,9 @@ class CadastroCompromisso(forms.ModelForm):
                                                                 (5, 'Anual')
                                                                 ), widget=forms.RadioSelect, initial=0, required=True,)
     #É necessário mudar-se o tipo do form, se quiser que aceite dados nullos.
-    dataFimFrequencia = forms.DateField(label='Fim da Frequência')
+    dataFimFrequencia = forms.DateField(label='<b>Fim da Frequência</b>')
     
-    diaSemana = forms.MultipleChoiceField(label='Dias da Semana', choices=DiaSemana.DIAS_CHOICES, initial="0", widget=forms.CheckboxSelectMultiple, required=False) 
+    diaSemana = forms.MultipleChoiceField(label='<b>Dias da Semana</b>', choices=DiaSemana.DIAS_CHOICES, initial="0", widget=forms.CheckboxSelectMultiple, required=False) 
     
     
     # Uni-form
