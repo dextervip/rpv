@@ -5,9 +5,6 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 # admin.autodiscover()
 
 urlpatterns = patterns('',
-    # Examples:
-    # url(r'^$', 'GerenDisponibilidade.views.home', name='home'),
-    # url(r'^GerenDisponibilidade/', include('GerenDisponibilidade.foo.urls')),
     (r'^$', 'geral.views.home'),
     (r'^page-login/$', 'geral.views.pageLogin'),
     (r'^sobre/$', 'geral.views.sobre'),

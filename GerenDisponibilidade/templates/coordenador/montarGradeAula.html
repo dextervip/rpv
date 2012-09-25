@@ -1,6 +1,24 @@
 {% extends "geral/base.html" %}
 
 {% block corpo %}
+<ul class="breadcrumb">
+	<li>
+		<a href="/">Página Inicial</a><span class="divider">/</span>
+	</li>
+	<li>
+		<a href="/">Coordenador</a><span class="divider">/</span>
+	</li>
+	<li class="active">
+		Montar Grade de Aulas
+	</li>
+</ul>
+
+<div class="hero-unit">
+	
+	<h2>Área do Coordenador</h2>
+
+	<br />
+	
 		<div id="main_container">
 			<!-- tables inside this DIV could have draggable content -->
 			<div id="drag">
@@ -125,4 +143,12 @@
 			</div><!-- drag container -->
 			<div id="message">Drag school subjects to the timetable (clone subjects with SHIFT key)</div>
 		</div><!-- main container -->
+		
+	</div>
+
+<div class="well">
+
+	<a href="/" class="btn btn-inverse btn-large">&laquo; Voltar</a>
+
+</div>
 {% endblock %}
