@@ -13,7 +13,6 @@ urlpatterns = patterns('',
     (r'^sobre/$', 'geral.views.sobre'),
     (r'^contato/$', 'geral.views.contato'),
     (r'^coordenador-home/$', 'coordenador.views.home'),
-    (r'^lista-disciplinas/', include('disciplinas.urls', namespace='disciplinas')),
     (r'^secretaria/', include('secretaria.urls', namespace='secretaria')),
     (r'^professor/', include('professor.urls', namespace='professor')),
     (r'^coordenador/', include('coordenador.urls', namespace='coordenador')),
@@ -31,6 +30,7 @@ urlpatterns = patterns('',
     (r'^editarSala/(?P<nr_sala>\d+)/$', 'secretaria.views.editarSala'),
     (r'^removerSala/(?P<nr_sala>\d+)/$', "secretaria.views.removerSala"),
     (r'^pesquisaSala/$', 'secretaria.views.pesquisaSala'),
+    (r'^lista-disciplinas/', include('disciplinas.urls', namespace='disciplinas')),
     #(?<paramPesq>\w+)/
 
 
