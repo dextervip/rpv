@@ -57,32 +57,58 @@ div#cabecalho #texto {
 }
 
 div#cabecalho #texto2 {
-	
+
 	font-size: 1.1em;
 	color: black;
 }
 
 div#page404 {
-	
+
 	text-align: center;
 }
 
 div#page404 #404Imagem {
-	
-	background-image: url("/static/img/404.jpg");
+
+	background-image: url("GerenDisponibilidade/static/img/404.jpg");
 	position: center;
 	background-repeat: no-repeat;
 }
 
 div#boxLogin {
-	
+
 	width: 300px;
 	text-align: center;
-	border-style:  outset;
+	border-style: outset;
 	margin-left: auto;
 	margin-right: auto;
 }
-	
+
+div#optionHome {
+
+	width: 99%;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+div#optionHome #optionProfessor {
+
+	width: 25%;
+	border-style: outset;
+}
+
+div#optionHome #optionSecretaria {
+
+	width: 26%;
+	border-style: outset;
+}
+
+div#optionHome #optionCoordenador {
+
+	width: 25%;
+	border-style: outset;
+}
+
 div.dataTables_length label {
 	float: left;
 	text-align: left;

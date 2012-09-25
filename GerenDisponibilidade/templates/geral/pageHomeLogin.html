@@ -7,28 +7,56 @@
 </head>
 {% endblock %}
 
+{% block navbar %}
+
+<div class="navbar navbar-fixed-top">
+	<div class="navbar-inner">
+		<div class="container">
+			<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a>
+			<a class="brand" href="/"><i class="icon-tasks icon-white"></i> GerenDisponibilidade</a>
+
+			<div class="nav-collapse">
+				<ul class="nav">
+					<li class="active">
+						<a href="/page-login/"><i class="icon-home icon-white"></i> Página de Login </a>
+					</li>
+					<li>
+						<a href="/sobre/"><i class="icon-hand-right icon-white"></i> Sobre</a>
+					</li>
+					<li>
+						<a href="/contato/"><i class="icon-envelope icon-white"></i> Contato</a>
+					</li>
+				</ul>
+			</div><!--/.nav-collapse -->
+		</div>
+	</div>
+</div>
+
+{% endblock %}
+
 {% block corpo %}
 
 <body>
-	<div class="well">
-		<h2>Bem Vindo(a)!</h2>
-		<h4>Por Favor;
+	<div class="alert alert-info">
+		<a class="close" data-dismiss="alert" href="#">×</a>
+		<h2 class="alert-heading"><i class="icon-bell"> </i>Bem Vindo(a)!</h2>
+		<h5>Por Favor,
 		<br />
-		Realize login para acessar o Sistema.</h4>
+		Realize login para acessar o Sistema.</h5>
 	</div>
 	<div class="well" id="boxLogin">
-			<form>
-				<div class="input-prepend">
-					<span class="add-on"><i class="icon-envelope"> </i> </span>
-					<input class="span2" type="text" placeholder="E-mail">
-				</div>
-				<div class="input-prepend">
-					<span class="add-on"><i class="icon-lock"> </i> </span>
-					<input class="span2" type="password" placeholder="Senha">
-				</div>
-			</form>
+		<form>
+			<div class="input-prepend">
+				<span class="add-on"><i class="icon-envelope"> </i> </span>
+				<input class="span2" type="text" placeholder="E-mail">
+			</div>
+			<div class="input-prepend">
+				<span class="add-on"><i class="icon-lock"> </i> </span>
+				<input class="span2" type="password" placeholder="Senha">
+			</div>
+		</form>
 		<br />
-		<a href="/page-home/" class="btn btn-success btn-large"><i class=" icon-ok-sign"></i> Aceesar </a>
+		<a href="/" class="btn btn-success btn-large"><i class=" icon-ok-sign"></i> Acessar </a>
 	</div>
 
 </body>
