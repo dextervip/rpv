@@ -432,11 +432,11 @@ $(document).ready(function() {
         "sLengthMenu": "_MENU_ disciplinas por página",
         
     	},
+    	"bAutoWidth": false,
     	"aoColumns": [
 			null,
 			null,
-			null,
-			{ "sType": "alt-string" },
+			{ "sType": "alt-string","sWidth":"150px" },
 		]
 	} );
 });
