@@ -5,17 +5,14 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 # admin.autodiscover()
 
 urlpatterns = patterns('',
-    # Examples:
-    # url(r'^$', 'GerenDisponibilidade.views.home', name='home'),
-    # url(r'^GerenDisponibilidade/', include('GerenDisponibilidade.foo.urls')),
     (r'^$', 'geral.views.home'),
     (r'^page-login/$', 'geral.views.pageLogin'),
     (r'^sobre/$', 'geral.views.sobre'),
     (r'^contato/$', 'geral.views.contato'),
     (r'^coordenador-home/$', 'coordenador.views.home'),
-    (r'^lista-disciplinas/', include('disciplinas.urls', namespace='disciplinas')),
     (r'^secretaria/', include('secretaria.urls', namespace='secretaria')),
     (r'^professor/', include('professor.urls', namespace='professor')),
+    (r'^coordenador/', include('coordenador.urls', namespace='coordenador')),
     #(r'^lista/$', 'disciplinas.views.lista'),
     #(r'^addDisciplina/$', 'disciplinas.views.addDisciplina'),
     (r'^disciplina/(?P<nr_disci>\d+)/$', "disciplinas.views.disciplina"),
@@ -30,6 +27,7 @@ urlpatterns = patterns('',
     (r'^editarSala/(?P<nr_sala>\d+)/$', 'secretaria.views.editarSala'),
     (r'^removerSala/(?P<nr_sala>\d+)/$', "secretaria.views.removerSala"),
     (r'^pesquisaSala/$', 'secretaria.views.pesquisaSala'),
+    (r'^lista-disciplinas/', include('disciplinas.urls', namespace='disciplinas')),
     #(?<paramPesq>\w+)/
 
 

@@ -120,7 +120,7 @@
 					<table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="tabela-disciplinas-preferencia">
 						<thead>
 							<tr>
-								<th>Semestre</th>
+								<!--<th>Semestre</th>-->
 								<th>Curso</th>
 								<th>Disciplina</th>
 								<th>Nível de Interesse</th>
@@ -129,7 +129,7 @@
 						<tbody>
 							{% for disciplina in disciplinas %}
 							<tr idDisciplina="{{ disciplina.pk }}">
-								<td>1</td>
+								<!--<td>1</td>-->
 								<td> {% for c in disciplina.curso.all %}
 								{{ c }}
 								<br/>

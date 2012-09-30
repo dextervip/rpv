@@ -7,3 +7,7 @@ def home(request):
     context = RequestContext(request)
     return render_to_response("coordenador/home.html", context)
 
+def montarGradeAula(request):
+    context = RequestContext(request)
+    return render_to_response("coordenador/montarGradeAula.html", context)
+
