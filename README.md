@@ -20,5 +20,5 @@ demorar alguns minutos, após a conclusão, o navegador será aberta na página 
 
 Copyright (C) 2012-2012 Juliano R. and Rafael T.
 
-License: GNU General Public License, version 3 or later; see COPYING.txt
-         included in this archive for details.
+License: GNU General Public License, version 3 or later; 
+See COPYING.txt included in this archive for details.
