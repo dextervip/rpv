@@ -10,13 +10,16 @@ from datetime import datetime, time, timedelta
 from django.core.urlresolvers import reverse
 from django.contrib import messages
 from disciplinas.models import Disciplina
+from django.contrib.auth.decorators import login_required
 
+@login_required
 def home(request):
     dis = DisponibilidadeAula()
     disc = Disciplina()
     context_instance = RequestContext(request, {'horas':dis.horas(),'dias': dis.diasSemana(), 'disciplinas' : disc.getDisciplinas() })
     return render_to_response("professor/home.html", context_instance)
 
+@login_required
 def adicionarCompromisso(request):
     form = CadastroCompromisso()
     if request.method == 'POST':
@@ -27,7 +30,7 @@ def adicionarCompromisso(request):
     context_instance = RequestContext(request, { 'form' : form})
     return render_to_response("professor/adicionar-compromisso.html", context_instance)
 
-
+@login_required
 def editarCompromisso(request, id):
     c = get_object_or_404(Compromisso, pk=id)
     form = CadastroCompromisso(instance=c)
@@ -39,28 +42,30 @@ def editarCompromisso(request, id):
     context_instance = RequestContext(request, { 'form' : form})
     return render_to_response("professor/editar-compromisso.html", context_instance)
 
-
+@login_required
 def visualizarCompromisso(request, id):
     compromisso = get_object_or_404(Compromisso, pk=id)
     context_instance = RequestContext(request, { 'compromisso' : compromisso})
     return render_to_response("professor/visualizar-compromisso.html", context_instance)
 
-
+@login_required
 def excluirCompromisso(request, id):
     agenda = Agenda()
     return agenda.excluirCompromisso(request, id)
 
-
+@login_required
 def getCompromissos(request):
     agenda = Agenda()
     return agenda.getCompromisso() 
 
+@login_required
 def disponibilidadeAula(request):
     p = Professor.objects.get(id=1);
     result = p.informarDisponibilidade(request.GET['dia'], request.GET['hora'])
     data = simplejson.dumps(result);
     return HttpResponse(data, mimetype='application/json')
 
+@login_required
 def getDisponibilidadeAula(request):
     from django.core import serializers
     p = Professor.objects.get(id=1);
@@ -72,6 +77,7 @@ def getDisponibilidadeAula(request):
     data = simplejson.dumps(vetor);
     return HttpResponse(data, mimetype='application/json')
 
+@login_required
 def informarInteresseDisciplina(request):
     professor = Professor.objects.get(id=1);
     discip = Disciplina.objects.get(pk=request.GET['idDisciplina'])
@@ -92,6 +98,7 @@ def informarInteresseDisciplina(request):
     
     return HttpResponse([], mimetype='application/json')
 
+@login_required
 def getInteressesDisciplina(request):
     professor = Professor.objects.get(id=1);
     niveis = professor.getNiveisInteresse()

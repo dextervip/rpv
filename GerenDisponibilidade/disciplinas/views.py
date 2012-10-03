@@ -5,15 +5,16 @@ from django.template import RequestContext
 
 from models import Disciplina
 from forms import FormNewDisciplina
+from django.contrib.auth.decorators import login_required
 
-
+@login_required
 def lista(request):
     
     lista_disciplinas = Disciplina.objects.all().order_by("id")
     return render_to_response("disciplina/listaDisc.html", {'lista_disciplinas': lista_disciplinas},
         context_instance=RequestContext(request))
 
-
+@login_required
 def addDisciplina(request):
         
     if request.method == "POST":
@@ -26,14 +27,14 @@ def addDisciplina(request):
     return render_to_response("disciplina/Disciplina.html", {'form': form},
         context_instance=RequestContext(request))
     
-
+@login_required
 def disciplina(request, nr_disci):
     
     disciplina = get_object_or_404(Disciplina, pk=nr_disci)
     return render_to_response("disciplina/showDisciplina.html", {'disciplina': disciplina} ,
         context_instance=RequestContext(request))
         
-        
+@login_required
 def editarDiscip(request, nr_disci):
         
     editDiscip = get_object_or_404(Disciplina, pk=nr_disci)
@@ -47,7 +48,7 @@ def editarDiscip(request, nr_disci):
     return render_to_response("disciplina/editarDiscip.html", {'editDiscip': editDiscip, 'form': form} ,
         context_instance=RequestContext(request))
 
-
+@login_required
 def removerDiscip(request, nr_discp):   
     
     removeDiscip = get_object_or_404(Disciplina, pk=nr_discp)
@@ -58,7 +59,7 @@ def removerDiscip(request, nr_discp):
         return render_to_response("geral/remover.html", {'removeDiscip': removeDiscip} ,
         context_instance=RequestContext(request))
         
-
+@login_required
 def pesquisaDiscip(request):
     
     if request.method == "POST":
