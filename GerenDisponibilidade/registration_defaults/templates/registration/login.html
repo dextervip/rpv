@@ -29,8 +29,18 @@
 	{% endif %}
 	
 <div class="well" id="boxLogin">
+	
 	<form method="post" action="{% url django.contrib.auth.views.login %}">
 		{% csrf_token %}
+		
+		<div class="input-prepend">
+			{{ '<span class="add-on"><i class="icon-envelope" > </i> Usuário </span>' }} {{ form.username }}
+		</div>
+		<div class="input-prepend">
+			{{ '<span class="add-on"><i class="icon-lock"> </i> Senha : </span>' }} {{ form.password }}
+		</div>
+		
+		<!--
 		<table>
 			<tr>
 				<td>{{ form.username.label_tag }}</td>
@@ -40,13 +50,18 @@
 				<td>{{ form.password.label_tag }}</td>
 				<td>{{ form.password }}</td>
 			</tr>
-		</table>
-		<p>
-			<a href="{% url auth_password_reset %}">Esqueceu</a> sua Senha? <a href="{% url registration_register %}">Precisa de uma Conta</a>?
-		</p>
-
+		</table> 
+		-->	
+		
 		<input type="submit" class="btn btn-success btn-large" value="Aceesar" />
 		<input type="hidden" name="next" value="{{ next }}" />
+		
+		<br />
+		<br />
+		
+		<p>
+			<a href="{% url auth_password_reset %}">Esqueceu</a> sua Senha? <a href="{% url registration_register %}">Registre-se</a>
+		</p>
 	</form>
 </div>
 {% endblock %}
