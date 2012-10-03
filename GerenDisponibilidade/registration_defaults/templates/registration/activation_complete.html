@@ -1,6 +1,14 @@
 {% extends "registration/registration_base.html" %}
-{% block cabecalho %}Activation complete{% endblock %}
+
+{% block cabecalho %}
+		<head>
+			<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+			<title>GerenDisponibilidade - Ativação Completa</title>
+		</head>
+{% endblock %}
+
 {% block corpo %}
+
 Thanks, activation complete!  You may now <a href='{% url auth_login %}'>login</a> using the username and password you set at registration.
 {% endblock %}
 

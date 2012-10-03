@@ -1,4 +1,5 @@
 {% extends "registration/registration_base.html" %}
+
 {% block cabecalho %}
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -7,6 +8,20 @@
 {% endblock %}
 
 {% block corpo %}
+<div class="well">
+	<div class="alert alert-info">
+		<h2 class="alert-heading"><i class="icon-bell"> </i>Registre-se</h2>
+		<h4>Aqui você poderá realizar o seu registro para acessar o sistema.</h4>
+		<br />
+		<br />
+	</div>
+	<p>
+		<a class="btn btn-info btn-large" href="{% url django.contrib.auth.views.login %}">&laquo; Login </a>
+	</p>
+	
+</div>
+
+<div class="well" id="boxLogin">
 <table>
 	<form method='post' action=''>
 		{% csrf_token %}
@@ -14,8 +29,10 @@
 		<tr>
 			<td>
 			</td><td>
-			<input type="submit" value="Enviar e-mail de Ativação" />
+			<input type="submit" class="btn btn-success btn-large" value="Enviar e-mail de Ativação" />
 			</td>
+		</tr>
 	</form>
 </table>
+</div>
 {% endblock %}

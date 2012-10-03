@@ -1,6 +1,27 @@
 {% extends "registration/registration_base.html" %}
-{% block cabecalho %}Activation email sent{% endblock %}
+
+{% block cabecalho %}
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>GerenDisponibilidade - Registro</title>
+</head>
+{% endblock %}
+
 {% block corpo %}
-An activation email has been sent.  Please check your email and click on the link to activate your account.
+
+<div class="well">
+	<div class="alert alert-success">
+		<h2 class="alert-heading"><i class="icon-bell"> </i>E-mail de ativação enviado!</h2>
+		<br />
+		<br />
+		 <h4>Um e-mail de ativação foi enviado, por favor acesse vosso e-mail e clique no link para ativar sua conta. </h4>
+	</div>
+	<!--
+	<p>
+		<a class="btn btn-info btn-large" href="{% url django.contrib.auth.views.login %}">&laquo; Login </a>
+	</p>
+	-->
+</div>
+
 {% endblock %}
 
