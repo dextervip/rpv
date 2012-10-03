@@ -1,5 +1,21 @@
 {% extends "registration/registration_base.html" %}
-{% block cabecalho %}Logged out{% endblock %}
+
+{% block cabecalho %}
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>GerenDisponibilidade - Logout</title>
+</head>
+{% endblock %}
+
+
 {% block corpo %}
-Successfully logged out!
+<div class="well">
+	<div class="alert alert-success">
+		<h2 class="alert-heading"><i class="icon-bell"> </i>Logout!</h2>
+		<h4>Logout realizado com sucesso!
+		<br />
+		<br />
+		Realize <a href="{% url django.contrib.auth.views.login %}">Login</a> para acessar o Sistema.</h4>
+	</div>
+</div>
 {% endblock %}
