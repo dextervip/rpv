@@ -1,11 +1,21 @@
-You (or someone pretending to be you) have asked to register an account at 
-{{ site.name }}.  If this wasn't you, please ignore this email
-and your address will be removed from our records.
+Você (ou alguém fingindo ser você) pediu para registrar uma conta em:
+{% if site.domain == 'example.com' %}
+http://localhost:8000 . Se não foi você, por favor, ignore este e-mail e seu endereço será removido de nossos registros.
+{% else %}
+{{ site.name }}.  Se não foi você, por favor, ignore este e-mail e seu endereço será removido de nossos registros.
+{% endif %}
 
-To activate this account, please click the following link within the next 
-{{ expiration_days }} days:
-
+Para ativar esta conta, por favor, clique no link a seguir. O link de ativação é válido pelos próximos {{ expiration_days }} dias:
+{% if site.domain == 'example.com' %}
+http://localhost:8000{% url registration_activate activation_key %}
+{% else %}
 http://{{site.domain}}{% url registration_activate activation_key %}
+{% endif %}
 
-Sincerely,
-{{ site.name }} Management
+
+Atenciosamente,
+{% if site.domain == 'example.com' %}
+http://localhost:8000 Administração.
+{% else %}
+{{ site.name }} Administração.
+{% endif %}
