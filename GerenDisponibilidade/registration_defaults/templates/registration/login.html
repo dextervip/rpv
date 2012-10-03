@@ -1,0 +1,52 @@
+{% extends "registration/registration_base.html" %}
+
+{% block cabecalho %}
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>GerenDisponibilidade - Login</title>
+</head>
+{% endblock %}
+
+{% block corpo %}
+
+	{% if not form.errors %}
+	<div class="alert alert-info">
+		<a class="close" data-dismiss="alert" href="#">×</a>
+		<h2 class="alert-heading"><i class="icon-bell"> </i>Bem Vindo(a)!</h2>
+		<h5>Por Favor,
+		<br />
+		Realize login para acessar o Sistema.</h5>
+	</div>
+	{% else %}
+		{% if form.errors %}
+			<div class="alert alert-error">
+			<h2 class="alert-heading"><i class="icon-bell"> </i> Atenção! </h2>
+			<h5>Ocorreu um Erro,
+			<br />
+			Usuário ou Senha inválidos, tente novamente!</h5>
+		</div>
+		{% endif %}
+	{% endif %}
+	
+<div class="well" id="boxLogin">
+	<form method="post" action="{% url django.contrib.auth.views.login %}">
+		{% csrf_token %}
+		<table>
+			<tr>
+				<td>{{ form.username.label_tag }}</td>
+				<td>{{ form.username }}</td>
+			</tr>
+			<tr>
+				<td>{{ form.password.label_tag }}</td>
+				<td>{{ form.password }}</td>
+			</tr>
+		</table>
+		<p>
+			<a href="{% url auth_password_reset %}">Esqueceu</a> sua Senha? <a href="{% url registration_register %}">Precisa de uma Conta</a>?
+		</p>
+
+		<input type="submit" class="btn btn-success btn-large" value="Aceesar" />
+		<input type="hidden" name="next" value="{{ next }}" />
+	</form>
+</div>
+{% endblock %}

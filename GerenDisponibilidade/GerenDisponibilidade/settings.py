@@ -36,6 +36,16 @@ else:
             'PORT': '3306',                      # Set to empty string for default. Not used with sqlite3.#3306
         }
     }
+    
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = "587"
+EMAIL_HOST_USER = 'rpv.management.site@gmail.com'
+EMAIL_HOST_PASSWORD = '3ha9dlw1gp8c'
+EMAIL_USE_TLS = True
+
+ACCOUNT_ACTIVATION_DAYS = 7 # Uma semana para a ativação da nova conta, caso contrário ela é desativada, mas não excluida.
+REGISTRATION_TEMPLATE_DIR = os.path.join(os.path.dirname(__file__), "templates")
+
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
 # although not all choices may be available on all operating systems.
@@ -143,6 +153,8 @@ INSTALLED_APPS = (
     'django_jenkins',
     'south',
     'crispy_forms',
+    'registration_defaults', # https://github.com/yourcelf/django-registration-defaults
+    'registration', # http://docs.b-list.org/django-registration/0.8/index.html
     
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',

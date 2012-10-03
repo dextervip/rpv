@@ -3,6 +3,7 @@ encoding//coordenador/views.py=utf-8
 encoding//disciplinas/forms.py=utf-8
 encoding//disciplinas/models.py=utf-8
 encoding//disciplinas/views.py=utf-8
+encoding//geral/management/commands/loadfixtures.py=utf-8
 encoding//geral/tests.py=utf-8
 encoding//geral/views.py=utf-8
 encoding//professor/forms.py=utf-8

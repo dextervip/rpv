@@ -1,0 +1,21 @@
+{% extends "registration/registration_base.html" %}
+{% block cabecalho %}
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>GerenDisponibilidade - Registro</title>
+</head>
+{% endblock %}
+
+{% block corpo %}
+<table>
+	<form method='post' action=''>
+		{% csrf_token %}
+		{{ form }}
+		<tr>
+			<td>
+			</td><td>
+			<input type="submit" value="Enviar e-mail de Ativação" />
+			</td>
+	</form>
+</table>
+{% endblock %}

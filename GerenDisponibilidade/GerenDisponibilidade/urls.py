@@ -5,6 +5,7 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
+    (r'^accounts/', include('registration.backends.default.urls')),
     (r'^$', 'geral.views.home'),
     (r'^page-login/$', 'geral.views.pageLogin'),
     (r'^sobre/$', 'geral.views.sobre'),
