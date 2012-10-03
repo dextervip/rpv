@@ -1,1 +1,1 @@
-Account registration for {{ site.name }}
+Registro de Conta de: {% if site.domain == 'example.com' %}http://localhost:8000{% else %}{{ site.name }}{% endif %}
