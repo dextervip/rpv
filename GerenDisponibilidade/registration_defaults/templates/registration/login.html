@@ -13,9 +13,9 @@
 	<div class="alert alert-info">
 		<a class="close" data-dismiss="alert" href="#">×</a>
 		<h2 class="alert-heading"><i class="icon-bell"> </i>Bem Vindo(a)!</h2>
-		<h5>Por Favor,
+		<h4>Por Favor,
 		<br />
-		Realize login para acessar o Sistema.</h5>
+		Realize login para acessar o Sistema.</h4>
 	</div>
 	{% else %}
 		{% if form.errors %}
@@ -54,13 +54,13 @@
 		-->	
 		
 		<input type="submit" class="btn btn-success btn-large" value="Aceesar" />
-		<input type="hidden" name="next" value="{{ next }}" />
+		<input type="hidden" name="next" value="{% url geral:home %}" />
 		
 		<br />
 		<br />
 		
 		<p>
-			<a href="{% url auth_password_reset %}">Esqueceu</a> sua Senha? <a href="{% url registration_register %}">Registre-se</a>
+			<a href="{% url auth_password_reset %}">Esqueceu</a> sua Senha? | <a href="{% url registration_register %}">Registre-se</a>
 		</p>
 	</form>
 </div>
