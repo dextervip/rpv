@@ -43,7 +43,7 @@ EMAIL_HOST_USER = 'rpv.management.site@gmail.com'
 EMAIL_HOST_PASSWORD = '3ha9dlw1gp8c'
 EMAIL_USE_TLS = True
 
-ACCOUNT_ACTIVATION_DAYS = 7 # Uma semana para a ativação da nova conta, caso contrário ela é desativada, mas não excluida.
+ACCOUNT_ACTIVATION_DAYS = 7 # One-week activation window; you may, of course, use a different value.
 REGISTRATION_TEMPLATE_DIR = os.path.join(os.path.dirname(__file__), "templates")
 
 # Local time zone for this installation. Choices can be found here:
