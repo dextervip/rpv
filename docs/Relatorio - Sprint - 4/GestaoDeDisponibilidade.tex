@@ -1,0 +1,439 @@
+\documentclass{abnt}
+\usepackage[utf8]{inputenc}
+\usepackage[english,brazilian]{babel}
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{indentfirst}
+\usepackage{blindtext}
+\hypersetup{%
+    pdfborder = {0 0 0}
+}
+\usepackage{graphicx}
+\graphicspath{{./imagens/}}
+\usepackage{placeins}
+
+\usepackage{longtable}
+\usepackage{floatpag}% http://ctan.org/pkg/floatpag
+\usepackage{fancyhdr}% http://ctan.org/pkg/fancyhdr
+\usepackage[absolute]{textpos}
+
+\usepackage{pdflscape}
+\usepackage{rotating}
+
+\usepackage{color, colortbl}
+\definecolor{corImplementado}{rgb}{0.88,1,1}
+\begin{document}
+
+\autor{Rafael Tavares Amorim \\ Juliano Rodovalho Macedo \\ Wolmir L. F. Nemitz}
+
+\titulo{Entrega 4: Gestão de Disponibilidade \\ Versão 3.0}
+
+\instituicao{Universidade Federal do Pampa \par Engenharia da Software \par Resolução de Problemas V}
+
+\local{Alegrete - Rio Grande do Sul, Brasil}
+
+\data{04 de Outubro de 2012}
+
+\capa
+
+\folhaderosto
+
+\tableofcontents
+
+\listoffigures
+
+
+\chapter{Introdução}
+
+	Este relatório tem por finalidade apresentar a fundamentação teórica e tecnológica utilizada no terceiro \emph{sprint}, o nosso Product Backlog completo e atualizado, 
+	o Sprint Backlog munido de nossas especificações de engenharia juntamente com o detalhamento da solução, e por fim,o link de referência visando o acesso ao sistema.
+
+	\section{Metodologia Ágil}
+	
+		Metodologia ágil é um famoso conjunto de metodologias de desenvolvimento de software, 
+		com foco na mitigação dos riscos, esta metodologia aposta em pequenos ciclos iterativos de desenvolvimento de software,
+		onde ocorre a repetição de cada tarefa comum em um processo de software, ou seja, em cada ciclo realiza-se analise, projeto,
+		implementação e testes, referentes aquele módulo, desta forma busca-se à capacidade real de implantar um nova versão 
+		do sistema ao final de cada ciclo; Antes de iniciar-se uma nova iteração a equipe responsável por todo o projeto é reunida 
+		e reavalia-se as características, metas e prioridades do projeto como um todo, para que estas sejam aplicadas no próximo ciclo.
+		
+		Os modelos ágeis são hoje a principal alternativa as metodologias tradicionais de desenvolvimento de software, 
+		as quais apresentam diversos problemas estruturais que comprometem a maioria dos projetos, 
+		baseados nas necessidades atuais do mercado de software.
+	
+	\section{Scrum}
+	
+		\subsection{Visão Geral}
+		
+			O \emph{scrum} é uma metodologia ágil de desenvolvimento de software, embora muitos consideram-no como um framework ágil, 
+			o seus maior objetivo é agilizar o processo de desenvolvimento de software com pequenas entregas ao cliente de forma iterativa
+			visando agregar-se valor ao produto a cada ciclo(iteração) . Em sua existem três papéis neste processo, são eles: \emph{Product Owner, Scrum Master, Team}.
+		
+		\subsection{Papéis}
+		
+			O \emph{Product Owner} é um papel muito importante no \emph{scrum}, cabe a ele definir quais funcionalidades devem ou
+			não existir no sistema por meio de \emph{user stories} e também definir a prioridade delas. Este pa\texttt{}pel também
+			trata de aprovar ou rejeitar o trabalho realizado e dizer se foi realizado como esperado.
+			
+			O \emph{scrum master} tem papel de manter a produtividade da equipe, facilitando o processo de \emph{scrum} e resolver impedimentos
+			no decorrer do \emph{sprint}. Ele ajuda o time a se manter organizado e certificar que as regras do processo estão sendo
+			seguidas corretamente. O \emph{scrum master} não dita o que o time deve fazer mas sim ajuda o time se manter autônomo,
+			organizado e com uma boa produtividade. 
+			
+			O \emph{team} tem papel de transformar os itens de \emph{backlog} em produtos que serão entregues de forma incremental em cada
+			sprint. Cabe ao time ter autonomia própria para se organizar e trabalhar de forma de colaborativa ajudando uns aos
+			outros sem a necessidade de existência de um "chefe" para dizer o que deve ser feito.
+		
+		\subsection{Processo}
+		
+			O processo de \emph{scrum} é trabalhado em cima de vários ciclos chamados de \emph{sprint}, que possuem um tempo fixo, geralmente de
+			1 a 4 semanas. Para cada \emph{sprint} é realizado a escolha de \emph{user stories} que estão no \emph{product backlog}. No \emph{product backlog} temos uma lista priorizada 
+			pelo \emph{product owner} das funcionalidades desejadas do projeto, e parte desta lista irá forma o \emph{sprint backlog}. É uma coleção de \emph{user stories}.
+			
+			Em um ciclo, o time irá realizar o \emph{sprint backlog} que contêm os itens de \emph{backlog} que o time concordou 
+			completar em um ciclo de \emph{sprint}, cada item de \emph{backlog} é quebrado em tarefas, atribuídas para equipe e estimado o tempo de realização.
+			
+					
+			O \emph{backlog item} ou também conhecido como \emph{user story} é um recurso/funcionalidade desejada no sistema que vão compor o
+			\emph{product backlog}. Uma \emph{user story} usualmente é composta por um ator do sistema e a ação para alcançar determinado
+			objetivo. Exemplos: 
+				\begin{itemize}
+					\item Como um usuário Eu posso realizar a ação para alcançar determinado objetivo
+					\item Como um cliente, eu posso criar um perfil no sistema
+					\item Como um cliente, eu posso escolher um usuário e senha
+					\item Como um administrador, eu posso bloquear contas de clientes
+				\end{itemize}
+					 
+					
+			No \emph{sprint planning}, a equipe decidirá quais \emph{backlog itens} irão para o \emph{sprint backlog}. Depois da priorização das \emph{user
+			stories} pelo \emph{product owner}, a equipe seleciona o item do topo do \emph{product backlog}, o qual tem maior prioridade, para a
+			discussão e criação das tarefas necessárias para entrega do item. Então as tarefas são atribuídas e estimadas em
+			tempo, este processo é repetido até que o time decida que não há possibilidade de realização de mais itens.
+			
+			Com a ajuda do\emph{Burndown} que é um gráfico que oferece uma forma poderosa que podemos analisar o andamento do projeto. Podemos estimar a velocidade de andamento do time, atrasos e tempo de 
+			execução de cada \emph{user story}.
+			
+			Por meio de um reunião diariamente, podemos também verificar impedimentos que podem afetar a produtividade da equipe, conhecida como \emph{daily meeting}, 
+			é uma reunião com duração aproximada de 15 minutos,	conduzida pelo \emph{scrum master} e tem como foco 3 perguntas para todo membro da equipe:
+				\begin{itemize}
+					\item O que eu fiz ontem?
+					\item O que eu estou fazendo hoje?
+					\item O que está me impedindo de fazer?
+				\end{itemize}
+			
+			Apesar da reunião ser conduzida pelo scrum master, cada membro deve responder para o time inteiro e não somente para o
+			\emph{scrum master}, todos devem estar de pé na reunião e falar somente quando for perguntado pelo \emph{scrum master}. No final da
+			reunião é discutido por todos soluções caso haja algum impedimento.
+			
+			No final de um \emph{sprint}, ocorre uma reunião informal, chamada \emph{sprint review} que tem intuito de demonstrar o que foi 
+			realizado no sprint com a presença da equipe, \emph{scrum master}, \emph{product owner} e stakeholders. Também é feita a reunião chamada \emph{sprint retrospective}
+			que é uma reunião da equipe que tem objetivo de discutir se o \emph{sprint} foi realizado com sucesso ou se é necessário melhorias.
+			
+			Um projeto em \emph{scrum} pode ser parado a qualquer momento, as vezes o cliente percebe que as funcionalidade implementadas já foram
+			suficientes e atendem a necessidade atual assim não dispersando dinheiro em funcionalidade que talvez nunca seriam utilizadas.
+			
+			As informações desta seção foram retiradas da referência \cite{SCRUMEPF}.
+	
+		%Importação errada, arrumar futuramente
+		\include{/ProductBacklog/productBacklog}
+		
+
+\clearpage
+
+\chapter{Sprint}
+	
+		Esta seção aborda as informações sobre o Sprint IV, demonstrando o nosso \emph{Sprint Backlog} logo a baixo. Os diagramas de casos de uso e classes para cada \emph{User Story} está disponível nas seções seguintes.
+	
+			
+		\section{Funcionalidades - Versão 3.0}
+		
+			As funcionalidades entregues nesta versão são:
+		
+			\begin{itemize} 
+			\item Crud de Compromissos:
+			\subitem Informar a frequência de repetição do compromisso
+			\subitem Dias da semana para a repetição do compromisso
+			\subitem Fim da repetição do compromisso
+			
+			\item Crud de Área de Formação:
+			\subitem Informar área de formação
+			\subitem Visualizar área de formação
+			\subitem Remover área de formação
+			
+			\item Crud Disciplinas de Preferência:
+			\subitem Informar disciplinas de preferência
+			\subitem Visualizar disciplinas de preferência
+			\subitem Editar disciplinas de preferência
+			\subitem Remover disciplinas de preferência
+			
+			\item Crud Grade de Aulas:
+			\subitem Visualizar grade de aulas
+			
+			\item Crud Disponibilidade Horária para Aulas:
+			\subitem Informar disponibilidade de horário para ministrar aulas
+			\subitem Visualizar disponibilidade de horário para ministrar aulas
+			\subitem Remover disponibilidade de horário para ministrar aulas
+			
+			\end{itemize}
+			
+	\clearpage
+	\section{User Story 1}
+	
+		\begin{itemize}
+			\item Como professor, eu quero informar os dias que estarei na Unipampa para que os outros possam me encontrar para assuntos urgentes.
+		\end{itemize}
+		
+		Status: Implementado
+		
+		A solução encontrada e combinada com P.O, seria implementar a recorrência de compromisso sendo assim o professor pode criar um compromisso para dizem que não está na unipampa ou vice-versa. A solução consiste em adicionar alguns campos no formulário para informar frequência(diária, semanal, mensal e anual), quando semanal(dias da semana) e data de fim da frequência.
+		
+		\subsection{Diagramas de Caso de Uso}	
+		\begin{figure}[h]
+			\begin{center}
+				 \includegraphics[width=400px]{CasoUsoDiasAusencia}
+				 \caption{Diagrama de Caso de Uso - Recorrência do Compromisso}
+				 \label{fig:CasoUsoDiasAusencia}
+			\end{center}
+		\end{figure}
+		
+\begin{figure}[h]
+			\begin{center}
+				 \includegraphics[width=450px]{VisualizarDiasAusencia}
+				 \caption{Caso de Uso - Visualizar Dias de Ausência}
+				 %\label{fig:CasoUsoDisponibilidadeHorario}
+			\end{center}
+		\end{figure}
+\begin{figure}[h]
+			\begin{center}
+				 \includegraphics[width=450px]{InformarDiasAusencia}
+				 \caption{Caso de Uso - Informar Dias de Ausência}
+				 %\label{fig:CasoUsoDisponibilidadeHorario}
+			\end{center}
+		\end{figure}
+\begin{figure}[h]
+			\begin{center}
+				 \includegraphics[width=450px]{CancelarDiasAusencia}
+				 \caption{Caso de Uso - Cancelar Dias de Ausência}
+				 %\label{fig:CasoUsoDisponibilidadeHorario}
+			\end{center}
+		\end{figure}
+		\FloatBarrier
+
+		
+		\subsection{Diagramas de Sequência}
+		
+		Não houve alterações no diagrama de sequência, apenas o diagrama de classes e caso de uso.
+		
+	
+	\clearpage	
+	\section{User Story 2}
+
+		\begin{itemize}
+			\item Como professor, eu quero informar meu horário disponível para as aulas, [Transferido para a Semana 03 (minhas disciplinas de preferência 
+			e área de formação para que o coordenador possa montar a grade de aulas de acordo com os dados que informei)].
+		\end{itemize}
+		
+			
+		\subsection{Diagramas de Caso de Uso}
+		\begin{figure}[h]
+			\begin{center}
+				 \includegraphics[width=450px]{CasoUsoDisponibilidadeHorario}
+				 \caption{Caso de Uso - Disponibilidade de Horário}
+				 \label{fig:CasoUsoDisponibilidadeHorario}
+			\end{center}
+		\end{figure}
+		
+		
+		\begin{figure}[h]
+					\begin{center}
+						 \includegraphics[width=450px]{casoUsoInformarHorarioDisponivelAula}
+						 \caption{Caso de Uso Expandido - Informar Disponibilidade de Horário}
+						 %\label{fig:CasoUsoDisponibilidadeHorario}
+					\end{center}
+		\end{figure}
+		
+		\begin{figure}[h]
+							\begin{center}
+								 \includegraphics[width=450px]{casoUsoVisualizarHorarioDisponivelAula}
+								 \caption{Caso de Uso Expandido - Visualizar Disponibilidade de Horário}
+								 %\label{fig:CasoUsoDisponibilidadeHorario}
+							\end{center}
+				\end{figure}
+				
+		\begin{figure}[h]
+									\begin{center}
+										 \includegraphics[width=450px]{casoUsoRemoverHorarioDisponivelAula}
+									 \caption{Caso de Uso Expandido - Remover Disponibilidade de Horário}
+									 %\label{fig:CasoUsoDisponibilidadeHorario}
+								\end{center}
+					\end{figure}
+		
+		\FloatBarrier
+		\begin{landscape}
+		\subsection{Diagramas de Sequência}
+						\begin{figure}[h]
+							\begin{center}
+							\includegraphics[width=500px]{SequenceDisponibilidade}
+							\caption{Diagrama de Sequência}
+							\label{fig:SequenceDisponibilidade}
+							\end{center}				
+						\end{figure}
+						\FloatBarrier
+		\end{landscape}
+			
+	\clearpage
+	\section{User Story 3}
+
+		\begin{itemize}
+			\item Como professor, eu quero visualizar minha grade horária de aulas para saber os horários que tenho que dar aula.
+			[Adicionado a Semana 03 (Como professor, eu quero informar minhas disciplinas de preferência e área de formação para que o coordenador 
+			possa montar a grade de aulas de acordo com os dados que informei.)].
+		\end{itemize}
+		
+
+		
+		\subsection{Diagramas de Caso de Uso}
+			\begin{figure}[h]
+				\begin{center}
+				 \includegraphics[width=450px]{CasoUsoUserStory3}
+				 \caption{Diagrama de Caso de Uso - User Story 03}
+				 \label{fig:CasoUsoUserStory3}
+				\end{center}
+			\end{figure}
+			
+			\begin{figure}[h]
+				\begin{center}
+				 \includegraphics[width=450px]{CasoUsoAreaFormacao}
+				 \caption{Diagrama de Caso de Uso - Área de Formação}
+				 \label{fig:CasoUsoAreaFormacao}
+				\end{center}
+			\end{figure}
+			
+
+		\begin{figure}[h]
+			\begin{center}
+				 \includegraphics[width=450px]{casoUsoVisualizarGradeAulas}
+				 \caption{Caso de Uso Expandido - Visualizar Grade de Aulas}
+				 %\label{fig:CasoUsoDisponibilidadeHorario}
+			\end{center}
+		\end{figure}
+		
+
+		\begin{figure}[h]
+			\begin{center}
+				 \includegraphics[width=450px]{casoUsoInformarNivelInteresseDisciplina}
+				 \caption{Caso de Uso Expandido - Informar Nível de Interesse em Disciplina}
+				 %\label{fig:CasoUsoDisponibilidadeHorario}
+			\end{center}
+		\end{figure}
+		
+\begin{figure}[h]
+			\begin{center}
+				 \includegraphics[width=450px]{casoUsoAdionarAreaFormacao}
+				 \caption{Caso de Uso Expandido - Adicionar Área de Formação}
+				 %\label{fig:CasoUsoDisponibilidadeHorario}
+			\end{center}
+		\end{figure}
+		
+\begin{figure}[h]
+			\begin{center}
+				 \includegraphics[width=450px]{casoUsoRemoverAreaFormacao}
+				 \caption{Caso de Uso Expandido - Remover Área de Formação}
+				 %\label{fig:CasoUsoDisponibilidadeHorario}
+			\end{center}
+		\end{figure}
+		
+\begin{figure}[h]
+			\begin{center}
+				 \includegraphics[width=450px]{casoUsoVisualizarAreaFormacao}
+				 \caption{Caso de Uso Expandido - Visualizar Área de Formação}
+				 %\label{fig:CasoUsoDisponibilidadeHorario}
+			\end{center}
+		\end{figure}
+		
+	\clearpage
+	\begin{landscape}
+			\subsection{Diagramas de Sequência}
+			\begin{figure}[h]
+				\begin{center}
+			\includegraphics[width=650px]{SequenceGradeAulas}
+			\caption{Diagrama de Sequência - Grade de Aulas}
+			\label{fig:SequenceGradeAulas}
+				\end{center}
+				
+			\end{figure}
+			\FloatBarrier
+			\begin{figure}[h]
+					\begin{center}
+				\includegraphics[width=650px]{SequenceInteresseDisciplina}
+				\caption{Diagrama de Sequência - Interesse Disciplina}
+				\label{fig:SequenceInteresseDisciplina}
+					\end{center}
+			\end{figure}
+			\FloatBarrier	
+		
+	\clearpage
+		\begin{figure}[h]
+		\begin{center}
+			\includegraphics[width=650px]{SequenceAreaFormacao}
+			\caption{Diagrama de Sequência -  Área de Formação}
+			\label{fig:SequenceAreaFormacao}
+			\end{center}
+		\end{figure}
+		\FloatBarrier
+	\end{landscape}	
+	\clearpage
+	
+	
+		\section{Diagrama de Classes}
+		
+			A figura \ref{fig:DiagramaClassesModelo} na próxima página mostra o diagrama de classes da solução implementada para as \emph{user stories} do \emph{sprint}. As classes e atributos referente ao sprint estão num tom vermelho.
+			
+	
+		\section{Casos de Teste}
+		
+		 Por limitação de exportação das descrições da ferramenta, os casos de teste podem ser visto no link \url{http://chicago1.vsnetwork.net:8080/klaros-web/pages/login.seam} com usuário \emph{professor} e senha \emph{professor}
+		 
+		 Os casos de teste estão agrupados em 2 suites de teste:
+		 \begin{itemize}
+		 \item TS00005 - Preferências de Disciplinas / Areá de Formação / Grade Horários
+		 \item TS00004 - Manter Horário Disponível
+		 \end{itemize}
+		 
+		 \begin{landscape}
+		 			\begin{figure}[htp]
+		 				\begin{center}
+		 					 \includegraphics[width=600px]{DiagramaClassesModelo}
+		 					 \caption{Diagrama de Classes Modelo}
+		 					 \label{fig:DiagramaClassesModelo}
+		 				\end{center}
+		 			\end{figure}
+		 			%\FloatBarrier
+		 		\end{landscape}
+		 		 
+\clearpage
+	\section{Acesso ao Sistema}
+			De acordo com o planejamento construído no primeiro \emph{sprint}, o qual definimos nossa infraestrutura de desenvolvimento, 
+			o sistema esta em integração contínua com o servidor de testes on-line, contendo todas as funcionalidades da versão 1.0 agora incrementadas para a versão 3.0, 
+			podendo ser acessado a partir da seguinte url:
+		
+			\url{http://chicago1.vsnetwork.net/}
+			
+			
+			
+
+	\section{Acesso às Ferramentas}
+		
+		O código fonte do projeto pode ser acessado em nosso repositório do github\cite{GITHUB} através da url: \url{https://github.com/dextervip/rpv}. 
+		
+		As construções automatizadas do jenkins podem ser acessadas através da url: \url{http://chicago2.vsnetwork.net:8080/job/RPV}.
+
+	\clearpage
+
+	%Referências Bibliograficas
+	\nocite{*}
+	\bibliographystyle{abnt-num}
+	%\bibliographystyle{plain}		
+	\bibliography{bibliografia}		
+
+\end{document}
