@@ -14,7 +14,7 @@ http://{{site.domain}}{% url registration_activate activation_key %}
 
 Atenciosamente,
 {% if site.domain == 'example.com' %}
-http://localhost:8000 Administração.
+http://localhost:8000 , Administração.
 {% else %}
 {{ site.name }}, Administração.
 {% endif %}

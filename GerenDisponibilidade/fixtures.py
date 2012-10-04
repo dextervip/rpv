@@ -2,6 +2,7 @@
 from django.db import models
 from disciplinas.models import Disciplina
 from professor.models import Professor, AreaFormacao, DisponibilidadeAula, DiaSemana, Curso
+from django.contrib.auth.models import User
 
 class Fixtures(object):
     '''
@@ -160,3 +161,15 @@ class Fixtures(object):
         disc.curso.add(curso1)
         disc.curso.add(curso2)
         disc.save()
+        
+        #=========================
+        #Carregando suoer-user
+        #=========================
+        
+        user = User()
+        user.username = "rootadmin"
+        user.password = "root"
+        user.is_staff = True
+        user.is_active = True
+        user.is_superuser = True 
+        user.save()
