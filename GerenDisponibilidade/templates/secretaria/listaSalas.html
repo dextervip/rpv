@@ -11,6 +11,11 @@
 	</li>
 </ul>
 
+<div class="well">
+	<h1>Área da Secretaria</h1>
+</div>
+
+{% if perms.secretaria %}
 
 <form action="/pesquisaSala/" method="post" class="well form-search">
 	{% csrf_token %}
@@ -51,10 +56,28 @@
 	{% endfor %}
 </table>
 
+<div class="well">
 <p>
 	<a href="/" class="btn btn-inverse btn-large">&laquo; Voltar </a>
 
 	<a href="{% url secretaria:addSala %}" class="btn btn-primary btn-large"> Cadastrar nova sala &raquo;</a>
 	<a href="{% url secretaria:addTipoDeSala %}" class="btn btn-primary btn-large"> Cadastrar novo tipo de sala &raquo;</a>
 </p>
+</div>
+
+{% else %}
+
+<div class="hero-unit">
+	<h3>
+		Você não tem acesso a esta área!
+	</h3>
+</div>
+
+<div class="well">
+
+	<a href="/" class="btn btn-inverse btn-large">&laquo; Voltar</a>
+
+</div>
+{% endif %}
+
 {% endblock %}

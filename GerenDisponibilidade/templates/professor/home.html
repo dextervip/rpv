@@ -16,6 +16,9 @@
 <div class="well">
 	<h1>Área do Professor</h1>
 </div>
+
+{% if perms.professor %}
+
 <div class="hero-unit">
 	<div class="row-fluid">
 		<div class="span4">
@@ -161,5 +164,20 @@
 <div class="well">
 	<a href="/" class="btn btn-inverse btn-large">&laquo; Voltar</a>
 </div>
+
+{% else %}
+
+<div class="hero-unit">
+	<h3>
+		Você não tem acesso a esta área!
+	</h3>
+</div>
+
+<div class="well">
+
+	<a href="/" class="btn btn-inverse btn-large">&laquo; Voltar</a>
+
+</div>
+{% endif %}
 
 {% endblock %}

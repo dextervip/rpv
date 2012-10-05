@@ -6,24 +6,25 @@
 		<a href="/">Página Inicial</a><span class="divider">/</span>
 	</li>
 	<li>
-		<a href="/">Coordenador</a><span class="divider">/</span>
+		<a href="/coordenador-home/">Coordenador</a><span class="divider">/</span>
 	</li>
 	<li class="active">
 		Home
 	</li>
 </ul>
 
-<div class="hero-unit">
-	<h2>Área do Coordenador</h2>
+<div class="well">
+	<h1>Área do Coordenador</h1>
+</div>
 
+{% if perms.disciplinas %}
+<div class="hero-unit">
 	<br />
 	<p>
 		<a href="{% url disciplinas:lista %}" class="btn btn-primary btn-large">Listagem de Disciplinas &raquo;</a>
-	</p>
-	<p>
+
 		<a href="{% url disciplinas:addDisciplina %}" class="btn btn-primary btn-large">Cadastrar nova Disciplina &raquo;</a>
-	</p>
-	<p>
+	
 		<a href="{% url coordenador:montarGradeAula %}" class="btn btn-primary btn-large">Montar Grade Aula &raquo;</a>
 	</p>
 </div>
@@ -33,5 +34,20 @@
 	<a href="/" class="btn btn-inverse btn-large">&laquo; Voltar</a>
 
 </div>
+
+{% else %}
+
+<div class="hero-unit">
+	<h3>
+		Você não tem acesso a esta área!
+	</h3>
+</div>
+
+<div class="well">
+
+	<a href="/" class="btn btn-inverse btn-large">&laquo; Voltar</a>
+
+</div>
+{% endif %}
 
 {% endblock %}
