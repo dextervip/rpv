@@ -47,8 +47,8 @@
 
 \chapter{Introdução}
 
-	Este relatório tem por finalidade apresentar a fundamentação teórica e tecnológica utilizada no terceiro \emph{sprint}, o nosso Product Backlog completo e atualizado, 
-	o Sprint Backlog munido de nossas especificações de engenharia juntamente com o detalhamento da solução, e por fim,o link de referência visando o acesso ao sistema.
+	Este relatório tem por finalidade apresentar a fundamentação teórica e tecnológica utilizada no quarto \emph{sprint}, o nosso Product Backlog completo e atualizado, 
+	o Sprint Backlog munido de nossas especificações de engenharia juntamente com o detalhamento da solução, e por fim, o link de referência visando o acesso ao sistema.
 
 	\section{Metodologia Ágil}
 	
@@ -56,7 +56,7 @@
 		com foco na mitigação dos riscos, esta metodologia aposta em pequenos ciclos iterativos de desenvolvimento de software,
 		onde ocorre a repetição de cada tarefa comum em um processo de software, ou seja, em cada ciclo realiza-se analise, projeto,
 		implementação e testes, referentes aquele módulo, desta forma busca-se à capacidade real de implantar um nova versão 
-		do sistema ao final de cada ciclo; Antes de iniciar-se uma nova iteração a equipe responsável por todo o projeto é reunida 
+		do sistema ao final de cada ciclo;  Antes de iniciar-se uma nova iteração a equipe responsável por todo o projeto é reunida 
 		e reavalia-se as características, metas e prioridades do projeto como um todo, para que estas sejam aplicadas no próximo ciclo.
 		
 		Os modelos ágeis são hoje a principal alternativa as metodologias tradicionais de desenvolvimento de software, 
@@ -182,12 +182,10 @@
 	\section{User Story 1}
 	
 		\begin{itemize}
-			\item Como professor, eu quero informar os dias que estarei na Unipampa para que os outros possam me encontrar para assuntos urgentes.
+			\item Como professor, eu quero informar minhas disciplinas de preferência.
 		\end{itemize}
 		
 		Status: Implementado
-		
-		A solução encontrada e combinada com P.O, seria implementar a recorrência de compromisso sendo assim o professor pode criar um compromisso para dizem que não está na unipampa ou vice-versa. A solução consiste em adicionar alguns campos no formulário para informar frequência(diária, semanal, mensal e anual), quando semanal(dias da semana) e data de fim da frequência.
 		
 		\subsection{Diagramas de Caso de Uso}	
 		\begin{figure}[h]
@@ -231,10 +229,10 @@
 	\section{User Story 2}
 
 		\begin{itemize}
-			\item Como professor, eu quero informar meu horário disponível para as aulas, [Transferido para a Semana 03 (minhas disciplinas de preferência 
-			e área de formação para que o coordenador possa montar a grade de aulas de acordo com os dados que informei)].
+			\item Como usuário, eu quero ter um usuário e senha para que eu possa acessar minha conta pessoal no sistema.
 		\end{itemize}
 		
+		Status: Implementado
 			
 		\subsection{Diagramas de Caso de Uso}
 		\begin{figure}[h]
@@ -287,12 +285,10 @@
 	\section{User Story 3}
 
 		\begin{itemize}
-			\item Como professor, eu quero visualizar minha grade horária de aulas para saber os horários que tenho que dar aula.
-			[Adicionado a Semana 03 (Como professor, eu quero informar minhas disciplinas de preferência e área de formação para que o coordenador 
-			possa montar a grade de aulas de acordo com os dados que informei.)].
+			\item Como coordenador, eu quero alocar disciplinas em horários específicos, alocar os professores e salas para elas assim possibilitando sua oferta.
 		\end{itemize}
 		
-
+		Status: Não Implementado
 		
 		\subsection{Diagramas de Caso de Uso}
 			\begin{figure}[h]
@@ -353,6 +349,26 @@
 			\end{center}
 		\end{figure}
 		
+			
+	\clearpage
+		\section{User Story 4}
+	
+			\begin{itemize}
+				\itemComo professor, eu quero me registrar no sistema para que eu possa fornecer meus dados ao coordenador.
+			\end{itemize}
+			
+			Status: Implementado
+			
+			\subsection{Diagramas de Caso de Uso}
+			\begin{figure}[h]
+				\begin{center}
+				 \includegraphics[width=450px]{CasoUsoUserStory3}
+				 \caption{Diagrama de Caso de Uso - User Story 03}
+				 \label{fig:CasoUsoUserStory3}
+				\end{center}
+			\end{figure}
+			
+			
 	\clearpage
 	\begin{landscape}
 			\subsection{Diagramas de Sequência}
