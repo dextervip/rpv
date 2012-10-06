@@ -175,6 +175,7 @@ PROJECT_APPS = (
     'coordenador',
     'disciplinas',
     'geral',    
+    'registration_defaults',
     'secretaria',
     'professor',
 )
