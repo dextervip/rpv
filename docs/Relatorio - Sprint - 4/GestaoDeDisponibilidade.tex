@@ -152,29 +152,12 @@
 			As funcionalidades entregues nesta versão são:
 		
 			\begin{itemize} 
-			\item Crud de Compromissos:
-			\subitem Informar a frequência de repetição do compromisso
-			\subitem Dias da semana para a repetição do compromisso
-			\subitem Fim da repetição do compromisso
-			
-			\item Crud de Área de Formação:
-			\subitem Informar área de formação
-			\subitem Visualizar área de formação
-			\subitem Remover área de formação
 			
 			\item Crud Disciplinas de Preferência:
 			\subitem Informar disciplinas de preferência
 			\subitem Visualizar disciplinas de preferência
 			\subitem Editar disciplinas de preferência
 			\subitem Remover disciplinas de preferência
-			
-			\item Crud Grade de Aulas:
-			\subitem Visualizar grade de aulas
-			
-			\item Crud Disponibilidade Horária para Aulas:
-			\subitem Informar disponibilidade de horário para ministrar aulas
-			\subitem Visualizar disponibilidade de horário para ministrar aulas
-			\subitem Remover disponibilidade de horário para ministrar aulas
 			
 			\end{itemize}
 			
@@ -187,42 +170,41 @@
 		
 		Status: Implementado
 		
+		
+		\subsection{Mockup}
+		
+		\begin{figure}[h]
+					\begin{center}
+						 \includegraphics[width=400px]{telaProfessorDisciplinas}
+						 \caption{Mockup - Informar interesse em disciplina}
+						 %\label{fig:CasoUsoDiasAusencia}
+					\end{center}
+				\end{figure}
+		
 		\subsection{Diagramas de Caso de Uso}	
 		\begin{figure}[h]
 			\begin{center}
-				 \includegraphics[width=400px]{CasoUsoDiasAusencia}
-				 \caption{Diagrama de Caso de Uso - Recorrência do Compromisso}
-				 \label{fig:CasoUsoDiasAusencia}
+				 \includegraphics[width=400px]{casoUsoInformarInteresseDisciplina}
+				 \caption{Diagrama de Caso de Uso - Informar interesse em disciplina}
+				 %\label{fig:CasoUsoDiasAusencia}
 			\end{center}
 		\end{figure}
-		
-\begin{figure}[h]
-			\begin{center}
-				 \includegraphics[width=450px]{VisualizarDiasAusencia}
-				 \caption{Caso de Uso - Visualizar Dias de Ausência}
-				 %\label{fig:CasoUsoDisponibilidadeHorario}
-			\end{center}
-		\end{figure}
-\begin{figure}[h]
-			\begin{center}
-				 \includegraphics[width=450px]{InformarDiasAusencia}
-				 \caption{Caso de Uso - Informar Dias de Ausência}
-				 %\label{fig:CasoUsoDisponibilidadeHorario}
-			\end{center}
-		\end{figure}
-\begin{figure}[h]
-			\begin{center}
-				 \includegraphics[width=450px]{CancelarDiasAusencia}
-				 \caption{Caso de Uso - Cancelar Dias de Ausência}
-				 %\label{fig:CasoUsoDisponibilidadeHorario}
-			\end{center}
-		\end{figure}
+
 		\FloatBarrier
 
 		
 		\subsection{Diagramas de Sequência}
 		
-		Não houve alterações no diagrama de sequência, apenas o diagrama de classes e caso de uso.
+		
+		\begin{figure}[h]
+					\begin{center}
+						 \includegraphics[width=400px]{SequenceInteresseDisciplina}
+						 \caption{Diagrama de Sequência - Informar interesse em disciplina}
+						 %\label{fig:CasoUsoDiasAusencia}
+					\end{center}
+				\end{figure}
+		
+				\FloatBarrier
 		
 	
 	\clearpage	
@@ -354,7 +336,7 @@
 		\section{User Story 4}
 	
 			\begin{itemize}
-				\itemComo professor, eu quero me registrar no sistema para que eu possa fornecer meus dados ao coordenador.
+				\item Como professor, eu quero me registrar no sistema para que eu possa fornecer meus dados ao coordenador.
 			\end{itemize}
 			
 			Status: Implementado
@@ -405,7 +387,7 @@
 	
 		\section{Diagrama de Classes}
 		
-			A figura \ref{fig:DiagramaClassesModelo} na próxima página mostra o diagrama de classes da solução implementada para as \emph{user stories} do \emph{sprint}. As classes e atributos referente ao sprint estão num tom vermelho.
+			A figura \ref{fig:DiagramaClassesModelo} na próxima página mostra o diagrama de classes da solução implementada para as \emph{user stories} do \emph{sprint}. As classes e atributos referente ao sprint estão em um tom vermelho.
 			
 	
 		\section{Casos de Teste}
@@ -414,8 +396,8 @@
 		 
 		 Os casos de teste estão agrupados em 2 suites de teste:
 		 \begin{itemize}
-		 \item TS00005 - Preferências de Disciplinas / Areá de Formação / Grade Horários
-		 \item TS00004 - Manter Horário Disponível
+		 \item TS00006 - Preferência de Disciplinas
+		 \item TS00007 - Montar Grade
 		 \end{itemize}
 		 
 		 \begin{landscape}
