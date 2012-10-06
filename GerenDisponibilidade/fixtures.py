@@ -3,6 +3,7 @@ from django.db import models
 from disciplinas.models import Disciplina
 from professor.models import Professor, AreaFormacao, DisponibilidadeAula, DiaSemana, Curso
 from django.contrib.auth.models import User
+import hashlib
 
 class Fixtures(object):
     '''
@@ -168,7 +169,8 @@ class Fixtures(object):
         
         user = User()
         user.username = "rootadmin"
-        user.password = "root"
+        #user.password = hashlib.sha512("root").hexdigest()
+		user.password = "pbkdf2_sha256$10000$5MZhCMUnj29S$/FeRbFu/+K5HJ+HTOCMb9XKlcN3PowFkS/VVV4m7v8E="
         user.is_staff = True
         user.is_active = True
         user.is_superuser = True 
