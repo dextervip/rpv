@@ -2,6 +2,7 @@
 
 import os
 PROJECT_DIR = os.path.join( os.path.dirname(__file__), '../');
+from registration_defaults.settings import *
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -43,8 +44,8 @@ EMAIL_HOST_USER = 'rpv.management.site@gmail.com'
 EMAIL_HOST_PASSWORD = '3ha9dlw1gp8c'
 EMAIL_USE_TLS = True
 
-ACCOUNT_ACTIVATION_DAYS = 7 # One-week activation window; you may, of course, use a different value.
-REGISTRATION_TEMPLATE_DIR = os.path.join(os.path.dirname(__file__), "templates")
+#ACCOUNT_ACTIVATION_DAYS = 7 # One-week activation window; you may, of course, use a different value.
+#REGISTRATION_TEMPLATE_DIR = os.path.join(os.path.dirname(__file__), "templates")
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
@@ -134,6 +135,7 @@ WSGI_APPLICATION = 'GerenDisponibilidade.wsgi.application'
 
 TEMPLATE_DIRS = (
   os.path.join(PROJECT_DIR, 'templates'),
+  REGISTRATION_TEMPLATE_DIR,
                  
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
@@ -147,7 +149,6 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django.contrib.messages',
     
     # Apps de terceiros
     'django_jenkins',
