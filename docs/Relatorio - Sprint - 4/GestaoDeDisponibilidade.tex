@@ -17,6 +17,7 @@
 \usepackage{fancyhdr}% http://ctan.org/pkg/fancyhdr
 \usepackage[absolute]{textpos}
 
+\usepackage[final]{pdfpages}
 \usepackage{pdflscape}
 \usepackage{rotating}
 
@@ -169,6 +170,7 @@
 			\item Login e Logout 
 			\subitem Realizar Login no sistema
 			\subitem Realizar Logout no sistema
+			
 			\end{itemize}
 			
 	\clearpage
@@ -179,7 +181,6 @@
 		\end{itemize}
 		
 		Status: Implementado
-		
 		
 		\subsection{Mockup}
 		
@@ -201,10 +202,8 @@
 		\end{figure}
 
 		\FloatBarrier
-
 		
 		\subsection{Diagramas de Sequência}
-		
 		
 		\begin{figure}[h]
 					\begin{center}
@@ -216,10 +215,9 @@
 		
 				\FloatBarrier
 		
-	
 	\clearpage	
 	\section{User Story 2}
-
+	 
 		\begin{itemize}
 			\item Como usuário, eu quero ter um usuário e senha para que eu possa acessar minha conta pessoal no sistema.
 		\end{itemize}
@@ -235,7 +233,6 @@
 		\end{itemize}
 		
 		Status: Não Implementado
-		
 		
 			\subsection{Mockup}
 				
@@ -260,16 +257,20 @@
 		%
 		%
 		% Colocar casos de uso expandido aqui
+		% http://ask.metafilter.com/32225/Including-PDF-figures-in-a-LaTeX-document
 		%
-		%
-		%\begin{figure}[h]
-		%	\begin{center}
-		%		 \includegraphics[width=450px]{casoUsoVisualizarGradeAulas}
-		%		 \caption{Caso de Uso Expandido - Visualizar Grade de Aulas}
-		%		 %\label{fig:CasoUsoDisponibilidadeHorario}
-		%	\end{center}
-		%\end{figure}
-		
+		\begin{figure}[h]
+			\begin{center}
+				\includegraphics[bb=1.0in 1.0in 7.5in 10in page=1]{ExpansaoU_C_OfertaDisciplinas.pdf}
+				 \caption{Caso de Uso Expandido - Oferta de Disciplinas}
+			\end{center}
+		\end{figure}
+		\begin{figure}[h]
+			\begin{center}
+				\includegraphics[bb=1.0in 1.0in 7.5in 10in,page=2]{ExpansaoU_C_OfertaDisciplinas.pdf}
+				 \caption{Caso de Uso Expandido - Oferta de Disciplinas}
+			\end{center}
+		\end{figure}
 
 
 		
