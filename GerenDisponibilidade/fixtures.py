@@ -169,8 +169,7 @@ class Fixtures(object):
         
         user = User()
         user.username = "rootadmin"
-        #user.password = hashlib.sha512("root").hexdigest()
-		user.password = "pbkdf2_sha256$10000$5MZhCMUnj29S$/FeRbFu/+K5HJ+HTOCMb9XKlcN3PowFkS/VVV4m7v8E="
+        user.password = "pbkdf2_sha256$10000$5MZhCMUnj29S$/FeRbFu/+K5HJ+HTOCMb9XKlcN3PowFkS/VVV4m7v8E="
         user.is_staff = True
         user.is_active = True
         user.is_superuser = True 
