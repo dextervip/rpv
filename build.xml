@@ -82,7 +82,7 @@
 	
 	<target name="syncdb">
   		<exec executable="python" failonerror="true">
-            <arg line="${source}/manage.py syncdb"/>
+            <arg line="${source}/manage.py syncdb --noinput"/>
         </exec>
   	</target>
   	
