@@ -1,19 +1,19 @@
 Você (ou alguém fingindo ser você) pediu para registrar uma conta em:
-{% if site.domain == 'example.com' %}
+{% if site.domain == 'localhost:8000' %}
 http://localhost:8000 . Se não foi você, por favor, ignore este e-mail e seu endereço será removido de nossos registros.
 {% else %}
 {{ site.name }}.  Se não foi você, por favor, ignore este e-mail e seu endereço será removido de nossos registros.
 {% endif %}
 
 Para ativar esta conta, por favor, clique no link a seguir. O link de ativação é válido pelos próximos {{ expiration_days }} dias:
-{% if site.domain == 'example.com' %}
+{% if site.domain == 'localhost:' %}
 http://localhost:8000{% url registration_activate activation_key %}
 {% else %}
 http://{{site.domain}}{% url registration_activate activation_key %}
 {% endif %}
 
 Atenciosamente,
-{% if site.domain == 'example.com' %}
+{% if site.domain == 'localhost' %}
 http://localhost:8000 , Administração.
 {% else %}
 {{ site.name }}, Administração.
